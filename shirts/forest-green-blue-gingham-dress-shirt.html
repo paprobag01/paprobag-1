@@ -1,0 +1,874 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from www.blacklapel.com/shirts/forest-green-blue-gingham-dress-shirt.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jan 2015 12:19:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<link rel="stylesheet" type="text/css" href="../skin/frontend/default/blacklapel/css/fonts/209585/E53D67E96732692B0.css" />
+<script src="../../cdn.optimizely.com/js/1406711702.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgIHWFJWGwIEVFVWBAY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("../index.html")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+<title>Forest Green &amp; Blue Gingham Dress Shirt - Custom Shirts | Black Lapel</title>
+<meta name="description" content="Forest Green &amp; Blue Gingham Made-to-Measure Dress Shirt by Black Lapel" />
+<meta name="keywords" content="Forest Green &amp; Blue Gingham Dress Shirt, custom shirts, bespoke shirts, made to measure shirts, Flawless Fit Promise, men's custom shirts, gingham shirt, green blue shirt, tailored shirts, online custom shirts, online custom clothing" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+<meta property="og:title" content="Black Lapel: Forest Green & Blue Gingham Dress Shirt" />
+<meta property="og:type" content="product" />
+<meta property="og:site_name" content="Black Lapel" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="http://www.blacklapel.com/media/catalog/product/cache/1/small_image/200x200/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png" />
+<meta property="og:url" content="http://www.blacklapel.com/shirts/forest-green-blue-gingham-dress-shirt.html" />
+<meta property="fb:admins" content="100000664231486" />
+<meta property="og:description" content="Exquisitely tailored and custom designed suits, shirts, blazers, trousers, tuxedos and accessories. All made to measure, shipped to you free of charge and backed by our Flawless Fit Promise." />
+<meta name="viewport" content="width=1000, user-scalable=yes">
+<link rel="icon" href="../skin/frontend/default/blacklapel/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../skin/frontend/default/blacklapel/favicon.ico" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.blacklapel.com/js/blank.html';
+    var BLANK_IMG = 'http://www.blacklapel.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<script type="text/javascript"> var skinUrl = '../skin/frontend/default/blacklapel/index.html';</script>
+<link rel="stylesheet" type="text/css" href="http://www.blacklapel.com/media/css/83996e5fc1a36f31ed181848956c8294.css" />
+<link rel="stylesheet" type="text/css" href="http://www.blacklapel.com/media/css/1b133904370b57faecfbb314d3faf468.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.blacklapel.com/media/css/dbab80f81a011309b8791100c571ba00.css" media="print" />
+<script type="text/javascript" src="http://www.blacklapel.com/media/js/8d08f920f0bde5e0042f6d5cf5e71f8b.js" global_header></script>
+<script type="text/javascript" src="http://www.blacklapel.com/media/js/76c5f0f84bbdd824f9fd1e17981d3c77.js"></script>
+<link rel="canonical" href="forest-green-blue-gingham-dress-shirt.html" />
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.blacklapel.com/media/css/815df5309df491d3bddab8f4b7053761.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://www.blacklapel.com/media/js/6b732f23679251267070ef1f80dd8411.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '../index.html';
+Mage.Cookies.domain   = '.www.blacklapel.com';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BA","BW","BV","BR","IO","VG","BN","BG","BF","BI","KH","CM","CA","CV","KY","CF","TD","CL","CN","CX","CC","CO","KM","CG","CD","CK","CR","HR","CU","CY","CZ","CI","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GG","GN","GW","GY","HT","HM","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MK","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM","NA","NR","NP","NL","AN","NC","NZ","NI","NE","NG","NU","NF","KP","MP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","RO","RU","RW","RE","BL","SH","KN","LC","MF","PM","VC","WS","SM","SA","SN","RS","SC","SL","SG","SK","SI","SB","SO","ZA","GS","KR","ES","LK","SD","SR","SJ","SZ","SE","CH","SY","ST","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UM","VI","UG","UA","AE","GB","US","UY","UZ","VU","VA","VE","VN","WF","EH","YE","ZM","ZW","AX"];
+//]]>
+</script>
+<script type="text/javascript">var Translator = new Translate({"Please use only letters (a-z or A-Z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Please use only letters (a-z or A-Z), numbers (0-9) or underscores (_) in this field, first character must be a letter."});</script><meta name="google-site-verification" content="TiX6AR1f4dF-eBKf54LnDkKr6rqqsckdJqjO6Yb51fU" />
+
+<!-- PaagmVNa3AHrsUP-3shNZ-d0LNI -->
+<script type="text/javascript" src="../../use.typekit.net/zgh3skp.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class=" catalog-product-view catalog-product-view product-forest-green-blue-gingham-dress-shirt categorypath-shirts category-shirts" data-spy="scroll">
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+
+    var _gaq = _gaq || [];
+
+ga('create', 'UA-27453230-1', 'auto');  // Replace with your property ID.
+ga('send', 'pageview');
+
+
+</script>
+<!-- End Google Analytics --><div class="wrapper" id="Frame">
+        <noscript>
+        <div class="noscript">
+            <div class="noscript-inner">
+                <p><strong>JavaScript seem to be disabled in your browser.</strong></p>
+                <p>You must have JavaScript enabled in your browser to utilize the functionality of this website.</p>
+            </div>
+        </div>
+    </noscript>
+    <div class="page">
+        <script>
+			window.S13AsyncInit = function(){
+				var windowHost = window.location.host;
+				var windowProtocol = window.location.protocol;
+				var handleLoginUrl = windowProtocol+'//'+windowHost+'/index.php/sociallogin/index/handlelogin?next='+SAS13Obj.btoa(window.location.href);
+				SAS13Obj.init({
+				siteid:9913991,buttonType:["regular","small"]},handleLoginUrl);
+			};
+
+			(function(d){
+			var js, id = 'socialannex-s13', ref = d.getElementsByTagName('script')[0];
+			if (d.getElementById(id)) {
+			return;
+			}
+			js = d.createElement('script'); js.id = id; js.async = true;
+			js.src = "../../cdn.socialannex.com/partner/9913991/s13.js";
+			ref.parentNode.insertBefore(js, ref);
+			}(document));
+			</script><div id="Header" class="clearfix header-container ">
+    <div class="header-content">
+		
+        
+
+<div id="CartHover">
+	<div class="divider short"></div>
+		<a class="edit-measurements" href="../measurements/wizard/index.html">Edit Measurements</a>
+	<div class="divider short"></div>
+		
+	<div class="block block-cart">
+	    	    <div class="block-content">
+	    
+	    	    	        <p class="empty">You have no items in your shopping cart.</p>
+	    	    </div>
+	    
+	    
+	    	    	    
+	</div>
+</div>
+		
+        <div id="Header-Background"></div>
+            <div class="header-top clearfix">
+                <div id="header-logo" onclick='javascript:window.location="../index.html"' class="fl">
+                    <img alt="Black Lapel - Best Online Custom Suits and Shirts" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAAaCAYAAADc6zIoAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAADUBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDQuMi4yLWMwNjMgNTMuMzUyNjI0LCAyMDA4LzA3LzMwLTE4OjEyOjE4ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIKICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgIHhtbG5zOklwdGM0eG1wQ29yZT0iaHR0cDovL2lwdGMub3JnL3N0ZC9JcHRjNHhtcENvcmUvMS4wL3htbG5zLyIKICAgeG1wUmlnaHRzOk1hcmtlZD0iRmFsc2UiCiAgIHhtcFJpZ2h0czpXZWJTdGF0ZW1lbnQ9IiIKICAgcGhvdG9zaG9wOkF1dGhvcnNQb3NpdGlvbj0iIj4KICAgPGRjOnJpZ2h0cz4KICAgIDxyZGY6QWx0PgogICAgIDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCIvPgogICAgPC9yZGY6QWx0PgogICA8L2RjOnJpZ2h0cz4KICAgPGRjOmNyZWF0b3I+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpLz4KICAgIDwvcmRmOlNlcT4KICAgPC9kYzpjcmVhdG9yPgogICA8ZGM6dGl0bGU+CiAgICA8cmRmOkFsdD4KICAgICA8cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiLz4KICAgIDwvcmRmOkFsdD4KICAgPC9kYzp0aXRsZT4KICAgPHhtcFJpZ2h0czpVc2FnZVRlcm1zPgogICAgPHJkZjpBbHQ+CiAgICAgPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ii8+CiAgICA8L3JkZjpBbHQ+CiAgIDwveG1wUmlnaHRzOlVzYWdlVGVybXM+CiAgIDxJcHRjNHhtcENvcmU6Q3JlYXRvckNvbnRhY3RJbmZvCiAgICBJcHRjNHhtcENvcmU6Q2lBZHJFeHRhZHI9IiIKICAgIElwdGM0eG1wQ29yZTpDaUFkckNpdHk9IiIKICAgIElwdGM0eG1wQ29yZTpDaUFkclJlZ2lvbj0iIgogICAgSXB0YzR4bXBDb3JlOkNpQWRyUGNvZGU9IiIKICAgIElwdGM0eG1wQ29yZTpDaUFkckN0cnk9IiIKICAgIElwdGM0eG1wQ29yZTpDaVRlbFdvcms9IiIKICAgIElwdGM0eG1wQ29yZTpDaUVtYWlsV29yaz0iIgogICAgSXB0YzR4bXBDb3JlOkNpVXJsV29yaz0iIi8+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz6wCsCdAAASgUlEQVR42u1cB1hU1xIWRIpGFBXsFbsoNrCggAoo10aCWBM1YgERu4mAMSpYQEERAQsKJmpEY4sKxGCiWBONGI0FS4QXic+KRsAo6Hn/HGHfuvcuuyy7QN7L/b752GXvKXfO/DNzZubcClOnTu3v6uoquLm5CUOGDFFK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" />
+                </div>
+                <div class="fr">
+                <p class="welcome-msg"><a href="../concierge/index.html#flawless-fit">Free Shipping, Incredibly Easy Returns</a> </p>
+                </div>
+            </div> <!-- end header-top -->
+            <div>
+                <div id="LeftNav" class="">
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                             var js, fjs = d.getElementsByTagName(s)[0];
+                             if (d.getElementById(id)) return;
+                             js = d.createElement(s); js.id = id;
+                             js.src = "../../connect.facebook.net/en_US/all.js#xfbml=1";
+                             fjs.parentNode.insertBefore(js, fjs);
+                             }(document, 'script', 'facebook-jssdk'));
+                    </script>
+                    <ul id="nav">
+        <li><a href="../suits.html">Suits</a></li>
+        <li><a href="../shirts.html">Shirts</a></li>
+        <li><a href="../weddings.html">Weddings</a></li>
+	<li class="parent">
+            <a href="../shop/index.html">More</a>
+            <ul class="level-1">
+                <li><a href="../unsuits.html">Unsuits - <span class="blue">New!</span></a></li>
+                <li><a href="../blazers.html">Blazers</a></li>
+                <li><a href="../pants.html">Pants</a></li>
+                <li><a href="../vests.html">Vests</a></li>
+                <li><a href="../accessories.html">Accessories - <span class="blue">New!</span></a></li>
+                <li><a href="../lookoftheweek.html">Look of the Week</a></li>
+                <li><a href="../bl-gift-card.html">Gift Cards</a></li>
+            </ul>
+	</li>
+        <li class="parent">
+            <a href="../about/index.html">About</a>
+            <ul class="level-1">
+                <li><a href="../about/index.html">Our Story</a></li>
+                <li><a href="../concierge/index.html">Service</a></li>
+                <li><a href="../quality/index.html">Quality</a></li>
+            </ul>
+	</li>
+	<li class="parent">
+            <a href="javascript:;">Inspiration</a>
+            <ul class="level-1">
+                <li><a href="../thecompass/index.html">Style Journal</a></li>
+                <li><a href="../lookoftheweek.html">Look of the Week</a></li>
+                <li><a href="../suitcity.html">#SuitCity</a></li>
+            </ul>
+	</li>
+</ul>
+                </div> <!-- end LeftNav -->
+                <div  id="RightNav" class="fr">
+                <ul class="links">
+                        <li class="nav-dropdown login-li">
+    <a class="activator" href="../customer/account/index.html"><span>My Account</span></a>
+    <div class="dropmodal">
+            <div class="login-form">
+                <p>Already have an account?</p>
+                <form action="https://www.blacklapel.com/customer/account/loginPost/" method="post" id="header-login">
+                    <input type="hidden" name="redirect_url" value="forest-green-blue-gingham-dress-shirt.html"/>
+                    <input type="hidden" name="is_header" value="true"/>
+                    <div class="fieldset">
+                        <div class="input-box clearfix">
+                            <input type="email" name="login[username]" value="" id="ajax-email" class="input-text required-entry validate-email" placeholder="Email Address" title="Email Address" placeholder="Email Address"/>
+                        </div>
+                        <div class="input-box clearfix">
+                            <input type="password" name="login[password]" class="input-text required-entry validate-password" id="ajax-pass" placeholder="Password" title="Password" placeholder="Password" />
+                            <button type="submit" class="button" title="Login" name="send" id="send2"><div class="arrow-right"></div></button>
+                        </div>
+                        <div class="error-msg">
+                        </div>
+                        <div>
+                            <a href="../customer/account/forgotpassword/index.html" class="forgot-password" >Forgot password?</a>
+                        </div>
+                    </div>
+                </form>
+                <p class="nav-or">or</p>
+                <div class="social-login">
+                    <div>
+                        <a class="facebook-login" onclick="SAS13Obj.FacebookLogin();" href="javascript:void(0);">
+                            <img alt="Facebook Login" src="../skin/frontend/default/blacklapel/img/Facebook_Login.png">
+                        </a>
+                        <a class="google-login" onclick="SAS13Obj.GoogleLogin();" href="javascript:void(0);">
+                            <img alt="Google Login" src="../skin/frontend/default/blacklapel/img/Google_Login.png">
+                        </a>
+                    </div>
+                </div>
+                <br/>
+                <hr/>
+                <p>Create an account</p>
+                <form action="#" method="post" id="ajax-register-form">
+                    <div class="fieldset">
+                        <div class="input-box clearfix">
+                            <input type="email" name="start_register[email]" class="input-text required-entry validate-email" id="ajax-pass" placeholder="Email Address" title="Email" />
+                            <button type="submit" class="button" title="Register" name="open-register" ><div class="arrow-right"></div></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="logged-in-options">
+                <ul>
+                                        <li><a href="../customer/account/index.html">My Membership</a></li>
+                    <li><a href="../sales/order/history/index.html">Order History</a></li>
+                    <li><a href="../measurements/index/index.html">My Measurements</a></li>
+                    <li><a href="../customer/account/logout/index.html">Log Out</a></li>
+                </ul>
+            </div>
+    </div>
+</li>
+
+<li class="last cart-activator"><a class="top-link-cart" href="../checkout/cart/index.html">My Bag</a></li>
+
+<!-- // {{{ Registration Modal -->
+<div class="registration-veil"></div>
+<div class="registration-modal">
+    <div class="header">
+        <h2>Join the Club, Become a Member</h2>
+        <!--
+        <p class="subhead">Come to the dark side, we have cookies.... and whiskey.</p>
+        -->
+    </div>
+    <div class="social-login clearfix">
+        <div>
+            <a class="facebook-login" onclick="SAS13Obj.FacebookLogin();" href="javascript:void(0);">
+                <img alt="Facebook Login" src="../skin/frontend/default/blacklapel/img/Facebook_Login.png">
+            </a>
+            <a class="google-login" onclick="SAS13Obj.GoogleLogin();" href="javascript:void(0);">
+                <img alt="Google Login" src="../skin/frontend/default/blacklapel/img/Google_Login.png">
+            </a>
+        </div>
+    </div>
+    <div class="separator">
+        <span>or</span>
+    </div>
+    <div class="registration-form">
+        <form method="post" action="http://www.blacklapel.com/customer/account/createpost/" name="modal-registration-form">
+            <div class="clearfix">
+                <input type="hidden" name="redirect_url" value="forest-green-blue-gingham-dress-shirt.html"/>
+                <div class="col fl clearfix">
+                    <input type="text" name="firstname" class="input-text required-entry" placeholder="First Name" title="First Name" />
+                    <input type="text" name="lastname" class="input-text required-entry" placeholder="Last Name" title="Last Name" />
+                    <input type="email" name="email" class="input-text required-entry validate-email" placeholder="Email Address" title="Email" />
+                </div>
+                <div class="col fr clearfix">
+                    <input type="password" name="password" class="input-text required-entry" placeholder="Password" title="Password" />
+                    <input type="password" name="confirmation" class="input-text required-entry" placeholder="Confirm Password" title="Confirm Password" />
+                    <div>
+                        <label for="modal_is_subscribed">
+                            <input type="checkbox" checked="checked" value="1" id="modal_is_subscribed" name="is_subscribed" title="Subscribe to the Black Lapel Newsletter"> Subscribe to the Black Lapel Newsletter
+                        </label>
+                    </div>
+                    <div>
+                        <label for="modal_terms_of_service">
+                            <input type="checkbox" checked="checked" value="1" id="modal_terms_of_service" name="terms-of-service" title="I agree to the Terms of Service"> I agree to the "<a href="javascript:;"/>Terms of Service</a>"
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="center-text">
+                <div class="form-error-msg"></div>
+                <button type="submit" class="button cta_animate large" title="Create Account" name="register-submit" >CREATE ACCOUNT</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- // }}} -->
+
+            </ul>
+                </div>
+            </div>
+            </div>
+</div>
+        <div class="main-container col1-layout">
+            <div class="main" id="Container">
+                                <script type="text/javascript">
+            var GRANIFY_SITE_ID = 1118;
+ 
+            (function(e,t,n){e=e+"?id="+t;window.Granify=n;n._stack=[];n.s_v=2;n.init=function(e,t,r){function i(e,t){e[t]=function(){Granify._stack.push([t].concat(Array.prototype.slice.call(arguments,0)))}}var s=n;h=["on","addTag","trackPageView","trackCart","trackOrder"];for(u=0;u<h.length;u++)i(s,h[u])};n.init();var r,i,s,o=document.createElement("iframe");o.src="javascript:false";o.title="";o.role="presentation";(o.frameElement||o).style.cssText="width: 0 !important; height: 0 !important; border: 0 !important; overflow: hidden !important; position: absolute !important; top: -1000px !important; left: -1000px !important;";s=document.getElementsByTagName("script");s=s[s.length-1];s.parentNode.insertBefore(o,s);try{i=o.contentWindow.document}catch(u){r=document.domain;o.src="javascript:var d=document.open();d.domain='"+r+"';void(0);";i=o.contentWindow.document}i.open()._l=function(){var t=this.createElement("script");if(r)this.domain=r;t.id="js-iframe-async";t.src=e;this.body.appendChild(t)};i.write('<body onload="document._l();">');i.close()})("../../cdn.granify.com/assets/magento.js",GRANIFY_SITE_ID,[])            
+            </script>
+<script type="text/javascript">
+                Granify.trackPageView({
+                    page_type: 'product'
+                });
+            </script>
+<script type="text/javascript">
+//<![CDATA[
+Granify.trackCart({ items: [] });
+//]]>
+</script>
+
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice({"productId":"545","priceFormat":{"pattern":"$%s","precision":2,"requiredPrecision":2,"decimalSymbol":".","groupSymbol":",","groupLength":3,"integerRequired":1},"includeTax":"false","showIncludeTax":false,"showBothPrices":false,"productPrice":"109","productOldPrice":"109","skipCalculate":1,"defaultTax":8.875,"currentTax":0,"idSuffix":"_clone","oldPlusDisposition":0,"plusDisposition":0,"oldMinusDisposition":0,"minusDisposition":0});
+</script>
+<div id="messages_product_view"></div>
+
+<!-- Breadcrumb -->
+<a href="../shirts.html" class="back-to-cat">Shirts</a>
+
+<div id="BodyText">
+    <!-- {{{ Product Details -->
+    <div class="product-view" id="ProductDetails">
+        <div class="product-essential">
+            <form action="http://www.blacklapel.com/checkout/cart/add/uenc/aHR0cDovL3d3dy5ibGFja2xhcGVsLmNvbS9zaGlydHMvZm9yZXN0LWdyZWVuLWJsdWUtZ2luZ2hhbS1kcmVzcy1zaGlydC5odG1s/product/545/" method="post" id="product_addtocart_form">
+                <div class="no-display">
+                    <input type="hidden" name="product" value="545" />
+                    <input type="hidden" name="related_product" id="related-products-field" value="" />
+                </div>
+                <div class="product-shop">
+                    <div id="ProductDetailsHeader" class="clearfix">
+                        <h1>Forest Green &amp; Blue Gingham Dress Shirt</h1>
+                        
+<div id="sa_s28_noreview">Be the first to review this product!</div>                                                <span class="regular-price" id="product-price-545">
+                            <span class="price">$109</span>
+                        </span>
+                                                <div id="ProductLike">
+                            <div class="pinterestwrap">
+                                <script type="text/javascript">
+                                    (function(d){
+                                        var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+                                        p.type = 'text/javascript';
+                                        p.async = true;
+                                        p.src = '../../assets.pinterest.com/js/pinit.js';
+                                        f.parentNode.insertBefore(p, f);
+                                    }(document));
+                                </script>
+                                 <a href="http://www.pinterest.com/pin/create/button/                                    ?url=http://www.blacklapel.com/shirts/forest-green-blue-gingham-dress-shirt.html%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&amp;media=http://www.blacklapel.com/media/catalog/product/cache/1/image/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&amp;description=BlackLapel%20%7C%20Forest%20Green%20&amp;%20Blue%20Gingham%20Dress%20Shirt"
+                                    data-pin-do="buttonPin"
+                                    data-pin-config="above">
+                                    <img src="../../assets.pinterest.com/images/pidgets/pin_it_button.png" />
+                                </a>
+                            </div>
+                            <div class="fbwrap">
+                                <div class="fb-like" data-href="http://www.blacklapel.com/shirts/forest-green-blue-gingham-dress-shirt.html" data-width="90" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+                            </div>
+                            <div class="twiterwrap">
+                                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                            </div>
+                        </div>
+                    </div>
+				
+                                                        <a href="../process_product_customize/index/view/id/545/index.html" class="button cta_animate xlarge">Customize Now</a>
+                                                            <div class="clear"></div>
+                    <div class="bottom">
+                                                    <div class="receive_by_date">Free Shipping, Incredibly Easy Returns
+                                <div class="subtext">
+                                                                    Receive by Feb 6, 2015                                                                    <!-- Shipping policy Page also -->
+                                        <!-- Lunar New Year Delivery Time 
+                                        <div style="color:red"><strong>PLEASE NOTE:</strong> Due to heavy order volume and the Lunar New Year holidays being celebrated by the incredible tailoring team that crafts every Black Lapel garment, order turnaround times are currently averaging 4 to 6 weeks.</div>
+                                        -->
+                                </div>
+                            </div>
+                                            </div>
+                                                                                                                        </div>
+                                                                </form>
+            <script type="text/javascript">
+            //<![CDATA[
+                var productAddToCartForm = new VarienForm('product_addtocart_form');
+                productAddToCartForm.submit = function(button, url) {
+                    if (this.validator.validate()) {
+                        var form = this.form;
+                        var oldUrl = form.action;
+
+                        if (url) {
+                        form.action = url;
+                        }
+                        var e = null;
+                        try {
+                                this.form.submit();
+                        } catch (e) {
+                        }
+                        this.form.action = oldUrl;
+                        if (e) {
+                                throw e;
+                        }
+
+                        if (button && button != 'undefined') {
+                                button.disabled = true;
+                        }
+                    }
+                }.bind(productAddToCartForm);
+
+                productAddToCartForm.submitLight = function(button, url){
+                    if(this.validator) {
+                        var nv = Validation.methods;
+                        delete Validation.methods['required-entry'];
+                        delete Validation.methods['validate-one-required'];
+                        delete Validation.methods['validate-one-required-by-name'];
+                        if (this.validator.validate()) {
+                            if (url) {
+                                this.form.action = url;
+                            }
+                            this.form.submit();
+                        }
+                        Object.extend(Validation.methods, nv);
+                    }
+                }.bind(productAddToCartForm);
+            //]]>
+            </script>
+        </div>
+
+        <div class="product-collateral">
+            <section class="product-descriptors">
+                            <article class="details">
+                <header>
+                    <h2>The Details</h2>
+                </header>
+                <div> 
+                        <h2>Details</h2>
+    <div class="std">
+        <ul>
+
+<li><span class="label">Fabric:</span> 100% Cotton</li><li><span class="label">Color:</span> Green / Blue</li><li><span class="label">Pattern:</span> Gingham</li><li><span class="label">Weight:</span> 113 GSM - Medium</li>
+
+</ul>    </div>
+                </div>
+            </article>
+                                <article class="story">
+                <header>
+                    <h2>The Story</h2>
+                </header>
+                <div> 
+                    
+<div class="std">
+	Wearing a forest green and blue gingham dress shirt announces to the world that you are a true master of style. Don’t let anybody know that this dress shirt is, actually, extremely easy to match with your ties and suits. Bring out the forest green by wearing a tie with some green in it and gray suits. Or pair it with blue suits and ties for an easy pairing.</div>	
+                </div>
+            </article>
+            </section>
+<script type="text/javascript">
+(function($){
+    $(document).ready(function(){
+        var prod_det_container = $('.details'),
+            tabs = $('.tab', prod_det_container),
+            header_text = $('header', prod_det_container),
+            tab_nav = $('<div class="prod-det-tab-nav clearfix">');
+        tabs.each(function(){
+            var el = $(this),
+                tab_name = el.attr('id'),
+                tab_link = $('<a data-tab="'+tab_name+'" href="javascript:;">'+tab_name+'</a>')
+                    .on({
+                        click: function(){
+                            var el_t = $(this);
+                            el_t.parent().siblings().removeClass('active');
+                            el_t.parent().addClass('active');
+                            tabs.removeClass('active');
+                            $('#'+el_t.data('tab'), prod_det_container).addClass('active');
+                        }
+                    });
+            tab_nav.append($('<li>').append(tab_link));
+            tab_nav.find('li').first().find('a').click();
+        });
+        header_text.after(tab_nav);
+    });
+})(jQuery); 
+</script>
+ 
+        </div>
+        <!-- {{{ olapic carousel -->
+                    <div class="olapic_loader center-text"><img src="../skin/frontend/default/blacklapel/img/ajax-loader.gif"/></div>
+            <div id="olapic_specific_widget"></div><script type="text/javascript" src="../../photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="d4d129995d7b54fdfe4515a76278be21" data-apikey="f8e2e3ba67bf3d35b543d886e5235b6b5364006d169e5cb46448c52e425b4b98" data-tags="38" async="async"></script>
+                <!-- }}} -->
+    </div>
+    <!-- // }}} -->
+    <!-- {{{ Product Photos -->
+    <div id="ProductDetailsPhotos" class="clearfix">
+        
+<div id="GalleryPhoto">
+	<div class="cloudzoom-wrap">
+				<a href="http://www.blacklapel.com/media/catalog/product/cache/1/image/776x1430/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png" ><img id="zoom-container" class="cloudzoom" src="http://www.blacklapel.com/media/catalog/product/cache/1/image/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png" alt="Forest Green &amp; Blue Gingham Dress Shirt" data-cloudzoom='{"animationTime": "100", "zoomFlyOut" : false, "zoomPosition":"inside", "zoomSizeMode":"zoom", "variableMagnification":false, "imageZoom":"http://www.blacklapel.com/media/catalog/product/cache/1/image/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png"}'/></a>
+        
+	</div>
+	<div id="GalleryThumbnails">
+				<div id="thumbs">
+                    <ul class="thumbs">
+                                                                                <!-- check if this image should be hidden -->
+                                
+                                <!-- check if this image is a lifestyle image -->
+                                
+                                
+				<li class="first selected">
+					<a style="height: 120px" class="thumb-link" href="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/776x1430/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png" class="thumb" title="Forest Green &amp; Blue Gingham Dress Shirt" >
+						<img class="cloudzoom-gallery" src="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png" width="120px" alt="Forest Green &amp; Blue Gingham Dress Shirt" data-cloudzoom='{ "animationTime":"100", "zoomFlyOut" : false, "zoomPosition":"inside", "useZoom":"#zoom-container", "image":"http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front-crop_5.png" }' />
+					</a>
+				</li>
+							                                <!-- check if this image should be hidden -->
+                                
+                                <!-- check if this image is a lifestyle image -->
+                                
+                                
+				<li >
+					<a style="height: 120px" class="thumb-link" href="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/776x1430/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-back-crop_1.jpg" class="thumb" title="Forest Green &amp; Blue Gingham Dress Shirt Back" >
+						<img class="cloudzoom-gallery" src="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-back-crop_1.jpg" width="120px" alt="Forest Green &amp; Blue Gingham Dress Shirt Back" data-cloudzoom='{ "animationTime":"100", "zoomFlyOut" : false, "zoomPosition":"inside", "useZoom":"#zoom-container", "image":"http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-back-crop_1.jpg" }' />
+					</a>
+				</li>
+							                                <!-- check if this image should be hidden -->
+                                
+                                <!-- check if this image is a lifestyle image -->
+                                
+                                
+				<li >
+					<a style="height: 120px" class="thumb-link" href="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/776x1430/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front_1.jpg" class="thumb" title="Forest Green &amp; Blue Gingham Dress Shirt" >
+						<img class="cloudzoom-gallery" src="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front_1.jpg" width="120px" alt="Forest Green &amp; Blue Gingham Dress Shirt" data-cloudzoom='{ "animationTime":"100", "zoomFlyOut" : false, "zoomPosition":"inside", "useZoom":"#zoom-container", "image":"http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/f/o/forest-green-and-blue-gingham-dress-shirt-front_1.jpg" }' />
+					</a>
+				</li>
+							                                <!-- check if this image should be hidden -->
+                                
+                                <!-- check if this image is a lifestyle image -->
+                                
+                                
+				<li class="last">
+					<a style="height: 120px" class="thumb-link" href="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/776x1430/9df78eab33525d08d6e5fb8d27136e95/b/l/blue-and-green-gingham.jpg" class="thumb" title="Forest Green &amp; Blue Gingham Dress Shirt Swatch" >
+						<img class="cloudzoom-gallery" src="http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/b/l/blue-and-green-gingham.jpg" width="120px" alt="Forest Green &amp; Blue Gingham Dress Shirt Swatch" data-cloudzoom='{ "animationTime":"100", "zoomFlyOut" : false, "zoomPosition":"inside", "useZoom":"#zoom-container", "image":"http://www.blacklapel.com/media/catalog/product/cache/1/thumbnail/388x715/9df78eab33525d08d6e5fb8d27136e95/b/l/blue-and-green-gingham.jpg" }' />
+					</a>
+				</li>
+							                    </ul>
+                </div>
+                	</div>
+        <div class="lifestyleImages clearfix">
+            <ul class="">
+                            </ul>
+        </div>
+	<script type="text/javascript">
+		CloudZoom.quickStart();
+		
+		(function($){
+			$(document).ready(function(){
+				$('#thumbs li a img').click(function(){
+					$(this).parents('li').siblings('.selected').removeClass('selected');
+					$(this).parents('li').addClass('selected');
+				})
+			});
+		})(jQuery);
+	</script> 
+    </div>
+    <!-- }}} -->
+    </div>
+<!-- Twitter widget -->		
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- Please place the dynamic variable for you product unique id into the 'data-tags' attribute in our javascript -->
+
+<script type="text/javascript">
+    Mage.Cookies.set('external_no_cache', 1);
+</script>
+
+
+<script type="text/javascript">
+
+    var CAPTION_POINT = 'Credit';
+    var CAPTION_POINTS = 'Credits';
+    var CAPTION_ONE_POINT = '%s Credit';
+    var CAPTION_MULTIPLE_POINTS = '%s Credits';
+    var CAPTION_POINTS = 'Credits';
+    var CAPTION_YOU_WILL_SPEND = 'You Will Spend';
+    var CAPTION_WITH = 'with';
+    var CAPTION_CANNOT_USE_POINTS = "You cannot use credits until you login or create a new account.";
+    var CAPTION_NOT_ENOUGH_POINTS = "You don't have enough credits to use this redemption rule.";
+    var CAPTION_REFRESHING_CART = 'Refreshing cart, please wait..';
+
+</script>
+<script type="text/javascript" >
+    document.observe("dom:loaded", function() {
+        Validation.add(
+        'validate-can_use_points', 
+        CAPTION_CANNOT_USE_POINTS, 
+        function(rule_id) {
+            if(rule_id == "") {
+                return true;
+            } else {
+                var can_use = rule_options[rule_id]['can_use_rule']; 
+                return can_use;
+            }
+        }, 
+        {}
+    );
+		
+        Validation.add(
+        'validate-has_enough_points', 
+        CAPTION_NOT_ENOUGH_POINTS, 
+        function(rule_id) {
+            if(rule_id == "") {
+                return true;
+            } else {
+                var can_use = rule_options[rule_id]['can_use_rule'];
+                var amt = rule_options[rule_id]['points_amt']; 
+                var curr = rule_options[rule_id]['points_currency_id'];
+                
+                var qty = parseInt($('qty').getValue());
+                // fix NaN or bad value
+                if( false == (qty > 0) )
+                    qty = 1;
+                
+                var uses = parseInt($('redemption_rule_uses').getValue());
+                // fix NaN or bad value
+                if( false == (uses > 0) )
+                    uses = 1;
+                
+                if (customer_points) {
+                    if(customer_points[curr] >= qty*amt*uses) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            }
+        }, 
+        {}
+    );	  	  
+    });
+
+</script>
+
+            </div>
+        </div>
+     </div>
+</div>
+<!-- -->
+
+<script type="text/javascript">
+var sa_uni = sa_uni || [];
+sa_uni.push(["sa_pg", "2"]);
+var sa_s28_review_form	=	"0";
+var sa_s28_email		=	"";
+var sa_s28_first_name	=	"";
+var sa_s28_last_name	=	"";
+var sa_s28_location = "";
+var sa_s28_product_url= "forest-green-blue-gingham-dress-shirt.html";
+var sa_s28_template_id = 21;
+(function() {function sa_async_load() {	var sa = document.createElement("script");sa.type = "text/javascript";sa.async = true;sa.src = "../../cdn.socialannex.com/partner/9913991/universal.js";var sax = document.getElementsByTagName("script")[0];sax.parentNode.insertBefore(sa, sax); }if (window.attachEvent) {window.attachEvent("onload", sa_async_load);}else {window.addEventListener("load", sa_async_load,false);}})();</script>
+<link rel="stylesheet" type="text/css" media="screen" href="http://s28.socialannex.com/s28-curl-css.php?site_id=9913991&amp;template_id=21">
+<!--Socialannex bottom Div--><div id="socialannex-reviewrating-bottom"><div id="sa_s28_sordiv"><div id="sa_s28_noreview_outer">
+	<div id="sa_s28_tot_count">
+		&nbsp;</div>
+	<div class="sa_s28_container_noreview">
+		<div class="sa_s28_noreview_productname">
+			<h3>
+				This Product has no reviews!</h3>
+			<h3>
+				You can change that...</h3>
+		</div>
+	</div>
+	<div class="sa_s28_write_bottom_link sa_s28_writereview_noreview" id="sa_s28_writereview_bottomlink">
+		&nbsp;</div>
+</div>
+
+	
+        
+</div></div><!--End Here--><footer id="Footer" class="clearfix">
+        <div class="footer-top-bar clearfix">
+            <div class="wrapper">
+                <ul class="social-footer">
+                    <li><a title="Black Lapel Facebook Page" class="facebook" href="http://www.facebook.com/blacklapel" target="_window"><i class="social"></i></a></li>
+                    <li><a title="Black Lapel Twitter Page" class="twitter" href="http://twitter.com/blacklapelcc" target="_window"><i class="social"></i></a></li>	
+                    <li><a title="Black Lapel Instagram Page" class="instagram" href="http://instagram.com/blacklapel" target="_window"><i class="social"></i></a></li>
+                    <li><a title="Black Lapel Google+ Page" class="googleplus" href="https://plus.google.com/109769574156225404652/posts" target="_window"><i class="social"></i></a></li>
+                    <li><a title="Black Lapel Pinterest Page" class="pinterest" href="https://www.pinterest.com/blacklapel/" target="_window"><i class="social"></i></a></li>
+                    <li><a title="Black Lapel Tumblr Page" class="tumblr" href="http://blacklapelcc.tumblr.com/" target="_window"><i class="social"></i></a></li>
+                </ul>
+                <div class="join-list">
+                    <form id="mc-subscribe-form" name="mc-subscribe-form" class="validate footer-subscribe">
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-EMAIL" placeholder="Sign up for our Newsletter" required>
+                        <button type="submit" value="Join Us" name="subscribe" id="mc-subscribe" class="button cta_animate">Join Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+	<div class="content clearfix">
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="../fall.html">Fall - <span class="blue">New!</span></a></li>
+                    <li><a href="../suits.html">Suits</a></li>
+                    <li><a href="../shirts.html">Shirts</a></li>
+                    <li><a href="../weddings.html">Weddings</a></li>
+                    <li><a href="../unsuits.html">Unsuits - <span class="blue">New!</span></a></li>
+                    <li><a href="../blazers.html">Blazers</a></li>
+                    <li><a href="../pants.html">Pants</a></li>
+                    <li><a href="../vests.html">Vests</a></li>
+                    <li><a href="../accessories.html">Accessories</a></li>
+                    <li><a href="../bl-gift-card.html">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Service</h3>
+                <ul class="level-1">
+                    <li><a href="../concierge/index.html">Customer Service</a></li>
+                    <li><a id="conciergeFormLink98" class="jqm" href="../customforms/ajax/fetchConciergeForm/index.html">Style Consultation</a></li>
+                    <li><a href="../showroom/index.html">NYC Showroom</a></li>
+                    <li><a href="../concierge/index.html#flawless-fit">Our Promise</a></li>
+                    <li><a href="../concierge/index.html#shipping">Shipping Policy</a></li>
+                    <li><a href="../returns/index.html">Alterations / Remake / Return</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>About</h3>
+                <ul class="level-1">
+                    <li><a href="../about/index.html">Our Story</a></li>
+                    <li><a href="../about/index.html#reviews">Reviews</a></li>
+                    <li><a href="../about/index.html#how-it-works">How It Works</a></li>
+                    <li><a href="../quality/index.html">Quality</a></li>
+                    <li><a href="../concierge/index.html#faq">F.A.Q.</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="../thecompass/index.html">Style Journal</a></li>
+                    <li><a href="../concierge/index.html">Contact Us</a></li>
+                    <li><a href="../jobs/index.html">Jobs</a></li>
+                    <li><a href="../affiliates/index.html">Affiliates</a></li>
+                    <li><a href="../terms-of-use/index.html">Terms</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Footer-->
+            <div class="mobile-only">
+                <ul>
+                    <li>
+                        <a title="Shop Black Lapel" href="../shop.html">Shop</a>
+                    </li>
+                    <li>
+                        <a title="The Flawless Fit Promise" href="javascript:;">Flawless Fit Promise</a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="Email Black Lapel" href="mailto:concierge@blacklapel.com">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+	</div>
+	<div class="footer-bottom-wrap">
+            <div class="footer-bottom">
+                <div id="Copyright">
+                    <a class="made-in-ny" target="_blank" href="http://nytm.org/made">
+                        <img src="../skin/frontend/default/blacklapel/img/made-in-ny-logo.png"/>
+                    </a>
+                    &copy; 2014 BLackLapel.com.  All Rights Reserved.    			
+                </div>
+                	
+                    <a id="conciergeFormLink99" class="jqm mail-us" href="../customforms/ajax/fetchConciergeForm/index.html"><span>Send us a message</span></a>
+                            </div>
+	</div>
+
+    <!--Quantcast Tag -->
+    <script type="text/javascript">
+        var _qevents = _qevents || [];
+
+        (function() {
+
+          var elem = document.createElement('script');
+              elem.src = (document.location.protocol == "https:" ?  "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+              elem.async = true;
+              elem.type = "text/javascript";
+
+          var scpt = document.getElementsByTagName('script')[0];
+          scpt.parentNode.insertBefore(elem, scpt);
+        })();
+
+        function p2l(pathname,query,hash){
+          pathname = pathname.replace(/\//gi,"__")
+
+          if(pathname === "__") { pathname = "homepage"; }
+
+          pathname = pathname.replace(/\./gi,"_");
+          query = query.replace(/\?/gi,'­');
+          params = query.split('&');
+          args = []
+
+          for(arg = 0; arg < params.length; arg++){
+            args.push(params[arg].split('=')[0]);
+          }
+
+          pathname += args.join('­');
+          pathname += hash.replace(/#/gi,"­");
+          return pathname;
+        };
+
+        _qevents.push({
+          qacct:"p-VJ6J4nQgte0MN",
+          labels: "_fp.event." + p2l(document.location.pathname,
+          document.location.search, document.location.hash)
+        });
+    </script>
+
+    <noscript>
+      <div style="display:none;">
+        <img src="../../pixel.quantserve.com/pixel/p-VJ6J4nQgte0MN.gif" border="0" height="1" width="1" alt="Quantcast"/>
+      </div>
+    </noscript>
+    <!--End Quantcast tag-->
+</footer>
+
+<!-- Crazy Egg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0024/6012.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- // Crazy Egg-->
+<script type="text/javascript" src="http://www.blacklapel.com/media/js/84ea5b321ee1a92169fbd48ceb5b61c4.js" global_footer></script>
+<div class="ajaxLoginWrapper"></div>
+<script type="text/javascript">
+//<![CDATA[
+    BL.AJAXLOGIN.LOGINLINK = '/ajax_login/ajax/fetchForm';
+//]]>
+</script>
+	<div class="conciergeFormWrap"></div>
+
+	<script type="text/javascript">
+		(function($){
+			$(document).ready(function() {
+				var triggers = '';
+				
+				$('a.jqm').each(function(){
+					//prevent staring of wedding form in default jqm wrapper
+					if($(this).hasClass('weddings-btn')){
+						return true;
+					} else {
+						//add ids as triggers of default jqm wrapper
+						triggers += '#'+$(this).attr('id')+', ';
+					}
+					
+				});
+				
+				$('a.jqm').click(function(event){
+					event.preventDefault();
+				});
+				
+				$('.conciergeFormWrap').jqm({
+					trigger: triggers,
+					ajax: '@href',
+					ajaxText: '<br>Please wait...',
+					modal: true
+				});
+			});
+		})(jQuery);
+	</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","licenseKey":"721f623b5d","applicationID":"1404437","transactionName":"b1dbbUdUXRdYUUMPWFYdeFpBXFwKFlFWElZUXV4WRUdcAExRQ0lBUVdO","queueTime":0,"applicationTime":908,"atts":"QxBYGw9OThk=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+
+<!-- Mirrored from www.blacklapel.com/shirts/forest-green-blue-gingham-dress-shirt.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jan 2015 12:19:48 GMT -->
+</html>

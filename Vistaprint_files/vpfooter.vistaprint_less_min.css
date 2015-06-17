@@ -1,0 +1,483 @@
+.footer-container
+{
+  float:left;
+  text-align:center;
+  width:100%;
+  margin:0 auto
+}
+.nav-footer-table
+{
+  height:155px;
+  width:100%
+}
+.tblNavFooter-disabled
+{
+  height:auto
+}
+.footer-error
+{
+  width:auto;
+  text-align:center;
+  padding-top:60px;
+  font-family:Arial;
+  font-size:14px
+}
+.nav-footer-bottom-cell
+{
+  width:100%;
+  height:54px;
+  color:Black;
+  text-align:center;
+  vertical-align:middle;
+  font-family:Arial;
+  font-size:14px
+}
+.NavFooterMajorItem
+{
+  text-decoration:none;
+  font-family:Arial;
+  font-size:12px
+}
+div.NavFooterMajorItem
+{
+  padding:40px
+}
+div.NavFooterMajorItem a
+{
+  font-size:18px
+}
+div.OmxNavFooterMajorItem a
+{
+  font-size:14px
+}
+.NavFooterMajorItem:hover
+{
+  text-decoration:underline
+}
+.NavFooterMinorItem
+{
+  text-decoration:none;
+  font-family:Arial;
+  font-size:11px;
+  color:Black
+}
+.NavFooterMinorItem:hover
+{
+  text-decoration:underline;
+  color:Black
+}
+.about-vistaprint-content-upperleft
+{
+  background-image:url(data:image/gif;base64,R0lGODdhCgAKAPQAAO/z/////4aHxqCi1MDB4YuMye7y/tvf9Njb8r6+4MfI5bq84vLy+e3w/uru/Li43fX1+o2PyuHl+Kep2IeIx4mKx8PE47y/5J2e0aGi0wAAAAAAAAAAAAAAAAAAAAAAACwAAAAACgAKAAAFKWAgBpCVUYIwKsWCGAAgPoMU30Ey3TwTObwb4RK8YQ7FWKWRBAiaTmgIADs=);
+  background-repeat:no-repeat;
+  width:10px;
+  height:10px
+}
+.about-vistaprint-content-upper
+{
+  background-image:url(data:image/gif;base64,R0lGODdhAQAKAPAAAO/z/4aHxiwAAAAAAQAKAAACAwyOWAA7);
+  background-repeat:repeat-x;
+  width:auto;
+  height:10px
+}
+.about-vistaprint-content-upperright
+{
+  background-image:url(data:image/gif;base64,R0lGODdhCgAKAPQAAO/z/////4aHxuru/Li43aGi0+nt/KCi1MDB4YuMyfX1+ry/5MPE49vf9Lq84p2e0Y2Oyb6+4IeIx9jb8qep2OHl+MfI5Y2Pyu7y/vLy+QAAAAAAAAAAAAAAAAAAAAAAACwAAAAACgAKAAAFKqAgSAWjBGgAANjkJFa6ztVBoHNORWq+DpeMb7ZADFeNxxFggCwBgqcgBAA7);
+  background-repeat:no-repeat;
+  width:10px;
+  height:10px
+}
+.about-vistaprint-content-left
+{
+  background-image:url(data:image/gif;base64,R0lGODdhCgABAPAAAO/z/4aHxiwAAAAACgABAAACAwyOWAA7);
+  background-repeat:repeat-y;
+  width:10px;
+  height:auto
+}
+.about-vistaprint-content
+{
+  background-color:#eff3ff;
+  color:#2e2f91;
+  font-size:11px;
+  text-align:center;
+  padding-top:10px;
+  padding-bottom:10px
+}
+.about-vistaprint-content-right
+{
+  background-image:url(data:image/gif;base64,R0lGODdhCgABAPAAAO/z/4aHxiwAAAAACgABAAACA4R/UQA7);
+  background-repeat:repeat-y;
+  width:10px;
+  height:auto
+}
+.about-vistaprint-content-lowerleft
+{
+  background-image:url(data:image/gif;base64,R0lGODdhCgAKAPQAAO/z/////4aHxsLC4ri43YuMyeru/I2Oyent/PT0+p2e0aCg0ru+44+Qy8DB4aKk1b6+4Nvf9Ly/5MfI5fLy+dnc8+Hl+Kmr2QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAACgAKAAAFJ6AAjCQpluWBoKQSsaMjwQDVGHAAXXlAPBZUYDgpMCqk4TAxWAieIQA7);
+  background-repeat:no-repeat;
+  width:10px;
+  height:10px
+}
+.about-vistaprint-content-lower
+{
+  background-image:url(data:image/gif;base64,R0lGODdhAQAKAPAAAO/z/4aHxiwAAAAAAQAKAAACA4R/UQA7);
+  background-repeat:repeat-x;
+  width:auto;
+  height:10px
+}
+.about-vistaprint-content-lowerright
+{
+  background-image:url(data:image/gif;base64,R0lGODdhCgAKAPQAAO/z/////4aHxuru/MLC4ry/5MDB4dvf9PT0+vLy+Z2e0Y+Qy7u+44uMyaSl1qmr2dnc86Cg0uHl+L6+4IyNycfI5bi43QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAACgAKAAAFKCAgjqNAnuYpDpQqHooLFIY7LIn7TMEpOZZATwRhNCrCgGAZISCSgRAAOw==);
+  background-repeat:no-repeat;
+  width:10px;
+  height:10px
+}
+.payment-types-lock-and-key
+{
+  vertical-align:middle
+}
+.payment-types-secure-key
+{
+  font-size:11px;
+  margin-left:5px;
+  margin-bottom:10px;
+  padding-bottom:5px;
+  border-collapse:collapse
+}
+.better-business-bureau
+{
+  position:relative;
+  left:15px;
+  top:7px
+}
+.payment-types-table-cell
+{
+  width:50px;
+  height:30px;
+  margin-left:10px;
+  margin-right:10px
+}
+.july-07-menu-table
+{
+  width:650px;
+  margin-top:20px;
+  margin-bottom:20px;
+  text-align:left
+}
+td.sepRule
+{
+  padding-top:20px;
+  padding-bottom:20px;
+  background-image:url(data:image/gif;base64,R0lGODdhAQBqAPEAAIuV0oyU0ouT0QAAACwAAAAAAQBqAAACD4SPqcsdD4WMs9KLs921AAA7);
+  background-repeat:repeat-y
+}
+td.july07menuText
+{
+  text-decoration:none;
+  font-family:Arial;
+  font-size:11px;
+  color:White;
+  padding-left:5px;
+  vertical-align:top
+}
+div.july07boldMenu
+{
+  font-weight:bold;
+  padding-bottom:10px
+}
+a.regMenu,
+td.july07menuText a
+{
+  text-decoration:none;
+  display:block;
+  font-weight:normal;
+  color:White
+}
+a.regMenu:hover,
+td.july07menuText a:hover
+{
+  text-decoration:underline;
+  color:White
+}
+div.country-menu
+{
+  margin:0 auto
+}
+.promotional-country-menu
+{
+  width:641px;
+  background-image:url(/sf/_hc-00000cd8/_langid-36/_/vp/images/nns/home/footer/footerGraphic.gif);
+  background-repeat:repeat-y;
+  background-position:center;
+  text-align:center
+}
+div.country-menu ul
+{
+  margin:0;
+  padding:0
+}
+div.country-menu li
+{
+  margin-left:0;
+  list-style:none;
+  display:inline;
+  background-image:none;
+  padding:0
+}
+div.country-menu a
+{
+  text-decoration:none;
+  font-family:Arial;
+  font-size:11px;
+  color:Black
+}
+.promotional-country-menu a,
+.promotional-country-menu span.separator
+{
+  color:White
+}
+div.country-menu a:hover
+{
+  text-decoration:underline
+}
+.nav-footer-bottom-table
+{
+  width:100%
+}
+.tblFooterMenu
+{
+  width:100%
+}
+.tblFooterMenu td
+{
+  padding-left:20px;
+  vertical-align:top;
+  text-align:left
+}
+.tblFooterMenu .footer-menu-link,
+.tblFooterMenu .footer-menu-header
+{
+  margin-bottom:5px
+}
+.promotional-country-menu
+{
+  padding-top:10px;
+  width:100%
+}
+.about-us-container
+{
+  width:531px
+}
+body.fixed-960 .about-us-container
+{
+  width:759px
+}
+.OmxNavFooterMajorItem,
+.footer-menu-content
+{
+  text-align:center
+}
+div.footer-links
+{
+  border-top:1px solid #bec3c5;
+  padding-top:20px
+}
+div.footer-links span
+{
+  padding-left:6px;
+  padding-right:6px
+}
+#gts_container,
+#gts-c
+{
+  display:inline
+}
+.payment-types-lock-and-key a
+{
+  margin-right:30px
+}
+.locale-us .gts-v-s
+{
+  top:-30px;
+  left:20px
+}
+.locale-us #gts-f-w #gts-f
+{
+  bottom:5px
+}
+.brand-2014 .footer-container
+{
+  background-color:#fff;
+  clear:both;
+  color:#000;
+  float:none;
+  margin:0 auto;
+  padding:10px 0 0 0;
+  position:relative;
+  width:728px
+}
+.footer-container H2
+{
+  font-size:14px
+}
+html.fixed-960 .brand-2014 div.footer-container
+{
+  left:0
+}
+html.fixed-960 div.page-inner-container div.footer-container
+{
+  left:0
+}
+html.fluid-width div.footer-container
+{
+  border-left:0;
+  border-right:0;
+  left:0;
+  width:100%
+}
+.responsive .footer-container
+{
+  padding:0;
+  left:0;
+  width:100%
+}
+.tblFooterMenu
+{
+  width:728px
+}
+html.fluid-width .tblFooterMenu,
+html.fixed-960 .tblFooterMenu
+{
+  width:938px
+}
+.promotional-country-menu
+{
+  background-image:none
+}
+div.country-menu a,
+.promotional-country-menu a,
+.promotional-country-menu span.separator
+{
+  color:#4d4d4f;
+  font-size:inherit
+}
+td.sepRule
+{
+  background-image:url(data:image/gif;base64,R0lGODdhAgACAPAAAP///77DxSwAAAAAAgACAAACAgxcADs=);
+  background-position:center center;
+  padding-left:0;
+  width:30px
+}
+.tblFooterMenu
+{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  width:100%
+}
+html.fixed-960 table.tblFooterMenu
+{
+  padding-left:20px
+}
+.about-vistaprint-content
+{
+  font-size:inherit;
+  background-color:Transparent;
+  color:#00539f
+}
+.footer-menu-link a.nav
+{
+  color:#4d4d4f
+}
+div.third-party-seal
+{
+  margin-top:15px
+}
+.payment-types-secure-key
+{
+  font-size:inherit
+}
+.nav-footer-bottom-cell
+{
+  font-size:inherit
+}
+.NavFooterMinorItem
+{
+  font-size:inherit
+}
+div#socialMediaInfo
+{
+  border-top:none;
+  margin:auto auto 10px auto;
+  text-align:center
+}
+body.fixed-960 div#socialMediaInfo
+{
+  width:960px
+}
+.ie6 div#socialMediaInfo
+{
+  margin:auto auto 10px auto
+}
+.widget-container
+{
+  clear:both;
+  display:inline-block;
+  margin:0 0 0 auto;
+  text-align:right
+}
+.ie9 .widget-container,
+.ie10 .widget-container,
+.ie11 .widget-container
+{
+  width:40%
+}
+.ie9 .dark-footer-container .widget-container,
+.ie10 .dark-footer-container .widget-container,
+.ie11 .dark-footer-container .widget-container
+{
+  width:auto
+}
+div.social
+{
+  display:inline-block;
+  height:auto;
+  line-height:25px;
+  max-height:25px;
+  margin:0 auto;
+  text-align:center;
+  float:left
+}
+.twitter
+{
+  width:160px;
+  overflow:hidden
+}
+.twitter iframe
+{
+  max-height:50px
+}
+.twitter-follow-button
+{
+  width:150px!important
+}
+.facebook
+{
+  position:relative;
+  padding-right:20px
+}
+.footer-menu-privacy-last-modified
+{
+  position:absolute;
+  bottom:0;
+  color:#4d4d4f
+}
+.ie7 .tblFooterMenu
+{
+  z-index:-1
+}
+div.mobile-toggle-link
+{
+  margin:7px 0 15px 0
+}
+
+.hc--347385905 {}

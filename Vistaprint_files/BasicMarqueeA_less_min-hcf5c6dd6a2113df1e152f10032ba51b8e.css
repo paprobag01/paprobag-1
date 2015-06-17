@@ -1,0 +1,959 @@
+.vhp-basicmarqueea
+{
+  position:relative;
+  cursor:pointer
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-image
+{
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper
+{
+  max-width:960px;
+  margin:0 auto
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text
+{
+  position:absolute;
+  top:0;
+  margin-top:7em;
+  margin-left:3em;
+  font-family:'MarkPro',sans-serif;
+  font-weight:300;
+  font-size:10px;
+  max-width:35em
+}
+.lang-jp .vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text
+{
+  font-family:'MS Gothic','MS Mincho',sans-serif
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h2,
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h3,
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h4,
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h5,
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h6,
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text p
+{
+  margin:0
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h1
+{
+  margin-bottom:15px;
+  font-weight:bold
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text h4
+{
+  margin-bottom:25px
+}
+.vhp-basicmarqueea .vhp-basicmarqueea-wrapper .vhp-basicmarqueea-text .vhp-basicmarqueea-block
+{
+  display:block
+}
+.vhp-basicmarqueea.breakpoint-large .vhp-basicmarqueea-text
+{
+  margin-top:6em;
+  margin-left:4.5em;
+  max-width:32em
+}
+.vhp-basicmarqueea.breakpoint-large .vhp-basicmarqueea-text h1
+{
+  font-size:24px
+}
+.vhp-basicmarqueea.breakpoint-large .vhp-basicmarqueea-text h4
+{
+  font-size:14px
+}
+.vhp-basicmarqueea.breakpoint-medium .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.breakpoint-small .vhp-basicmarqueea-image
+{
+  padding-bottom:inherit;
+  height:inherit
+}
+.vhp-basicmarqueea.breakpoint-medium .vhp-basicmarqueea-text,
+.vhp-basicmarqueea.breakpoint-small .vhp-basicmarqueea-text
+{
+  margin-top:5em;
+  margin-left:4.5em;
+  max-width:30em
+}
+.vhp-basicmarqueea.breakpoint-medium .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.breakpoint-small .vhp-basicmarqueea-text h1
+{
+  font-size:22px;
+  margin-bottom:5px
+}
+.vhp-basicmarqueea.breakpoint-medium .vhp-basicmarqueea-text h4,
+.vhp-basicmarqueea.breakpoint-small .vhp-basicmarqueea-text h4
+{
+  font-size:12px;
+  margin-bottom:15px
+}
+.vhp-basicmarqueea.breakpoint-medium .vhp-basicmarqueea-text .vhp-basicmarqueea-block,
+.vhp-basicmarqueea.breakpoint-small .vhp-basicmarqueea-text .vhp-basicmarqueea-block
+{
+  display:inline
+}
+.vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.co.uk%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fEU-businesscards-001-2x-hc33a10571a7ed7840b5d207b6c91bbf5f.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=33ea4ca8a7ed7840b5d207b6c91bbf5f&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.co.uk%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fEU-businesscards-001-2x-hc33a10571a7ed7840b5d207b6c91bbf5f.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=33ea4bf9a7ed7840b5d207b6c91bbf5f&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.co.uk%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fEU-businesscards-001-2x-hc33a10571a7ed7840b5d207b6c91bbf5f.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=33ea4b57a7ed7840b5d207b6c91bbf5f&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.EU-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.EU-businesscards-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.EU-businesscards-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.co.uk%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fEU-flyers-001-2x-hc47c9f3caaf2ee71ccd13d66902a1f714.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=4782ba13af2ee71ccd13d66902a1f714&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.co.uk%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fEU-flyers-001-2x-hc47c9f3caaf2ee71ccd13d66902a1f714.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=4782bd42af2ee71ccd13d66902a1f714&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.co.uk%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fEU-flyers-001-2x-hc47c9f3caaf2ee71ccd13d66902a1f714.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=4782bdecaf2ee71ccd13d66902a1f714&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.EU-flyers-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.EU-flyers-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.EU-flyers-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-businesscards-001-2x-hc89ee931f299a1616451677e501834ea1.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=89a5dac6299a1616451677e501834ea1&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-businesscards-001-2x-hc89ee931f299a1616451677e501834ea1.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=89a5dd97299a1616451677e501834ea1&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-businesscards-001-2x-hc89ee931f299a1616451677e501834ea1.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=89a5dd39299a1616451677e501834ea1&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-businesscards-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-businesscards-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-calendar-001-2x-hc05d6dc8fb3313e2eb4f9667092821cca.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=059d9543b3313e2eb4f9667092821cca&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-calendar-001-2x-hc05d6dc8fb3313e2eb4f9667092821cca.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=059d9212b3313e2eb4f9667092821cca&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-calendar-001-2x-hc05d6dc8fb3313e2eb4f9667092821cca.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=059d92bcb3313e2eb4f9667092821cca&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-calendar-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-calendar-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-calendar-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-ia-001-2x-hcc347ab3db20863d92842c476d7bb6229.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=c30ce2e4b20863d92842c476d7bb6229&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-ia-001-2x-hcc347ab3db20863d92842c476d7bb6229.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=c30ce5b5b20863d92842c476d7bb6229&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-ia-001-2x-hcc347ab3db20863d92842c476d7bb6229.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=c30ce51bb20863d92842c476d7bb6229&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-ia-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-ia-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-ia-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-laptopbags-001-2x-hca2050ca4249b9aa3cb27387eb17ef3c3.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=a24e457d249b9aa3cb27387eb17ef3c3&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-laptopbags-001-2x-hca2050ca4249b9aa3cb27387eb17ef3c3.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=a24e422c249b9aa3cb27387eb17ef3c3&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-laptopbags-001-2x-hca2050ca4249b9aa3cb27387eb17ef3c3.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=a24e4282249b9aa3cb27387eb17ef3c3&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-laptopbags-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-laptopbags-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-laptopbags-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-marketingproducts-001-2x-hc1c3a2b9be48f416c267c466448a1616f.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=1c716257e48f416c267c466448a1616f&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-marketingproducts-001-2x-hc1c3a2b9be48f416c267c466448a1616f.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=1c716506e48f416c267c466448a1616f&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-marketingproducts-001-2x-hc1c3a2b9be48f416c267c466448a1616f.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=1c7165a8e48f416c267c466448a1616f&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-marketingproducts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-marketingproducts-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-marketingproducts-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-photobook-001-2x-hc990df56e1098030af0190da9953e04aa.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=9946bcb71098030af0190da9953e04aa&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-photobook-001-2x-hc990df56e1098030af0190da9953e04aa.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=9946bbe61098030af0190da9953e04aa&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-photobook-001-2x-hc990df56e1098030af0190da9953e04aa.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=9946bb481098030af0190da9953e04aa&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-photobook-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-photobook-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-photobook-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-polotshirts-001-2x-hc011e79d156f1f1ca6125eb39346c1a9b.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=0155300856f1f1ca6125eb39346c1a9b&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-polotshirts-001-2x-hc011e79d156f1f1ca6125eb39346c1a9b.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=0155375956f1f1ca6125eb39346c1a9b&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-polotshirts-001-2x-hc011e79d156f1f1ca6125eb39346c1a9b.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=015537f756f1f1ca6125eb39346c1a9b&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-polotshirts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-polotshirts-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-polotshirts-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-totebags-001-2x-hca050ad7befcbf16f1f992819305c3176.png&w=1230&h=384&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=a01be4a7efcbf16f1f992819305c3176&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-totebags-001-2x-hca050ad7befcbf16f1f992819305c3176.png&w=760&h=238&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=a01be3ffefcbf16f1f992819305c3176&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-totebags-001-2x-hca050ad7befcbf16f1f992819305c3176.png&w=520&h=162&cl=0&ct=0&cw=0&ch=0&langid=36&q=0&c=64&hc=a01be343efcbf16f1f992819305c3176&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-totebags-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-totebags-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-totebags-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-tshirt-001-2x-hc6ca14ab6d42d6e9830e6554dd9aefc28.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=6cea036fd42d6e9830e6554dd9aefc28&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-tshirt-001-2x-hc6ca14ab6d42d6e9830e6554dd9aefc28.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=6cea043ed42d6e9830e6554dd9aefc28&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-tshirt-001-2x-hc6ca14ab6d42d6e9830e6554dd9aefc28.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=6cea0490d42d6e9830e6554dd9aefc28&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-tshirt-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-tshirt-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-tshirt-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-websites-001-2x-hc80f9b2bbdf514070745be02fad33c38c.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=80b2fb62df514070745be02fad33c38c&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-websites-001-2x-hc80f9b2bbdf514070745be02fad33c38c.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=80b2fc33df514070745be02fad33c38c&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww.in%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fIN-websites-001-2x-hc80f9b2bbdf514070745be02fad33c38c.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=80b2fc9ddf514070745be02fad33c38c&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.IN-websites-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.IN-websites-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.IN-websites-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-businesscards-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.JANZ-businesscards-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-calendars-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-calendars-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.JANZ-calendars-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-christmascards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-christmascards-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.JANZ-christmascards-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-marketingproducts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-marketingproducts-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.JANZ-marketingproducts-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEBAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.JANZ-photobook-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.JANZ-photobook-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.JANZ-photobook-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#38454f
+}
+.vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fNA-businesscards-001-2x-hc43706c49a236d53f28ff334171ac537e.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=433b2590a236d53f28ff334171ac537e&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fNA-businesscards-001-2x-hc43706c49a236d53f28ff334171ac537e.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=433b22c1a236d53f28ff334171ac537e&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fNA-businesscards-001-2x-hc43706c49a236d53f28ff334171ac537e.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=433b226fa236d53f28ff334171ac537e&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.NA-businesscards-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.NA-businesscards-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.NA-businesscards-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+.vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fNA-marketingproducts-001-2x-hc3b7a3983aca638e9d0571c56f339cc85.png&w=1230&h=400&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=3b31705aaca638e9d0571c56f339cc85&ie6=0');
+  background-size:100% 100%;
+  padding-bottom:32.5203252%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-max .vhp-basicmarqueea-image,
+.ie9 .vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-large .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fNA-marketingproducts-001-2x-hc3b7a3983aca638e9d0571c56f339cc85.png&w=760&h=247&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=3b31770baca638e9d0571c56f339cc85&ie6=0');
+  background-size:760px 238px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:238px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-medium .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  background-image:url('/Sales/Utility/Img.caspx?s=%2fmerch%2fwww%2fmc%2flegacy%2fimages%2fvp-site%2fvhp%2fmarquee%2fBasicMarqueeA%2fNA-marketingproducts-001-2x-hc3b7a3983aca638e9d0571c56f339cc85.png&w=520&h=169&cl=0&ct=0&cw=0&ch=0&langid=36&q=85&c=0&hc=3b3177a5aca638e9d0571c56f339cc85&ie6=0');
+  background-size:520px 150px;
+  background-repeat:no-repeat;
+  background-position:top right;
+  height:150px;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc)
+}
+.ie9 .vhp-basicmarqueea.NA-marketingproducts-001-marquee.breakpoint-small .vhp-basicmarqueea-image
+{
+  behavior:none
+}
+.vhp-basicmarqueea.NA-marketingproducts-001-marquee .vhp-basicmarqueea-text h1,
+.vhp-basicmarqueea.NA-marketingproducts-001-marquee .vhp-basicmarqueea-text h4
+{
+  color:#fff
+}
+
+.hc-306672666 {}

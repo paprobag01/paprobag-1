@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+phpunit_config_file=
+preload_script=
+test_file_pattern=.php
+test_folders=/Paprobag.com/application
+testing_framework=PHPUnit

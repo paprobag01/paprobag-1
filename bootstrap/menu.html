@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Try v1.2 Bootstrap Online</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <style>
+   	.cbp-spmenu {
+background: #47a3da;
+position: fixed;
+}
+.cbp-spmenu h3 {
+color: #afdefa;
+font-size: 1.9em;
+padding: 20px;
+margin: 0;
+font-weight: 300;
+background: #0d77b6;
+}
+.cbp-spmenu a {
+display: block;
+color: #fff;
+font-size: 1.1em;
+font-weight: 300;
+}
+.cbp-spmenu a:hover {
+background: #258ecd;
+}
+.cbp-spmenu a:active {
+background: #afdefa;
+color: #47a3da;
+}
+2. Orientation-dependent styles for the content of the menu
+
+.cbp-spmenu-vertical {
+width: 240px;
+height: 100%;
+top: 0;
+z-index: 1000;
+}
+.cbp-spmenu-vertical a {
+border-bottom: 1px solid #258ecd;
+padding: 1em;
+}
+3. Vertical menu that slides from the left
+
+.cbp-spmenu-left {
+left: -240px;
+}
+.cbp-spmenu-left.cbp-spmenu-open {
+left: 0px;
+}
+4. Transitions
+
+.cbp-spmenu, .cbp-spmenu-push {
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+   </style>
+</head>
+<body>
+	<script src="js/classie.js"></script>
+2. The javascript
+
+<script>
+var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+body = document.body;
+
+showLeft.onclick = function() {
+classie.toggle( this, 'active' );
+classie.toggle( menuLeft, 'cbp-spmenu-open' );
+disableOther( 'showLeft' );
+};
+
+function disableOther( button ) {
+if( button !== 'showLeft' ) {
+classie.toggle( showLeft, 'disabled' );
+}
+}
+</script>
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+<h3>Menu</h3>
+<a href="#">Celery seakale</a>
+<a href="#">Dulse daikon</a>
+<a href="#">Zucchini garlic</a>
+<a href="#">Catsear azuki bean</a>
+<a href="#">Dandelion bunya</a>
+<a href="#">Rutabaga</a>
+</nav>
+
+</body>
+</html>

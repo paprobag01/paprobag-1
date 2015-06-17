@@ -1,0 +1,83 @@
+.product-tile
+{
+  position:relative;
+  cursor:pointer
+}
+.product-tile .product-tile-image
+{
+  display:block;
+  background-size:100% 100%;
+  padding-bottom:66.66666667%;
+  height:0;
+  behavior:url(/sf/_langid-1/_hc-c4cc5dd7/_/vp/css/ThirdParty/backgroundsize.htc);
+  position:relative;
+  z-index:1
+}
+.ie9 .product-tile .product-tile-image
+{
+  behavior:none
+}
+.product-tile .product-tile-cta-container
+{
+  position:relative;
+  font-family:'MarkPro',sans-serif;
+  font-weight:300;
+  font-size:10px;
+  color:#111a22;
+  background-color:#fff;
+  text-align:center;
+  margin-top:1px;
+  padding-top:.5em;
+  padding-bottom:5px
+}
+.lang-jp .product-tile .product-tile-cta-container
+{
+  font-family:'MS Gothic','MS Mincho',sans-serif
+}
+.product-tile .product-tile-cta-container h1,
+.product-tile .product-tile-cta-container h2,
+.product-tile .product-tile-cta-container h3,
+.product-tile .product-tile-cta-container h4,
+.product-tile .product-tile-cta-container p
+{
+  margin:0
+}
+.product-tile .product-tile-cta-container .product-tile-product-name
+{
+  font-weight:bold;
+  display:table;
+  margin:0 auto 5px auto
+}
+.product-tile .product-tile-cta-container .product-tile-product-name-text
+{
+  display:table-cell;
+  vertical-align:middle;
+  padding-right:6px
+}
+.product-tile .product-tile-cta-container .product-tile-product-name-icon
+{
+  display:table-cell;
+  vertical-align:middle;
+  text-align:left
+}
+.product-tile .product-tile-cta-container .inline-rating
+{
+  height:2em;
+  margin:0 auto;
+  display:inline-block
+}
+.product-tile.breakpoint-small .product-tile-cta-container
+{
+  position:relative;
+  padding-top:1px
+}
+.product-tile.breakpoint-small .product-tile-cta-container .product-tile-product-name-text
+{
+  font-size:12px;
+  height:2.4em;
+  padding-bottom:5px
+}
+.product-tile.breakpoint-small .product-tile-cta-container .product-tile-product-name-icon
+{
+  min-width:20%
+}

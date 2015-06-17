@@ -1,0 +1,64 @@
+
+*     { background:none !important; text-align:left !important; }
+html  { margin:0 !important; padding:0 !important; }
+body  { background:#fff !important; font-size:9pt !important; padding:0 !important; margin:10px !important; }
+a     { color:#2976c9 !important; }
+th,td { color:#2f2f2f !important;  border-color:#ccc !important; }
+
+.header-container,
+.nav-container,
+.footer-container,
+.pager,
+.toolbar,
+.actions,
+.buttons-set { display:none !important; }
+
+.page-print .data-table .cart-tax-total { background-position:100% -54px; }
+.page-print .data-table .cart-tax-info { display:block !important; }
+
+body {
+	color:#000;
+}
+
+h1, h2, h3, h4 {
+	color:#000;
+}
+
+.data-table {
+	width:670px;
+}
+.data-table td{
+	padding:0 10px 0 0;
+}
+.data-table thead {
+	color:#000;
+	font-size:1.2em;
+}
+
+h4.product-name {
+	font-size:1.2em;	
+}
+.data-table th {
+	text-align:left;
+	padding:0 10px 0 0;
+}
+.data-table .item-options dt {
+	float:left;
+	width:250px;
+	margin:0 0 2px 0;
+	font-weight:bold;
+	color:#000;
+	font-size:1.1em;
+	clear: both;
+}
+
+.data-table .item-options dd {
+	float:left;
+	width:120px;
+	margin:0 0 5px 0;
+	-webkit-margin-start:0;
+}
+
+tfoot{
+	color:#000;
+}

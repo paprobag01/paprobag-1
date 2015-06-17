@@ -1,0 +1,35 @@
+User-agent: *
+Disallow:
+
+Disallow: /home
+Disallow: /home/home_details/1
+Disallow: /home/home_details/2
+Disallow: /home/home_details/3
+Disallow: /home/home_details/8
+Disallow: /home/home_details/7
+Disallow: /home/home_details/6
+Disallow: /domestic/domestic_details/14
+Disallow: /domestic/domestic_details/12
+Disallow: /domestic/domestic_details/11
+Disallow: /domestic/domestic_details/10
+Disallow: /deals/deals_details/5
+Disallow: /deals/deals_details/4
+Disallow: /deals/deals_details/3
+Disallow: /deals/deals_details/2
+Disallow: /deals/deals_details/1
+Disallow: /honeymoon/honeymoon_details/14
+Disallow: /honeymoon/honeymoon_details/12
+Disallow: /honeymoon/honeymoon_details/11
+Disallow: /international/international_details/6
+Disallow: /international/international_details/5
+Disallow: /international/international_details/4
+Disallow: /international/international_details/3
+Disallow: /international/international_details/2
+Disallow: /international/international_details/1
+Disallow: /domestic/domestic_details/15
+Disallow: /honeymoon/honeymoon_details/index.html
+Disallow: /international/international_details/index.html
+Disallow: /domestic/domestic_details/index.html
+Disallow: /home/home_details/index.html
+Disallow: /deals/deals_details/10
+Disallow: /deals/deals_details/index.html

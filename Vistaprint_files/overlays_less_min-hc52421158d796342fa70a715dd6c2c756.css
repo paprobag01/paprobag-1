@@ -1,0 +1,144 @@
+.fake-slideshowcontrolleft
+{
+  height:55px;
+  width:30px;
+  background-color:#b5babf;
+  position:absolute;
+  top:45%;
+  left:0
+}
+.fake-slideshowcontrolright
+{
+  height:55px;
+  width:30px;
+  background-color:#b5babf;
+  position:absolute;
+  top:45%;
+  right:0
+}
+.fake-outer-grid-wrapper
+{
+  margin:0 auto;
+  width:960px
+}
+.fake-outer-grid-wrapper .fake-promodrawer-wrapper
+{
+  position:absolute;
+  top:0
+}
+.fake-outer-grid-wrapper .fake-promodrawer-wrapper .fake-promodrawer-container
+{
+  margin:0 auto;
+  position:relative
+}
+.fake-outer-grid-wrapper .fake-promodrawer-wrapper .fake-promodrawer-container .fake-promodrawer
+{
+  width:960px;
+  height:40px;
+  background-color:#b5babf
+}
+.fake-outer-grid-wrapper .fake-inner-grid-wrapper
+{
+  margin:0 auto;
+  width:940px
+}
+.fake-outer-grid-wrapper .fake-inner-grid-wrapper .fake-brandbillboard-wrapper
+{
+  position:absolute;
+  bottom:0
+}
+.fake-outer-grid-wrapper .fake-inner-grid-wrapper .fake-brandbillboard-wrapper .fake-brandbillboard-container
+{
+  margin:0 auto;
+  position:relative
+}
+.fake-outer-grid-wrapper .fake-inner-grid-wrapper .fake-brandbillboard-wrapper .fake-brandbillboard-container .fake-brandbillboard
+{
+  width:940px;
+  height:50px;
+  background-color:#b5babf
+}
+.fake-tab
+{
+  position:relative;
+  bottom:0;
+  margin-top:-60px;
+  overflow:visible;
+  width:100%;
+  height:60px;
+  background-color:#b5babf
+}
+.fake-designoptions
+{
+  position:relative;
+  bottom:0;
+  margin-top:-110px;
+  overflow:visible;
+  width:100%;
+  height:50px
+}
+.fake-designoptions .fake-labeltab
+{
+  background:transparent;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  font-size:0
+}
+.fake-designoptions .fake-labeltab .fake-title
+{
+  padding-top:10px;
+  display:inline-block;
+  background:#fff;
+  height:40px;
+  position:relative
+}
+.fake-designoptions .fake-labeltab:after,
+.fake-designoptions .fake-labeltab:before
+{
+  background:transparent;
+  content:" ";
+  display:inline-block;
+  width:0;
+  height:0;
+  vertical-align:bottom;
+  border-top:50px solid transparent
+}
+.fake-designoptions .fake-labeltab:before
+{
+  border-right:50px solid #fff
+}
+.fake-designoptions .fake-labeltab:after
+{
+  position:absolute;
+  border-left:50px solid #fff
+}
+@media only screen and (max-width:520px)
+{
+  .fake-promodrawer
+  {
+    display:none
+  }
+}
+@media only screen and (max-width:940px)
+{
+  .fake-brandbillboard
+  {
+    display:none
+  }
+}
+@media only screen and (max-width:768px)
+{
+  .fake-tab
+  {
+    height:50px
+  }
+}
+@media only screen and (max-width:520px)
+{
+  .fake-tab
+  {
+    display:none
+  }
+}
