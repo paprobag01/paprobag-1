@@ -9,7 +9,7 @@
 			}
       
 	  function index(){
-		  
+		$data['page']='sections';  
 		  
 		$arr['table']='sections';
 		$arr['where']="";

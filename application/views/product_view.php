@@ -7,8 +7,6 @@ extract($page_data5);
 
 ?>
 <div id="content">
-
-
   <div class="container">
     <div class="title clearfix">
       <h2><?php foreach($page_data5 as $row){echo $row['prod_name'];}?></h2>
@@ -23,14 +21,14 @@ extract($page_data5);
   <div id="slider-product" class="flexslider">
     <ul class="slides">
 	<?php foreach($page_data5 as $row) {?>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-       <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
-      <li> <img src="<?php echo base_url().$row['prod_image'] ?>" draggable="true"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+       <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
+      <li> <img src="<?php echo base_url().$row['prod_image'] ?>"/> </li>
 	<?php } ?>
     </ul>
   </div>
@@ -178,7 +176,52 @@ extract($page_data5);
             <p>Etiam pretium, arcu id mattis aliquet, est neque sagittis quam, id mollis leo urna non dui. Phasellus lacinia facilisis ipsum, a tempor nibh. Aliquam nec interdum mi. Nunc laoreet molestie massa, at euismod ipsum fringilla id. Vivamus vehicula metus velit, sit amet congue turpis suscipit in. Etiam interdum felis sed consequat varius. Aliquam erat volutpat. </p>
           </div>
          <div class="tab-pane" id="protags">
-			
+			<div class="carosel product_c">
+          <div class="row"> 
+            <!-- Place somewhere in the <body> of your page -->
+            <div >
+              <ul class="bxcarousel" >
+			  <?php
+									$i=0;
+									if(isset($_COOKIE))
+									{
+									foreach ($_COOKIE as $key=>$val)
+										{
+											if($key!='PHPSESSID' && $key!='ci_session' && $key!='count')
+											{
+												
+										//	echo $key.' is '.$val."<br>\n";
+												if('prod_id'.$val==$key){
+													if(isset($_COOKIE['prod_id'.$val.'']))
+													{
+											?>
+											
+											 <li>
+                  <div class="main_box">
+                    <div class="box_1"> <a href="<?php if(isset($_COOKIE['prod_Image'.$val.''])){ echo base_url().'productDetails/getDetails/'.$_COOKIE['prod_id'.$val.''] ;}?>"><img alt="alt"  src="<?php if(isset($_COOKIE['prod_Image'.$val.''])){ echo base_url().$_COOKIE['prod_Image'.$val.''];}?>" width="259" height="200"></a>
+                    
+                    
+                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
+                    
+                    </div>
+                    <div class="desc">
+                      <h5><?php if(isset($_COOKIE['prod_Name'.$val.''])){echo $_COOKIE['prod_Name'.$val.''];} ?></h5>
+                      <p>Kitchen utensils</p>
+                      <div class="price">$<?php if(isset($_COOKIE['prod_Price'.$val.''])){ echo $_COOKIE['prod_Price'.$val.''];} ?></div>
+                    </div>
+                  </div>
+                </li>
+				
+											<?php }
+												}
+											}
+										}
+									}
+			  	
+											?>
+				<ul>
+			</div>
+			</div></div>
           </div>
         </div>
       </div>

@@ -26,16 +26,18 @@
     <div class="container">
       <div class="top_menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Contacts</a></li>
+          <li><a href="#">Sale With GreenHandle</a></li>         
+        </ul>
+      </div>
+	  <div class="top_menu">
+        <ul>
+          <li align="center"><a href="#">Free Shipping across India</a></li>         
         </ul>
       </div>
       <div class="hed_right">
         <ul>
           <li><span class="fa fa-phone"></span>8 800 909 50 60 </li>
-          <li><a href="#"><span class="fa fa-envelope"></span>support@domain.com</a></li>
+          <li><a href="#"><span class="fa fa-envelope"></span>Bulk Order</a></li>
         </ul>
       </div>
     </div>
@@ -70,8 +72,10 @@
                 </li>
               </ul>
 			<?php } ?>
+			
             <li>
 		  <?php } ?>
+		  
 		  </ul>
 		</nav>
       </div>
@@ -94,7 +98,7 @@
                   <li>
                     <div class="price">$360.00</div>
                     <a href="#" class="del_btn"></a>
-					</li>
+					        </li>
                 </ul>               
               </div>
               <div class="cheout_row clearfix">
@@ -104,17 +108,37 @@
           </li>
           <li class="menubtn"><a href="#"><span class="fa fa-user"></span></a>
             <div class="menu_c acc_menu">
+              <?php 
+              if($this->session->userdata('logged_in')) {
+              ?>
+              <div class="menu_title clearfix">
+                <h4>Account</h4> 
+              </div>
+              <div class="login_frm">
+                <div>
+                  <p>Dear, <?php echo $this->session->userdata('logged_in')['username']; ?></p>
+                </div>
+                <a href="<?php echo base_url(); ?>login/logout" class="signin_btn btn_c">Sign out</a> 
+              </div>
+              <?php
+              } else {
+              ?>
               <div class="menu_title clearfix">
                 <h4>Account</h4>
-                <a href="http://templines.com/demo/html/cooncook/catalog.html" class="sign_up">Sign up</a> </div>
-              <div class="login_frm">
-                <input type="text" class="txtbox" placeholder="Username">
-                <input type="text" class="txtbox" placeholder="Password">
-                <div class="remember">
-                  <input type="checkbox" class="chkbox icheckbox_minimal"/>
-                  Remember Me</div>
-                <a href="#" class="signin_btn btn_c">Sign in</a> </div>
+                <a href="<?php echo base_url() ?>login/registration_form" class="sign_up">Sign up</a> 
+              </div>
+              <form method="post" action="<?php echo base_url()?>login">
+                <div class="login_frm">
+                  <input type="text" name="username" class="txtbox" placeholder="Username">
+                  <input type="text" name="password" class="txtbox" placeholder="Password">
+                  <div class="remember">
+                    <input type="checkbox" class="chkbox icheckbox_minimal"/>
+                    Remember Me</div>
+                  <input type="submit" class="signin_btn btn_c" name="submit" value="Sign in">
+                </div>
+              </form>
               <div class="forgot clearfix"> <span>Forgot: </span> <a href="#"> Password</a> <a href="#" class="name">Username</a> </div>
+              <?php } ?>
             </div>
           </li>
           <li class="menubtn"><a href="#"><span class="fa fa-search"></span></a>

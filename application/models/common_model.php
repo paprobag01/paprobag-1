@@ -23,6 +23,28 @@ function getDetail($data=null)
 		return $sql->row_array();
 	}
 }
+
+function checkuser($data=null)
+{
+	try {
+		$sql = $this->db->query("select * from login where (username='".$data['username']."' or email='".$data['username']."') and password='".$data['password']."'");
+		
+		$rowcount = $sql->num_rows();	
+		
+		if($rowcount>0)
+		{
+			return $sql->result_array();
+		}
+		else
+		{
+			echo "Invalid User";
+		}
+	} catch (Exception $e) {
+		// print error
+		redirect('/index','refrest');
+	}
+}
+
 function getAllProducts($data){
 		
 	$start=0;
@@ -77,9 +99,22 @@ function getdatacat($id=null,$type=null,$c=null)
 		return $sql->result_array();
 }
 
+function register($data=null)
+{
+	try {
+		$this->db->insert('login',$data);
+	    return $this->db->insert_id();
+	} catch (Exception $e) {
+		// erro page
+		$error = "Registration Error";
+		return $error;
+	}
+
+}
+
 function getdataprod($id=null,$type=null)
 {
-		$sql = $this->db->query("select * from products where cat_id=$id and section_id=$type and prod_on_home=0");
+		$sql = $this->db->query("select * from products where cat_id=$id and section_id=$type");
 		return $sql->result_array();
 		
 }

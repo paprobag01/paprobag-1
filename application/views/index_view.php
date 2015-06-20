@@ -128,15 +128,17 @@
 			  ?>
              <li>
                   <div class="main_box">
-				  
+					 <div class="desc">
+                      <h5 align="center"><?php echo $row['prod_name']; ?></h5>
+					<p align="center"><?php echo $row['prod_short_description']; ?></p>
+                    </div>
                     <div class="box_1"> <img src="<?php echo base_url().$row['prod_image'] ?>" class="img-responsive" alt="img" width="259" height="200">
                     
                     
 						<div class="overlay"> <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"" class="btn_c cart_btn_1" href="#">More Info</a> </div>
                     
                     </div>
-                    <div class="desc">
-                      <h5><?php echo $row['prod_name']; ?></h5>
+                    <div class="desc">                      
                      <p>Starting Price</p>
                       <div class="price">$5</div>
                     </div>
@@ -209,7 +211,7 @@
 	<br><br>
 		    <div class=" animated" data-animation="fadeInUp">
       <div class="clearfix">
-        <h3>New Products</h3>
+        <h3 align="center">--- Client Board ---</h3>
       </div>
       <div class="carosel product_c">
           <div class="row"> 
@@ -218,14 +220,35 @@
               <ul class="bxcarousel" >
              <li>
                   <div class="main_box">
+				  <div class="desc">
+                      <h5 align="center">2-piece salad servers set</h5>
+                      <p align="center">Kitchen utensils</p>                      
+                    </div>
                     <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
                     
                     
                     <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
                     
                     </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
+                    <div class="desc">                      
+                      <p>Kitchen utensils</p>
+                      <div class="price">$1.50</div>
+                    </div>
+                  </div>
+                </li>
+               <li>
+                  <div class="main_box">
+				  <div class="desc">
+                      <h5 align="center">2-piece salad servers set</h5>
+                      <p align="center">Kitchen utensils</p>                      
+                    </div>
+                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
+                    
+                    
+                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
+                    
+                    </div>
+                    <div class="desc">                      
                       <p>Kitchen utensils</p>
                       <div class="price">$1.50</div>
                     </div>
@@ -233,42 +256,35 @@
                 </li>
                 <li>
                   <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/2.jpg" width="259" height="200">
+				  <div class="desc">
+                      <h5 align="center">2-piece salad servers set</h5>
+                      <p align="center">Kitchen utensils</p>                      
+                    </div>
+                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
                     
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
+                    
+                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
                     
                     </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
+                    <div class="desc">                      
                       <p>Kitchen utensils</p>
                       <div class="price">$1.50</div>
                     </div>
                   </div>
                 </li>
-                <li>
+               <li>
                   <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/3.jpg" width="259" height="200">
+				  <div class="desc">
+                      <h5 align="center">2-piece salad servers set</h5>
+                      <p align="center">Kitchen utensils</p>                      
+                    </div>
+                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
                     
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
                     
+                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
                     
                     </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/4.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                                
-                                </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
+                    <div class="desc">                      
                       <p>Kitchen utensils</p>
                       <div class="price">$1.50</div>
                     </div>

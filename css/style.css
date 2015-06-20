@@ -159,7 +159,7 @@ h5 {
 	border-left:none;
 }
 #header .top_menu ul li:last-child {
-	padding-right:0;
+	padding-right:256px;
 }
 #header .top_menu ul li a {
 	margin:0;
@@ -173,6 +173,7 @@ h5 {
 #header .top_menu ul li a:hover {
 	color:#37bbec;
 }
+
 #header .hed_right {
 	float:right;
 }
@@ -3021,6 +3022,7 @@ html #content .blog_blk .blog_desc > h5 a:hover {
 	padding:0;
 	float:left;
 }
+
 #footer .f_bot .f_bot_left strong {
 	font-family: 'latobold';
 	font-weight:normal;

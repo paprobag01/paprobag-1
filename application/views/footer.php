@@ -4,20 +4,20 @@
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk">
-            <h5>Customer loyalty <br>
-              programs<a href="#" class="fa fa-arrow-circle-right"></a></h5>
+            <h5>Refer & Earn<br>
+              By Greenhandle<a href="#" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_1 icon"></span> </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk">
-            <h5>Worldwide <br>
-              shipping <a href="#" class="fa fa-arrow-circle-right"></a></h5>
+            <h5>Delivery 
+              Details<a href="#" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_2 icon"></span> </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk">
-            <h5>24/7 technical <br>
-              support<a href="#" class="fa fa-arrow-circle-right"></a></h5>
+            <h5>Sell With <br>
+             Greenhandle<a href="#" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_3 icon"></span> </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <h4>About Store</h4>
+          <h4>Greenhandle Story</h4>
           <div class="desc">Nulla laoreet, orci at fringilla consectetur, urna dui aliquam urna, sit amet dapibus odio orci vitae risus. Praesent egestas est vitae interdum varius. Sed ac mauris sit amet erat varius elementum. Morbi leo metus, dictum vitae justo ac, posuere porttitor augue. <a href="#" class="fa fa-arrow-circle-right"></a></div>
           <div class="partner">
             <h4>Our Partners</h4>
@@ -57,8 +57,8 @@
           <h4>Newsletter</h4>
           <div class="desc">Nunc ut lorem congue, consectetur lacus non, rutrum lacus. Aliquam erat volutpat. Mauris pharetra quam eros. </div>
           <div class="emial_box">
-            <input type="text" class="txtbox" placeholder="Enter your e-mail">
-            <a href="#"><span class="fa fa-level-down fa-rotate-90"></span></a></div>
+            <input type="text" name="newletr" class="txtbox" placeholder="Enter your e-mail">
+            <a href="<?php echo base_url()?>/newsletter/getupdates/"><span class="fa fa-level-down fa-rotate-90"></span></a></div>
           <div class="social">
             <ul>
               <li class="facebook"><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -73,7 +73,7 @@
   </div>
   <div class="f_bot">
     <div class="container">
-      <div class="f_bot_left"><strong>CoonCook - </strong>Responsive  Theme  © 2014</div>
+      <div class="f_bot_left"><strong>Greenhandle  </strong>copyright  © 2015 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms & Condition | Privacy Policy | FAQ | Career | Company Blog | Feedback</div>
       <div class="f_bot_right">Design By <a href="#">Svetlov</a></div>
     </div>
   </div>
