@@ -46,38 +46,59 @@
     <div class="container">
       <div class="logo"> <a href="index-2.html"><img alt="alt" src="<?php echo base_url('images/logo.png')?>" ></a> </div>
       <div id="nav" class="yamm">
-        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-		<nav id="navbar-collapse-1" class="navbar-collapse collapse">
+        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+        </button>
+		    <nav id="navbar-collapse-1" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-         <?php foreach($section_data as $row){ ?>
-            <li class="dropdown"><a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle"><?php echo $row['section_name']?><b class="caret"></b></a>
-			<?php if(isset($P_CatIdArr[$row['section_id']])){
-				?>
-			 <ul role="menu" class="dropdown-menu">
+          <?php foreach($section_data as $row){ ?>
+            <li class="dropdown">
+              <a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">
+                <?php echo $row['section_name']?>
+                <b class="caret"></b>
+              </a>
+    			    <?php 
+              
+              if(isset($P_CatIdArr[$row['section_id']])){ 
+              ?>
+  			      <ul role="menu" class="dropdown-menu">
                 <li>
-				<?php  for($i=0;$i<count($P_CatIdArr[$row['section_id']]); $i++){ ?>
-                  <h5><?php  echo $catNameArr[$row['section_id']][$i]; ?></h5>
-                  <ul>
-					<?php 
-					//echo $P_CatIdArr[$row['section_id']][$i];
-					if(isset($childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]]))
-					{
-					for($j=0;$j<count($childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]]);$j++){ 
-					?>
-                    <li><a href="index-2.html"><?php echo $childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]][$j]; ?></a></li>
-					<?php } }?>
-                   
-                  </ul>
-				<?php }  ?>
+  			 	  <?php for($i=0;$i<count($P_CatIdArr[$row['section_id']]); $i++){ ?>
+                    <h5><?php  echo $catNameArr[$row['section_id']][$i]; ?></h5>
+                    <ul>
+  					<?php
+            print_r('<pre>');
+            print_r($row);
+            print_r($childCatArr);
+            print_r($P_CatIdArr);
+            die(); 
+        					if(isset($childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]]))
+  			       		{
+  				          for($j=0;$j<count($childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]]); $j++){ 
+  				  ?>
+                      <li>
+                        <a href="<?php echo base_url(); ?>catelog/section/<?php echo $row['section_id'];?>/<?php 
+                          echo $P_CatIdArr[$row['section_id']][$i]; ?>">
+                          <?php echo $childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]][$j]; ?>
+                        </a>
+                      </li>
+  				  <?php 
+                    } 
+                  }
+            ?>                   
+                    </ul>
+  				  <?php }  ?>
                 </li>
               </ul>
-			<?php } ?>
-			
-            <li>
+  			    <?php 
+            } 
+            ?>
+            </li>
 		  <?php } ?>
-		  
-		  </ul>
-		</nav>
+		      </ul>
+		    </nav>
       </div>
       <div class="right_menu">
         <ul>

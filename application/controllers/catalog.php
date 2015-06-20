@@ -8,7 +8,7 @@ class Catalog extends CI_Controller{
 		$this->load->model('common_model');
 		$this->load->library('encrypt');
 	}
-	
+
 	function getProducts($a=null,$b=null,$id=null,$type=null,$prod_id=null)
 	{
 		$data = $this->common_model->get_head();

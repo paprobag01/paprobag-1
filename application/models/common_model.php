@@ -131,6 +131,23 @@ function getcategry($type=null)
 		return $sql->result_array();
 		
 }
+
+function get_customizable_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
+{
+	// section_id = 5 (because it is customizbae)
+
+}
+
+function get_readytoprint_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
+{
+	// section_id = 6 (because it is readytoprint)
+}
+
+function get_readytodeliver_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
+{
+	// section_id = 7 (because it is readytoprint)
+}
+
 function get_head()
 {
 	$catArr="";

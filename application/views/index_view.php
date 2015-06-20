@@ -29,7 +29,7 @@
 	  <?php foreach($page_data1 as $row){ ?>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  animated" data-animation="rollIn" >
           <div class="box hg_510 box_1 red5">
-            <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="760" height="510" >
+            <a href="<?php echo base_url() ?>catalog/cusomizable/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="760" height="510" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
