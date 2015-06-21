@@ -53,41 +53,60 @@
         </button>
 		    <nav id="navbar-collapse-1" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <?php foreach($section_data as $row){ ?>
+          <?php 
+          // Loop for section
+          foreach($section_data as $row)
+          {          
+          ?>
             <li class="dropdown">
               <a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">
                 <?php echo $row['section_name']?>
                 <b class="caret"></b>
               </a>
-    			    <?php 
-              
-              if(isset($P_CatIdArr[$row['section_id']])){ 
-              ?>
+  			    <?php    
+            if(isset($catIdArr[$row['section_id']])) { 
+            ?>
   			      <ul role="menu" class="dropdown-menu">
                 <li>
-  			 	  <?php for($i=0;$i<count($P_CatIdArr[$row['section_id']]); $i++){ ?>
-                    <h5><?php  echo $catNameArr[$row['section_id']][$i]; ?></h5>
+  			 	      <?php
+                // Category loop
+                for($i=0; $i<count($catIdArr[$row['section_id']]); $i++) { 
+                ?>
+                    <h5><?php echo $catNameArr[$row['section_id']][$i]; ?></h5>
                     <ul>
-  					<?php
-            print_r('<pre>');
-            print_r($row);
-            print_r($childCatArr);
-            print_r($P_CatIdArr);
-            die(); 
-        					if(isset($childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]]))
-  			       		{
-  				          for($j=0;$j<count($childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]]); $j++){ 
-  				  ?>
+  					        <?php
+                    if(isset($subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]]))
+  			       		  {
+                      // Sub Category Loop
+  				            for($j=0; $j<count($subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]]); $j++){ 
+  				          ?>
                       <li>
-                        <a href="<?php echo base_url(); ?>catelog/section/<?php echo $row['section_id'];?>/<?php 
-                          echo $P_CatIdArr[$row['section_id']][$i]; ?>">
-                          <?php echo $childCatArr[$row['section_id']][$P_CatIdArr[$row['section_id']][$i]][$j]; ?>
-                        </a>
+                        <?php
+                        if(strtoupper($catNameArr[$row['section_id']][$i]) == 'WHOLESALE')
+                        {
+                          $wholesale_flag = 1;
+                        } else {
+                          $wholesale_flag = 0;
+                        }
+                        ?>
+                        <a href="<?php echo base_url()?>catalog/getProducts/<?php 
+                          echo $wholesale_flag; ?>/<?php
+                          echo $row['section_id']; ?>/<?php 
+                          echo $catIdArr[$row['section_id']][$i] ;?>/<?php
+                          echo $subCatIdArr[$row['section_id']][$catIdArr[$row['section_id']][$i]][$j]; ?>">
+                          <!-- Print sub category name -->
+                          <?php 
+                          //  subcategoryname = section id/category id/ name
+                          //  section id = $row['section_id']
+                          //  category id = $catIdArr[$row['section_id']][$i]
+
+                          echo $subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]][$j]; ?>
+                        </a>                        
                       </li>
-  				  <?php 
+  				          <?php 
                     } 
                   }
-            ?>                   
+                    ?>                   
                     </ul>
   				  <?php }  ?>
                 </li>

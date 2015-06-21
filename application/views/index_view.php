@@ -1,4 +1,10 @@
+<?php 
+if(isset($moq))
+{
+  echo $moq;
+}
 
+?>
 <div class="flexslider home-slider">
   <ul class="slides">
   <?php foreach($page_data10 as $row){ ?>

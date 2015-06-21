@@ -27,7 +27,7 @@ class Catalog_section extends CI_Controller{
 		
 		$data['page_data2'] = $this->common_model->getdataprod($id,$type);
 		$data['page_data3'] = $this->common_model->getdatacat($id,$type);		
-		$data['page_data4']=$this->common_model->getcategry($type);
+		$data['page_data4']=$this->common_model->getcategory($type);
 		
 		$this->load->view('header',$data);
 		$this->load->view('deliver_view',$data);

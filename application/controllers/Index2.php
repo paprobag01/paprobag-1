@@ -12,16 +12,16 @@ class Index2 extends CI_Controller{
 		
 		$catArr="";
 		$catNameArr="";
-		$childCatArr="";
+		$subCatNameArr="";
 		$subCatArr="";
-		$childCatIdArr="";
+		$subCatIdArr="";
 		$subCatIdArr="";
 		$sectionNameArr=array();
 		$arr['table']='sections';
 		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']=""; 
-		$P_CatIdArr="";
+		$catIdArr="";
 
 		$data['section_data']=$this->site_sentry->get_all($arr); 
 		foreach($data['section_data'] as $row)
@@ -31,7 +31,7 @@ class Index2 extends CI_Controller{
 			//$catArr[$row['section_id']][]=$res;
 			foreach($res as $rw)
 			{
-			$P_CatIdArr[$row['section_id']][]=$rw['cat_id'];
+			$catIdArr[$row['section_id']][]=$rw['cat_id'];
 			$catNameArr[$row['section_id']][]=$rw['cat_name'];
 				
 			$catIdArr=explode(",",$rw['child_cat_id']);
@@ -40,21 +40,21 @@ class Index2 extends CI_Controller{
 					$sql1=$this->db->query("select * from category where cat_id=".$catIdArr[$i]." and section_id=".$row['section_id']." and cat_type=2" );
 					$res1=$sql1->row_array();
 					extract($res1);
-					$childCatArr[$row['section_id']][$rw['cat_id']][]=$cat_name;
+					$subCatNameArr[$row['section_id']][$rw['cat_id']][]=$cat_name;
 				}
 			}
 		}
 		
-		//print_r($childCatArr[6]); die;
-		$data['P_CatIdArr']=$P_CatIdArr;
+		//print_r($subCatNameArr[6]); die;
+		$data['catIdArr']=$catIdArr;
 		$data['sectionNameArr']=$sectionNameArr;
 		$data['catArr']=$catArr;
 		$data['catNameArr']=$catNameArr;
 		$data['subCatArr']=$subCatArr;
 		
 		
-		$data['childCatArr']=$childCatArr;
-		$data['childCatIdArr']=$childCatIdArr;
+		$data['subCatNameArr']=$subCatNameArr;
+		$data['subCatIdArr']=$subCatIdArr;
 		$data['subCatIdArr']=$subCatIdArr;
 		
 		

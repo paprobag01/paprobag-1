@@ -39,7 +39,7 @@ class Grade_catalog extends CI_Controller{
 		
 		
 		$this->load->view('header',$data);
-		$this->load->view('customize_view',$data);
+		$this->load->view('product_catelog',$data);
 		$this->load->view('footer');
 	}
 	
