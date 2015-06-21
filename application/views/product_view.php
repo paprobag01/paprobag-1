@@ -68,11 +68,27 @@ extract($page_data5);
 			   </table>
             </div>
             <div class="desc_blk_bot clearfix">
-              <div class="qty"> <a class="minus_btn" ></a>
-                <input type="text" name="qty" placeholder="1" class="txtbox">
-                <a class="plus_btn" ></a> </div>
-              <div class="price"><?php foreach($page_data5 as $row){echo $row['prod_price'];}?></div>
-              <a href="#" class="btn_c">Add to cart</a> </div>
+              <div class="qty"> 
+                <a class="minus_btn" ></a>
+                <input type="text" name="qty" placeholder="1" class="txtbox" id="product_quantity" value="1">
+                <a class="plus_btn" ></a> 
+              </div>
+              <input type="hidden" name="product_price" id="product_price" value="<?php 
+                foreach($page_data5 as $row){
+                  echo $row['prod_price'];
+                }
+                ?>">
+              <input type="hidden" name="product_id" id="product_id" value="<?php 
+                foreach($page_data5 as $row){
+                  echo $row['prod_id'];
+                }
+                ?>">
+              <div class="price prod_price">
+                <?php foreach($page_data5 as $row){
+                  echo $row['prod_price'];
+                }?>
+              </div>
+              <a href="javascript:void(0);" class="btn_c" id="add_to_cart">Add to cart</a> </div>
             <div class="review_row clearfix">
               <ul class="start_list">
                 <li class="fa fa-star active"></li>

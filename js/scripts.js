@@ -128,28 +128,70 @@ jQuery(function ($) {
     jQuery(".minus_btn").click(function () {
         var inputEl = jQuery(this).parent().children().next();
         var qty = inputEl.val();
-        if (jQuery(this).parent().hasClass("minus_btn"))
+        var product_price = jQuery('#product_price').val();
+        var prod_price = null;
+        if (jQuery(this).parent().hasClass("minus_btn")) {
             qty++;
-        else
+            prod_price = qty * product_price;
+        } else {
             qty--;
-        if (qty < 0)
-            qty = 0;
+            prod_price = qty * product_price;
+        }
+        if (qty < 1) {
+            qty = 1;
+            prod_price = qty * product_price;
+        }
         inputEl.val(qty);
+        jQuery('.prod_price').text(prod_price);
     })
 
 
     jQuery(".plus_btn").click(function () {
         var inputEl = jQuery(this).parent().children().next();
         var qty = inputEl.val();
-        if (jQuery(this).hasClass("plus_btn"))
+        var product_price = jQuery('#product_price').val();
+        var prod_price = null;
+        if (jQuery(this).hasClass("plus_btn")) {
             qty++;
-        else
+            prod_price = qty * product_price;
+        } else {
             qty--;
-        if (qty < 0)
-            qty = 0;
+            prod_price = qty * product_price;
+        }
+        if (qty < 1) {
+            qty = 1;
+            prod_price = qty * product_price;
+        }
         inputEl.val(qty);
+        jQuery('.prod_price').text(prod_price);
     })
 
+    /////////////////////////////////////
+    // Add to Cart
+    /////////////////////////////////////
+
+    jQuery("#add_to_cart").click(function() {
+        var product_id = jQuery('#product_id').val(); 
+        var product_quantity = jQuery('#product_quantity').val();
+        var product_total = parseInt(jQuery('.prod_price').text());
+        var data = {
+            'product_id': product_id,
+            'product_quantity': product_quantity,
+            'product_total': product_total
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: base_url+"/add_to_cart_ajax/",
+            data: data, // or JSON.stringify ({name: 'jonas'}),
+            success: function(data) { 
+                // alert('data: ' + data); 
+                console.log(data);
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    });
 
     /////////////////////////////////////
     //  animate elements when they are in viewport

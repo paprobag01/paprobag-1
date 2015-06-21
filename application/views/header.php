@@ -16,6 +16,8 @@
 <script type="text/javascript" src="<?php echo base_url('js/jquery.flexslider.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/bxslider/jquery.bxslider.min.js')?>"></script> 
 <script type="text/javascript" src="<?php echo base_url('js/scripts.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/path.js')?>"></script>
+
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('js/j360.js')?>" ></script>
