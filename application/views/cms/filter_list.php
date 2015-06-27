@@ -9,8 +9,8 @@
 			<div class="span12">
 				<!-- BEGIN STYLE CUSTOMIZER--> 
 				<h3 class="page-title">
-					Category Details
-					<small>Add, Delete, and Modify Categories</small>
+					Filter Details
+					<small>Add, Delete, and Modify filters</small>
 				</h3>
 				
 				
@@ -20,7 +20,7 @@
 		<!-- BEGIN PAGE CONTENT-->
 		<div class="row-fluid">
 			<div class="span12">	
-			<p style="text-align:right"><button type="button" id="add_new" class="btn blue">Add Category Details</button></p>			
+			<p style="text-align:right"><button type="button" id="add_new_filter" class="btn blue">Add Filter Details</button></p>	
 				<div class="portlet box light-grey">
 					<div class="portlet-title">
 						<h4><i class="icon-reorder"></i>Home Page Details View</h4>
@@ -35,55 +35,52 @@
 							<thead>
 								<tr> 
 									<th class="hidden-phone">Srno</th>
+									<!-- <th class="hidden-phone">Image</th> -->
+									<th class="hidden-phone">Section Name</th> 
+									<th class="hidden-phone">Category Name</th>
+									<th class="hidden-phone">Subcategory Name</th> 
+									<th class="hidden-phone">Filter Name</th> 
+									<!-- <th class="hidden-phone">Section</th> -->
 									
-									<th class="hidden-phone">Category Name</th> 
-									<th class="hidden-phone">Section</th> 
-									 <th class="hidden-phone">Type</th> 
-									<th class="hidden-phone">Groups/Subcategories</th> 
 									<th class="hidden-phone">Options</th>
 								</tr>
 							</thead>
 							<tbody>
 								 <?php $cnt=0; if(count($page_data)>0){
 									foreach($page_data as $row){
-										
-										$sql1=$this->db->query("select * from sections where section_id=".$row['section_id']."");
-										$res1=$sql1->row_array();
-										extract($res1);
-
-										$sql2=$this->db->query("select * from subcategory where section_id=".$row['section_id']."  and cat_id = ".$row['cat_id']."");
-										$res2=$sql2->result_array();
-										//extract($res2);
+										$cnt++;
 									?>
 								<tr id="" class="odd gradeX"> 
 									<td><?php echo $cnt;?></td>
-									<td class="hidden-phone"><?php echo $row['cat_name']?></td>
-									<td class="hidden-phone"><?php echo $section_name ?></td>
-									<td class="hidden-phone"><?php  if($row['cat_type']==1){ echo 'Parent Category'; } else if($row['cat_type']==2){echo 'Child Category';} else if($row['cat_type']==3){ echo 'Sub Category';} ?></td>
-									<td class="hidden-phone"><?php if($res2>0){
-									 foreach($res2 as $row1)
-									 {
-
-									 		echo $row1['sub_cat_name'].' '.',';
-									 	
-
-									}
-									}
-									else
-									{ 
-										echo "Not Created";
-									} 
-									?></td>
+									<?php
+										$sql1=$this->db->query("select * from sections where section_id=".$row['section_id']."");
+										$res1=$sql1->row_array();
+										extract($res1);							
+										
+									?>
+									
+									<td class="hidden-phone"><?php echo $section_name;?></td>
+									<?php
+										$sql = $this->db->query("select * from category where section_id = ".$row['section_id']." and cat_id = ".$row['cat_id']."");
+										$cat_name = $sql->result_array();										
+									?>
+									<td class="hidden-phone"><?php foreach($cat_name as $row1){echo $row1['cat_name'];}?></td>
+									<?php
+										$sub_cat=$this->db->query("select * from subcategory where section_id=".$row['section_id']."  and cat_id = ".$row['cat_id']." and sub_cat_id = ".$row['sub_cat_id']."");
+										$res2=$sub_cat->result_array();										
+									?>
+									<td class="hidden-phone"><?php foreach($res2 as $row2){echo $row2['sub_cat_name'];}?></td>
+									<td class="hidden-phone"><?php echo $row['material_name']?></td>
+									
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms/categories/viewCategory/<?php echo $row['cat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/categories/viewCategory/<?php echo $row['cat_id']?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/categories/deleteCategory/<?php echo $row['cat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
+									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['filter_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['filter_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/Filters/deleteFilter/<?php echo $row['filter_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>
 								</tr>
 								<?php 
-								$cnt++;
 								}
 								 }
 								else
@@ -126,16 +123,18 @@
 				$("#delete_domestic").modal("show"); 
 			});
 
-			$("#add_new").click(function(){
+			$("#add_new_filter").click(function(){
 
-				document.location="<?php echo base_url()?>cms/categories/viewCategory";
+				document.location="<?php echo base_url()?>cms/filters/add_filter";
 			});
+			
+			
 
 			$(".btn_delete").click(function(){
 
 				var id=$(this).attr("id");
 				 
-				$.post("<?php echo base_url()?>cms/categories/deleteCustomization", {
+				$.post("<?php echo base_url()?>cms/filters/deleteFilter", {
 
 					id: id
 							

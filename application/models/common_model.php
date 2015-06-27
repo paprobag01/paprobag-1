@@ -25,6 +25,8 @@ class Common_model extends CI_Model
 		}
 	}
 
+	
+
 	function checkuser($data=null)
 	{
 		try {
@@ -94,10 +96,10 @@ class Common_model extends CI_Model
 	}
 
 	//newly added
-	function getdatacat($id=null,$type=null)
+	function getdatacat($cat_id=null,$section_id=null)
 	{
 			
-			$sql = $this->db->query("select * from category where cat_id=$id and section_id=$type");
+			$sql = $this->db->query("select * from category where cat_id=$cat_id and section_id=$section_id");
 			return $sql->result_array();
 	}
 
@@ -121,19 +123,34 @@ class Common_model extends CI_Model
 			
 	}
 	
-	function getprodimg($section_id=null,$cat_id=null,$prod_id=null)
+	function getsubprodimg($section_id=null,$cat_id=null,$prod_id=null)
 	{
 			
 			$sql = $this->db->query("select * from products where cat_id=$cat_id and section_id=$section_id and prod_id=$prod_id");
 			return $sql->result_array();
 			
 	}
-	
+	function getsubprod($section_id=null,$cat_id=null,$sub_cat_id=null)
+	{
+		echo 	$sub_cat_id;
+		echo $section_id;
+		echo $cat_id;
+			$sql = $this->db->query("select * from products where cat_id=$cat_id and section_id=$section_id and sub_cat_id=$sub_cat_id");
+			return $sql->result_array();
+			
+	}
+
 	function getcategory($section_id=null)
 	{
 			$sql = $this->db->query("select * from category where section_id = $section_id");
 			return $sql->result_array();
 			
+	}
+	
+	function getsubcategory($section_id=null,$cat_id=null)
+	{
+		$sql = $this->db->query("select * from subcategory where section_id = $section_id and cat_id=$cat_id");
+		return $sql->result_array();
 	}
 
 	function get_customizable_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
@@ -177,12 +194,15 @@ class Common_model extends CI_Model
 				$catIdArr[$row['section_id']][]=$row1['cat_id'];
 				$catNameArr[$row['section_id']][]=$row1['cat_name'];
 				
-				$sql1=$this->db->query("select * from subcategories where cat_id=".$row1['cat_id']." and section_id=".$row['section_id']);
-				$res1=$sql1->row_array();
-				extract($res1);
+				$sql1=$this->db->query("select * from subcategory where cat_id=".$row1['cat_id']." and section_id=".$row['section_id']);
+				$res1=$sql1->result_array();
+				//extract($res1);
+				foreach($res1 as $subrow)
+				{
 				
-				$subCatIdArr[$row['section_id']][$row1['cat_id']][] = $sub_cat_id;
-				$subCatNameArr[$row['section_id']][$row1['cat_id']][] = $sub_cat_name;
+					$subCatIdArr[$row['section_id']][$row1['cat_id']][] = $subrow['sub_cat_id'];
+					$subCatNameArr[$row['section_id']][$row1['cat_id']][] = $subrow['sub_cat_name'];
+				}
 			}
 		}
 		
@@ -191,6 +211,59 @@ class Common_model extends CI_Model
 		$data['subCatIdArr']=$subCatIdArr;
 		$data['subCatNameArr']=$subCatNameArr;
 		return $data;
+	}
+
+	function add_to_cart($data=null)
+	{
+		try {
+			$this->db->insert('cart',$data);
+		    return $this->db->insert_id();
+		} catch (Exception $e) {
+			// erro page
+			$error = "Error in Cart insert";
+			return $error;
+		}
+	}
+
+	function add_to_cart_product($data=null)
+	{
+		try {
+			$this->db->insert('cart_product',$data);
+		    return $this->db->insert_id();
+		} catch (Exception $e) {
+			// erro page
+			$error = "Error in Cart product insert";
+			return $error;
+		}
+	}
+
+	function update_cart($data=null, $cart_id)
+	{
+		try {
+			$this->db->where('cart_id', $cart_id);
+			$this->db->update('cart', $data); 
+		} catch (Exception $e) {
+			// erro page
+			$error = "Error in update cart";
+			return $error;
+		}
+	}
+
+	function update_cart_product($data=null, $cart_product_id)
+	{
+		try {
+			$this->db->where('cart_product_id', $cart_product_id);
+			$this->db->update('cart_product', $data); 
+		} catch (Exception $e) {
+			// erro page
+			$error = "Error in update cart product";
+			return $error;
+		}
+	}
+
+	function remove_cart_product($data=null)
+	{
+		# code...
 	}
 }
 ?>

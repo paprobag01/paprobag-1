@@ -21,6 +21,8 @@ class Subcategories_model extends CI_Model
 		
 		return $sql->result_array();
 	}
+
+	
 	
 }
 ?>

@@ -14,30 +14,30 @@ class Index extends CI_Controller{
 	{
 		$data = $this->common_model->get_head();
 		
-		$arr6['where']="where section_id=5 and cat_id=14  and prod_on_home=1";
+		$arr6['where']="where section_id=5 and cat_id=1  and prod_on_home=1";
 		$arr6['table']='products';
 		$arr6['order_by']='';
-		$data['page_data1']=$this->common_model->getAllDetails($arr6);
+		$data['paper_prod']=$this->common_model->getAllDetails($arr6);
 		
-		$arr7['where']="where section_id=5 and cat_id=15 and prod_on_home=1";
+		$arr7['where']="where section_id=5 and cat_id=2 and prod_on_home=1";
 		$arr7['table']='products';
 		$arr7['order_by']='';
-		$data['page_data2']=$this->common_model->getAllDetails($arr7);
+		$data['eco_prod']=$this->common_model->getAllDetails($arr7);
 		
-		$arr2['where']="where section_id=5 and cat_id=16 and prod_on_home=1";
+		$arr2['where']="where section_id=5 and cat_id=3 and prod_on_home=1";
 		$arr2['table']='products';
 		$arr2['order_by']='';
-		$data['page_data6']=$this->common_model->getAllDetails($arr2);
+		$data['box_prod']=$this->common_model->getAllDetails($arr2);
 		
-		$arr3['where']="where section_id=5 and cat_id=19 and prod_on_home=1";
+		$arr3['where']="where section_id=5 and cat_id=4 and prod_on_home=1";
 		$arr3['table']='products';
 		$arr3['order_by']='';
-		$data['page_data7']=$this->common_model->getAllDetails($arr3);
+		$data['pouch_prod']=$this->common_model->getAllDetails($arr3);
 		
-		$arr4['where']="where section_id=5 and cat_id=27 and prod_on_home=1";
+		$arr4['where']="where section_id=5 and cat_id=5 and prod_on_home=1";
 		$arr4['table']='products';
 		$arr4['order_by']='';
-		$data['page_data8']=$this->common_model->getAllDetails($arr4);	
+		$data['office_prod']=$this->common_model->getAllDetails($arr4);	
 		
 		
 		$arr5['where']="where section_id=6 and prod_on_home=0";

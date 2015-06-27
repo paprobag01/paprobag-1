@@ -173,23 +173,23 @@ jQuery(function ($) {
     jQuery("#add_to_cart").click(function() {
         var product_id = jQuery('#product_id').val(); 
         var product_quantity = jQuery('#product_quantity').val();
-        var product_total = parseInt(jQuery('.prod_price').text());
+        var product_price = jQuery('#product_price').val();
+        var product_wise_total = parseInt(jQuery('#product_wise_total').text());
         var data = {
             'product_id': product_id,
             'product_quantity': product_quantity,
-            'product_total': product_total
+            'product_price': product_price,
+            'product_wise_total': product_wise_total
         };
-
         $.ajax({
             type: 'POST',
+            dataType: 'json',
+            ContentType: "application/json",
             url: base_url+"/add_to_cart_ajax/",
             data: data, // or JSON.stringify ({name: 'jonas'}),
             success: function(data) { 
-                // alert('data: ' + data); 
-                console.log(data);
+                window.location.reload();                
             },
-            contentType: "application/json",
-            dataType: 'json'
         });
     });
 

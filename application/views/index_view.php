@@ -32,10 +32,11 @@ if(isset($moq))
   <div class="container">
     <div class="h_row_1 ideas-hover">
       <div class="row">
-	  <?php foreach($page_data1 as $row){ ?>
+	  <?php foreach($paper_prod as $row){ ?>
+       
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  animated" data-animation="rollIn" >
           <div class="box hg_510 box_1 red5">
-            <a href="<?php echo base_url() ?>catalog/cusomizable/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="760" height="510" >
+            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="760" height="510" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
@@ -46,10 +47,10 @@ if(isset($moq))
           </div>
         </div>
 	  <?php } ?>
-	   <?php foreach($page_data2 as $row){ ?>
+	   <?php foreach($eco_prod as $row){ ?>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 animated" data-animation="bounceInRight">
           <div class="box hg_510 box_2 red5">
-            <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="360" height="510" >
+            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="360" height="510" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
@@ -65,10 +66,10 @@ if(isset($moq))
 	   
     <div class="h_row_2 ideas-hover">
       <div class="row">
-	  <?php foreach($page_data6 as $row){ ?>
+	  <?php foreach($box_prod as $row){ ?>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  animated" data-animation="rollIn">
           <div class="box hg_310 box_1 red5">
-            <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="260" height="310" >
+            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="260" height="310" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
@@ -78,10 +79,10 @@ if(isset($moq))
           </div>
         </div>
 	  <?php } ?>
-	   <?php foreach($page_data7 as $row){ ?>
+	   <?php foreach($pouch_prod as $row){ ?>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 animated" data-animation="fadeInUpBig">
           <div class="box hg_310 box_2 red5">
-            <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="560" height="310" >
+            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="560" height="310" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
@@ -91,10 +92,10 @@ if(isset($moq))
           </div>
         </div>
 	   <?php } ?>
-	   <?php foreach($page_data8 as $row){ ?>
+	   <?php foreach($office_prod as $row){ ?>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 animated" data-animation="bounceInRight">
           <div class="box hg_310 box_3 red5">
-            <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="310" >
+            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="310" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">

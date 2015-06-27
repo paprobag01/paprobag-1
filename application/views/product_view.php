@@ -83,7 +83,7 @@ extract($page_data5);
                   echo $row['prod_id'];
                 }
                 ?>">
-              <div class="price prod_price">
+              <div class="price prod_price" id="product_wise_total">
                 <?php foreach($page_data5 as $row){
                   echo $row['prod_price'];
                 }?>

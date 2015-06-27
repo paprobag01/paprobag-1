@@ -37,6 +37,11 @@
 									 Images
 								</a>
 							</li>
+							<li>
+								<a href="#tab_3" data-toggle="tab">
+									 Filter Details
+								</a>
+							</li>
 						</ul>
 						<form action="<?php echo base_url()?>cms/productList/save_products" class="" method="post" enctype="multipart/form-data" />
 						<div class="tab-content">
@@ -115,6 +120,35 @@
 								  
                               </div>
                            </div>
+						   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+											<script type="text/javascript">
+											 function getmaterial()
+										{										
+											  var filters = $('#material_value').val();
+											  
+												console.log(filters);
+												$.ajax({   
+												   url: "<?php echo base_url()?>cms/getSubCategories/GSM_dropdown",
+													async: false,
+													type: "POST", 
+													data: "filters="+filters,
+													dataType: "html",
+													
+													success: function(data) {
+														var dt=data.split("|");
+														
+														$("#output").fadeIn();
+														$('#output').html(data);
+														
+														
+														
+													}
+												})
+								  
+									 
+								  }
+												
+											</script>
 						   
 											  <script type="text/javascript">
 							  $(document).ready(function() {
@@ -176,7 +210,7 @@
 												{
 													var dt=data.split("|");
 													
-																if(dt[0]!='<label class="control-label">Subcategory</label><div class="controls"><select name="sub_categories"  id="sub_categories"></select></div>')
+																if(dt[0]!='<label class="control-label">Subcategory</label><div class="controls" id="sub_categories"><select name="sub_categories"  id="sub_categories"></select></div>')
 																{
 																	$('#filters').fadeIn();
 																	$('#filters').html(dt[0]);
@@ -188,6 +222,44 @@
 																	$('#filters').fadeIn();
 																	$('#filters').html('<div class="controls">Subcategory is not found under this Category</div>');
 																}
+													
+												}
+										});
+									 });
+									  $('#filters').on('click', function() {
+										 
+											  var filters = $('#prod_sub_categories').val();
+											  var filters1 = $('#sec_id').val();
+											  var filters2 = $('#sub_categories').val();
+											  
+									//console.log(sub_categories);
+									$.ajax({   
+											   url: "<?php echo base_url()?>cms/getSubCategories/material_name",
+												async: false,
+												type: "POST", 
+												data: {'filters':filters,'filters1':filters1,'filters2':filters2},
+												dataType: "html",
+										
+												success: function(data) 
+												{
+													var dt=data.split("|");
+													
+																	//$('#material_drop').fadeIn();
+																	//$('#material_drop').html(dt[0]);
+																	
+																	if(dt[0]!='<label class="control-label">Select Material</label><div class="controls" id="material_value"><select name="material_value" onchange="getmaterial()"  id="material_value"></select></div>')
+																{
+																	$('#material_drop').fadeIn();
+																	$('#material_drop').html(dt[0]);
+																	
+																	
+																
+																}
+																else{
+																	$('#material_drop').fadeIn();
+																	$('#material_drop').html('<div class="controls">Material is not found under this Category</div>');
+																}
+																
 													
 												}
 										});
@@ -306,8 +378,8 @@
 													<label class="control-label">Product On Home</label>
 													    <div class="controls">
 															<select name="prod_on_home" id="prod_on_home">
-																<option value="0">Yes</option>
-																<option value="1">No</option>
+																<option value="1">Yes</option>
+																<option value="0">No</option>
 															</select>
 													    </div>
 												</div>
@@ -542,7 +614,7 @@
 												<div class="control-group">
 													<label class="control-label">Sold By</label>
 													    <div class="controls">
-															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="" class="span4 m-wrap"> 
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
 													
@@ -599,16 +671,16 @@
 										<div class="caption">
 											<i class="fa fa-reorder"></i>Form Sample
 										
-										<div class="tools">
-											<a href="javascript:;" class="collapse">
-											</a>
-											<a href="#portlet-config" data-toggle="modal" class="config">
-											</a>
-											<a href="javascript:;" class="reload">
-											</a>
-											<a href="javascript:;" class="remove">
-											</a>
-										</div>
+											<div class="tools">
+												<a href="javascript:;" class="collapse">
+												</a>
+												<a href="#portlet-config" data-toggle="modal" class="config">
+												</a>
+												<a href="javascript:;" class="reload">
+												</a>
+												<a href="javascript:;" class="remove">
+												</a>
+											</div>
 										</div>
 									</div>
 									<div class="portlet-body form form-horizontal"">
@@ -617,17 +689,17 @@
 											<div class="form-body">
 												<h3 class="form-section">Upload Images For Description</h3>
 												
-											<div class="control-group">
+												<div class="control-group">
 											  <label class="control-label">Image 1:</label>
 											  <div class="controls">
-												<div class="fileupload fileupload-new" data-provides="fileupload">
-													<?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-													   <?php if($image_url1!=""){?>
-														<img src="<?php echo base_url().$image_url1?>" /> 
-														<?php } else {?>
-													   <img src="<?php echo base_url()?>images/noimage.gif" alt="" />
-													   <?php }?>
-													   <input type="hidden" value="<?php echo $image_url1; ?>" name="img_url1">	
+													<div class="fileupload fileupload-new" data-provides="fileupload">
+														<?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+														   <?php if($image_url1!=""){?>
+															<img src="<?php echo base_url().$image_url1?>" /> 
+															<?php } else {?>
+														   <img src="<?php echo base_url()?>images/noimage.gif" alt="" />
+														   <?php }?>
+														   <input type="hidden" value="<?php echo $image_url1; ?>" name="img_url1">	
 													</div><?php } ?>
 													<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 													<div>
@@ -637,8 +709,8 @@
 													   <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
 													</div>
 													
-												 </div> 
-											  </div> 
+												</div> 
+												</div> 
 											</div> 
 											 <div class="control-group">
                               <label class="control-label">Image 2:</label>
@@ -709,7 +781,52 @@
                                  </div> 
                               </div>
                            </div> 
+						   
 											</div>
+											
+											
+										
+											</div>
+									</div>
+
+								</div>
+							
+							<div class="tab-pane " id="tab_3">
+								<div class="portlet box blue">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-reorder"></i>Filter Details
+										
+											<div class="tools">
+												<a href="javascript:;" class="collapse">
+												</a>
+												<a href="#portlet-config" data-toggle="modal" class="config">
+												</a>
+												<a href="javascript:;" class="reload">
+												</a>
+												<a href="javascript:;" class="remove">
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="portlet-body form form-horizontal"">
+										<!-- BEGIN FORM-->
+										
+											<div class="form-body">
+												
+							<div class="control-group" name="material_drop" id="material_drop" style="display:none;">
+											
+											</div>
+						   <div class="control-group" name="filter_id" id="output" style="display:none;">
+											
+											</div>
+						  
+						   
+						   	
+						    
+											</div> 
+						    
+                             
 											<div class="control-group">
 											<div class="controls">
 											<?php if($type!='view'){?>
@@ -718,14 +835,9 @@
 											<?php }?>
 											</div>
 											</div>
-										
-											</div>
+                          
+											
 									</div>
-								</div>
-							
-							
-							
-							
 							
 						</div>
 						</form>

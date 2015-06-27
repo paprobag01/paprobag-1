@@ -293,7 +293,7 @@ function Save_Products()
 	'taggings'=>$this->input->post('taggings'),
 	'complete_the_look'=>$this->input->post('complete_the_look'),
 	'prod_gift_card'=>$gift_card,
-	//'filter_id'=>$this->input->post('filter_id'),
+	'filter_id'=>$this->input->post('material_id'),
 	'prod_status'=>$this->input->post('prod_status'),
 	'prod_on_home'=>$this->input->post('prod_on_home'),
 	'prod_customizable'=>$this->input->post('prod_customizable'),
@@ -311,7 +311,16 @@ function Save_Products()
 	'prod_image3'=>$link3,
 	'prod_image4'=>$link4,
 	'require_shipping'=>$this->input->post('require_shipping'),
-	'prod_shipping_price'=>$this->input->post('prod_shipping_price')
+	'prod_shipping_price'=>$this->input->post('prod_shipping_price'),
+	//'material_name' => $this->input->post('material_id'),	
+	'GSM_name' => $this->input->post('GSM_id'),
+	'size' => $this->input->post('size_id'),	
+	'style' => $this->input->post('style'),	
+	'handle' => $this->input->post('handle_id'),	
+	'print' => $this->input->post('print'),	
+	'print_color' => $this->input->post('printclr'),	
+	'lamination' => $this->input->post('lamination'),	
+	'special_wrk' => $this->input->post('specialwrk')
 	);
 	$this->db->trans_start();
 	$this->db->update('products', $data); 
@@ -592,8 +601,7 @@ function Save_Products()
 	//'filter_val'=>$this->input->post('filter_val'),
 	'prod_sku'=>$this->input->post('prod_sku'),
 	'complete_the_look'=>$this->input->post('complete_the_look'),
-	'taggings'=>$this->input->post('taggings'),
-	//'filter_id'=>$this->input->post('filter_id'),
+	'taggings'=>$this->input->post('taggings'),	
 	'prod_status'=>$this->input->post('prod_status'),
 	'prod_on_home'=>$this->input->post('prod_on_home'), 
 	'prod_customizable'=>$this->input->post('prod_customizable'),
@@ -610,8 +618,18 @@ function Save_Products()
 	'prod_image2'=>$link2,
 	'prod_image3'=>$link3,
 	'prod_image4'=>$link4,
+	'sold_by'=>$this->input->post('sold_by'),
 	'require_shipping'=>$this->input->post('require_shipping'),
-	'prod_shipping_price'=>$this->input->post('prod_shipping_price')
+	'prod_shipping_price'=>$this->input->post('prod_shipping_price'),	
+	'filter_id'=>$this->input->post('material_id'),	
+	'GSM_name' => $this->input->post('GSM_id'),
+	'size' => $this->input->post('size_id'),	
+	'style' => $this->input->post('style'),	
+	'handle' => $this->input->post('handle_id'),	
+	'print' => $this->input->post('print'),	
+	'print_color' => $this->input->post('printclr'),	
+	'lamination' => $this->input->post('lamination'),	
+	'special_wrk' => $this->input->post('specialwrk')
 	);
 	
 	

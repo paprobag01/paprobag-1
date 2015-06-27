@@ -9,18 +9,18 @@ class Catalog extends CI_Controller{
 		$this->load->library('encrypt');
 	}
 
-	function section($type1=null,$type2=null,$sec_id=null,$cat_id=null)
+	function getall_catprod($wholesale_flag=null, $section_id=null, $cat_id=null)
 	{
-		$data = $this->common_model->get_head();
-		if($type2!='retail')
-		{
-			$data['moq'] = 500; //example taken
-			 echo 'hello';
-		}
+		$data = $this->common_model->get_head();	
+
+		$data['cat_prod'] = $this->common_model->getdataprod($cat_id,$section_id);
+		$data['page_data3'] = $this->common_model->getdatacat($cat_id,$section_id);		
+		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
 		
+		$data['wholesale_flag'] = $wholesale_flag;
 
 		$this->load->view('header',$data);
-		$this->load->view('index_view',$data);
+		$this->load->view('product_catelog',$data);
 		$this->load->view('footer');
 	}
 
@@ -28,25 +28,51 @@ class Catalog extends CI_Controller{
 	{
 		$data = $this->common_model->get_head();
 
-		$arr1['table']='category';
-		$arr1['where']='where section_id = '.$section_id;
+		$arr1['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
+		$arr1['table']='products';
 		$arr1['order_by']='';
+		$data['sub_prod']=$this->common_model->getAllDetails($arr1);
+		
+		$arr2['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
+		$arr2['table']='subcategory';
+		$arr2['order_by']='';
+		$data['sub_prod_name']=$this->common_model->getAllDetails($arr2);
+		
+		$arr3['where']="where section_id=$section_id and cat_id=$cat_id";
+		$arr3['table']='filters';
+		$arr3['order_by']='';
+		$data['material_data']=$this->common_model->getAllDetails($arr3);
+		
+		$arr3['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
+		$arr3['table']='filters';
+		$arr3['order_by']='';
+		$data['specific_material_data']=$this->common_model->getAllDetails($arr3);
 
 		$data['page_data2'] = $this->common_model->getdataprod($cat_id,$section_id);
 		$data['page_data3'] = $this->common_model->getdatacat($cat_id,$section_id);		
 		$data['category_list'] = $this->common_model->getcategory($section_id);
+		//$data['sub_prod'] = $this->common_model->getsubprod($cat_id,$section_id,$sub_cat_id);
 		$data['wholesale_flag'] = $wholesale_flag;
-
+		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
+		
 		$this->load->view('header',$data);
-		$this->load->view('product_catelog',$data);
+		$this->load->view('product_sub_catelog',$data);
 		$this->load->view('footer');
+	}
+	
+	function getGSM($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null,$material_type=null)
+	{
+		$arr3['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_name=$material_type";
+		$arr3['table']='filters';
+		$arr3['order_by']='';
+		$data['GSM_data']=$this->common_model->getAllDetails($arr3);
 	}
 	
 	function getmore($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null, $prod_id=null)
 	{
 		$data = $this->common_model->get_head();
 		
-		$data['page_data5']=$this->common_model->getprodimg($section_id,$cat_id,$prod_id);
+		$data['page_data5']=$this->common_model->getsubprodimg($section_id,$cat_id,$prod_id);
 		$data['page_data2'] = $this->common_model->getdataprod($cat_id,$section_id);
 		
 		$_SESSION['last_seen_prod'][$prod_id]=array('prod_id'=>$prod_id);

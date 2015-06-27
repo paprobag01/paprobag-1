@@ -1,10 +1,25 @@
+<script>
+	$('#cat').click(function(e) {
+  var material_name = $(this).val();
+  $.ajax({
+    type: 'POST',
+    data : {'material_name':material_name},
+    url: '<?php echo base_url()?>cms/getSubCategories/GSM_dropdown',
+    dataType: 'html',
+    success: function (html) {
+         $('#output').html(html);
+    }
+   });
+ });
+</script>
+
 <div id="content">
   <div class="container">
     <div class="catelog_c">
       <div class="slider clearfix animated rollIn " data-animation="rollIn"  >
         <div class="category-slider">
           <ul class="slides">
-		  <?php foreach($cat_prod as $row) { ?>
+		  <?php foreach($page_data2 as $row) { ?>
 				<li>
 			   <div class="slider_img"> <img alt="alt"  src="<?php echo base_url()?>/<?php echo $row['prod_image'];?>" width="400" height="400"> </div>
 				  <div class="slider_desc">
@@ -23,7 +38,14 @@
         </div>
       </div>
       <div class="title clearfix">
-        <h2><?php foreach($page_data3 as $row){echo $row['cat_name'];}?>
+        <h2><?php foreach($page_data3 as $row){echo $row['cat_name'];}?> : 
+		<?php foreach($sub_prod_name as $row)
+		{
+			echo $row['sub_cat_name'];
+		}
+		
+		
+		?>
           
         </h2>
       </div>
@@ -50,162 +72,93 @@
             </div>
             <div class="side_box side_box_1 red5">
               <h5><a href="#" class="tgl_btn">categories</a></h5>
-              <ul class="tgl_c" id="sub_cat_data">
+              <ul class="tgl_c1">
+			  <?php
+                        if(strtoupper($row['cat_id']) == 'WHOLESALE')
+                        {
+                          $wholesale_flag = 1;
+                        } else {
+                          $wholesale_flag = 0;
+                        }
+                        ?>
 			  <?php foreach($sub_category_list as $row){?>
-                <li value="<?php echo $row['sub_cat_id']; ?>" ><a href=""><?php echo $row['sub_cat_name']; ?></a></li>
+                <li><a href="<?php echo base_url()?>catalog/getProducts/<?php echo $wholesale_flag;?>/<?php echo $row['section_id'];?>/<?php echo $row['cat_id'];?>/<?php echo $row['sub_cat_id'];?>"><?php echo $row['sub_cat_name']; ?></a></li>
 			  <?php } ?>
-			  </ul>
+              </ul>
             </div>
-             <div class="side_box side_box_1 red5" id="material_sec">
+             <div class="side_box side_box_1 red5" id="cat_div">
               <h5><a href="#" class="tgl_btn">Material</a></h5>
-              <?php foreach($arrSubcat as $row)
-			   {
-				   
-				?>   <li><?php echo $row['material_name'] ?></li>;
-				  
-			<?php	  
-			   }?>
+              <ul class="tgl_c1" id="material_ajax">
+			  <?php foreach($specific_material_data as $row){?>
+                <li id="cat"><a href="<?php echo base_url()?>catalog/getProducts/<?php echo $wholesale_flag;?>/<?php echo $row['section_id'];?>/<?php echo $row['cat_id'];?>/<?php echo $row['sub_cat_id'];?>/<?php echo $row['material_name']; ?>" id="<?php echo $row['filter_id'];?>"><?php echo $row['material_name']; ?></a></li>
+			  <?php } ?>
+              </ul>
             </div>
             
-            <div class="side_box side_box_1 red5 material">
+            <div class="side_box side_box_1 red5 material" id="output">
               <h5><a href="#" class="tgl_btn">GSM</a></h5>
-              <ul class="tgl_c">
-                <li>100
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+              <ul class="tgl_c">                
+                <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['GSM_name']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?>
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Size</a></h5>
               <ul class="tgl_c">
-                <li>12w*10h*4g
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>16w*13h*4g
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>                
+                <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['size']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?>            
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Style</a></h5>
               <ul class="tgl_c">
-                <li>Vertical
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Horizatal
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Box
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Basket
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>               
+                <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['style']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?>       
               </ul>
             </div>
             
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Handle</a></h5>
               <ul class="tgl_c">
-                <li>Twisted 
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                 <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['handle']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?> 
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Print</a></h5>
               <ul class="tgl_c">
-                <li>Offset
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Screen
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>               
+               <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['print']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?>           
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Print Color</a></h5>
               <ul class="tgl_c">
-                <li>1
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>2
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>3
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>4
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>More Color
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+               <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['print_color']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?> 
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Lamination</a></h5>
               <ul class="tgl_c">
-                <li>All
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['lamination']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?> 
               </ul>
             </div>
              
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Special Work</a></h5>
               <ul class="tgl_c">
-                <li>All
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+               <?php if(isset($specific_material_data) && $specific_material_data!=""){ foreach($specific_material_data as $row){?>
+                <li><?php echo $row['special_wrk']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+			  <?php } }?> 
               </ul>
             </div>
             <div class="side_box side_box_1 red5 cat_box">
@@ -235,7 +188,7 @@
               </div>
             </div>
             <div class="row view-grid animated  fadeInUp" data-animation="fadeInUp" >
-             <?php foreach($cat_prod as $row){?>
+             <?php foreach($sub_prod as $row){?>
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="main_box">
                 
@@ -252,7 +205,8 @@
                         echo $wholesale_flag; ?>/<?php 
                         echo $row['section_id'];?>/<?php 
                         echo $row['cat_id'];?>/<?php
-                        echo $row['sub_cat_id'];?>/<?php echo $row['prod_id'];?>" 
+                        echo $row['sub_cat_id'];?>/<?php 
+                        echo $row['prod_id'];?>" 
                         class="btn_c info_btn">More info
                       </a> 
                     </div>

@@ -120,6 +120,12 @@ class site_sentry {
 	
 }
 
+function insertsubcat($data=null)
+	{
+		$this->CI->db->insert('subcategories',$data);
+		
+	}
+	
 function save_slide($data){
 		
 		//if($this->CI->input->post('img_url'))

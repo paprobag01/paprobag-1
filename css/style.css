@@ -1818,12 +1818,36 @@ html #content .blog_blk .blog_desc > h5 a:hover {
 	font-weight:normal;
 	display:block;
 }
-.sidebar .side_box ul li:nth-child(odd) {
+
+.sidebar .side_box ul li:nth-child(odd),{
 	background:#fff;
 }
+
+.sidebar .side_box ul li a:active{
+	background:#0088cc;
+	text-decoration: none;
+}
+.sidebar .side_box ul li:hover:nth-child(odd),.sidebar .side_box ul li:active:nth-child(odd),.sidebar .side_box ul li a:active:nth-child(odd),.sidebar .side_box ul li a:hover:nth-child(odd){
+	color: #fff;
+	background:#0088cc;
+	border: 1px solid #0088cc;
+	text-decoration: none;
+}
+
 .sidebar .side_box ul li:nth-child(even) {
 	background:#fafafa;
 }
+
+.sidebar .side_box ul li:hover:nth-child(even),.sidebar .side_box ul li:active:nth-child(even),.sidebar .side_box ul li a:active:nth-child(even),.sidebar .side_box ul li a:hover:nth-child(even){
+	color: #fff;
+	background:#0088cc;
+	border: 1px solid #0088cc;
+}
+ .sidebar .side_box nav_tag ul li:active:nth-child(even),.sidebar .side_box nav_tag ul li a:active:nth-child(even){
+	color: #fff;
+	background:#0088cc;
+	border: 1px solid #0088cc;
+}  
 .sidebar .side_box ul li:last-child {
 	border-radius:0px 0px 5px 5px;
 }

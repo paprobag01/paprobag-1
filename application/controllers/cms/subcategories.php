@@ -75,32 +75,14 @@
 		echo $data['cat_id'] = $this->input->post('prod_sub_categories');
 		echo $data['sub_cat_name'] = $this->input->post('sub_cat');
 		
-		$this->db->insert('subcategories',$data);
+		$this->db->insert('subcategory',$data);
 		
 		$cat_id=$this->input->post('cat_id');
-		$child_id=$this->input->post('child_cat_id');
+		//$child_id=$this->input->post('child_cat_id');
+
+		//$sql = $this->site_sentry->insertsubcat($data);
 		
-		/*$sql=$this->db->query("select * from category where cat_id=$cat_id");
-		$res=$sql->row_array();
-		extract($res);
-		if($child_cat_id==0)
-		{
-		$child_cat_id=$child_id;
-		}
-		else
-		{
-			$child_cat_id=$child_cat_id.",".$child_id;
-		}
-		$arr=array(
-		'child_cat_id'=>$child_cat_id,
-		'created_on'=>date('d-m-Y')
-		);
-		$this->db->where('cat_id', $cat_id);
-		$i=$this->db->update('category', $arr);
-		if($i==true)
-		{
-			$this->index();
-		}*/
+		
 		
 		 $arr['table']='category';
 		$arr['where']="";

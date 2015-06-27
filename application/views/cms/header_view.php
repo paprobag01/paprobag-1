@@ -142,6 +142,12 @@ $profile_pic=$this->session->userdata("profile_pic");
 					<span class="selected"></span>
 					</a>					
 			    </li>
+				<li <?php if(isset($page) && $page=="filters"){?> class="active"<?php }?>>
+				    <a href="<?php echo base_url()?>index.php/cms/filters">
+					<i class="icon-home"></i>Filter
+					<span class="selected"></span>
+					</a>					
+			    </li>
 				<li <?php if(isset($page) && $page=="myaccount"){?> class="active"<?php }?>>
 				    <a href="<?php echo base_url()?>index.php/cms/users">
 					<i class="icon-home"></i>My Account Users

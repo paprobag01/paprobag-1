@@ -18,7 +18,7 @@ class ProductList extends CI_Controller{
 		$data['page']='productList';
 		
 		$arr['table']='products';
-		$arr['where']="where deleted=0";
+		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
 		$data['page_data']=$this->site_sentry->get_all($arr);
@@ -41,14 +41,18 @@ class ProductList extends CI_Controller{
 		$arr['order_by']="order by prod_id desc"; 
 		$data['page_data']=$this->site_sentry->get_all($arr); 
 		
-		$arr1['table']='categories';
-		$arr1['where']="where deleted=0";
+		$arr1['table']='category';
+		$arr1['where']="";
 		$arr1['and']="";
 		$arr1['order_by']="";
 		
 		$data['page_data1']=$this->site_sentry->get_all($arr1);
 		
-		
+		$material['table']='filters';
+		$material['where']="";
+		$material['and']="";
+		$material['order_by']="";		
+		$data['material_data']=$this->site_sentry->get_all($material);
 		
 		
 		
@@ -69,13 +73,13 @@ class ProductList extends CI_Controller{
 		//$data['prod_sub_categories']='';
 		//$data['filter_id']='';
 		$data['prod_status']='';
-		$data['prod_on_home']='';
+		//$data['prod_on_home']='';
 		$data['prod_customizable']='';
 		$data['created_on']='';
 		$data['prod_sell_price']='';//prod_sku created_on
 		$data['prod_qty']='';
 		$data['prod_stock']='';
-		//$data['sold_by']='';
+		$data['sold_by']='';
 		$data['prod_gift_card']='';
 		$data['url_for_product_details']='';
 		$data['require_shipping1']='';
@@ -89,6 +93,15 @@ class ProductList extends CI_Controller{
 		$data['image_url4']='';//require_shipping1 require_shipping2
 		$data['taggings']='';//complete_the_look
 		$data['complete_the_look']='';
+		//$data['material_name'] = $this->input->post('material_name');	
+		$data['GSM_name'] = '';	
+		$data['size'] = '';	
+		$data['style'] = '';	
+		$data['handle'] = '';	
+		$data['print'] = '';	
+		$data['print_color'] = '';	
+		$data['lamination'] = '';	
+		$data['special_wrk'] = '';
 	
 		$arr3['table']='sections';
 		$arr3['where']="";
@@ -160,6 +173,14 @@ class ProductList extends CI_Controller{
 	$data['image_url4']=$row['prod_image4'];
 	$data['taggings']=$row['taggings'];
 	$data['complete_the_look']=$row['complete_the_look'];
+	$data['GSM_name'] = $row['GSM_name'];	
+	$data['size'] = $row['size'];	
+	$data['style'] = $row['style'];	
+	$data['handle'] = $row['handle'];	
+	$data['print'] = $row['print'];	
+	$data['print_color'] = $row['print_color'];	
+	$data['lamination'] = $row['lamination'];	
+	$data['special_wrk'] = $row['special_wrk'];
 	
 }
 $arr3['table']='sections';
@@ -177,11 +198,9 @@ $data['type']=$type;
 	{
 		
 		$this->db->where('prod_id', $id);
-		$data = array(
-		'deleted'=>1
-		);
-		$this->db->trans_start();
-		$this->db->update('products', $data); 
+		$this->db->delete('products');
+		/*$this->db->trans_start();
+		$this->db->update('products'); 
 		$this->db->trans_complete();
 		if ($this->db->trans_status() === FALSE)
 		{
@@ -192,7 +211,9 @@ $data['type']=$type;
 		{
 		   
 			return redirect('cms/productList');
-		}
+		}*/
+		
+		return redirect('cms/productList');
 		
 	}
 
