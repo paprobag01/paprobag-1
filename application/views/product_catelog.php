@@ -53,9 +53,9 @@
               <h5><a href="#" class="tgl_btn">Price</a></h5>
               <div class="price tgl_c">
                 <div class="clearfix">
-                  <input type="text" class="txtbox" placeholder="$ 10">
+                  <input type="text" class="txtbox" placeholder="10">
                   <span class="to">to</span>
-                  <input type="text" class="txtbox" placeholder="$ 850">
+                  <input type="text" class="txtbox" placeholder="850">
                 </div>
                 <div class="price_bar"> 
                 
@@ -71,145 +71,130 @@
               <h5><a href="#" class="tgl_btn">categories</a></h5>
               <ul class="tgl_c" id="sub_cat_data">
 			  <?php foreach($sub_category_list as $row){?>
-                <li value="<?php echo $row['sub_cat_id']; ?>" ><a href=""><?php echo $row['sub_cat_name']; ?></a></li>
+                <li value="<?php echo $row['sub_cat_id']; ?>" ><a href="" id="<?php echo ?>"><?php echo $row['sub_cat_name']; ?></a></li>
 			  <?php } ?>
-			  </ul>
+			       </ul>
             </div>
             <div class="side_box side_box_1 red5">
               <h5><a href="#" class="tgl_btn">Material</a></h5>
-              <ul class="tgl_c" id="sub_cat_data">
+              <ul class="tgl_c">
         <?php foreach($material_data as $row){?>
-                <li value="<?php echo $row['material_name']; ?>" ><a href=""><?php echo $row['material_name']; ?></a></li>
+                <li id="<?php echo $row['material_id']; ?>" ><a href=""><?php echo $row['material_name']; ?></a></li>
         <?php } ?>
         </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">GSM</a></h5>
               <ul class="tgl_c">
-                <li id="GSM_data">100
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>               
+                <?php 
+                  foreach($gsm_list as $row){
+                ?>
+                <li id="<?php echo $row['gsm_id']; ?>" >
+                  <?php echo $row['gsm_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
+                </li>
+                <?php 
+                  } 
+                ?>               
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Size</a></h5>
               <ul class="tgl_c">
-                <li>12w*10h*4g
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                <?php 
+                  foreach($size_list as $row){
+                ?>
+                <li id="<?php echo $row['size_id']; ?>" >
+                  <?php echo $row['size_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>16w*13h*4g
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>                
+                <?php 
+                  } 
+                ?>                
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Style</a></h5>
               <ul class="tgl_c">
-                <li>Vertical
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                <?php 
+                  foreach($style_list as $row){
+                ?>
+                <li id="<?php echo $row['style_id']; ?>" >
+                  <?php echo $row['style_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>Horizatal
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Box
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Basket
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>               
+                <?php 
+                  } 
+                ?>           
               </ul>
             </div>
             
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Handle</a></h5>
               <ul class="tgl_c">
-                <li>Twisted 
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                 <?php 
+                  foreach($handle_list as $row){
+                ?>
+                <li id="<?php echo $row['handle_id']; ?>" >
+                  <?php echo $row['handle_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                <?php 
+                  } 
+                ?>   
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Print</a></h5>
               <ul class="tgl_c">
-                <li>Offset
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                 <?php 
+                  foreach($print_list as $row){
+                ?>
+                <li id="<?php echo $row['print_id']; ?>" >
+                  <?php echo $row['print_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>Screen
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>               
+                <?php 
+                  } 
+                ?>              
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Print Color</a></h5>
               <ul class="tgl_c">
-                <li>1
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                <?php 
+                  foreach($print_color_list as $row){
+                ?>
+                <li id="<?php echo $row['print_color_id']; ?>" >
+                  <?php echo $row['print_color_val']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>2
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>3
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>4
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>More Color
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                <?php 
+                  } 
+                ?>   
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Lamination</a></h5>
               <ul class="tgl_c">
-                <li>All
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                <?php 
+                  foreach($lamination_list as $row){
+                ?>
+                <li id="<?php echo $row['lamination_id']; ?>" >
+                  <?php echo $row['lamination_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                <?php 
+                  } 
+                ?>   
               </ul>
             </div>
              
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">Special Work</a></h5>
               <ul class="tgl_c">
-                <li>All
-                  <input type="radio" class="iradio_minimal" name="mate_name">
+                <?php 
+                  foreach($special_wrk_list as $row){
+                ?>
+                <li id="<?php echo $row['special_wrk_id']; ?>" >
+                  <?php echo $row['special_wrk_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
                 </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                <?php 
+                  } 
+                ?>   
               </ul>
             </div>
             <div class="side_box side_box_1 red5 cat_box">

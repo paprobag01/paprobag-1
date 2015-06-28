@@ -12,6 +12,35 @@ class Catalog extends CI_Controller{
 	function getall_catprod($wholesale_flag=null, $section_id=null, $cat_id=null)
 	{
 		$data = $this->common_model->get_head();	
+		// Get filters
+		// Get subcategory ids
+		$sub_cat_data['where']="where cat_id=$cat_id && section_id=$section_id";
+		$sub_cat_data['table']='subcategory';
+		$sub_cat_data['order_by']='';
+		$sub_cat_ids = $this->common_model->getAllDetails($sub_cat_data);
+		foreach ($sub_cat_ids as $key => $value) {
+			$filter_data['where']="where sub_cat_id =".$value['sub_cat_id'];
+			$filter_data['table']='filter_detail';
+			$filter_data['order_by']='';
+			$filter_details = $this->common_model->getDetail($filter_data);
+			
+			// Get material filter details
+			$material_ids_string = $filter_details['material_IDs'];
+			if(strlen($material_ids_string) > 0)
+			{
+				$material_ids_array = explode(',', $material_ids_string);
+				
+				foreach ($material_ids_array as $material_id) {
+					$material_data['where']="where material_id = $material_id";
+					$material_data['table']='material';
+					$material_data['order_by']='';
+					$data['material_data'] = $this->common_model->getDetail($material_data);
+					//$data['material_data']=$material_details;
+				}				
+			}			
+		}
+		// Get filters
+
 		if($this->session->userdata('cart_id'))
 		{
 			$cart_id = $this->session->userdata('cart_id');
@@ -96,7 +125,7 @@ class Catalog extends CI_Controller{
 		if(isset($_POST['search_for']))
 		{
 			echo $_POST['search_for'];
-			return $_POST['search_for'];
+			//return $_POST['search_for'];
 		}
 	}
 

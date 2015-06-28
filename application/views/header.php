@@ -366,14 +366,14 @@
 <script type="text/javascript">
                        function getmaterial()
                     {                   
-                        var filters = $('#search_value').val();
+                        var search_for = $('#search_value').val();
                         
                         console.log(filters);
                         $.ajax({   
-                           url: "<?php echo base_url()?>cms/getSubCategories/material_dropdown",
+                           url: "<?php echo base_url()?>Catalog/search_result",
                           async: false,
                           type: "POST", 
-                          data: "filters="+filters,
+                          data: "search_for="+search_for,
                           dataType: "html",
                           
                           success: function(data) {
