@@ -12,6 +12,20 @@ class Catalog extends CI_Controller{
 	function getall_catprod($wholesale_flag=null, $section_id=null, $cat_id=null)
 	{
 		$data = $this->common_model->get_head();	
+		if($this->session->userdata('cart_id'))
+		{
+			$cart_id = $this->session->userdata('cart_id');
+			$cart_details['where']="where cart_id=$cart_id";
+			$cart_details['table']='cart_product';
+			$cart_details['order_by']='';
+			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
+
+		}
+
+		$arr3['where']="where section_id=$section_id and cat_id=$cat_id";
+		$arr3['table']='filters';
+		$arr3['order_by']='';
+		$data['material_data']=$this->common_model->getAllDetails($arr3);
 
 		$data['cat_prod'] = $this->common_model->getdataprod($cat_id,$section_id);
 		$data['page_data3'] = $this->common_model->getdatacat($cat_id,$section_id);		
@@ -27,6 +41,15 @@ class Catalog extends CI_Controller{
 	function getProducts($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null)
 	{
 		$data = $this->common_model->get_head();
+		if($this->session->userdata('cart_id'))
+		{
+			$cart_id = $this->session->userdata('cart_id');
+			$cart_details['where']="where cart_id=$cart_id";
+			$cart_details['table']='cart_product';
+			$cart_details['order_by']='';
+			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
+
+		}
 
 		$arr1['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
 		$arr1['table']='products';
@@ -68,9 +91,28 @@ class Catalog extends CI_Controller{
 		$data['GSM_data']=$this->common_model->getAllDetails($arr3);
 	}
 	
+	function search_result()
+	{
+		if(isset($_POST['search_for']))
+		{
+			echo $_POST['search_for'];
+			return $_POST['search_for'];
+		}
+	}
+
 	function getmore($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null, $prod_id=null)
 	{
+
 		$data = $this->common_model->get_head();
+		if($this->session->userdata('cart_id'))
+		{
+			$cart_id = $this->session->userdata('cart_id');
+			$cart_details['where']="where cart_id=$cart_id";
+			$cart_details['table']='cart_product';
+			$cart_details['order_by']='';
+			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
+
+		}
 		
 		$data['page_data5']=$this->common_model->getsubprodimg($section_id,$cat_id,$prod_id);
 		$data['page_data2'] = $this->common_model->getdataprod($cat_id,$section_id);

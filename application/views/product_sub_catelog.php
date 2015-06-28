@@ -6,8 +6,8 @@
     data : {'material_name':material_name},
     url: '<?php echo base_url()?>cms/getSubCategories/GSM_dropdown',
     dataType: 'html',
-    success: function (html) {
-         $('#output').html(html);
+    success: function (data) {
+         $('#output').html(data);
     }
    });
  });

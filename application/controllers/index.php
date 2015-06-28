@@ -13,6 +13,16 @@ class Index extends CI_Controller{
 	function index()
 	{
 		$data = $this->common_model->get_head();
+
+		if($this->session->userdata('cart_id'))
+		{
+			$cart_id = $this->session->userdata('cart_id');
+			$cart_details['where']="where cart_id=$cart_id";
+			$cart_details['table']='cart_product';
+			$cart_details['order_by']='';
+			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
+
+		}
 		
 		$arr6['where']="where section_id=5 and cat_id=1  and prod_on_home=1";
 		$arr6['table']='products';
@@ -44,6 +54,11 @@ class Index extends CI_Controller{
 		$arr5['table']='products';
 		$arr5['order_by']='';
 		$data['page_data9']=$this->common_model->getAllDetails($arr5);
+
+		$prod_img['where']="where section_id=5";
+		$prod_img['table']='products';
+		$prod_img['order_by']='';
+		$data['prodimg']=$this->common_model->getAllDetails($prod_img);
 		
 		/*$sql = $this->db->query('select * from products where section_id=6');
 		$data['page_data9'] = $sql->result_array();*/

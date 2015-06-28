@@ -1,3 +1,22 @@
+<script>
+  $("#material").click(function () {
+   var material_sec = $("#material_sec").val();
+
+    $.ajax({
+        type:'POST',
+        dataType:'json',
+        ContentType:'application/json',
+        url:base_url+"catalog/getGSM/",
+        data:{'seach_for':seach_for},
+        success:function(data)
+        {
+            $('#GSM_data').text(data);
+        }
+
+
+    });
+  });
+</script>
 <div id="content">
   <div class="container">
     <div class="catelog_c">
@@ -56,35 +75,20 @@
 			  <?php } ?>
 			  </ul>
             </div>
-             <div class="side_box side_box_1 red5" id="material_sec">
+            <div class="side_box side_box_1 red5">
               <h5><a href="#" class="tgl_btn">Material</a></h5>
-              <?php foreach($arrSubcat as $row)
-			   {
-				   
-				?>   <li><?php echo $row['material_name'] ?></li>;
-				  
-			<?php	  
-			   }?>
+              <ul class="tgl_c" id="sub_cat_data">
+        <?php foreach($material_data as $row){?>
+                <li value="<?php echo $row['material_name']; ?>" ><a href=""><?php echo $row['material_name']; ?></a></li>
+        <?php } ?>
+        </ul>
             </div>
-            
             <div class="side_box side_box_1 red5 material">
               <h5><a href="#" class="tgl_btn">GSM</a></h5>
               <ul class="tgl_c">
-                <li>100
+                <li id="GSM_data">100
                   <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Steel
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Plastic
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Ceramics
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <li>Wood
-                  <input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
+                </li>               
               </ul>
             </div>
             <div class="side_box side_box_1 red5 material">

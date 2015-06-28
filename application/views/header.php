@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE HTML>
 <html class="noIE">
 
@@ -31,7 +34,7 @@
           <li><a href="#">Sale With GreenHandle</a></li>         
         </ul>
       </div>
-	  <div class="top_menu">
+    <div class="top_menu">
         <ul>
           <li align="center"><a href="#">Free Shipping across India</a></li>         
         </ul>
@@ -53,100 +56,80 @@
           <span class="icon-bar"></span> 
           <span class="icon-bar"></span> 
         </button>
-		    <nav id="navbar-collapse-1" class="navbar-collapse collapse">
+         <nav id="navbar-collapse-1" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <?php 
-          // Loop for section
-          foreach($section_data as $row)
-          {          
-          ?>
-            <li class="dropdown">
-              <a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">
-                <?php echo $row['section_name']?>
-                <b class="caret"></b>
-              </a>
-              <ul role="menu" class="dropdown-menu">
+            
+            <li class="dropdown yamm-fw"><a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">Customizable<b class="caret"></b></a>
+              <ul class="dropdown-menu">
                 <li>
                   <div class="yamm-content">
                     <div class="container">
                       <div class="row">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                          <h5>Kitchen</h5>
+                          <h5>Paper Bags</h5>
                           <ul>
-                            <li><a href="catalog.html">Kitchen cabinets</a></li>
-                            <li><a href="catalog.html">Interior organizers</a></li>
-                            <li><a href="catalog.html">Appliances</a></li>
-                            <li><a href="catalog.html">Free-standing kitchens</a></li>
-                            <li><a href="catalog.html">Countertops</a></li>
-                            <li><a href="catalog.html">Kitchen faucets</a></li>
-                            <li><a href="catalog.html">Wall panels</a></li>
-                            <li><a href="catalog.html">Kitchen islands &amp; carts</a></li>
-                            <li><a href="catalog.html">Step stools &amp; step ladders</a></li>
+                            <li><a href="catalog.html">Shopping Carry Bags</a></li>
+                            <li><a href="catalog.html">Handmade Paper Bags</a></li>
+                            <li><a href="catalog.html">Food Parcel Bags</a></li>
+                            <li><a href="catalog.html">Counter Bags</a></li>
+                            <li><a href="catalog.html">Grocery Bags</a></li>
+                            <li><a href="catalog.html">Medical Bags</a></li>
+                            <li><a href="catalog.html">Box Bags</a></li>
+                            <li><a href="catalog.html">Basket Bags</a></li>
+                            <li><a href="catalog.html">More Products</a></li>                           
                           </ul>
-                          <h5>Children's</h5>
+                         
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                           <h5>Ecobags</h5>
                           <ul>
-                            <li><a href="catalog.html">Baby</a></li>
-                            <li><a href="catalog.html">Children 3-7</a></li>
-                            <li><a href="catalog.html">Children 8-12</a></li>
+                            <li><a href="catalog.html">Nonwoven Bags</a></li>
+                            <li><a href="catalog.html">Woven Stich Bags</a></li>
+                            <li><a href="catalog.html">Woven Stich Bags</a></li>
+                            <li><a href="catalog.html">Jute Bags</a></li>
+                            <li><a href="catalog.html">Canvas Bags</a></li>
+                            <li><a href="catalog.html">Cotton Bags</a></li>
+                            <li><a href="catalog.html">Bamboo Bags</a></li>
+                            <li><a href="catalog.html">Khadi Bags</a></li>
+                          </ul>
+                          <h5>Boxes</h5>
+                          <ul>
+                            <li><a href="catalog.html">Courier Boxes</a></li>
+                            <li><a href="catalog.html">Mailing Boxes</a></li>
+                            <li><a href="catalog.html">Food Boxes</a></li>
+                            <li><a href="catalog.html">Paper Board Conisters</a></li>                           
+                         
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                          <h5>Pouches</h5>
+                          <ul>
+                            <li><a href="catalog.html">Paper Pouches</a></li>
+                             <li><a href="catalog.html">Nonwoven Pouches</a></li>
+                            <li><a href="catalog.html">Woven Pouches</a></li>
+                            <li><a href="catalog.html">Jute Pouches</a></li>
+                            <li><a href="catalog.html">Cotton Pouches</a></li>
+                             <li><a href="catalog.html">Canvas Pouches</a></li>                           
+                          </ul>
+                          <h5>Office Products</h5>
+                          <ul>
+                             <li><a href="catalog.html">Envolopes</a></li>
+                            <li><a href="catalog.html">File & Folders</a></li>
+                            <li><a href="catalog.html">Stickers</a></li>
+                            <li><a href="catalog.html">Pamplets</a></li>
+                            <li><a href="catalog.html">Mascouat</a></li>  
+                                                      
                           </ul>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                          <h5>Livingroom</h5>
+                         
+                          <h5>Accessories</h5>
                           <ul>
-                            <li><a href="catalog.html">Sofas &amp; armchairs</a></li>
-                            <li><a href="catalog.html">TV &amp; media furniture </a></li>
-                            <li><a href="catalog.html">Living room storage</a></li>
-                            <li><a href="catalog.html">Coffee &amp; side tables</a></li>
-                            <li><a href="catalog.html">Living room lighting</a></li>
-                            <li><a href="catalog.html">Living room textiles</a></li>
-                          </ul>
-                          <h5>Bedroom</h5>
-                          <ul>
-                            <li><a href="catalog.html">Mattresses</a></li>
-                            <li><a href="catalog.html">Beds</a></li>
-                            <li><a href="catalog.html">Bedroom storage</a></li>
-                            <li><a href="catalog.html">Lighting</a></li>
-                            <li><a href="catalog.html">Textiles &amp; rugs</a></li>
-                            <li><a href="catalog.html">Mirrors</a></li>
-                          </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                          <h5>Textiles &amp; Rugs</h5>
-                          <ul>
-                            <li><a href="catalog.html">Rugs</a></li>
-                            <li><a href="catalog.html">Bedroom textiles</a></li>
-                            <li><a href="catalog.html">Curtains &amp; blinds</a></li>
-                            <li><a href="catalog.html">Curtain rods &amp; rails</a></li>
-                            <li><a href="catalog.html">Fabrics &amp; sewing</a></li>
-                            <li><a href="catalog.html">Cushions covers</a></li>
-                            <li><a href="catalog.html">Blankets &amp; throws </a></li>
-                            <li><a href="catalog.html">Kitchen textiles </a></li>
-                            <li><a href="catalog.html">Place mats</a></li>
-                            <li><a href="catalog.html">Bathroom textiles</a></li>
-                            <li><a href="catalog.html">Children's textiles</a></li>
-                            <li><a href="catalog.html">Baby textiles</a></li>
-                            <li><a href="catalog.html">Mattress</a></li>
-                          </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                          <h5>For Business</h5>
-                          <ul>
-                            <li><a href="catalog.html">School</a></li>
-                            <li><a href="catalog.html">Office</a></li>
-                            <li><a href="catalog.html">Retail</a></li>
-                            <li><a href="catalog.html">Hospitality</a></li>
-                          </ul>
-                          <h5>Workshop</h5>
-                          <ul>
-                            <li><a href="catalog.html">Tools</a></li>
-                            <li><a href="catalog.html">Brushes</a></li>
-                            <li><a href="catalog.html">Paints</a></li>
-                            <li><a href="catalog.html">Wallpaper</a> </li>
-                            <li><a href="catalog.html">Equipment</a> </li>
-                            <li><a href="catalog.html">Glue</a> </li>
-                            <li><a href="catalog.html">Nails</a> </li>
-                            <li><a href="catalog.html">Panel</a></li>
-                          </ul>
+                            <li><a href="catalog.html">Tags</a></li>
+                            <li><a href="catalog.html">Tissue Papers</a></li>
+                            <li><a href="catalog.html">Bookmarks</a></li>
+                            <li><a href="catalog.html">Shutcover</a></li>
+                             <li><a href="catalog.html">More Products</a></li> 
+                          </ul>                         
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                           <div class="new_item">
@@ -160,7 +143,9 @@
                                 </ul>
                               </div>
                             </div>
-                            <div class="item_thumb"></div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
                             <div class="item_desc">
                               <div class="pull-left">
                                 <h5>Mugs with yellow stripes</h5>
@@ -175,59 +160,129 @@
                   </div>
                 </li>
               </ul>
-  			    <?php    
-            if(isset($catIdArr[$row['section_id']])) { 
-            ?>
-  			      <ul role="menu" class="dropdown-menu">
+            </li>
+             <li class="dropdown yamm-fw"><a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">Ready To Print<b class="caret"></b></a>
+              <ul class="dropdown-menu">
                 <li>
-  			 	      <?php
-               // $counter_for_vertical_display = 0;
-                // Category loop
-                for($i=0; $i<count($catIdArr[$row['section_id']]); $i++) { 
-                ?>
-                    <h5><?php echo $catNameArr[$row['section_id']][$i]; ?></h5>
-                    <ul>
-  					        <?php
-                    if(isset($subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]]))
-  			       		  {
-                      //echo count($subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]]);
-                      // Sub Category Loop
-  				            for($j=0; $j<count($subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]]); $j++){ 
-  				          ?>
-                      <li>
-                        <?php
-                        if(strtoupper($catNameArr[$row['section_id']][$i]) == 'WHOLESALE')
-                        {
-                          $wholesale_flag = 1;
-                        } else {
-                          $wholesale_flag = 0;
-                        }
-                        ?>
-                        <a href="<?php echo base_url()?>catalog/getProducts/<?php 
-                          echo $wholesale_flag; ?>/<?php
-                          echo $row['section_id']; ?>/<?php 
-                          echo $catIdArr[$row['section_id']][$i] ;?>/<?php
-                          echo $subCatIdArr[$row['section_id']][$catIdArr[$row['section_id']][$i]][$j]; ?>">
-                          <!-- Print sub category name -->
-                          <?php 
-                          echo $subCatNameArr[$row['section_id']][$catIdArr[$row['section_id']][$i]][$j]; ?>
-                        </a>                        
-                      </li>
-  				          <?php 
-                    } 
-                  }
-                    ?>                   
-                    </ul>
-  				  <?php }  ?>
+                  <div class="yamm-content">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                          <h5>Paper Bags</h5>
+                          <ul>
+                            <li><a href="catalog.html">Shopping Carry Bags</a></li>
+                            <li><a href="catalog.html">Handmade Paper Bags</a></li>
+                            <li><a href="catalog.html">Food Parcel Bags</a></li>
+                            <li><a href="catalog.html">Counter Bags</a></li>
+                            <li><a href="catalog.html">Grocery Bags</a></li>
+                            <li><a href="catalog.html">Medical Bags</a></li>
+                            <li><a href="catalog.html">Box Bags</a></li>
+                            <li><a href="catalog.html">Basket Bags</a></li>
+                            <li><a href="catalog.html">Neckties Bags</a></li>                            
+                            <li><a href="catalog.html">More Products</a></li>                           
+                          </ul>
+                          <h5>Ecobags</h5>
+                          <ul>
+                            <li><a href="catalog.html">Nonwoven Bags</a></li>
+                            <li><a href="catalog.html">Woven Stich Bags</a></li>
+                           
+                          </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                          <ul>
+                             <li><a href="catalog.html">Jute Bags</a></li>
+                            <li><a href="catalog.html">Canvas Bags</a></li>
+                            <li><a href="catalog.html">Cotton Bags</a></li>
+                            <li><a href="catalog.html">Bamboo Bags</a></li>
+                            <li><a href="catalog.html">Khadi Bags</a></li>
+                             <li><a href="catalog.html">More Products</a></li> 
+                          </ul>
+                          <h5>Boxes</h5>
+                          <ul>
+                            <li><a href="catalog.html">Courier Boxes</a></li>
+                            <li><a href="catalog.html">Mailing Boxes</a></li>
+                            <li><a href="catalog.html">Food Boxes</a></li>
+                            <li><a href="catalog.html">Paper Board Conisters</a></li>                           
+                             <li><a href="catalog.html">More Products</a></li> 
+                          </ul>
+                          <h5>Pouches</h5>
+                          <ul>
+                            <li><a href="catalog.html">Paper Pouches</a></li>
+                           
+                          </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                          <ul>
+                             <li><a href="catalog.html">Nonwoven Pouches</a></li>
+                            <li><a href="catalog.html">Woven Pouches</a></li>
+                            <li><a href="catalog.html">Jute Pouches</a></li>
+                            <li><a href="catalog.html">Cotton Pouches</a></li>
+                             <li><a href="catalog.html">Canvas Pouches</a></li>
+                            <li><a href="catalog.html">More Products</a></li> 
+                          </ul>
+                          <h5>Office Products</h5>
+                          <ul>
+                             <li><a href="catalog.html">Nonwoven Pouches</a></li>
+                            <li><a href="catalog.html">Woven Pouches</a></li>
+                            <li><a href="catalog.html">Jute Pouches</a></li>
+                            <li><a href="catalog.html">Cotton Pouches</a></li>
+                             <li><a href="catalog.html">Canvas Pouches</a></li>
+                            <li><a href="catalog.html">Mirrors</a></li>
+                            <li><a href="catalog.html">Envolopes</a></li>                           
+                          </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                          <ul>
+                             <li><a href="catalog.html">File & Folders</a></li>
+                            <li><a href="catalog.html">Stickers</a></li>
+                            <li><a href="catalog.html">Pamplets</a></li>
+                            <li><a href="catalog.html">Mascouat</a></li>                           
+                            <li><a href="catalog.html">More Products</a></li> 
+                          </ul>
+                          <h5>Accessories</h5>
+                          <ul>
+                            <li><a href="catalog.html">Tags</a></li>
+                            <li><a href="catalog.html">Tissue Papers</a></li>
+                            <li><a href="catalog.html">Bookmarks</a></li>
+                            <li><a href="catalog.html">Shutcover</a></li>
+                             <li><a href="catalog.html">More Products</a></li> 
+                          </ul>                         
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>New items and sales</h5>
+                              <div class="item_nav">
+                                <ul>
+                                  <li class="active"><a href="catalog.html"></a></li>
+                                  <li><a href="catalog.html"></a></li>
+                                  <li><a href="catalog.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
-  			    <?php 
-            } 
-            ?>
             </li>
-		  <?php } ?>
-		      </ul>
-		    </nav>
+            <li class="dropdown"><a href="catalog.html"  >Ready To Deliver </a> </li>
+            <li class="dropdown"><a href="blog.html"  >Ecological Ad Bags</a> </li>
+           
+          </ul>
+        </nav>
       </div>
       <div class="right_menu">
         <ul>
@@ -236,21 +291,23 @@
               <div class="menu_title clearfix">
                 <h4>Your Cart</h4>
               </div>
-              <div class="cart_row">
+             <?php foreach($cart_array as $row){?>
+              <div class="cart_row">                
                 <ul>
                   <li>
                     <div class="pro_img"><span></span></div>
                   </li>
                   <li>
-                    <h5><a href="http://templines.com/demo/html/cooncook/catalog.html">POÄNG - Chair, Blomstermåla</a></h5>
+                    <h5><a href="http://templines.com/demo/html/cooncook/catalog.html">Product Name</a></h5>
                     <p>Living room furniture</p>
                   </li>
                   <li>
-                    <div class="price">$360.00</div>
+                    <div class="price"><?php echo $row['product_price']; ?></div>
                     <a href="#" class="del_btn"></a>
-					        </li>
+                  </li>
                 </ul>               
               </div>
+           <?php }?>
               <div class="cheout_row clearfix">
                 <p><span class="fa fa-clock-o"></span>Praesent egestas est vitae interdum amet erat varius elementum.</p>
                 <a href="#" class="checkout_btn">Checkout</a> </div>
@@ -294,12 +351,42 @@
           <li class="menubtn"><a href="#"><span class="fa fa-search"></span></a>
             <div class="menu_c search_menu">
               <div class="search_box">
-                <input type="search" class="txtbox" placeholder="Search">
-                <a href="#"><span class="fa fa-level-down fa-rotate-90"></span></a> </div>
+                <input type="search" id="search_value"  class="txtbox" placeholder="Search">
+                <a href="#"><span class="fa fa-level-down fa-rotate-90" onclick="getmaterial()"></span></a> </div>
+                <div id="output">
             </div>
+            </div>
+            
           </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+                       function getmaterial()
+                    {                   
+                        var filters = $('#search_value').val();
+                        
+                        console.log(filters);
+                        $.ajax({   
+                           url: "<?php echo base_url()?>cms/getSubCategories/material_dropdown",
+                          async: false,
+                          type: "POST", 
+                          data: "filters="+filters,
+                          dataType: "html",
+                          
+                          success: function(data) {
+                            var dt=data.split("|");
+                            
+                            $("#output").fadeIn();
+                            $('#output').html(data);                            
+                            
+                            
+                          }
+                        })
+                  
+                   
+                  }
+                        
+                      </script>
