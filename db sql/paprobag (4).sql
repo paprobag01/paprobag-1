@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2015 at 09:56 AM
+-- Generation Time: Jun 28, 2015 at 05:11 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -249,6 +249,65 @@ INSERT INTO `filters` (`filter_id`, `material_name`, `section_id`, `cat_id`, `su
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `filter_detail`
+--
+
+CREATE TABLE IF NOT EXISTS `filter_detail` (
+  `id` int(11) NOT NULL,
+  `sub_cat_id` int(11) NOT NULL,
+  `material` tinyint(4) NOT NULL,
+  `material_IDs` varchar(100) NOT NULL,
+  `GSM` tinyint(4) NOT NULL,
+  `GSM_IDs` varchar(100) NOT NULL,
+  `size` tinyint(4) NOT NULL,
+  `size_IDs` varchar(100) NOT NULL,
+  `style` tinyint(4) NOT NULL,
+  `style_IDs` varchar(100) NOT NULL,
+  `handle` tinyint(4) NOT NULL,
+  `handle_IDs` varchar(100) NOT NULL,
+  `print` tinyint(4) NOT NULL,
+  `print_IDs` varchar(100) NOT NULL,
+  `lamination` tinyint(4) NOT NULL,
+  `lamination_IDs` varchar(100) NOT NULL,
+  `special_wrok` tinyint(4) NOT NULL,
+  `special_work_IDs` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `filter_detail`
+--
+
+INSERT INTO `filter_detail` (`id`, `sub_cat_id`, `material`, `material_IDs`, `GSM`, `GSM_IDs`, `size`, `size_IDs`, `style`, `style_IDs`, `handle`, `handle_IDs`, `print`, `print_IDs`, `lamination`, `lamination_IDs`, `special_wrok`, `special_work_IDs`) VALUES
+(1, 1, 1, '1', 1, '', 1, '', 1, '', 1, '', 1, '', 1, '', 1, ''),
+(2, 2, 1, '', 1, '', 1, '', 1, '', 1, '', 1, '', 1, '', 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gsm`
+--
+
+CREATE TABLE IF NOT EXISTS `gsm` (
+  `id` int(11) NOT NULL,
+  `GSM_name` varchar(100) NOT NULL,
+  `GSM_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `handle`
+--
+
+CREATE TABLE IF NOT EXISTS `handle` (
+  `id` int(11) NOT NULL,
+  `handle_name` varchar(100) NOT NULL,
+  `handle_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `home_details`
 --
 
@@ -265,6 +324,18 @@ CREATE TABLE IF NOT EXISTS `home_details` (
 
 INSERT INTO `home_details` (`id`, `details`, `name`, `status`) VALUES
 (2, '<p>Order Your Garments&nbsp;</p>\r\n\r\n<p>Order Your Garments</p>\r\n<!--<p>Taesha Tours is a spectacular travel services agent in Mumbai offering best deal for Tours & Travels related solutions for making your travel journey easier than before. We know just how to transform your heart desire into your dream holidays. We have been in this field from past saveral years.</p>\r\n\r\n<p>?</p>\r\n\r\n<p>We provide Great destinations, stunning sightseeing, and the exquisite hotels for the ultimate in luxury. At Taesha Tours every detail is taken care of, so that you are free to experience and enjoy your dream holidays. One need not worry about travel plans as every segment of the plan will be taken care by Taesha Tours.</p>-->\r\n\r\n<p>&nbsp;</p>\r\n', 'Order Your Garments', 'Active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lamination`
+--
+
+CREATE TABLE IF NOT EXISTS `lamination` (
+  `id` int(11) NOT NULL,
+  `lamination_name` varchar(100) NOT NULL,
+  `lamination_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -307,6 +378,31 @@ INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `password`, `username
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `material`
+--
+
+CREATE TABLE IF NOT EXISTS `material` (
+  `id` int(11) NOT NULL,
+  `material_name` varchar(100) NOT NULL,
+  `material_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `materials`
+--
+
+CREATE TABLE IF NOT EXISTS `materials` (
+  `id` int(11) NOT NULL,
+  `material_id` varchar(10) NOT NULL,
+  `material_name` varchar(100) NOT NULL,
+  `gsm_link_id` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `newsletter`
 --
 
@@ -322,6 +418,30 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
 
 INSERT INTO `newsletter` (`Sr.No`, `email_list`, `offer_details`) VALUES
 (1, 'msjhijh@gmail.com', 'newoffersss');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `print`
+--
+
+CREATE TABLE IF NOT EXISTS `print` (
+  `id` int(11) NOT NULL,
+  `print_id` varchar(10) NOT NULL,
+  `print` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `print_color`
+--
+
+CREATE TABLE IF NOT EXISTS `print_color` (
+  `id` int(11) NOT NULL,
+  `print` varchar(10) NOT NULL,
+  `print_num_colors` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -432,6 +552,18 @@ INSERT INTO `sections` (`section_id`, `section_name`, `created_on`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `size`
+--
+
+CREATE TABLE IF NOT EXISTS `size` (
+  `id` int(11) NOT NULL,
+  `size` varchar(50) NOT NULL,
+  `size_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `slider`
 --
 
@@ -455,6 +587,30 @@ INSERT INTO `slider` (`slider_id`, `slider_name`, `slider_image`, `slider_status
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `special_work`
+--
+
+CREATE TABLE IF NOT EXISTS `special_work` (
+  `id` int(11) NOT NULL,
+  `special_work` varchar(100) NOT NULL,
+  `special_work_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `style`
+--
+
+CREATE TABLE IF NOT EXISTS `style` (
+  `id` int(11) NOT NULL,
+  `style` varchar(100) NOT NULL,
+  `style_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subcategory`
 --
 
@@ -462,50 +618,51 @@ CREATE TABLE IF NOT EXISTS `subcategory` (
   `sub_cat_id` int(11) NOT NULL,
   `sub_cat_name` varchar(100) NOT NULL,
   `cat_id` int(11) NOT NULL,
-  `section_id` int(11) NOT NULL
+  `section_id` int(11) NOT NULL,
+  `material_link_id` varchar(200) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subcategory`
 --
 
-INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`) VALUES
-(1, 'Shopping Carry Bags', 1, 5),
-(2, 'Handmade Paper bags', 1, 5),
-(3, 'Food Parcel Bags', 1, 5),
-(4, 'Counter Bags', 1, 5),
-(5, 'Grocery Bags', 1, 5),
-(6, 'Wine Bags', 1, 5),
-(7, 'Medical Bags', 1, 5),
-(8, 'Box Bags', 1, 5),
-(9, 'Basket Bags', 1, 5),
-(10, 'Bag For Neckties', 1, 5),
-(11, 'Non woven Bags', 2, 5),
-(12, 'Woven Stitch Bags', 2, 5),
-(13, 'Jute Bags', 2, 5),
-(14, 'Canvas Bags', 2, 5),
-(15, 'Cotton Bags', 2, 5),
-(16, 'Khadi Bags', 2, 5),
-(17, 'Bamboo Bags', 2, 5),
-(18, 'Currier Boxes', 3, 5),
-(19, 'Packaging Boxes', 3, 5),
-(20, 'Mailing Boxes', 3, 5),
-(21, 'Food Boxes', 3, 5),
-(22, 'Non Woven Pouches', 4, 5),
-(23, 'Woven Stitch Pouches', 4, 5),
-(24, 'Jute Pouches', 4, 5),
-(25, 'Cotton Pouches', 4, 5),
-(26, 'Canvas Pouches', 4, 5),
-(27, 'Mixed Pouches', 4, 5),
-(28, 'Envolopes', 5, 5),
-(29, 'Files & Folders', 5, 5),
-(30, 'Stickers', 5, 5),
-(31, 'Pampletes', 5, 5),
-(32, 'Mascouats', 5, 5),
-(33, 'Tags', 10, 5),
-(34, 'Suite cover', 10, 5),
-(35, 'Tissue Paper', 10, 5),
-(36, 'Bookmark', 10, 5);
+INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`, `material_link_id`) VALUES
+(1, 'Shopping Carry Bags', 1, 5, ''),
+(2, 'Handmade Paper bags', 1, 5, ''),
+(3, 'Food Parcel Bags', 1, 5, ''),
+(4, 'Counter Bags', 1, 5, ''),
+(5, 'Grocery Bags', 1, 5, ''),
+(6, 'Wine Bags', 1, 5, ''),
+(7, 'Medical Bags', 1, 5, ''),
+(8, 'Box Bags', 1, 5, ''),
+(9, 'Basket Bags', 1, 5, ''),
+(10, 'Bag For Neckties', 1, 5, ''),
+(11, 'Non woven Bags', 2, 5, ''),
+(12, 'Woven Stitch Bags', 2, 5, ''),
+(13, 'Jute Bags', 2, 5, ''),
+(14, 'Canvas Bags', 2, 5, ''),
+(15, 'Cotton Bags', 2, 5, ''),
+(16, 'Khadi Bags', 2, 5, ''),
+(17, 'Bamboo Bags', 2, 5, ''),
+(18, 'Currier Boxes', 3, 5, ''),
+(19, 'Packaging Boxes', 3, 5, ''),
+(20, 'Mailing Boxes', 3, 5, ''),
+(21, 'Food Boxes', 3, 5, ''),
+(22, 'Non Woven Pouches', 4, 5, ''),
+(23, 'Woven Stitch Pouches', 4, 5, ''),
+(24, 'Jute Pouches', 4, 5, ''),
+(25, 'Cotton Pouches', 4, 5, ''),
+(26, 'Canvas Pouches', 4, 5, ''),
+(27, 'Mixed Pouches', 4, 5, ''),
+(28, 'Envolopes', 5, 5, ''),
+(29, 'Files & Folders', 5, 5, ''),
+(30, 'Stickers', 5, 5, ''),
+(31, 'Pampletes', 5, 5, ''),
+(32, 'Mascouats', 5, 5, ''),
+(33, 'Tags', 10, 5, ''),
+(34, 'Suite cover', 10, 5, ''),
+(35, 'Tissue Paper', 10, 5, ''),
+(36, 'Bookmark', 10, 5, '');
 
 -- --------------------------------------------------------
 
@@ -577,6 +734,12 @@ ALTER TABLE `filters`
   ADD PRIMARY KEY (`filter_id`);
 
 --
+-- Indexes for table `filter_detail`
+--
+ALTER TABLE `filter_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `home_details`
 --
 ALTER TABLE `home_details`
@@ -587,6 +750,18 @@ ALTER TABLE `home_details`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `material`
+--
+ALTER TABLE `material`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `materials`
+--
+ALTER TABLE `materials`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `newsletter`
@@ -670,6 +845,11 @@ ALTER TABLE `customize_type`
 ALTER TABLE `filters`
   MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
+-- AUTO_INCREMENT for table `filter_detail`
+--
+ALTER TABLE `filter_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `home_details`
 --
 ALTER TABLE `home_details`
@@ -679,6 +859,16 @@ ALTER TABLE `home_details`
 --
 ALTER TABLE `login`
   MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+--
+-- AUTO_INCREMENT for table `material`
+--
+ALTER TABLE `material`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `materials`
+--
+ALTER TABLE `materials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --

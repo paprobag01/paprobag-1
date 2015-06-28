@@ -35,7 +35,104 @@ class Catalog extends CI_Controller{
 					$material_data['table']='material';
 					$material_data['order_by']='';
 					$data['material_data'] = $this->common_model->getDetail($material_data);
-					//$data['material_data']=$material_details;
+				}				
+			}
+
+			// Get gsm filter details
+			$gsm_ids_string = $filter_details['gsm_IDs'];
+			if(strlen($gsm_ids_string) > 0)
+			{
+				$gsm_ids_array = explode(',', $gsm_ids_string);
+				
+				foreach ($gsm_ids_array as $gsm_id) {
+					$gsm_data['where']="where GSM_id = $gsm_id";
+					$gsm_data['table']='gsm';
+					$gsm_data['order_by']='';
+					$data['gsm_data'] = $this->common_model->getDetail($gsm_data);
+				}				
+			}
+
+			// Get size filter details
+			$size_ids_string = $filter_details['size_IDs'];
+			if(strlen($size_ids_string) > 0)
+			{
+				$size_ids_array = explode(',', $size_ids_string);
+				
+				foreach ($size_ids_array as $size_id) {
+					$size_data['where']="where size_id = $size_id";
+					$size_data['table']='size';
+					$size_data['order_by']='';
+					$data['size_data'] = $this->common_model->getDetail($size_data);
+				}				
+			}
+
+			// Get handle filter details
+			$handle_ids_string = $filter_details['handle_IDs'];
+			if(strlen($handle_ids_string) > 0)
+			{
+				$handle_ids_array = explode(',', $handle_ids_string);
+				
+				foreach ($handle_ids_array as $handle_id) {
+					$handle_data['where']="where handle_id = $handle_id";
+					$handle_data['table']='handle';
+					$handle_data['order_by']='';
+					$data['handle_data'] = $this->common_model->getDetail($handle_data);
+				}				
+			}
+
+			// Get style filter details
+			$style_ids_string = $filter_details['style_IDs'];
+			if(strlen($style_ids_string) > 0)
+			{
+				$style_ids_array = explode(',', $style_ids_string);
+				
+				foreach ($style_ids_array as $style_id) {
+					$style_data['where']="where style_id = $style_id";
+					$style_data['table']='style';
+					$style_data['order_by']='';
+					$data['style_data'] = $this->common_model->getDetail($style_data);
+				}
+			}
+
+			// Get print filter details
+			$style_ids_string = $filter_details['style_IDs'];
+			if(strlen($material_ids_string) > 0)
+			{
+				$material_ids_array = explode(',', $material_ids_string);
+				
+				foreach ($material_ids_array as $material_id) {
+					$material_data['where']="where material_id = $material_id";
+					$material_data['table']='material';
+					$material_data['order_by']='';
+					$data['material_data'] = $this->common_model->getDetail($material_data);
+				}				
+			}
+
+			// Get lamination filter details
+			$lamination_ids_string = $filter_details['lamination_IDs'];
+			if(strlen($lamination_ids_string) > 0)
+			{
+				$lamination_ids_array = explode(',', $lamination_ids_string);
+				
+				foreach ($lamination_ids_array as $lamination_id) {
+					$lamination_data['where']="where lamination_id = $lamination_id";
+					$lamination_data['table']='lamination';
+					$lamination_data['order_by']='';
+					$data['lamination_data'] = $this->common_model->getDetail($lamination_data);
+				}				
+			}
+
+			// Get special work filter details
+			$spw_ids_string = $filter_details['spw_IDs'];
+			if(strlen($spw_ids_string) > 0)
+			{
+				$spw_ids_array = explode(',', $spw_ids_string);
+				
+				foreach ($spw_ids_array as $spw_id) {
+					$spw_data['where']="where special_work_id = $spw_id";
+					$spw_data['table']='special_work';
+					$spw_data['order_by']='';
+					$data['spw_data'] = $this->common_model->getDetail($spw_data);
 				}				
 			}			
 		}
