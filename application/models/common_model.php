@@ -27,6 +27,31 @@ class Common_model extends CI_Model
 
 	
 
+	function search_result($for=null)
+	{
+
+		$this->db->select("*");
+		$this->db->from('products');
+		$this->db->like('prod_name',$for);
+		$query = $this->db->get();
+
+		$this->db->select("*");
+		$this->db->from('material');
+		$this->db->like('material_name',$for);
+		$query1 = $this->db->get();
+
+		
+
+		return $query->result_array();
+
+	}
+
+	function search_material($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null)
+	{
+		$sql = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id");
+		return $sql->result_array();
+	}
+
 	function checkuser($data=null)
 	{
 		try {

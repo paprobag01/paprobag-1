@@ -90,7 +90,7 @@ class GetSubCategories extends CI_Controller
 	{
 		if (isset($_POST) && isset($_POST['filters'])) 
 		{
-           $category_id = $_POST['filters'];
+          echo  $category_id = $_POST['filters'];
             $arrSubcat = $this->getSubCatAjax->get_GSM($category_id);
 				
 				$res='<label class="control-label">GSM Details</label><div class="controls" id="GSM_id"><select name="GSM_id"  id="GSM_id">';

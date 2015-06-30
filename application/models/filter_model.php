@@ -9,15 +9,27 @@ class Filter_model extends CI_Model
 		$data1['section_id'] = $this->input->post('sec_id');
 		$data1['cat_id'] = $this->input->post('prod_sub_categories');
 		$data1['sub_cat_id'] = $this->input->post('sub_categories');
-		$data1['material_name'] = $this->input->post('material_name');	
+		$data1['material_name'] = $this->input->post('material_name');
+		//$data1['material_name'] = $this->input->post('material_name');
+
+		$material['material_name'] = $this->input->post('material_name');	
 		
 		//$this->db->where('filter_id', $id);
+		$this->db->insert('material',$material);
+		
+		$rst = $this->db->insert_id();
+		
+
+		$data1['material_id'] = $rst;
 		$this->db->insert('filters',$data1);
+
 		$filter_id=$this->input->post('filter_id');
 		
 		return 1;
 	
 		}
+
+		
 		function save_GSM()
 		{
 			

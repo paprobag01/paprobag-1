@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE HTML>
 <html class="noIE">
 
@@ -351,10 +349,34 @@
           <li class="menubtn"><a href="#"><span class="fa fa-search"></span></a>
             <div class="menu_c search_menu">
               <div class="search_box">
-                <input type="search" id="search_value"  class="txtbox" placeholder="Search">
-                <a href="#"><span class="fa fa-level-down fa-rotate-90" onclick="getmaterial()"></span></a> </div>
-                <div id="output">
-            </div>
+                <form method="post" autocomplete="off">
+                <input type="search" id="search_value" name="search_value"  class="txtbox" placeholder="Search" onkeyup="showResult(this.value)">
+                <a href="#"><span class="fa fa-level-down fa-rotate-90"></span></a></div>
+                <div id="livesearch"></div>
+                </form>
+                <script>
+                function showResult(str) {
+                  if (str.length==0) { 
+                    document.getElementById("livesearch").innerHTML="";
+                    document.getElementById("livesearch").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+                      document.getElementById("livesearch").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/search_data/?search_value="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
             </div>
             
           </li>
@@ -363,30 +385,3 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-                       function getmaterial()
-                    {                   
-                        var search_for = $('#search_value').val();
-                        
-                        console.log(filters);
-                        $.ajax({   
-                           url: "<?php echo base_url()?>Catalog/search_result",
-                          async: false,
-                          type: "POST", 
-                          data: "search_for="+search_for,
-                          dataType: "html",
-                          
-                          success: function(data) {
-                            var dt=data.split("|");
-                            
-                            $("#output").fadeIn();
-                            $('#output').html(data);                            
-                            
-                            
-                          }
-                        })
-                  
-                   
-                  }
-                        
-                      </script>

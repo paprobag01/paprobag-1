@@ -1,22 +1,217 @@
-<script>
-  $("#material").click(function () {
-   var material_sec = $("#material_sec").val();
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+                      <script type="text/javascript">
+                       function getmaterial()
+                    {                   
+                        var filters = $('#material_value').val();
+                        
+                        console.log(filters);
+                        $.ajax({   
+                           url: "<?php echo base_url()?>cms/getSubCategories/GSM_dropdown",
+                          async: false,
+                          type: "POST", 
+                          data: "filters="+filters,
+                          dataType: "html",
+                          
+                          success: function(data) {
+                            var dt=data.split("|");
+                            
+                            $("#output").fadeIn();
+                            $('#output').html(data);
+                            
+                            /*if(dt[0]!='<label class="control-label">Filter_id</label><div class="controls"><select name="filter_id"  id="filter_id"></select></div>')
+                            {
+                              $('#output').fadeIn();
+                              $('#output').html(dt[0]);
+                              
+                              
+                            
+                            }
+                            else{
+                              $('#output').fadeIn();
+                              $('#output').html('<div class="controls">NO value</div>');
+                            }*/
+                            
+                          }
+                        })
+                  
+                   
+                  }
+                        
+                      </script>-->
 
-    $.ajax({
-        type:'POST',
-        dataType:'json',
-        ContentType:'application/json',
-        url:base_url+"catalog/getGSM/",
-        data:{'seach_for':seach_for},
-        success:function(data)
-        {
-            $('#GSM_data').text(data);
-        }
-
-
-    });
-  });
-</script>
+                      <script>
+                function showResult(str) {
+                  //var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("GSM_result").innerHTML="";
+                    document.getElementById("GSM_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("GSM_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("GSM_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_material/?filter_material="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                <script>
+                function showsize(str) {
+                  //var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("size_result").innerHTML="";
+                    document.getElementById("size_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("size_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("size_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_size/?filter_size="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                 <script>
+                function showstyle(str) {
+                 // var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("style_result").innerHTML="";
+                    document.getElementById("style_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("style_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("style_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_style/?filter_style="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                 <script>
+                function showhandle(str) {
+                 // var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("handle_result").innerHTML="";
+                    document.getElementById("handle_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("handle_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("handle_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_handle/?filter_handle="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                <script>
+                function filter_print(str) {
+                 // var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("print_result").innerHTML="";
+                    document.getElementById("print_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("print_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("print_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_print/?filter_print="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                 <script>
+                function filter_lamination(str) {
+                 // var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("lamination_result").innerHTML="";
+                    document.getElementById("lamination_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("lamination_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("lamination_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_lamination/?filter_lamination="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                 <script>
+                function filter_spl_wrk(str) {
+                 // var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("special_wrk_result").innerHTML="";
+                    document.getElementById("special_wrk_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("special_wrk_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("special_wrk_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_spl_wrk/?filter_spl_wrk="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+  
+ <style type='text/css'>
+     
+     span.unclickable:hover { cursor: default; }
+     </style>
 <div id="content">
   <div class="container">
     <div class="catelog_c">
@@ -71,131 +266,102 @@
               <h5><a href="#" class="tgl_btn">categories</a></h5>
               <ul class="tgl_c" id="sub_cat_data">
 			  <?php foreach($sub_category_list as $row){?>
-                <li value="<?php echo $row['sub_cat_id']; ?>" ><a href="" id="<?php echo ?>"><?php echo $row['sub_cat_name']; ?></a></li>
+              
+                <li id="<?php echo $row['sub_cat_id']; ?>" name="categories_list"><a href="<?php echo base_url()?>catalog/getProducts/0/<?php echo $row['section_id'];?>/<?php echo $row['cat_id'];?>/<?php echo $row['sub_cat_id'];?>"><?php echo $row['sub_cat_name']; ?></a></li>
 			  <?php } ?>
 			       </ul>
             </div>
-            <div class="side_box side_box_1 red5">
+           <form method="post">
+            <!-- <input type="search" id="search_value" name="search_value"  class="txtbox" placeholder="Search" onkeyup="showResult(this.value)">
+             <div class="control-group" name="filter_id" id="output">
+                      
+                      </div>-->
+             <div class="side_box side_box_1 red5">
               <h5><a href="#" class="tgl_btn">Material</a></h5>
-              <ul class="tgl_c">
+              
+              <ul class="tgl_c1">
         <?php foreach($material_data as $row){?>
-                <li id="<?php echo $row['material_id']; ?>" ><a href=""><?php echo $row['material_name']; ?></a></li>
+               <span style="cursor:pointer"> <li  id="<?php echo $row['filter_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>" onclick="showResult(this.id);"><?php echo $row['material_name']; ?></li></span>
         <?php } ?>
-        </ul>
-            </div>
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">GSM</a></h5>
-              <ul class="tgl_c">
-                <?php 
-                  foreach($gsm_list as $row){
-                ?>
-                <li id="<?php echo $row['gsm_id']; ?>" >
-                  <?php echo $row['gsm_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>               
               </ul>
+              
+
             </div>
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Size</a></h5>
-              <ul class="tgl_c">
-                <?php 
-                  foreach($size_list as $row){
-                ?>
-                <li id="<?php echo $row['size_id']; ?>" >
-                  <?php echo $row['size_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>                
-              </ul>
+            <!--<div class="control-group" name="filter_id" id="output">
+                      
+                      </div>-->
+            <div class="side_box side_box_1 red5 material" id="GSM_result">
+            <span class="unclickable"> <h5><a href="#" class="tgl_btn">GSM</a></h5></span>
+                  <ul class="tgl_c1">
+                       <li> <?php echo "Select Material"; ?></li>
+                  </ul>
             </div>
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Style</a></h5>
-              <ul class="tgl_c">
-                <?php 
-                  foreach($style_list as $row){
-                ?>
-                <li id="<?php echo $row['style_id']; ?>" >
-                  <?php echo $row['style_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
+            <div class="side_box side_box_1 red5 material" id="size_result">
+              <span class="unclickable" style="hover:{ cursor: default; }"> <h5><a href="#" class="tgl_btn">Size</a></h5></span>
+                  <ul class="tgl_c1">
+                      <li> <?php echo "Select GSM"; ?></li>
+                   </ul>           
+
+            </div>           
+            <div class="side_box side_box_1 red5 material" id="style_result">
+              <span class="unclickable" > <h5><a href="#" class="tgl_btn">Style</a></h5></span>
+                 <ul class="tgl_c1">
+                      <li> <?php echo "Select Size"; ?></li>
+                   </ul> 
+              
+            </div>
+             </form>
+            
+            <div class="side_box side_box_1 red5 material" id="handle_result">
+               <span class="unclickable" > <h5><a href="#" class="tgl_btn">Handle</a></h5></span>
+                 <ul class="tgl_c1">
+                      <li> <?php echo "Select Style"; ?></li>
+                  </ul> 
+              
+            </div>
+            <div class="side_box side_box_1 red5 material" id="print_result">
+              <span class="unclickable" > <h5><a href="#" class="tgl_btn">Print</a></h5></span>
+                 <ul class="tgl_c1">
+                      <li> <?php echo "Select Handle"; ?></li>
+                   </ul> 
+              
+            </div>
+
+            <div class="side_box side_box_1 red5 col_box">
+              <h5><a href="#" class="tgl_btn">Select Number Of Colors</a></h5>
+                <ul class="tgl_c">                
+                <li>1
+                  <input type="checkbox" class="icheckbox_minimal">
                 </li>
-                <?php 
-                  } 
-                ?>           
+                 <li>2
+                  <input type="checkbox" class="icheckbox_minimal">
+                </li>
+                <li>3
+                  <input type="checkbox" class="icheckbox_minimal">
+                </li>
+                <li>4
+                  <input type="checkbox" class="icheckbox_minimal">
+                </li>
+                <li>Multicolor
+                  <input type="checkbox" class="icheckbox_minimal">
+                </li>
               </ul>
             </div>
             
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Handle</a></h5>
-              <ul class="tgl_c">
-                 <?php 
-                  foreach($handle_list as $row){
-                ?>
-                <li id="<?php echo $row['handle_id']; ?>" >
-                  <?php echo $row['handle_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>   
-              </ul>
-            </div>
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Print</a></h5>
-              <ul class="tgl_c">
-                 <?php 
-                  foreach($print_list as $row){
-                ?>
-                <li id="<?php echo $row['print_id']; ?>" >
-                  <?php echo $row['print_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>              
-              </ul>
-            </div>
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Print Color</a></h5>
-              <ul class="tgl_c">
-                <?php 
-                  foreach($print_color_list as $row){
-                ?>
-                <li id="<?php echo $row['print_color_id']; ?>" >
-                  <?php echo $row['print_color_val']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>   
-              </ul>
-            </div>
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Lamination</a></h5>
-              <ul class="tgl_c">
-                <?php 
-                  foreach($lamination_list as $row){
-                ?>
-                <li id="<?php echo $row['lamination_id']; ?>" >
-                  <?php echo $row['lamination_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>   
-              </ul>
+            <div class="side_box side_box_1 red5 material" id="lamination_result">
+               <span class="unclickable" > <h5><a href="#" class="tgl_btn">Lamination</a></h5></span>
+                 <ul class="tgl_c1">
+                      <li> <?php echo "Select Print"; ?></li>
+                   </ul> 
+              
             </div>
              
-            <div class="side_box side_box_1 red5 material">
-              <h5><a href="#" class="tgl_btn">Special Work</a></h5>
-              <ul class="tgl_c">
-                <?php 
-                  foreach($special_wrk_list as $row){
-                ?>
-                <li id="<?php echo $row['special_wrk_id']; ?>" >
-                  <?php echo $row['special_wrk_name']; ?><input type="radio" class="iradio_minimal" name="mate_name">
-                </li>
-                <?php 
-                  } 
-                ?>   
-              </ul>
+            <div class="side_box side_box_1 red5 material" id="special_wrk_result">
+              <span class="unclickable" > <h5><a href="#" class="tgl_btn">Special Work</a></h5></span>
+                 <ul class="tgl_c1">
+                      <li> <?php echo "Select Lamination"; ?></li>
+                   </ul> 
+             
             </div>
             <div class="side_box side_box_1 red5 cat_box">
               <h2>Free Catalog</h2>

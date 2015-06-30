@@ -18,34 +18,45 @@ class Catalog extends CI_Controller{
 		$sub_cat_data['table']='subcategory';
 		$sub_cat_data['order_by']='';
 		$sub_cat_ids = $this->common_model->getAllDetails($sub_cat_data);
-		foreach ($sub_cat_ids as $key => $value) {
+		/*foreach ($sub_cat_ids as $key => $value) {
 			$filter_data['where']="where sub_cat_id =".$value['sub_cat_id'];
 			$filter_data['table']='filter_detail';
 			$filter_data['order_by']='';
 			$filter_details = $this->common_model->getDetail($filter_data);
-			
+			//print_r($filter_details);
+			//die();
+			extract($filter_details);
+
 			// Get material filter details
-			$material_ids_string = $filter_details['material_IDs'];
+			$material_ids_string = $material_IDs;
+			
+
 			if(strlen($material_ids_string) > 0)
 			{
 				$material_ids_array = explode(',', $material_ids_string);
+				//print_r($material_ids_array);
+				//die();
+				
 				
 				foreach ($material_ids_array as $material_id) {
 					$material_data['where']="where material_id = $material_id";
 					$material_data['table']='material';
 					$material_data['order_by']='';
 					$data['material_data'] = $this->common_model->getDetail($material_data);
+					
 				}				
 			}
 
 			// Get gsm filter details
-			$gsm_ids_string = $filter_details['gsm_IDs'];
+			$gsm_ids_string = $GSM_IDs;
 			if(strlen($gsm_ids_string) > 0)
 			{
 				$gsm_ids_array = explode(',', $gsm_ids_string);
+				//print_r($gsm_ids_array);
+				//die();
 				
 				foreach ($gsm_ids_array as $gsm_id) {
-					$gsm_data['where']="where GSM_id = $gsm_id";
+					$gsm_data['where']="where GSM_IDs = $gsm_id";
 					$gsm_data['table']='gsm';
 					$gsm_data['order_by']='';
 					$data['gsm_data'] = $this->common_model->getDetail($gsm_data);
@@ -53,7 +64,7 @@ class Catalog extends CI_Controller{
 			}
 
 			// Get size filter details
-			$size_ids_string = $filter_details['size_IDs'];
+			$size_ids_string = $size_IDs;
 			if(strlen($size_ids_string) > 0)
 			{
 				$size_ids_array = explode(',', $size_ids_string);
@@ -67,7 +78,7 @@ class Catalog extends CI_Controller{
 			}
 
 			// Get handle filter details
-			$handle_ids_string = $filter_details['handle_IDs'];
+			$handle_ids_string = $handle_IDs;
 			if(strlen($handle_ids_string) > 0)
 			{
 				$handle_ids_array = explode(',', $handle_ids_string);
@@ -81,7 +92,7 @@ class Catalog extends CI_Controller{
 			}
 
 			// Get style filter details
-			$style_ids_string = $filter_details['style_IDs'];
+			$style_ids_string = $style_IDs;
 			if(strlen($style_ids_string) > 0)
 			{
 				$style_ids_array = explode(',', $style_ids_string);
@@ -95,21 +106,21 @@ class Catalog extends CI_Controller{
 			}
 
 			// Get print filter details
-			$style_ids_string = $filter_details['style_IDs'];
+			$print_ids_string = $print_IDs;
 			if(strlen($material_ids_string) > 0)
 			{
-				$material_ids_array = explode(',', $material_ids_string);
+				$material_ids_array = explode(',', $print_ids_string);
 				
-				foreach ($material_ids_array as $material_id) {
-					$material_data['where']="where material_id = $material_id";
-					$material_data['table']='material';
-					$material_data['order_by']='';
-					$data['material_data'] = $this->common_model->getDetail($material_data);
+				foreach ($material_ids_array as $print_id) {
+					$print_data['where']="where print_id = $print_id";
+					$print_data['table']='print';
+					$print_data['order_by']='';
+					$data['print_data'] = $this->common_model->getDetail($material_data);
 				}				
 			}
 
 			// Get lamination filter details
-			$lamination_ids_string = $filter_details['lamination_IDs'];
+			$lamination_ids_string = $lamination_IDs;
 			if(strlen($lamination_ids_string) > 0)
 			{
 				$lamination_ids_array = explode(',', $lamination_ids_string);
@@ -123,7 +134,7 @@ class Catalog extends CI_Controller{
 			}
 
 			// Get special work filter details
-			$spw_ids_string = $filter_details['spw_IDs'];
+			$spw_ids_string = $special_work_IDs;
 			if(strlen($spw_ids_string) > 0)
 			{
 				$spw_ids_array = explode(',', $spw_ids_string);
@@ -136,7 +147,7 @@ class Catalog extends CI_Controller{
 				}				
 			}			
 		}
-		// Get filters
+		// Get filters*/
 
 		if($this->session->userdata('cart_id'))
 		{
@@ -158,6 +169,7 @@ class Catalog extends CI_Controller{
 		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
 		
 		$data['wholesale_flag'] = $wholesale_flag;
+		$data['page'] = "All Product";
 
 		$this->load->view('header',$data);
 		$this->load->view('product_catelog',$data);
@@ -186,8 +198,10 @@ class Catalog extends CI_Controller{
 		$arr2['table']='subcategory';
 		$arr2['order_by']='';
 		$data['sub_prod_name']=$this->common_model->getAllDetails($arr2);
+
 		
-		$arr3['where']="where section_id=$section_id and cat_id=$cat_id";
+		
+		$arr3['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
 		$arr3['table']='filters';
 		$arr3['order_by']='';
 		$data['material_data']=$this->common_model->getAllDetails($arr3);

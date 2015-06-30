@@ -5,25 +5,25 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk">
             <h5>Refer & Earn<br>
-              By Greenhandle<a href="#" class="fa fa-arrow-circle-right"></a></h5>
+              By Greenhandle<a href="<?php echo base_url();?>Refer_earn" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_1 icon"></span> </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk">
             <h5>Delivery 
-              Details<a href="#" class="fa fa-arrow-circle-right"></a></h5>
+              Details<a href="<?php echo base_url();?>Delivery_page" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_2 icon"></span> </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk">
             <h5>Sell With <br>
-             Greenhandle<a href="#" class="fa fa-arrow-circle-right"></a></h5>
+             Greenhandle<a href="" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_3 icon"></span> </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="ftop_blk bor_none">
-            <h5>returns and <br>
-              exchanges <a href="#" class="fa fa-arrow-circle-right"></a></h5>
+            <h5>Cancellation and <br>
+              Replacements <a href="<?php echo base_url();?>Cancellation_replacement" class="fa fa-arrow-circle-right"></a></h5>
             <span class="icon_4 icon"></span> </div>
         </div>
       </div>
