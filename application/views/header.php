@@ -19,7 +19,16 @@
 <script type="text/javascript" src="<?php echo base_url('js/scripts.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/path.js')?>"></script>
 
+<!--<script type="text/javascript" src="<?php echo base_url('js/colorpicker.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/eye.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/js/jquery.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/layout.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/utils.js')?>"></script>-->
+
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<!--<link href="<?php echo base_url('css/colorpicker.css')?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('css/layout.css')?>" rel="stylesheet" type="text/css">-->
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('js/j360.js')?>" ></script>
 </head>
@@ -29,7 +38,7 @@
     <div class="container">
       <div class="top_menu">
         <ul>
-          <li><a href="#">Sale With GreenHandle</a></li>         
+          <li><a href="<?php echo base_url()?>seller_page">Sale With GreenHandle</a></li>         
         </ul>
       </div>
     <div class="top_menu">
@@ -40,7 +49,7 @@
       <div class="hed_right">
         <ul>
           <li><span class="fa fa-phone"></span>8 800 909 50 60 </li>
-          <li><a href="#"><span class="fa fa-envelope"></span>Bulk Order</a></li>
+          <li><a href="<?php echo base_url()?>Bulk_order"><span class="fa fa-envelope"></span>Bulk Order</a></li>
         </ul>
       </div>
     </div>
@@ -289,26 +298,29 @@
               <div class="menu_title clearfix">
                 <h4>Your Cart</h4>
               </div>
-             <?php foreach($cart_array as $row){?>
-              <div class="cart_row">                
+
+             <div class="cart_row">
+             <?php
+                                if(isset($product_id)){foreach ($product_id as $key => $value) {
+                                ?>
                 <ul>
+                  <li><div class="thumb"><span> <img alt="alt" width="80px" height="80px"  src="<?php echo base_url().$product_image[$key]?>" class="" draggable="false"> </span></div></li>
                   <li>
-                    <div class="pro_img"><span></span></div>
+                    <h5><a href="#"><?php echo $product_name[$key]; ?></a></h5>
+                    <p><?php echo $product_short_desc[$key]; ?></p>
                   </li>
                   <li>
-                    <h5><a href="http://templines.com/demo/html/cooncook/catalog.html">Product Name</a></h5>
-                    <p>Living room furniture</p>
-                  </li>
-                  <li>
-                    <div class="price"><?php echo $row['product_price']; ?></div>
-                    <a href="#" class="del_btn"></a>
-                  </li>
-                </ul>               
+                    <div class="price"><?php echo $product_wise_total[$key]; ?></div>
+                    <a href="javascript:void(0);" id="<?php echo $value; ?>"  class="del_btn"></a> </li>
+                </ul>    
+                <?php
+                               } }
+                                ?>            
               </div>
-           <?php }?>
+
               <div class="cheout_row clearfix">
                 <p><span class="fa fa-clock-o"></span>Praesent egestas est vitae interdum amet erat varius elementum.</p>
-                <a href="#" class="checkout_btn">Checkout</a> </div>
+                <a href="<?php echo base_url(); ?>checkout" class="checkout_btn">Checkout</a> </div>
             </div>
           </li>
           <li class="menubtn"><a href="#"><span class="fa fa-user"></span></a>

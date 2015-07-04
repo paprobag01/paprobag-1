@@ -194,6 +194,50 @@ jQuery(function ($) {
     });
 
     /////////////////////////////////////
+    // Checkout Page
+    /////////////////////////////////////
+
+    jQuery("#next_billing").click(function() {
+        $('.cart_top').hide();
+        $('.cart_bot').show();
+    });
+
+    jQuery("#back_shipping").click(function() {
+        $('.cart_top').show();
+        $('.cart_bot').hide();
+    });
+
+    jQuery(".ship_different_address").click(function() {
+        $('.ship_frm').show();
+    });
+
+     /////////////////////////////////////
+    // Remove Cart Product From header
+    /////////////////////////////////////
+
+    jQuery('.del_btn').click(function(){
+
+        var product_id = $(this).attr('id');
+        console.log(product_id);
+
+        var data = {
+            'product_id':product_id,           
+
+        };
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            ContentType: "application/json",
+            url: base_url+"/delete_header_cart/",
+            data: data, // or JSON.stringify ({name: 'jonas'}),
+            success: function(data) { 
+                window.location.reload();                
+            },
+        });
+
+    });
+
+    /////////////////////////////////////
     //  animate elements when they are in viewport
     /////////////////////////////////////
 

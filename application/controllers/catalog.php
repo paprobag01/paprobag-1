@@ -11,7 +11,9 @@ class Catalog extends CI_Controller{
 
 	function getall_catprod($wholesale_flag=null, $section_id=null, $cat_id=null)
 	{
-		$data = $this->common_model->get_head();	
+		$data = $this->common_model->get_head();
+		$data = $this->common_model->header_cart_details();
+
 		// Get filters
 		// Get subcategory ids
 		$sub_cat_data['where']="where cat_id=$cat_id && section_id=$section_id";
@@ -157,7 +159,18 @@ class Catalog extends CI_Controller{
 			$cart_details['order_by']='';
 			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
 
+			//$sql=$this->db->query("select * from cart_product where cart_id=$cart_id");
+			//$
+			
+			$cart_data = $data['cart_array'];//get the perticular array id to extract data.
+			//print_r($cart_data);
+			//die();
+			
+		
+
 		}
+
+		$data = $this->common_model->header_cart_details();
 
 		$arr3['where']="where section_id=$section_id and cat_id=$cat_id";
 		$arr3['table']='filters';
@@ -167,6 +180,7 @@ class Catalog extends CI_Controller{
 		$data['cat_prod'] = $this->common_model->getdataprod($cat_id,$section_id);
 		$data['page_data3'] = $this->common_model->getdatacat($cat_id,$section_id);		
 		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
+		
 		
 		$data['wholesale_flag'] = $wholesale_flag;
 		$data['page'] = "All Product";
@@ -179,6 +193,8 @@ class Catalog extends CI_Controller{
 	function getProducts($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null)
 	{
 		$data = $this->common_model->get_head();
+		$data = $this->common_model->header_cart_details();
+		
 		if($this->session->userdata('cart_id'))
 		{
 			$cart_id = $this->session->userdata('cart_id');
@@ -187,6 +203,30 @@ class Catalog extends CI_Controller{
 			$cart_details['order_by']='';
 			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
 
+			$cart_data = $data['cart_array'];//get the perticular array id to extract data.
+			extract($cart_data);
+			//print_r();
+			
+			if($this->session->userdata('cart_id'))
+			{
+				$cart_id = $this->session->userdata('cart_id');
+				$cart_details['where']="where cart_id=$cart_id";
+				$cart_details['table']='cart_product';
+				$cart_details['order_by']='';
+				$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
+
+				$cart_data = $data['cart_array']['0'];//get the perticular array id to extract data.
+				extract($cart_data);
+				//print_r();
+
+				$cart_details['where']="where prod_id=$product_id";
+				$cart_details['table']='products';
+				$cart_details['order_by']='';
+				$data['prod_array'] = $this->common_model->getAllDetails($cart_details);
+
+
+			}
+		
 		}
 
 		$arr1['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
@@ -240,10 +280,23 @@ class Catalog extends CI_Controller{
 		}
 	}
 
+	function deletecart($id=null)
+	{
+		echo $id;
+		//die();
+		
+		$this->db->where('cart_id',$id);
+		$this->db->delete('cart');
+
+
+	}
+
 	function getmore($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null, $prod_id=null)
 	{
 
 		$data = $this->common_model->get_head();
+		$data = $this->common_model->header_cart_details();
+
 		if($this->session->userdata('cart_id'))
 		{
 			$cart_id = $this->session->userdata('cart_id');
@@ -251,6 +304,9 @@ class Catalog extends CI_Controller{
 			$cart_details['table']='cart_product';
 			$cart_details['order_by']='';
 			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
+
+			
+
 
 		}
 		

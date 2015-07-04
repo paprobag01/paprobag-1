@@ -2081,9 +2081,9 @@ html #content .blog_blk .blog_desc > h5 a:hover {
 	border-bottom:1px solid #d7dbdb;
 	box-shadow:0 1px 1px #fff;
 }
-#content .cart_bot {
+/*#content .cart_bot {
 	padding:30px 0 0 0;
-}
+}*/
 #content .cart_tbl {
 	background:#fff;
 	position:relative;
