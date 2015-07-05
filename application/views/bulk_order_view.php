@@ -9,7 +9,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bounceInLeft animated animation-done " data-animation="bounceInLeft">
           <div class="infor_c">
             <h5>Information</h5>
-            <div class="infor_c_inn">
+            <div class="infor_c_inn" style="padding-bottom: 127px;">
               <p>In hac habitasse platea dictumst. Pellentesque auctor pulvinar tempor. Integer at justo ipsum. Vestibulum ut interdum erat, at congue lacus. Nullam posuere nec ante in dapibus. Donec vel purus quis nibh bibendum rutrum ut ac velit. </p>
               <h5>Maecenas ullamcorper venenatis mattis. </h5>
               <p>Sed tempor augue ut arcu iaculis bibendum. Aenean nisi nunc, eleifend non mollis sed, vehicula non odio. Fusce mauris nisl, commodo id risus a, malesuada ultricies lectus.</p>
@@ -52,7 +52,7 @@
                     <div class="lbltxt" style="float:left;">Way Of Communication:
                       <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                     </div>
-                    <div class="select_box sub_box" style="float: left;">
+                    <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
                       
                            <input type="radio" class="txtbox">By Call  
                     </div>
@@ -63,7 +63,7 @@
                   </div>
                 </div>
                 <div class="lbltxt">Enquiry: <span class="req" required data-validation-required-message="Please Enter Message">*</span></div>
-                <textarea placeholder="I am Looking For..."></textarea>
+                <textarea placeholder="I am Looking For..." style="height:70px;"></textarea>
                 <div class="clearfix frm_bot">
                   <input type="submit" class="btn_c" value="Submit">
                   <input type="reset" class="clear_btn" value="Clear">

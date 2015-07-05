@@ -14,6 +14,8 @@ class Common_model extends CI_Model
 	}
 
 	
+
+	
 	function header_cart_details()
 	{
 		if($this->session->userdata('cart_id'))

@@ -45,7 +45,7 @@
                                             <input type="text" class="txtbox">
                                         </div>
                                         <span style="float:left">
-                                       <div class="cart_btn clearfix">
+                                       <div class="cart_btn clearfix" style="padding-top: 40px;padding-bottom: 10px;">
                                    
                                             <a href="#" class="next_btn">Verify Number</a>
                                      </div>  </span>
@@ -80,19 +80,13 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt"><input type="radio" class="rad_btn" name="address">Ship to this address</div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt"><input type="radio" class="rad_btn iradio_minimal" name="address">Ship to different address</div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="reqired">* Required Fields</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="cart_btn clearfix">
                                     <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                                    <a href="#" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
+                                    <a href="<?php echo base_url()?>seller_catalog" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
                                 </div>        
                             </div>
                         </div>
