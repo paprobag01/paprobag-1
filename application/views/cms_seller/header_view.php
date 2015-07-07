@@ -111,12 +111,6 @@ $profile_pic=$this->session->userdata("profile_pic");
 					</a>					
 			    </li>
 			   
-				<li <?php if(isset($page) && $page=="detail"){?> class="active"<?php }?>>
-				    <a href="<?php echo base_url()?>index.php/cms_seller/detail">
-					<i class="icon-home"></i>Picking Address
-					<span class="selected"></span>
-					</a>					
-			    </li>
 			    <li <?php if(isset($page) && $page=="productList"){?> class="active"<?php }?>>
 				    <a href="<?php echo base_url()?>index.php/cms_seller/productList">
 					<i class="icon-home"></i>Product Catalog
@@ -124,7 +118,7 @@ $profile_pic=$this->session->userdata("profile_pic");
 					</a>					
 			    </li>
 				<li <?php if(isset($page) && $page=="producttrade"){?> class="active"<?php }?>>
-				    <a href="<?php echo base_url()?>index.php/cms_seller/productList">
+				    <a href="<?php echo base_url()?>index.php/cms_seller/ProductTrade">
 					<i class="icon-home"></i>Product Trade
 					<span class="selected"></span>
 					</a>					

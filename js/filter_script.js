@@ -1,4 +1,4 @@
-  
+          <script>  
                 function createpagenumb(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -21,9 +21,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/create_number/?create_number="+str,true);
                   xmlhttp.send();
                 }
-                  
-
-                  
+              </script>    
+               <script>                  
                 function create_numberlinks_material(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -47,8 +46,8 @@
                   xmlhttp.send();
                 }
                   
-
-                   
+                   </script>
+                 <script> 
                 function create_numberlinks_GSM(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -72,8 +71,8 @@
                   xmlhttp.send();
                 }
                   
-
-                  
+                 </script>
+                 <script>  
                 function create_numberlinks_size(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -97,8 +96,8 @@
                   xmlhttp.send();
                 }
                   
-
-                  
+                   </script>
+                  <script> 
                 function create_numberlinks_style(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -122,8 +121,8 @@
                   xmlhttp.send();
                 }
                   
-
-                  
+                 </script>
+                <script>
                 function create_numberlinks_handle(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -147,8 +146,8 @@
                   xmlhttp.send();
                 }
                   
-
-                    
+                 </script>
+                <script>   
                 function create_numberlinks_print(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -171,8 +170,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_print/?numberlinks_print="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                   </script>
+                 <script>  
                 function create_numberlinks_lamination(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -196,8 +195,8 @@
                   xmlhttp.send();
                 }
                   
-
-                   
+                 </script>
+                <script>  
                 function create_numberlinks_special_wrk(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -222,8 +221,8 @@
                 }
                   
 
-
-  
+                 </script>
+                 <script>
                 function showsubcat(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -246,8 +245,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_subcat/?filter_subcat="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                   </script>
+                 <script>  
                 function showmaterial(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -270,8 +269,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_material/?filter_material="+str,true);
                   xmlhttp.send();
                 }
-                  
-                        
+                   </script>
+                  <script>       
                 function showResult(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -294,8 +293,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_GSM/?filter_GSM="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                   </script>
+                 <script>  
                 function showsize(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -318,7 +317,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_size/?filter_size="+str,true);
                   xmlhttp.send();
                 }
-                  
+                  </script> 
+                   <script>
                    
                 function showstyle(str) {
                  var xmlhttp;
@@ -342,8 +342,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_style/?filter_style="+str,true);
                   xmlhttp.send();
                 }
-                  
-                   
+              </script> 
+              <script>
                 function showhandle(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -366,8 +366,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_handle/?filter_handle="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                 </script>  
+                   <script>
                 function filter_print(str) {
                  var xmlhttp;
                   if (str.length==0) { 
@@ -390,8 +390,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_print/?filter_print="+str,true);
                   xmlhttp.send();
                 }
-                  
-                   
+                  </script> 
+                   <script> 
                 function filter_lamination(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -414,8 +414,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_lamination/?filter_lamination="+str,true);
                   xmlhttp.send();
                 }
-                  
-                   
+                  </script> 
+                   <script> 
                 function filter_spl_wrk(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -438,8 +438,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_spl_wrk/?filter_spl_wrk="+str,true);
                   xmlhttp.send();
                 }
-                  
-                   
+                 </script>  
+                  <script>  
                 function show_filter_subprod(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -462,8 +462,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_subprod_result/?filter_subprod_result="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                 </script>  
+                  <script> 
                 function show_filter_material(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -486,7 +486,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_material_result1/?filter_material_result1="+str,true);
                   xmlhttp.send();
                 }
-                                  
+                 </script>  
+                  <script>                
                   
                 function show_filter_GSM(str) {
                   var xmlhttp;
@@ -510,7 +511,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_GSM_result/?filter_GSM_result="+str,true);
                   xmlhttp.send();
                 }
-                  
+                  </script>
+                   <script> 
                   
                 function show_filter_size(str) {
                   var xmlhttp;
@@ -534,8 +536,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_size_result/?filter_size_result="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                  </script> 
+                   <script>
                 function show_filter_style(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -558,7 +560,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_style_result/?filter_style_result="+str,true);
                   xmlhttp.send();
                 }
-                  
+                   </script>
+                    <script>
                   
                 function show_filter_handle(str) {
                   var xmlhttp;
@@ -582,8 +585,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_handle_result/?filter_handle_result="+str,true);
                   xmlhttp.send();
                 }
-                  
-                   
+                 </script>  
+                   <script> 
                 function show_filter_print(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -606,8 +609,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_print_result/?filter_print_result="+str,true);
                   xmlhttp.send();
                 }
-                  
-                  
+                   </script>
+                   <script>
                 function show_filter_lamination(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -630,7 +633,8 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_lamination_result/?filter_lamination_result="+str,true);
                   xmlhttp.send();
                 }
-                  
+                </script>
+                 <script>
                    
                 function show_filter_splwrk(str) {
                   var xmlhttp;
@@ -654,4 +658,4 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_splwrk_result/?filter_splwrk_result="+str,true);
                   xmlhttp.send();
                 }
-                  
+                </script> 

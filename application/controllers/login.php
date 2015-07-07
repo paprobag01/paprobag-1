@@ -1,4 +1,8 @@
 <?php
+// login role id
+// role_id = 5 (seller)
+// role_id = 2 (customer)
+
 class Login extends CI_Controller{
 	
 	function __Construct()
@@ -21,6 +25,7 @@ class Login extends CI_Controller{
 			$sess_array = array(
 	         'id' => $row['user_id'],
 	         'username' => $row['username'],
+	         'role_id' => $row['role_id']
 	       );
 	       $this->session->set_userdata('logged_in', $sess_array);
 		}
@@ -42,7 +47,6 @@ class Login extends CI_Controller{
 	}
 	function registration()
 	{
-		$data1 = $this->common_model->get_head();
 		$username = $this->input->post('username');
 		$data = array(
 			'username' => $username,
@@ -57,6 +61,7 @@ class Login extends CI_Controller{
 		$sess_array = array(
 	        'id' => $id,
 	        'username' => $username,
+	        'role_id' => 2
         );
 
         $this->session->set_userdata('logged_in', $sess_array);
@@ -64,6 +69,35 @@ class Login extends CI_Controller{
 	    redirect('/index', 'refresh');
 
 	}
+
+	function seller_registration()
+	{
+		$name = $this->input->post('sellername');
+		
+		$part = preg_split('/\s+/', $name);
+
+		$data = array(
+			'username' => $part[0],
+			'name' => $name,
+			'org_name' => $this->input->post('orgname'),
+			'email' => $this->input->post('email_id'),
+			'mobile_number' => $this->input->post('mob_no'),
+			'password' => md5($this->input->post('password'))
+		);
+
+		$id = $this->common_model->register($data);
+		
+		$sess_array = array(
+	        'id' => $id,
+	        'username' => $part[0],
+	        'role_id' => 5
+        );
+
+        $this->session->set_userdata('logged_in', $sess_array);
+
+	    redirect('/index', 'refresh');
+	}
+
 	function logout()
 	{
 		session_start();

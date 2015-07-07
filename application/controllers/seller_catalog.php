@@ -16,6 +16,12 @@ class seller_catalog extends CI_Controller{
 		$section_data['table']='sections';
 		$section_data['order_by']='';
 		$data['section'] = $this->common_model->getAllDetails($section_data);
+
+		$section_id=5;
+		$cat_id=1;
+
+
+		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
 		
 		
 		$this->load->view('header',$data);

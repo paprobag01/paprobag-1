@@ -199,6 +199,21 @@ class Common_model extends CI_Model
 		return $sql->result_array();
 	}
 
+	function getcategorylist($section_id=null)
+	{
+		
+
+		$sql1 = $this->db->query("select * from category where section_id=$section_id");
+		return  $sql1->result_array();
+
+	}
+
+	function getsubcatlist($section_id=null,$cat_id=null)
+	{
+		$sql = $this->db->query("select * from subcategory where section_id=$section_id and cat_id=$cat_id");
+		return $sql->result_array();
+	}
+
 	function search_material($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null)
 	{
 		$sql = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id");

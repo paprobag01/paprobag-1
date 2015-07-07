@@ -1,127 +1,720 @@
-<script type="text/javascript">
-   $(document).ready(function() {
-       $('#sec_id').on('click', function() {                  
-         var categories = $('#sec_id').val();
-         console.log(categories);
-         $.ajax({   
-            url: "<?php echo base_url()?>cms/getSubCategories/dropdown",
-             async: false,
-             type: "POST", 
-             data: "categories="+categories,
-             dataType: "html",             
-             success: function(data) {
-                 var dt=data.split("|");
-                 //$('#subcategories').html(dt[0]);
-                 if(dt[0]!='<label class="control-label">Category</label><div class="controls" id="prod_sub_categories"><select name="prod_sub_categories" onchange="getFilterVals()" id="prod_sub_categories"></select></div>')
-                 {
-                     $('#subcategories').fadeIn();
-                     $('#subcategories').html(dt[0]);
-                 }
-                 else{
-                     $('#subcategories').fadeIn();
-                     $('#subcategories').html('<div class="controls">Category is not found under this Section</div>');
-                 }
-             }
-         });
-       });
-     //  $('#filterDropdwn').on('click', function() {
-         
-               $('#subcategories').on('click', function() {
-                    var filters = $('#prod_sub_categories').val();
-                   var filters1 = $('#sec_id').val();
-                   console.log(filters);
-                   $.ajax({   
-                    url: "<?php echo base_url()?>cms/getSubCategories/filterdropdown",
-                     async: false,
-                     type: "POST", 
-                     data: {'filters':filters,'filters1':filters1},
-                     dataType: "html",
-             
-                     success: function(data) 
-                     {
-                         var dt=data.split("|");
-                         
-                                     if(dt[0]!='<label class="control-label">Subcategory</label><div class="controls" id="sub_categories"><select name="sub_categories"  id="sub_categories"></select></div>')
-                                     {
-                                         $('#filters').fadeIn();
-                                         $('#filters').html(dt[0]);
-                                         
-                                         
-                                     
-                                     }
-                                     else{
-                                         $('#filters').fadeIn();
-                                         $('#filters').html('<div class="controls">Subcategory is not found under this Category</div>');
-                                     }
-                         
-                     }
-             });
-          });
-           $('#filters').on('click', function() {
+      
+               <script>  
+                function get_sub_cat_name(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("sub_cat_list").innerHTML="";
+                    document.getElementById("sub_cat_list").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("sub_cat_list").innerHTML=xmlhttp.responseText;
+                      document.getElementById("sub_cat_list").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/get_product/?get_product="+str,true);
+                  xmlhttp.send();
+                }
+              </script> 
+       <script>  
+                function getFilters(str) {
+                if (str.checked) {
+                var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("subcategories").innerHTML="";
+                    document.getElementById("subcategories").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("subcategories").innerHTML=xmlhttp.responseText;
+                      document.getElementById("subcategories").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/get_category/?get_category="+str,true);
+                  xmlhttp.send();
+                }
+              }
               
-                   var filters = $('#prod_sub_categories').val();
-                   var filters1 = $('#sec_id').val();
-                   var filters2 = $('#sub_categories').val();
+              </script>    
+          <script>  
+                function createpagenumb(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/create_number/?create_number="+str,true);
+                  xmlhttp.send();
+                }
+              </script>    
+               <script>                  
+                function create_numberlinks_material(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_material/?numberlinks_material="+str,true);
+                  xmlhttp.send();
+                }
+                  
+                   </script>
+                 <script> 
+                function create_numberlinks_GSM(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_GSM/?numberlinks_GSM="+str,true);
+                  xmlhttp.send();
+                }
+                  
+                 </script>
+                 <script>  
+                function create_numberlinks_size(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_size/?numberlinks_size="+str,true);
+                  xmlhttp.send();
+                }
+                  
+                   </script>
+                  <script> 
+                function create_numberlinks_style(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_style/?numberlinks_style="+str,true);
+                  xmlhttp.send();
+                }
+                  
+                 </script>
+                <script>
+                function create_numberlinks_handle(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_handle/?numberlinks_handle="+str,true);
+                  xmlhttp.send();
+                }
+                  
+                 </script>
+                <script>   
+                function create_numberlinks_print(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_print/?numberlinks_print="+str,true);
+                  xmlhttp.send();
+                }
+                   </script>
+                 <script>  
+                function create_numberlinks_lamination(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_lamination/?numberlinks_lamination="+str,true);
+                  xmlhttp.send();
+                }
+                  
+                 </script>
+                <script>  
+                function create_numberlinks_special_wrk(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("paging").innerHTML="";
+                    document.getElementById("paging").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("paging").innerHTML=xmlhttp.responseText;
+                      document.getElementById("paging").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/numberlinks_special_wrk/?numberlinks_special_wrk="+str,true);
+                  xmlhttp.send();
+                }
+                  
+
+                 </script>
+                 <script>
+                function showsubcat(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("material_result").innerHTML="";
+                    document.getElementById("material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_subcat/?filter_subcat="+str,true);
+                  xmlhttp.send();
+                }
+                   </script>
+                 <script>  
+                function showmaterial(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("material_result").innerHTML="";
+                    document.getElementById("material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_material/?filter_material="+str,true);
+                  xmlhttp.send();
+                }
+                   </script>
+                  <script>       
+                function showResult(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("GSM_result").innerHTML="";
+                    document.getElementById("GSM_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("GSM_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("GSM_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_GSM/?filter_GSM="+str,true);
+                  xmlhttp.send();
+                }
+                   </script>
+                 <script>  
+                function showsize(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("size_result").innerHTML="";
+                    document.getElementById("size_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("size_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("size_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_size/?filter_size="+str,true);
+                  xmlhttp.send();
+                }
+                  </script> 
+                   <script>
                    
-         //console.log(sub_categories);
-         $.ajax({   
-                    url: "<?php echo base_url()?>cms/getSubCategories/material_name",
-                     async: false,
-                     type: "POST", 
-                     data: {'filters':filters,'filters1':filters1,'filters2':filters2},
-                     dataType: "html",
-             
-                     success: function(data) 
-                     {
-                         var dt=data.split("|");
-                         
-                                         //$('#material_drop').fadeIn();
-                                         //$('#material_drop').html(dt[0]);
-                                         
-                                         if(dt[0]!='<label class="control-label">Select Material</label><div class="controls" id="material_value"><select name="material_value" onchange="getmaterial()"  id="material_value"></select></div>')
-                                     {
-                                         $('#material_drop').fadeIn();
-                                         $('#material_drop').html(dt[0]);
-                                         
-                                         
-                                     
-                                     }
-                                     else{
-                                         $('#material_drop').fadeIn();
-                                         $('#material_drop').html('<div class="controls">Material is not found under this Category</div>');
-                                     }
-                                     
-                         
-                     }
-             });
-          });
-       function getFilterVals()
-             {                                       
-                   var filters = $('#prod_sub_categories').val();
+                function showstyle(str) {
+                 var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("style_result").innerHTML="";
+                    document.getElementById("style_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("style_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("style_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_style/?filter_style="+str,true);
+                  xmlhttp.send();
+                }
+              </script> 
+              <script>
+                function showhandle(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("handle_result").innerHTML="";
+                    document.getElementById("handle_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("handle_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("handle_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_handle/?filter_handle="+str,true);
+                  xmlhttp.send();
+                }
+                 </script>  
+                   <script>
+                function filter_print(str) {
+                 var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("print_result").innerHTML="";
+                    document.getElementById("print_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("print_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("print_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_print/?filter_print="+str,true);
+                  xmlhttp.send();
+                }
+                  </script> 
+                   <script> 
+                function filter_lamination(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("lamination_result").innerHTML="";
+                    document.getElementById("lamination_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("lamination_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("lamination_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_lamination/?filter_lamination="+str,true);
+                  xmlhttp.send();
+                }
+                  </script> 
+                   <script> 
+                function filter_spl_wrk(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("special_wrk_result").innerHTML="";
+                    document.getElementById("special_wrk_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("special_wrk_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("special_wrk_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_spl_wrk/?filter_spl_wrk="+str,true);
+                  xmlhttp.send();
+                }
+                 </script>  
+                  <script>  
+                function show_filter_subprod(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_subprod_result/?filter_subprod_result="+str,true);
+                  xmlhttp.send();
+                }
+                 </script>  
+                  <script> 
+                function show_filter_material(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_material_result1/?filter_material_result1="+str,true);
+                  xmlhttp.send();
+                }
+                 </script>  
+                  <script>                
+                  
+                function show_filter_GSM(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_GSM_result/?filter_GSM_result="+str,true);
+                  xmlhttp.send();
+                }
+                  </script>
+                   <script> 
+                  
+                function show_filter_size(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_size_result/?filter_size_result="+str,true);
+                  xmlhttp.send();
+                }
+                  </script> 
+                   <script>
+                function show_filter_style(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_style_result/?filter_style_result="+str,true);
+                  xmlhttp.send();
+                }
+                   </script>
+                    <script>
+                  
+                function show_filter_handle(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_handle_result/?filter_handle_result="+str,true);
+                  xmlhttp.send();
+                }
+                 </script>  
+                   <script> 
+                function show_filter_print(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_print_result/?filter_print_result="+str,true);
+                  xmlhttp.send();
+                }
+                   </script>
+                   <script>
+                function show_filter_lamination(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_lamination_result/?filter_lamination_result="+str,true);
+                  xmlhttp.send();
+                }
+                </script>
+                 <script>
                    
-         console.log(filters);
-         $.ajax({   
-            url: "<?php echo base_url()?>cms/getSubCategories/filterdropdown",
-             async: false,
-             type: "POST", 
-             data: "filters="+filters,
-             dataType: "html",
-             
-             success: function(data) {
-                 var dt=data.split("|");
-                 
-                 $("#filters").fadeIn();
-                 $('#filters').html(dt[0]);
-                 
-             }
-         })
-       
-          
-       }
-          
-       });
-                   
-</script>
+                function show_filter_splwrk(str) {
+                  var xmlhttp;
+                  if (str.length==0) { 
+                    document.getElementById("filter_material_result").innerHTML="";
+                    document.getElementById("filter_material_result").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("filter_material_result").innerHTML=xmlhttp.responseText;
+                      document.getElementById("filter_material_result").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/filter_splwrk_result/?filter_splwrk_result="+str,true);
+                  xmlhttp.send();
+                }
+                </script> 
+                <style type='text/css'>
+     
+     span.unclickable:hover { cursor: default; }
+     </style>
 <div id="content">
    <div class="container">
       <div class="cart_c">
@@ -157,188 +750,202 @@
                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                   <div class="ship_frm_c">
                      <div class="frm ship_frm">
-                        <div class="tabing animated  animation-done bounceInUp" data-animation="bounceInUp">
-                           <ul class="nav nav-tabs">
-                              <li class="active"><a href="#custp" data-toggle="tab">General</a></li>
-                              <li class=""><a href="#rtd" data-toggle="tab">Price</a></li>
-                              <li class=""><a href="#rtp" data-toggle="tab">Images</a></li>
-                              <li class=""><a href="#help" data-toggle="tab">Product Details</a></li>
-                           </ul>
-                           <!-- Tab panes -->
-                           <div class="tab-content">
-                              <div class="tab-pane active" id="custp">
-                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                       <div class="frm rew_frm">
-                                          <form method="post" action="<?php echo base_url(); ?>New_seller">
-                                             <span class="reqired">* Required Fields</span>
-                                             <div class="row first_row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <div class="lbltxt">Product Name: <span class="req">*</span></div>
-                                                   <input type="text" name ="seller_product_name" class="txtbox">
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <div class="lbltxt">Section:<span class="req">*</span></div>
-                                                   <select name="sec_id" id="sec_id" onchange="getFilters(this.value)">
-                                                      <?php foreach($section as $row){?>
-                                                      <option value="<?php echo $row['section_id']; ?>"><?php echo $row['section_name']?></option>
-                                                      <?php } ?>
-                                                   </select>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <div class="lbltxt" id="subcategories">Category:<span class="req">*</span></div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                   <div class="lbltxt" id="filters">Subcategory:<span class="req">*</span></div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="lbltxt">Product Description: <span class="req">*</span></div>
-                                                <textarea name="product_description"></textarea>
-                                             </div>
-                                       </div>
-                                    </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Section</a></h5></span>                                     
+                                      <?php foreach($section as $row){ ?>
+                                        <ul class="tgl_c1">
+                                             <li id="<?php echo $row['section_id']; ?>" onclick="getFilters('this.id')"><?php echo $row['section_name']; ?></li>
+                                        </ul>                                        
+                                        <?php } ?>
+
                                  </div>
                               </div>
-                              <div class="tab-pane" id="rtd">
-                              <div class="row first_row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">MRP: <span class="req">*</span></div>
-                              <input type="text" name="mrp" class="txtbox">
-                              </div>   
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Sell Price:<span class="req">*</span></div>
-                              <input type="text" name="sell_price" class="txtbox">
-                              </div>                   
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Discount:<span class="req">*</span></div>
-                              <input type="text" name="discount" class="txtbox">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Quantity:<span class="req">*</span></div>
-                              <input type="text" name="quantity" class="txtbox">
-                              </div>
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Sold By:<span class="req">*</span></div>
-                              <input type="text" name="sold_by" class="txtbox">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Shipping Price (Optional):<span class="req">*</span></div>
-                              <input type="text" name="shipping_price" class="txtbox">
-                              </div> 
-                              </div>
-                              <div class="row">  
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Stock: <span class="req">*</span></div>
-                              <select name="stock">
-                              <option value="1">In Stock</option>
-                              <option value="0">Out Of Stock</option>
-                              </select>
-                              </div>  
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Require Shipping: <span class="req">*</span></div>
-                              <select name="require_shipping">
-                              <option value="1">Yes</option>
-                              <option value="0">No</option>
-                              </select>
-                              </div>                  
-                              </div>
-                              </div>
-                              <div class="tab-pane" id="rtp">
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Image 1: <span class="req">*</span></div>
-                              <input type="file" name="image1">
-                              </div>
-                              </div> 
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Image 2: <span class="req">*</span></div>
-                              <input type="file" name="image2">
-                              </div>
-                              </div> 
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Image 3: <span class="req">*</span></div>
-                              <input type="file" name="image3">
-                              </div>
-                              </div> 
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Image 4: <span class="req">*</span></div>
-                              <input type="file" name="image4">
-                              </div>
-                              </div>
-                              </div>
-                              <div class="tab-pane" id="help">           
-                              <div class="row first_row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Material Type: <span class="req">*</span></div>
-                              <input type="text" name="material_name" class="txtbox">                        
-                              </div>    
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">GSM Details:<span class="req">*</span></div>
-                              <input type="text" name="GSM_name" class="txtbox">
-                              </div>                  
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Style:<span class="req">*</span></div>
-                              <input type="text" name="style" class="txtbox">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Size Details: <span class="req">*</span></div>
-                              <input type="text" name="size" class="txtbox">
-                              </div>
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Handle Details: <span class="req">*</span></div>
-                              <input type="text" name="handle" class="txtbox">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Print Details: <span class="req">*</span></div>
-                              <input type="text" name="print" class="txtbox">
-                              </div>                     
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Print Color Details: <span class="req">*</span></div>
-                              <input type="text" name="print_color" class="txtbox">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Lamination Details: <span class="req">*</span></div>
-                              <input type="text" name="lamination" class="txtbox">
-                              </div>
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="lbltxt">Special Work Details: <span class="req">*</span></div>
-                              <input type="text" name="special_work" class="txtbox">
-                              </div>
-                              </div>
-                              <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <div class="cart_btn clearfix">
-                              <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                              <a href="javascript:void(0);" class="next_btn">Submit</a>
-                              </div>  
-                              </div>
-                              </div>
+                           </div>
+                      </div>
+                    <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="subcategories">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Category</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Section"; ?></li>
+                                      </ul>
+                                 </div>
                               </div>
                            </div>
-                           </form>  
-                        </div>
+                      </div>
+                        <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="sub_cat_list">
+                                     <span class="unclickable"> <h5><a href="#" class="tgl_btn">Product</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Category"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="material_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Material</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Category"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="GSM_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">GSM</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Material"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5"  id="size_result" id="style_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Size</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select GSM"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="style_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Style</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Size"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="handle_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Handle</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Style"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="print_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Prinr</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Handle"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="print_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Select Number Of Colors</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li>1
+                                            <input type="checkbox" class="icheckbox_minimal">
+                                          </li>
+                                           <li>2
+                                            <input type="checkbox" class="icheckbox_minimal">
+                                          </li>
+                                          <li>3
+                                            <input type="checkbox" class="icheckbox_minimal">
+                                          </li>
+                                          <li>4
+                                            <input type="checkbox" class="icheckbox_minimal">
+                                          </li>
+                                          <li>Multicolor
+                                            <input type="checkbox" class="icheckbox_minimal">
+                                          </li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="lamination_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Lamination</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Print"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                              <div class="sidebar">
+                                 <div class="side_box side_box_1 red5" id="special_wrk_result">
+                                    <span class="unclickable"> <h5><a href="#" class="tgl_btn">Special Work</a></h5></span>
+                                      <ul class="tgl_c1">
+                                           <li> <?php echo "Select Lamination"; ?></li>
+                                      </ul>
+                                 </div>
+                              </div>
+                           </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Product Price :<span class="req">*</span></div>
+                              <input type="text" class="txtbox">
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Weight Caring Capacity Of Bag:<span class="req">*</span></div>
+                              <input type="text" class="txtbox">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Product ID :<span class="req">*</span></div>
+                              <input type="text" class="txtbox">
+                          </div>                          
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Image1 :<span class="req">*</span></div>
+                              <input type="file">
+                          </div> 
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Image2 :<span class="req">*</span></div>
+                              <input type="file">
+                          </div> 
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Image3 :<span class="req">*</span></div>
+                              <input type="file">
+                          </div> 
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="lbltxt">Image4 :<span class="req">*</span></div>
+                              <input type="file">
+                          </div>                          
+                      </div>
                      </div>
                      <div class="cart_btn clearfix">
                         <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>

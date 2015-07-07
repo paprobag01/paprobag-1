@@ -71,35 +71,35 @@
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                  <div class="frm rew_frm">
                                     <h5>Register Now</h5>
-                                    <form action="<?php echo base_url()?>verification">
+                                    <form method="post" action="<?php echo base_url()?>login/seller_registration">
                                        <div class="row first_row">
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Your Name: <span class="req">*</span></div>
-                                             <input type="text" class="txtbox">
+                                             <input type="text" name="sellername" id="sellername" class="txtbox">
                                           </div>
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Organization Name:<span class="req">*</span></div>
-                                             <input type="text" class="txtbox">
+                                             <input type="text" name="orgname" id="orgname" class="txtbox">
                                           </div>
                                        </div>
                                        <div class="row">
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Email ID:<span class="req">*</span></div>
-                                             <input type="text" class="txtbox">
+                                             <input type="text" name="email_id" id="email_id" class="txtbox">
                                           </div>
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Mobile Number:<span class="req">*</span></div>
-                                             <input type="text" class="txtbox">
+                                             <input type="text" name="mob_no" id="mob_no" class="txtbox">
                                           </div>
                                        </div>
                                        <div class="row">
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Password:<span class="req">*</span></div>
-                                             <input type="text" class="txtbox">
+                                             <input type="password" name="seller_password" class="txtbox">
                                           </div>
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Confirm Password:<span class="req">*</span></div>
-                                             <input type="text" class="txtbox">
+                                             <input type="password" name="seller_confirm_password" class="txtbox">
                                           </div>
                                        </div>
                                        <div class="lbltxt">
@@ -138,8 +138,8 @@
                        </div>
                        <form method="post" action="http://localhost/paprobag/login">
                           <div class="login_frm">
-                             <input type="text" name="username" class="txtbox" placeholder="Username">
-                             <input type="text" name="password" class="txtbox" placeholder="Password">
+                             <input type="text" name="seller_username" id="seller_username" class="txtbox" placeholder="Username">
+                             <input type="text" name="seller_password" id="seller_password" class="txtbox" placeholder="Password">
                              <div class="remember">
                                 <div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" class="chkbox icheckbox_minimal" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
                                 Remember Me

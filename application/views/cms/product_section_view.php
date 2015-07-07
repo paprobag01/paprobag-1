@@ -50,8 +50,7 @@
 								<div class="portlet box blue">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-reorder"></i>Product Details
-										
+											<i class="fa fa-reorder"></i>Product Details										
 										<div class="tools">
 											<a href="javascript:;" class="collapse">
 											</a>

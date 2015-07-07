@@ -20,6 +20,70 @@ class Search_result extends CI_Controller{
   }
 
  
+ function get_category()
+  {
+     $material_id = $this->input->get('get_category');
+   
+   
+    $material_data = $this->common_model->getcategorylist($material_id);
+    print_r($material_id);
+    die();
+    
+
+         
+echo "<h5><a href='#'' class='tgl_btn'>Catergory</a></h5>";
+          echo "<ul class='tgl_c'>"; 
+          //echo count($material_data);
+          if(count($material_data)>0)
+          {
+             foreach( $material_data as $row)
+              {
+                ?>
+
+                    <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>" onclick="get_sub_cat_name(this.id)"><?php echo $row['cat_name']; ?></li>
+                  <?php
+              
+            }
+
+          }
+              echo "<ul>";
+    
+  }
+
+function get_product()
+  {
+     $material_id = $this->input->get('get_product');
+   
+    $arr = explode('/',$material_id);  
+
+    $section_id=$arr['0'];
+    $cat_id= $arr['1'];
+
+    $material_data = $this->common_model->getsubcatlist($section_id,$cat_id);
+
+    
+
+         
+echo "<h5><a href='#'' class='tgl_btn'>Product</a></h5>";
+          echo "<ul class='tgl_c'>"; 
+          //echo count($material_data);
+          if(count($material_data)>0)
+          {
+             foreach( $material_data as $row)
+              {
+                ?>
+
+                    <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>" onclick="show_filter_subprod(this.id); showsubcat(this.id); createpagenumb(this.id)"><?php echo $row['sub_cat_name']; ?></li>
+                  <?php
+              
+            }
+
+          }
+              echo "<ul>";
+    
+  }
+
+
   function create_number()
   {
      $material_id = $this->input->get('create_number');

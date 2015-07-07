@@ -11,7 +11,7 @@ extract($page_data);
 			<div class="span12">
 				<!-- BEGIN STYLE CUSTOMIZER--> 
 				<h3 class="page-title">
-					Product Details
+					Product Trade Details
 					<small>Add, delete, and Modify customizations</small>
 				</h3>
 				
@@ -23,24 +23,24 @@ extract($page_data);
 		<div class="row-fluid">
 			<div class="span12">	
 			<p style="text-align:right"><!--<button type="button" id="add_new" class="btn blue">Add Product Details</button>--></p>			
-				<div class="portlet box light-grey">					
-						<div class="portlet-title" style="height: 36px;">
+				<div class="portlet box light-grey" style="background-color: #FFFFFF">
+					<div class="portlet-title" style="height: 36px;">
 						
 						<ul class="nav nav-tabs">
 							<li class="active">
 								<a href="#tab_0" data-toggle="tab">
-									 Customizable Products
+									 Current Orders
 								</a>
 							</li>
 							
 							<li>
 								<a href="#tab_2" data-toggle="tab">
-									 Ready To Print 
+									 Order In Process
 								</a>
 							</li>
 							<li>
 								<a href="#tab_1" data-toggle="tab">
-									 Ready To Deliver
+									 Past Orders
 								</a>
 							</li>
 							<!--<li>
@@ -55,19 +55,17 @@ extract($page_data);
 							<a href="javascript:;" class="remove"></a>
 						</div>
 					</div>
-					<div class="portlet-body">
+					<div class="portlet-body" style="background-color:#FFFFFF ">
 						<table class="table table-striped table-bordered table-hover" id="sample_1">
 							<thead>
 								<tr> 
 									<th class="hidden-phone">Srno</th>
 									<!-- <th class="hidden-phone">Image</th> -->
-									<th class="hidden-phone">Products</th> 
+									<th class="hidden-phone">Organization Name</th> 
 									<!-- <th class="hidden-phone">Section</th> -->
-									<th class="hidden-phone">category</th>
-									<th class="hidden-phone">Product ID</th>
 									<th class="hidden-phone">Price</th>
+									<th class="hidden-phone">Short Description</th>
 									<th class="hidden-phone">Image</th>
-									<th class="hidden-phone">Status</th>
 									<th class="hidden-phone">Options</th>
 								</tr>
 							</thead>
@@ -79,7 +77,7 @@ extract($page_data);
 								<tr id="" class="odd gradeX"> 
 									<td><?php echo $cnt;?></td>
 									<td class="hidden-phone"><?php echo $row['prod_name']?></td>
-								<td class="hidden-phone"><?php echo $row['prod_name']?></td> 
+								<td class="hidden-phone"><?php echo $row['prod_price']?></td> 
 									
 									 
 									<td class="hidden-phone">
@@ -87,7 +85,6 @@ extract($page_data);
 										<?php echo $row['prod_description']?>
 									<!-- </span> -->
 									</td> 
-									<td class="hidden-phone"><?php echo $row['prod_price']?></td> 
 									<td class="hidden-phone">
 									<?php if($row['prod_image']!=""){?>
 									<img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
@@ -97,16 +94,9 @@ extract($page_data);
 									</td> 
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> Enable</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Dissable</a>&nbsp;&nbsp;&nbsp;
-									<!--<a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
-									
-									</td>
-									<td class="hidden-phone">
-									
 									<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
+									<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>
 								</tr>
@@ -128,10 +118,12 @@ extract($page_data);
 						</table>
 					</div>
 				</div>
+				
 				<!-- END EXAMPLE TABLE PORTLET-->
 			</div>
-			
+
 		</div>
+
 		<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 	<div id="delete_domestic" class="modal fade hide">
 		<div class="modal-header">
