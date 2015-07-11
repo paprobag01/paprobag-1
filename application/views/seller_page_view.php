@@ -136,15 +136,17 @@
                        <div class="menu_title clearfix">
                           <h4>Seller Account</h4>
                        </div>
-                       <form method="post" action="http://localhost/paprobag/login">
+                       <form method="post" action="<?php echo base_url(); ?>login/seller_login">
                           <div class="login_frm">
-                             <input type="text" name="seller_username" id="seller_username" class="txtbox" placeholder="Username">
-                             <input type="text" name="seller_password" id="seller_password" class="txtbox" placeholder="Password">
-                             <div class="remember">
+                              <input type="text" name="seller_username" id="seller_username" class="txtbox" placeholder="Username">
+                              <input type="text" name="seller_password" id="seller_password" class="txtbox" placeholder="Password">
+                              <div class="remember">
                                 <div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" class="chkbox icheckbox_minimal" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
                                 Remember Me
-                             </div>
-                            <a href="<?php echo base_url();?>Seller_profile"> <input type="submit" class="signin_btn btn_c" name="submit" value="Sign in"></a>
+                              </div>
+                              <a href="javascript:void(0);"> 
+                                 <input type="submit" class="signin_btn btn_c" name="submit" value="Sign in">
+                              </a>
                           </div>
                        </form>
                        <div class="forgot clearfix" style="  padding-top: 16px;"> <span>Forgot: </span> <a href="#"> Password</a> <a href="#" class="name">Username</a> </div>

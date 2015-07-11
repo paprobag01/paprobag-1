@@ -1,3 +1,4 @@
+
  <div id="content">
         <div class="container">
             
@@ -17,7 +18,8 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="sidebar">
+                            <div clas
+                            s="sidebar">
                                 <div class="side_box side_box_1 red5">
                                     <h5>helpful information</h5>
                                     <ul>
@@ -42,7 +44,7 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">Enter OTP :<span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" class="txtbox" placeholder="Put last four digits of miss call">
                                         </div>
                                         <span style="float:left">
                                        <div class="cart_btn clearfix" style="padding-top: 40px;padding-bottom: 10px;">

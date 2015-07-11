@@ -13,9 +13,6 @@ class Common_model extends CI_Model
 		}
 	}
 
-	
-
-	
 	function header_cart_details()
 	{
 		if($this->session->userdata('cart_id'))
@@ -313,7 +310,7 @@ class Common_model extends CI_Model
 	{
 		try {
 			$sql = $this->db->query("select * from login where (username='".$data['username']."' or email='".$data['username']."') and password='".$data['password']."'");
-			
+
 			$rowcount = $sql->num_rows();	
 			
 			if($rowcount>0)
@@ -322,7 +319,7 @@ class Common_model extends CI_Model
 			}
 			else
 			{
-				echo "Invalid User";
+				return false;
 			}
 		} catch (Exception $e) {
 			// print error

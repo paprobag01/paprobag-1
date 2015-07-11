@@ -81,16 +81,16 @@
 												</div>
 												<div class="control-group">
 													<label class="control-label">Section</label>
-													<?php foreach($sec_data as $row){ ?>
+													
 													    <div class="controls">
-															<input type="text" name="sec_data" id="sec_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $row['section_name'];?>" class="span4 m-wrap"> 
+															<input type="text" name="sec_data" id="sec_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
-													  <?php } ?>  
+													 
 												</div>
 												<div class="control-group">
 													<label class="control-label">Category</label>
 													    <div class="controls">
-															<input type="text" name="cat_data" id="cat_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $cat_data;?>" class="span4 m-wrap"> 
+															<input type="text" name="cat_data" id="cat_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
@@ -103,7 +103,7 @@
 											<div class="control-group">
 												  <label class="control-label">Material Name</label>
 													  <div class="controls">
-															<input type="text" name="material_name" id="material_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $material_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="material_name" id="material_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
