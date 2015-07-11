@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2015 at 01:33 PM
+-- Generation Time: Jul 11, 2015 at 03:13 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -253,8 +253,8 @@ CREATE TABLE IF NOT EXISTS `filters` (
 --
 
 INSERT INTO `filters` (`filter_id`, `material_id`, `material_name`, `section_id`, `cat_id`, `sub_cat_id`, `GSM_name`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`) VALUES
-(23, 1, 'Recycle Brown Craft Paper', 5, '1', '1', '120', '16w*13h*4g', '', 'D-Cut', 'Offset', 2, 'No', ''),
-(24, 0, 'Recycle White Craft Paper', 5, '1', '1', '180', '', '', 'Twisted Handle', '', 2, 'Yes', ''),
+(23, 1, 'Recycle Brown Craft Paper', 5, '1', '1', '', '16w*13h*4g', '', 'D-Cut', 'Offset', 2, 'No', ''),
+(24, 0, 'Recycle White Craft Paper', 5, '1', '1', '', '', '', 'Twisted Handle', '', 2, 'Yes', ''),
 (25, 2, 'Glossy Paper', 5, '1', '1', '200', '17w*13h*4g', '', '', 'Screen', 0, 'Glossy', ''),
 (26, 0, 'Recycle Color Craft Paper', 5, '1', '3', '100', '', 'Horizontal', 'Folded', 'Screen', 5, 'No', ''),
 (27, 0, 'Recycle Brown Craft Paper', 5, '1', '2', '', '', '', '', '', 0, '', ''),
@@ -306,15 +306,15 @@ INSERT INTO `filter_detail` (`id`, `sub_cat_id`, `material`, `material_IDs`, `GS
 
 CREATE TABLE IF NOT EXISTS `gsm` (
   `id` int(11) NOT NULL,
-  `GSM_name` varchar(100) NOT NULL,
-  `GSM_IDs` varchar(10) NOT NULL
+  `gsm_name` varchar(100) NOT NULL,
+  `gsm_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `gsm`
 --
 
-INSERT INTO `gsm` (`id`, `GSM_name`, `GSM_IDs`) VALUES
+INSERT INTO `gsm` (`id`, `gsm_name`, `gsm_id`) VALUES
 (1, '140', '1'),
 (2, '100', '2');
 
@@ -386,8 +386,9 @@ INSERT INTO `lamination` (`id`, `lamination_name`, `lamination_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `login` (
   `user_id` bigint(20) NOT NULL,
-  `first_name` varchar(25) NOT NULL,
-  `last_name` varchar(25) NOT NULL,
+  `first_name` varchar(25) DEFAULT NULL,
+  `last_name` varchar(25) DEFAULT NULL,
+  `name` varchar(150) NOT NULL,
   `password` varchar(50) NOT NULL,
   `username` varchar(100) NOT NULL,
   `user_type` varchar(10) NOT NULL,
@@ -397,25 +398,21 @@ CREATE TABLE IF NOT EXISTS `login` (
   `role_id` int(5) NOT NULL,
   `email` varchar(25) NOT NULL,
   `cart_id` int(11) NOT NULL,
-  `mobile_number` varchar(15) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+  `mobile_number` varchar(15) NOT NULL,
+  `mobile_number_verified` tinyint(1) NOT NULL,
+  `email_verified` tinyint(1) NOT NULL,
+  `org_name` varchar(100) NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `password`, `username`, `user_type`, `account_status`, `profile_pic`, `date_of_deactivation`, `role_id`, `email`, `cart_id`, `mobile_number`) VALUES
-(18, 'paprobag', 'paprobag', 'e10adc3949ba59abbe56e057f20f883e', 'admin', 'Admin', 'yes', 'upload/users/29615.jpg', '2015-01-29', 1, '', 0, ''),
-(26, 'monica', 'sadafule', 'e10adc3949ba59abbe56e057f20f883e', 'monica', '123456', 'yes', '0', '0000-00-00', 3, '', 0, ''),
-(27, '0', '0', 'd41d8cd98f00b204e9800998ecf8427e', '0', '', NULL, NULL, '0000-00-00', 0, '0', 0, ''),
-(28, '0', '0', 'd41d8cd98f00b204e9800998ecf8427e', '0', '', NULL, NULL, '0000-00-00', 0, '0', 0, ''),
-(29, '0', '0', 'd41d8cd98f00b204e9800998ecf8427e', '0', '', NULL, NULL, '0000-00-00', 0, '0', 0, ''),
-(30, '0', '0', 'd41d8cd98f00b204e9800998ecf8427e', '0', '', NULL, NULL, '0000-00-00', 0, '0', 0, ''),
-(31, '0', 'singh', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', '', NULL, NULL, '0000-00-00', 0, 'ashussingh91@gmail.com', 0, ''),
-(32, '0', 'singh', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', '', NULL, NULL, '0000-00-00', 0, 'ashussingh91@gmail.com', 0, ''),
-(33, '0', 'singh', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', '', NULL, NULL, '0000-00-00', 0, 'ashussingh91@gmail.com', 0, ''),
-(34, '0', 'singh', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', '', NULL, NULL, '0000-00-00', 0, 'ashussingh91@gmail.com', 0, ''),
-(35, '0', 'dsds', '202cb962ac59075b964b07152d234b70', 'sddsd', '', NULL, NULL, '0000-00-00', 0, 'dsdsa@ff.com', 0, '');
+INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `name`, `password`, `username`, `user_type`, `account_status`, `profile_pic`, `date_of_deactivation`, `role_id`, `email`, `cart_id`, `mobile_number`, `mobile_number_verified`, `email_verified`, `org_name`) VALUES
+(18, 'paprobag', 'paprobag', '', 'e10adc3949ba59abbe56e057f20f883e', 'admin', 'Admin', 'yes', 'upload/users/29615.jpg', '2015-01-29', 1, '', 0, '', 0, 0, ''),
+(26, 'monica', 'sadafule', '', 'e10adc3949ba59abbe56e057f20f883e', 'monica', '123456', 'yes', '0', '0000-00-00', 3, '', 0, '', 0, 0, ''),
+(45, NULL, NULL, 'somsh', 'd41d8cd98f00b204e9800998ecf8427e', 'somsh', '', NULL, NULL, '0000-00-00', 5, 'someshford@gmail.com', 0, '98689898', 0, 0, 'paprobag'),
+(46, NULL, NULL, 'deepak', 'd41d8cd98f00b204e9800998ecf8427e', 'deepak', '', NULL, NULL, '0000-00-00', 5, 'deepak@paprobag', 0, '123456899', 0, 0, 'paprobag');
 
 -- --------------------------------------------------------
 
@@ -424,33 +421,21 @@ INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `password`, `username
 --
 
 CREATE TABLE IF NOT EXISTS `material` (
-  `material_id` int(11) NOT NULL,
-  `material_name` varchar(100) NOT NULL
+  `id` int(11) NOT NULL,
+  `material_name` varchar(100) NOT NULL,
+  `material_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `material`
 --
 
-INSERT INTO `material` (`material_id`, `material_name`) VALUES
-(1, 'Recycle White Craft'),
-(2, 'Recycle Brown'),
-(11, 'Recycle White Craft Paper1'),
-(12, 'Natural Brown Craft Paper'),
-(13, 'Natural Brown Craft Paper');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `materials`
---
-
-CREATE TABLE IF NOT EXISTS `materials` (
-  `id` int(11) NOT NULL,
-  `material_id` varchar(10) NOT NULL,
-  `material_name` varchar(100) NOT NULL,
-  `gsm_link_id` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `material` (`id`, `material_name`, `material_id`) VALUES
+(1, 'Recycle White Craft', ''),
+(2, 'Recycle Brown', ''),
+(11, 'Recycle White Craft Paper1', ''),
+(12, 'Natural Brown Craft Paper', ''),
+(13, 'Natural Brown Craft Paper', '');
 
 -- --------------------------------------------------------
 
@@ -564,17 +549,19 @@ CREATE TABLE IF NOT EXISTS `products` (
   `lamination` varchar(100) NOT NULL,
   `special_wrk` varchar(100) NOT NULL,
   `seller_id` varchar(10) NOT NULL,
-  `approved` tinyint(4) NOT NULL
+  `approved` tinyint(4) NOT NULL,
+  `seller_request_status` int(11) NOT NULL,
+  `product_status` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`prod_id`, `prod_name`, `prod_description`, `prod_short_description`, `cat_id`, `section_id`, `sub_cat_id`, `prod_sub_categories`, `prod_sku`, `prod_price`, `prod_tax_class`, `prod_status`, `prod_meta_title`, `prod_meta_keyword`, `prod_meta_description`, `prod_image`, `prod_image1`, `prod_image2`, `prod_image3`, `prod_image4`, `prod_on_home`, `created_on`, `prod_sell_price`, `prod_qty`, `prod_stock`, `require_shipping`, `prod_shipping_price`, `prod_discount`, `filter_id`, `complete_the_look`, `taggings`, `prod_customizable`, `url_for_product_details`, `prod_gift_card`, `prod_gift_code`, `sold_by`, `material_id`, `GSM_name`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `seller_id`, `approved`) VALUES
-(13, 'paperbag', '<p>paperbag</p>\r\n', 'paperbag', 1, 5, 1, 1, 'paperbag', '500', NULL, 0, 'paperbag', 'paperbag', 'paperbag', 'upload/products/eddc3427c5d77843c2253f1e799fe933.jpg', '0', '0', '0', '0', 1, '0000-00-00', '480', '30', '', '1', '30', '4.00', 11, 0, 1, 0, 'paperbag', 0, 0, 'abc', 0, '17', '230', '', '', 'Screen', 0, '', '', '', 0),
-(15, 'ecobag1', '<p>ecobag1</p>\r\n', 'ecobag1', 2, 5, 11, 2, 'ecobag1', '', NULL, 0, 'ecobag1', 'ecobag1', 'ecobag1', 'upload/products/9c8780d93f7077ed38cdc242778f7fdc.jpg', '0', '0', '0', '0', 1, '0000-00-00', '', '', '', '1', '', '0', 14, 0, 1, 0, 'ecobag1', 0, 0, '', 0, '', '', '', '', '', 0, '', '', '', 0),
-(16, 'paperbag', '<p>paperbag</p>\r\n', 'paperbag', 1, 5, 5, 1, 'paperbag', '300', NULL, 0, 'paperbag', 'paperbag', 'paperbag', 'upload/products/a3060118db9026aba5f5248721d313df.jpg', '0', '0', '0', '0', 0, '0000-00-00', '250', '50', '', '1', '30', '16.67', 0, 0, 2, 0, 'paperbag', 0, 0, 'cdcf', 13, '100', '', 'Horizontal', 'Folded', 'Screen', 5, 'No', '', '', 0);
+INSERT INTO `products` (`prod_id`, `prod_name`, `prod_description`, `prod_short_description`, `cat_id`, `section_id`, `sub_cat_id`, `prod_sub_categories`, `prod_sku`, `prod_price`, `prod_tax_class`, `prod_status`, `prod_meta_title`, `prod_meta_keyword`, `prod_meta_description`, `prod_image`, `prod_image1`, `prod_image2`, `prod_image3`, `prod_image4`, `prod_on_home`, `created_on`, `prod_sell_price`, `prod_qty`, `prod_stock`, `require_shipping`, `prod_shipping_price`, `prod_discount`, `filter_id`, `complete_the_look`, `taggings`, `prod_customizable`, `url_for_product_details`, `prod_gift_card`, `prod_gift_code`, `sold_by`, `material_id`, `GSM_name`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `seller_id`, `approved`, `seller_request_status`, `product_status`) VALUES
+(13, 'paperbag_1', '<p>paperbag</p>\r\n', 'paperbag', 1, 5, 1, 1, 'paperbag', '500', NULL, 0, 'paperbag', 'paperbag', 'paperbag', 'upload/products/eddc3427c5d77843c2253f1e799fe933.jpg', '0', '0', '0', '0', 1, '0000-00-00', '480', '30', '', '1', '30', '4.00', 11, 0, 1, 0, 'paperbag', 0, 0, 'abc', 0, '17', '230', '', '', 'Screen', 0, '', '', '', 0, 1, 1),
+(15, 'ecobag1', '<p>ecobag1</p>\r\n', 'ecobag1', 2, 5, 11, 2, 'ecobag1', '', NULL, 0, 'ecobag1', 'ecobag1', 'ecobag1', 'upload/products/9c8780d93f7077ed38cdc242778f7fdc.jpg', '0', '0', '0', '0', 1, '0000-00-00', '', '', '', '1', '', '0', 14, 0, 1, 0, 'ecobag1', 0, 0, '', 0, '', '', '', '', '', 0, '', '', '', 0, 0, 2),
+(16, 'paperbag', '<p>paperbag</p>\r\n', 'paperbag', 1, 5, 5, 1, 'paperbag', '300', NULL, 0, 'paperbag', 'paperbag', 'paperbag', 'upload/products/a3060118db9026aba5f5248721d313df.jpg', '0', '0', '0', '0', 0, '0000-00-00', '250', '50', '', '1', '30', '16.67', 0, 0, 2, 0, 'paperbag', 0, 0, 'cdcf', 13, '100', '', 'Horizontal', 'Folded', 'Screen', 5, 'No', '', '', 0, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -896,12 +883,6 @@ ALTER TABLE `login`
 -- Indexes for table `material`
 --
 ALTER TABLE `material`
-  ADD PRIMARY KEY (`material_id`);
-
---
--- Indexes for table `materials`
---
-ALTER TABLE `materials`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1044,17 +1025,12 @@ ALTER TABLE `lamination`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `material`
 --
 ALTER TABLE `material`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT for table `materials`
---
-ALTER TABLE `materials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
