@@ -1,5 +1,5 @@
 <?php 
-class ProductTrade extends CI_Controller{
+class Myaccount extends CI_Controller{
 	
 	function __Construct(){
 
@@ -17,7 +17,16 @@ class ProductTrade extends CI_Controller{
 	function index()
 	{
 		
-		$data['page']='producttrade';
+		$data['page']='productList';
+		
+		/*$arr['table']='products';
+		$arr['where']="where section_id=5";
+		$arr['and']="";
+		$arr['order_by']="order by prod_id desc"; 
+		$data['customize_prod_list']=$this->site_sentry->get_all($arr); */
+
+		
+		$data['page']='productList';
 		
 		$arr['table']='products';
 		$arr['where']="where section_id=5";
@@ -106,10 +115,14 @@ class ProductTrade extends CI_Controller{
 		$data['sec_data']=$this->site_sentry->get_all($arr3);
 		
 		
-		
 		$data['type']='add';		
 		$this->load->view('cms_seller/header_view',$data);
-		$this->load->view('cms_seller/product_trade_view',$data);
+		$this->load->view('cms_seller/myaccount_view',$data);
 		$this->load->view('cms_seller/footer_view',$data);
 	}
+	
+	
+	
+
 }
+?>

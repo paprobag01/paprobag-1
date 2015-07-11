@@ -22,7 +22,7 @@ extract($page_data);
 		<!-- BEGIN PAGE CONTENT-->
 		<div class="row-fluid">
 			<div class="span12">	
-			<p style="text-align:right"></p>			
+			<p style="text-align:right"><button type="button" id="add_new" class="btn blue">Add Product Details</button></p>			
 				<div class="portlet box light-grey">
 					<div class="portlet-title">
 						<h4><i class="icon-reorder"></i>Home Page Details View</h4>
@@ -41,7 +41,11 @@ extract($page_data);
 									<th class="hidden-phone">Organization Name</th>
 									<th class="hidden-phone">Section</th>
 									<th class="hidden-phone">Category</th> 
-									<th class="hidden-phone">Subcategory</th> 									
+									<th class="hidden-phone">Subcategory</th> 
+									<th class="hidden-phone">Product Name</th>
+									<!-- <th class="hidden-phone">Section</th> -->
+									<th class="hidden-phone">Price</th>
+									<th class="hidden-phone">Short Description</th>
 									<th class="hidden-phone">Image</th>
 									<th class="hidden-phone">Options</th>
 								</tr>
@@ -55,8 +59,17 @@ extract($page_data);
 									<td><?php echo $cnt;?></td>
 									<td class="hidden-phone"><?php echo $row['prod_name']?></td>
 									<td class="hidden-phone"><?php echo $row['prod_name']?></td>
-									<td class="hidden-phone"><?php echo $row['prod_name']?></td>									
-									<td class="hidden-phone"><?php echo $row['prod_price']?></td>
+									<td class="hidden-phone"><?php echo $row['prod_name']?></td>
+									<td class="hidden-phone"><?php echo $row['prod_name']?></td>
+									<td class="hidden-phone"><?php echo $row['prod_name']?></td>
+								<td class="hidden-phone"><?php echo $row['prod_price']?></td> 
+									
+									 
+									<td class="hidden-phone">
+									<!-- <span  class="label label-success"  class="label label-important" > -->
+										<?php echo $row['prod_description']?>
+									<!-- </span> -->
+									</td> 
 									<td class="hidden-phone">
 									<?php if($row['prod_image']!=""){?>
 									<img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
@@ -66,8 +79,10 @@ extract($page_data);
 									</td> 
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms_seller/myaccount" class="btn mini purple"><i class="icon-edit"></i> Visit Profile</a>&nbsp;&nbsp;&nbsp;
-																		
+									<a href="<?php echo base_url()?>cms/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> Enable</a>&nbsp;&nbsp;&nbsp;
+									<!--<a href="<?php echo base_url()?>cms/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;-->
+									<a href="<?php echo base_url()?>cms/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Dissable</a>
+									
 									</td>
 								</tr>
 								<?php 

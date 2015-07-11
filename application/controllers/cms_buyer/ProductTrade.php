@@ -20,19 +20,19 @@ class ProductTrade extends CI_Controller{
 		$data['page']='producttrade';
 		
 		$arr['table']='products';
-		$arr['where']="where section_id=5";
+		$arr['where']="where product_status=1";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
 		$data['customize_prod_list']=$this->site_sentry->get_all($arr); 
 
 		$arr['table']='products';
-		$arr['where']="where section_id=6";
+		$arr['where']="where product_status=2";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
 		$data['ready_to_print_prod_list']=$this->site_sentry->get_all($arr);
 
 		$arr['table']='products';
-		$arr['where']="where section_id=7";
+		$arr['where']="where product_status=3";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
 		$data['ready_to_deliver_prod_list']=$this->site_sentry->get_all($arr);

@@ -177,6 +177,7 @@
 		  $data['type']=$type;
 		  $data['filter_id'] = '';
 		  $data['material_name'] = '';	
+		  $data['GSM_numb'] = '';
 		 $data['GSM_name'] = '';	
 		  $data['size'] = '';	
 		   $data['style'] = '';	

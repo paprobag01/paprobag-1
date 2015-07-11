@@ -1,5 +1,5 @@
 <div id="footer" >
-  <div class="f_top">
+  <!--<div class="f_top">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
   <div class="f_mid">
     <div class="container">
       <div class="row">

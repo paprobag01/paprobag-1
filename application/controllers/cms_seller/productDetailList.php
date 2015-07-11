@@ -1,5 +1,5 @@
 <?php 
-class ProductList extends CI_Controller{
+class ProductDetailList extends CI_Controller{
 	
 	function __Construct(){
 
@@ -13,33 +13,29 @@ class ProductList extends CI_Controller{
 		
 	}
 
-	function index(){
-
-		$data['page']='productList';
-		
-		$arr['table']='products';
-		$arr['where']="";
-		$arr['and']="";
-		$arr['order_by']="order by prod_id desc"; 
-		$data['page_data']=$this->site_sentry->get_all($arr);
-		
-		
-		$data['type']='view';		
-		$this->load->view('cms_seller/header_view',$data);
-		$this->load->view('cms_seller/productList_view',$data);
-		$this->load->view('cms_seller/footer_view',$data);
 	
-	}
-	function add_products()
+	function index()
 	{
 		
 		$data['page']='productList';
 		
 		$arr['table']='products';
-		$arr['where']="";
+		$arr['where']="where section_id=5";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
-		$data['page_data']=$this->site_sentry->get_all($arr); 
+		$data['customize_prod_list']=$this->site_sentry->get_all($arr); 
+
+		$arr['table']='products';
+		$arr['where']="where section_id=6";
+		$arr['and']="";
+		$arr['order_by']="order by prod_id desc"; 
+		$data['ready_to_print_prod_list']=$this->site_sentry->get_all($arr);
+
+		$arr['table']='products';
+		$arr['where']="where section_id=7";
+		$arr['and']="";
+		$arr['order_by']="order by prod_id desc"; 
+		$data['ready_to_deliver_prod_list']=$this->site_sentry->get_all($arr);
 		
 		$arr1['table']='category';
 		$arr1['where']="";
@@ -113,7 +109,7 @@ class ProductList extends CI_Controller{
 		
 		$data['type']='add';		
 		$this->load->view('cms_seller/header_view',$data);
-		$this->load->view('cms_seller/product_section_view',$data);
+		$this->load->view('cms_seller/product_detail_view',$data);
 		$this->load->view('cms_seller/footer_view',$data);
 	}
 	function save_products()
@@ -145,9 +141,7 @@ class ProductList extends CI_Controller{
 	$data['prod_meta_keyword']=$row['prod_meta_keyword'];
 	$data['prod_meta_description']=$row['prod_meta_description'];
 	$data['prod_description']=$row['prod_description'];
-	$section_id=$row['section_id'];
-	$cat_id=$row['cat_id'];
-	$sub_cat_id=$row['sub_cat_id'];
+	$data['cat_id']=$row['cat_id'];
 	//$data['section_id']=$row['section_id'];
 	$data['prod_short_description']=$row['prod_short_description'];
 	//$data['filter_val']=$row['filter_val'];
@@ -175,8 +169,6 @@ class ProductList extends CI_Controller{
 	$data['image_url4']=$row['prod_image4'];
 	$data['taggings']=$row['taggings'];
 	$data['complete_the_look']=$row['complete_the_look'];
-	//$data['material_name'] = $row['material_name'];
-	$material_id = $row['material_id'];
 	$data['GSM_name'] = $row['GSM_name'];	
 	$data['size'] = $row['size'];	
 	$data['style'] = $row['style'];	
@@ -187,29 +179,11 @@ class ProductList extends CI_Controller{
 	$data['special_wrk'] = $row['special_wrk'];
 	
 }
-		$arr3['table']='sections';
-		$arr3['where']="where section_id=$section_id";
+$arr3['table']='sections';
+		$arr3['where']="";
 		$arr3['and']="";
 		$arr3['order_by']="";		
 		$data['sec_data']=$this->site_sentry->get_all($arr3);
-
-		$arr4['table']='category';
-		$arr4['where']="where section_id=$section_id and cat_id=$cat_id";
-		$arr4['and']="";
-		$arr4['order_by']="";		
-		$data['cat_data']=$this->site_sentry->get_all($arr4);
-
-		$arr5['table']='subcategory';
-		$arr5['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
-		$arr5['and']="";
-		$arr5['order_by']="";		
-		$data['sub_cat_data']=$this->site_sentry->get_all($arr5);
-
-		$arr5['table']='filters';
-		$arr5['where']="where material_id=$material_id";
-		$arr5['and']="";
-		$arr5['order_by']="";		
-		$data['material_name']=$this->site_sentry->get_all($arr5);
 		
 $data['type']=$type;
 		$this->load->view('cms_seller/header_view',$data);

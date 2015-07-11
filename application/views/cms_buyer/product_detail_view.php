@@ -29,7 +29,7 @@
       <div class="span12">
          <!-- BEGIN STYLE CUSTOMIZER--> 
          <h3 class="page-title">
-            Product Trade Details<small></small>
+            Product Details<small></small>
          </h3>
       </div>
    </div>
@@ -47,17 +47,17 @@
             <ul class="nav nav-tabs">
                <li class="active">
                   <a href="#tab_0" data-toggle="tab">
-                  Current Order
+                  Customizable Products
                   </a>
                </li>
                <li>
                   <a href="#tab_1" data-toggle="tab">
-                  Order In Process
+                  Ready To Print
                   </a>
                </li>
                <li>
                   <a href="#tab_2" data-toggle="tab">
-                  Past Order
+                  Ready To Deliver
                   </a>
                </li>
             </ul>
@@ -67,7 +67,7 @@
                      <div class="portlet box blue">
                         <div class="portlet-title">
                            <div class="caption">
-                              <i class="fa fa-reorder"></i>Current Order
+                              <i class="fa fa-reorder"></i>Customizable Product List
                               <div class="tools">
                                  <a href="javascript:;" class="collapse">
                                  </a>
@@ -97,9 +97,7 @@
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Quantity</th>
-                                          <th class="hidden-phone">Mobile Number</th>
-                                          <th class="hidden-phone">Email ID</th>                                          
+                                          <th class="hidden-phone">Status</th>
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -125,10 +123,16 @@
                                              <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
                                              <?php }?>
                                           </td>
-                                          <td>200</td>
-                                          <td>9865847593</td>
-                                          <td>abcd@gmail.com</td>
-                                          
+                                          <td class="hidden-phone" id="prod_status">
+                                          	<?php 
+                                          		if($row['status']==1)
+                                          		{
+                                          	?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php }else {?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php } ?>
+                                          </td>
                                           <td class="hidden-phone">
                                              <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
@@ -142,7 +146,7 @@
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="10">No records found</td>
+                                          <td colspan="6">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -151,7 +155,6 @@
                                     </tbody>
                                  </table>
                               </div>
-                              
                            </div>
                         </div>
                      </div>
@@ -160,7 +163,7 @@
                      <div class="portlet box blue">
                         <div class="portlet-title">
                            <div class="caption">
-                              <i class="fa fa-reorder"></i>Order In Process
+                              <i class="fa fa-reorder"></i>Ready To Print Product List
                               <div class="tools">
                                  <a href="javascript:;" class="collapse">
                                  </a>
@@ -189,9 +192,7 @@
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Quantity</th>
-                                          <th class="hidden-phone">Mobile Number</th>
-                                          <th class="hidden-phone">Email ID</th>                                         
+                                          <th class="hidden-phone">Status</th>
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -224,16 +225,23 @@
                                              <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
                                              <?php }?>
                                           </td>
-                                          <td>9865847593</td>
-                                          <td>abcd@gmail.com</td>
-                                          <td>300</td>
                                           <td class="hidden-phone">
                                              <?php if($row['prod_image']!=""){?>
                                              <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
                                              <?php } else {?>
                                              <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
                                              <?php }?>
-                                          </td>                                          
+                                          </td>
+                                          <td class="hidden-phone" id="prod_status">
+                                          	<?php 
+                                          		if($row['status']==1)
+                                          		{
+                                          	?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php }else {?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php } ?>
+                                          </td>
                                           <td class="hidden-phone">
                                              <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
@@ -247,7 +255,7 @@
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="10">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -264,7 +272,7 @@
                      <div class="portlet box blue">
                         <div class="portlet-title">
                            <div class="caption">
-                              <i class="fa fa-reorder"></i>Past Oreder
+                              <i class="fa fa-reorder"></i>Ready To Deliver Product List
                               <div class="tools">
                                  <a href="javascript:;" class="collapse">
                                  </a>
@@ -294,9 +302,7 @@
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Quantity</th>
-                                          <th class="hidden-phone">Mobile Number</th>
-                                          <th class="hidden-phone">Email ID</th>                                          
+                                          <th class="hidden-phone">Status</th>
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -324,10 +330,6 @@
                                              <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
                                              <?php }?>
                                           </td>
-                                          <td>100</td>
-                                          <td>9865847593</td>
-                                          <td>abcd@gmail.com</td>
-                                          
                                           <td class="hidden-phone" id="prod_status">
                                           	<?php 
                                           		if($row['status']==1)
@@ -351,7 +353,7 @@
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="10">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 

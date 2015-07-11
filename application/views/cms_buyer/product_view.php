@@ -67,12 +67,6 @@
 										<input type="hidden" value="<?php echo $prod_id;?>" name="prod_id"/>
 										<input type="hidden" value="<?php echo $created_on;?>" name="created_on" value="<?php echo date('d-m-Y')?>"/>
 											<div class="form-body">
-											<div class="control-group">
-													<label class="control-label">Product ID</label>
-													    <div class="controls">
-															<input type="text" name="prod_id" id="prod_id" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_id;?>" class="span4 m-wrap"> 
-													    </div>
-												</div>
 												<div class="control-group">
 													<label class="control-label">Product Name</label>
 													    <div class="controls">
@@ -80,82 +74,47 @@
 													    </div>
 												</div>
 												<div class="control-group">
-													<label class="control-label">Section</label>
-													<?php foreach($sec_data as $row){ ?>
-													    <div class="controls">
-															<input type="text" name="sec_data" id="sec_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $row['section_name'];?>" class="span4 m-wrap"> 
-													    </div>
-													  <?php } ?>  
-												</div>
-												<div class="control-group">
-													<label class="control-label">Category</label>
-													    <div class="controls">
-															<input type="text" name="cat_data" id="cat_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $cat_data;?>" class="span4 m-wrap"> 
-													    </div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Subcategory</label>
-													    <div class="controls">
-															<input type="text" name="prod_name" id="prod_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
-													    </div>
-												</div>
-												
-											<div class="control-group">
-												  <label class="control-label">Material Name</label>
+												  <label class="control-label">Meta Title</label>
 													  <div class="controls">
-															<input type="text" name="material_name" id="material_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $material_name;?>" class="span4 m-wrap"> 
-													    </div>
+														<textarea name="prod_meta_title" id="prod_meta_title" <?php if($type=='view'){?>disabled<?php }?> class="span12 m-wrap"><?php echo $prod_meta_title;?></textarea>
+													  </div>
 												</div>
 												<div class="control-group">
-												  <label class="control-label">GSM</label>
+												  <label class="control-label">Meta Keywords</label>
 													  <div class="controls">
-															<input type="text" name="GSM_name" id="GSM_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $GSM_name;?>" class="span4 m-wrap"> 
-													    </div>
+														<textarea name="prod_meta_keyword" id="prod_meta_keyword" <?php if($type=='view'){?>disabled<?php }?> class="span12 m-wrap"><?php echo $prod_meta_keyword;?></textarea>
+													  </div>
 												</div>
 												<div class="control-group">
-												  <label class="control-label">Size</label>
+												  <label class="control-label">Meta Description</label>
 												  <div class="controls">
-															<input type="text" name="size" id="size" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $size;?>" class="span4 m-wrap"> 
-													</div>
-											   </div>
-											   <div class="control-group">
-												  <label class="control-label">Style</label>
-												  <div class="controls">
-															<input type="text" name="style" id="style" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $style;?>" class="span4 m-wrap"> 
-													    </div>
-											   </div>
-											   <div class="control-group">
-												  <label class="control-label">Handle</label>
-												  <div class="controls">
-															<input type="text" name="handle" id="handle" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $handle;?>" class="span4 m-wrap"> 
-													    </div>
-											   </div>
-											   <div class="control-group">
-												  <label class="control-label">Print</label>
-												  <div class="controls">
-															<input type="text" name="print" id="print" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $print;?>" class="span4 m-wrap"> 
-													    </div>
-											   </div>
-											   <div class="control-group">
-												  <label class="control-label">Number Of Color</label>
-												  <div class="controls">
-															<input type="text" name="print_color" id="print_color" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $print_color;?>" class="span4 m-wrap"> 
-													    </div>
-											   </div>
-											   <div class="control-group">
-												  <label class="control-label">Lamination</label>
-												  <div class="controls">
-															<input type="text" name="lamination" id="lamination" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $lamination;?>" class="span4 m-wrap"> 
-													    </div>
-											   </div>
-											   <div class="control-group">
-												  <label class="control-label">Special Work</label>
-												  <div class="controls">
-															<input type="text" name="special_wrk" id="special_wrk" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $special_wrk;?>" class="span4 m-wrap"> 
-													    </div>
+													 <textarea name="prod_meta_description" id="prod_meta_description" <?php if($type=='view'){?>disabled<?php }?>  class="span12 m-wrap"><?php echo $prod_meta_description;?></textarea>
+												   </div>
 											   </div>
 											   
+											 <div class="control-group">
+												  <label class="control-label">Product Description</label>
+												  <div class="controls">
+													 <textarea  name="prod_description" id="prod_description" <?php if($type=='view'){?>disabled<?php }?>  class="span12 ckeditor  m-wrap" cols="30" rows="10"><?php echo $prod_description;?> </textarea> 
+													 
+												  </div>
+											</div>
+											<?php 
 											
+											?>
+											<div class="control-group">
+                              <label class="control-label">Sections</label>
+                              <div class="controls">
+                                <!-- <textarea  name="details"  id="ai" class="span12 ckeditor m-wrap" cols="30" rows="10">  </textarea> -->
+									<select name="sec_id" id="sec_id" onchange="getFilters(this.value)" <?php if($type=='view'){?>disabled<?php }?>>
+										<option value="">Select</option>
+										<?php foreach($sec_data as $row){ ?>
+										<option value="<?php echo $row['section_id']; ?>"><?php echo $row['section_name']; ?></option>
+										<?php }?>
+									</select>
+								  
+                              </div>
+                           </div>
 						  <script type="text/javascript">
 							  $(document).ready(function() {
 								  
@@ -283,8 +242,45 @@
 							</div> -->
                            
 						  
-												
-												
+											<div class="control-group" id="subcategories" style="display:none;">
+											  
+											</div>
+											<div class="control-group" id="filters" style="display:none;">
+											  
+											</div>
+											
+											<div class="control-group">
+													<label class="control-label">Product Sku</label>
+													    <div class="controls">
+															<input type="text" name="prod_sku" id="prod_sku" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_sku;?>" class="span4 m-wrap"> 
+													    </div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Product Taggings</label>
+													    <div class="controls">
+															<select name="taggings" <?php if($type=='view'){?>disabled<?php }?>>
+															<?php if($taggings!=0){?>
+																<option value="<?php echo $taggings;?>"><?php if($taggings==1){echo "New";} if($taggings==2){echo "Premium";}?></option>
+																<?php }else{?>
+																<option value="0">Select</option>
+																<?php } if($taggings!=1){?>
+																
+																<option value="1">New</option>
+																<?php } if($taggings!=2){?>
+																<option value="2">Premium</option>
+																<?php }?>
+															</select> 
+													    </div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Gift Card</label>
+													    <div class="controls">
+															<select name="prod_gift_card" id="prod_gift_card">
+																<option value="0">No</option>
+																<option value="1">Yes</option>
+															</select>
+													    </div>
+												</div>
 												<div class="control-group">
 													<label class="control-label">Product Status</label>
 													    <div class="controls">
@@ -294,8 +290,24 @@
 															</select>
 													    </div>
 												</div>
-												
-												
+												<div class="control-group">
+													<label class="control-label">Product On Home</label>
+													    <div class="controls">
+															<select name="prod_on_home" id="prod_on_home">
+																<option value="1">Yes</option>
+																<option value="0">No</option>
+															</select>
+													    </div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Product On Complete The Look</label>
+													    <div class="controls">
+															<select name="complete_the_look" id="complete_the_look">
+																<option value="0">Yes</option>
+																<option value="1">No</option>
+															</select>
+													    </div>
+												</div>
 											
 														  <script type="text/javascript">
 							  $(document).ready(function() {
@@ -407,9 +419,51 @@
 									 
 								  }
 											  </script>
+												<div class="control-group">
+												  <label class="control-label">Product Short Description</label>
+												  <div class="controls">
+													 <textarea name="prod_short_description" id="prod_short_description"  <?php if($type=='view'){?>disabled<?php }?> class="span12   m-wrap"><?php echo $prod_short_description;?></textarea>
+												   </div>
+											   </div>
+											   <div class="control-group">
+													<label class="control-label">Customizable</label>
+													    <div class="controls">
+															<select name="prod_customizable" id="prod_customizable">
+																<option value="0">Yes</option>
+																<option value="1">No</option>
+															</select>
+													    </div>
+												</div>
+<!-- 												url_for_product_details -->
+												<div class="control-group">
+													<label class="control-label">Product Detail Url</label>
+													    <div class="controls">
+															<input type="text" name="url_for_product_details" id="url_for_product_details" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $url_for_product_details;?>" class="span4 m-wrap"> 
+													    </div>
+												</div>
+											   <div class="control-group">
+										  <label class="control-label">Image On Product page:</label>
+										  <div class="controls">
+											<div class="fileupload fileupload-new" data-provides="fileupload">
+												<?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+												   <?php if($image_url!=""){?>
+													<img src="<?php echo base_url().$image_url?>" /> 
+													<?php } else {?>
+												   <img src="<?php echo base_url()?>images/noimage.gif" alt="" />
+												   <?php }?>
+												   <input type="hidden" value="<?php echo $image_url; ?>" name="img_url">	
+												</div><?php } ?> 
+												<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+												<div>
+												   <span class="btn btn-file"><span class="fileupload-new">Select image</span>
+												   <span class="fileupload-exists">Change</span>
+												   <input type="file" name="fileinput" <?php if($type=='view'){?>disabled<?php }?> class="default" /></span>
+												   <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+												</div>
 												
-											   
-											   
+											 </div> 
+										  </div>
+										</div> 
 				
 											   
 											</div>
@@ -491,12 +545,6 @@
 															
 														</div>
 													</div>
-													<div class="control-group">
-												  <label class="control-label">Product SKU</label>
-												  <div class="controls">
-															<input type="text" name="prod_sku" id="prod_sku" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_sku;?>" class="span4 m-wrap"> 
-													    </div>
-											   </div>
 													<!--/span-->
 													<div class="control-group">
 													<label class="control-label">Require Shipping</label>
@@ -557,7 +605,7 @@
 												<h3 class="form-section">Upload Images For Description</h3>
 												
 											<div class="control-group">
-											  <label class="control-label">Front:</label>
+											  <label class="control-label">Image 1:</label>
 											  <div class="controls">
 												<div class="fileupload fileupload-new" data-provides="fileupload">
 													<?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -580,7 +628,7 @@
 											  </div> 
 											</div> 
 											 <div class="control-group">
-                              <label class="control-label">Back:</label>
+                              <label class="control-label">Image 2:</label>
                               <div class="controls">
                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                     <?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -603,7 +651,7 @@
                               </div>
                            </div> 
 						    <div class="control-group">
-                              <label class="control-label">Left:</label>
+                              <label class="control-label">Image 3:</label>
                               <div class="controls">
                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                     <?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -626,7 +674,7 @@
                               </div>
                            </div> 
 						    <div class="control-group">
-                              <label class="control-label">Right:</label>
+                              <label class="control-label">Image 4:</label>
                               <div class="controls">
                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                     <?php if($type=='edit'){ ?><div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">

@@ -86,11 +86,59 @@ class Common_model extends CI_Model
 		}
 	}
 
+	function update_status($section_id,$cat_id,$sub_cat_id,$prod_id,$status)
+	{
+		
+		
+		if($status==1)
+		{
+			$new_status = 0;
+
+		}
+		else
+		{
+			$new_status = 1;
+		}
+
+		
+		$data = array(
+			
+			'status' => $new_status,
+			);
+
+		$data1 = array(
+			'section_id' => $section_id,
+			'cat_id' => $cat_id,
+			'sub_cat_id' => $sub_cat_id,
+			'prod_id' => $prod_id,
+			);
+		$sql = $this->db->query("UPDATE products SET status=$new_status WHERE section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and prod_id=$prod_id");
+
+		//$this->db->update('products',$data);
+		//$this->db->set('status',$new_status);
+		//$this->db->where('section_id',$section_id);
+		//$this->db->where('cat_id',$cat_id);
+		//$this->db->where('sub_cat_id',$sub_cat_id);
+		//$this->db->where('prod_id',$prod_id);
+
+		
+		
+
+	}
+
 	function get_all_filter_product($per_page,$offset) 
 	{
 		$query = $this->db->get('products', $per_page, $offset);
 		$row=$query->result_array();
 		return $row;
+	}
+
+	function status_prod_list($status) 
+	{
+		$sql = $this->db->query("select * from products where seller_request_status=$status");
+	    $rst = $sql->result_array();
+
+		return $rst;
 	}
 
 	function count_subcat($section_id,$cat_id,$sub_cat_id)
