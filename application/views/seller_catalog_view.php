@@ -1,3 +1,15 @@
+<script>
+    $(document).ready(function () {
+        $('#section_id').click(function () {
+            //$('#div2').hide('fast');
+            $('#output').show('fast');
+        });
+        /*$('#id_radio2').click(function () {
+            $('#div1').hide('fast');
+            $('#div2').show('fast');
+        });*/
+    });
+</script>
 <script>  
                 function get_sub_cat_name(str) {
                   var xmlhttp;
@@ -775,7 +787,7 @@
                                   <?php foreach($section as $row){ ?>
                                   <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
                                     
-                                         <input type="radio" name="section" id="<?php echo $row['section_id']; ?>" value="<?php echo $row['section_id']; ?>" onclick="getFilters(this.id)" class="txtbox"><?php echo $row['section_name']; ?> 
+                                         <input type="radio" name="section" id="section_id" value="<?php echo $row['section_id']; ?>" onclick="getFilters(this.id)" class="txtbox"><?php echo $row['section_name']; ?> 
                                   </div>
                                   <?php } ?>
                               </div>
@@ -805,6 +817,7 @@
                                   </div>
                                   
                               </div>
+                              <div id="output">Welcome</div>
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                   <div class="lbltxt" style="float:left;">Select Subcategory:
                                     <span class="req" required data-validation-required-message="Please Select Subject">*</span>

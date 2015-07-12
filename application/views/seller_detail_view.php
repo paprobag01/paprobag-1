@@ -1,5 +1,4 @@
-
- <div id="content">
+<div id="content">
         <div class="container">
             
             <div class="cart_c">
@@ -36,20 +35,27 @@
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                             <div class="ship_frm_c">
+                            <?php 
+                            if($errormsg['error']){
+                            ?>
+                                <div><h3>Your Email address is not verified</h3></div>
+                            <?php
+                            } else {
+                            ?>
                                 <div class="frm ship_frm">
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">Email ID :<span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" id="email_id" class="txtbox">
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">Enter OTP :<span class="req">*</span></div>
-                                            <input type="text" class="txtbox" placeholder="Put last four digits of miss call">
+                                            <input type="text" class="txtbox" id="mobile_number" placeholder="Put last four digits of miss call" value="<?php echo $otp_start; ?>">
                                         </div>
                                         <span style="float:left">
                                        <div class="cart_btn clearfix" style="padding-top: 40px;padding-bottom: 10px;">
                                    
-                                            <a href="#" class="next_btn">Verify Number</a>
+                                            <a href="javascript:void(0);" class="next_btn" id="verify_number">Verify Number</a>
                                      </div>  </span>
                                     </div>
                                     <div class="row">
@@ -59,25 +65,25 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">Address Line 1:  <span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" id="address_1" class="txtbox">
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">Address Line 2: <span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" id="address_2" class="txtbox">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">Zip/Postal Code:<span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" id="zipcode" class="txtbox">
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">City:<span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" id="city" class="txtbox">
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="lbltxt">State: <span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
+                                            <input type="text" id="state" class="txtbox">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -87,9 +93,14 @@
                                     </div>
                                 </div>
                                 <div class="cart_btn clearfix">
+                                    <input type="hidden" id="keymatch" name="keymatch" value="<?php echo $keymatch; ?>">
+                                    <input type="hidden" id="otp_set" value="0">
                                     <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                                    <a href="<?php echo base_url()?>seller_catalog" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
-                                </div>        
+                                    <a href="javascript:void(0);" onclick="seller_info();" id="seller_info" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
+                                </div> 
+                            <?php       
+                            }
+                            ?>
                             </div>
                         </div>
                     </div>
@@ -97,3 +108,43 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+    /////////////////////////////////////
+    // Register Seller info
+    /////////////////////////////////////
+
+    function seller_info(){
+        var otp_set = $('#otp_set').val();
+        if(otp_set == '1'){
+            // register seller info
+            var email_id = $('#email_id').val();
+            var address_1 = $('#address_1').val();
+            var address_2 = $('#address_2').val();
+            var zipcode = $('#zipcode').val();
+            var city = $('#city').val();
+            var state = $('#state').val();
+            var data = {
+                'email_id': email_id,
+                'address_1': address_1,
+                'address_2': address_2,
+                'zipcode': zipcode,
+                'city': city,
+                'state': state
+            };
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                ContentType: "application/json",
+                url: base_url+"/login/register_seller_info",
+                data: data, // or JSON.stringify ({name: 'jonas'}),
+                success: function(data) { 
+                    window.location.href = base_url+"/seller_catalog";
+                },
+            });
+        } else {
+            // Otp is not set
+        }
+    }
+
+    </script>

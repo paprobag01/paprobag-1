@@ -309,7 +309,28 @@ class Common_model extends CI_Model
 	function checkuser($data=null)
 	{
 		try {
-			$sql = $this->db->query("select * from login where (username='".$data['username']."' or email='".$data['username']."') and password='".$data['password']."'");
+			$sql = $this->db->query("select * from login where (username='".$data['username']."' or email='".$data['username']."') and password='".$data['password']."' and email_verified = 1");
+
+			$rowcount = $sql->num_rows();	
+			
+			if($rowcount>0)
+			{
+				return $sql->result_array();
+			}
+			else
+			{
+				return false;
+			}
+		} catch (Exception $e) {
+			// print error
+			redirect('/index','refrest');
+		}
+	}
+
+	function getMobileNo($verificationText)
+	{
+		try {
+			$sql = $this->db->query("select mobile_number from login where email_verification_code = '".$verificationText."'");
 
 			$rowcount = $sql->num_rows();	
 			

@@ -218,7 +218,6 @@ jQuery(function ($) {
     jQuery('.del_btn').click(function(){
 
         var product_id = $(this).attr('id');
-        console.log(product_id);
 
         var data = {
             'product_id':product_id,           
@@ -236,6 +235,42 @@ jQuery(function ($) {
         });
 
     });
+
+    /////////////////////////////////////
+    // Verify Mobile number
+    /////////////////////////////////////
+
+    jQuery('#verify_number').click(function(e){
+        var keymatch = $('#keymatch').val();
+        var otp = $('#mobile_number').val();
+        otp = decodeURIComponent(otp);
+        var data = {
+            'keymatch':keymatch,
+            'otp': otp
+        };
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            ContentType: "application/json",
+            url: base_url+"/verify_number",
+            data: data, // or JSON.stringify ({name: 'jonas'}),
+            success: function(data) { 
+                //window.location.reload(); 
+                if(data.status == 'success') {
+                    $('#verify_number').html("Number is verified");
+                    $("body").off( "click", "#verify_number", flash);
+                    $('#verify_number').css('background','#8DC838');
+                    $('#otp_set').val("1");
+                }
+            },
+        });
+    });
+
+    function flash() {
+        $( "div" ).show().fadeOut( "slow" );
+    }
+
 
     /////////////////////////////////////
     //  animate elements when they are in viewport

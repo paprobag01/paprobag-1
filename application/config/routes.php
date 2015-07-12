@@ -41,6 +41,7 @@
 $route['default_controller'] = "index";
 $route['404_override'] = '';
 
+$route['verify/(:any)'] = "/login/verify/$1";
 
 
 
