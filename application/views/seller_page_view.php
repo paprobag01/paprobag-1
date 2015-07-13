@@ -71,7 +71,7 @@
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                  <div class="frm rew_frm">
                                     <h5>Register Now</h5>
-                                    <form method="post" action="<?php echo base_url()?>login/seller_registration">
+                                    <form method="post" id="seller_registration_form" action="<?php echo base_url()?>login/seller_registration">
                                        <div class="row first_row">
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Your Name: <span class="req">*</span></div>
@@ -95,17 +95,17 @@
                                        <div class="row">
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Password:<span class="req">*</span></div>
-                                             <input type="password" name="seller_password" class="txtbox">
+                                             <input type="password" id="seller_password" name="seller_password" class="txtbox">
                                           </div>
                                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                              <div class="lbltxt">Confirm Password:<span class="req">*</span></div>
-                                             <input type="password" name="seller_confirm_password" class="txtbox">
+                                             <input type="password" id="seller_confirm_password" name="seller_confirm_password" class="txtbox">
                                           </div>
                                        </div>
                                        <div class="lbltxt">
                                        </div>
                                        <div class="clearfix frm_bot">
-                                          <input type="submit" class="btn_c" value="Submit">
+                                          <input type="submit" id="seller_submit" class="btn_c" value="Submit">
                                           <input type="reset" class="clear_btn" value="Clear">
                                           <span class="reqired">* Required Fields</span> 
                                        </div>
@@ -191,3 +191,42 @@
       </div>
    </div>
 </div>
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+<script>
+   $(document).ready(function () {           
+       //validation rules
+       $("#seller_registration_form").validate({
+           rules: {
+               "sellername": {
+                   required: true,
+                   maxlength : 25
+               },
+               "orgname": {
+                   required: true,
+                   minlength: 2,
+                   maxlength: 25
+               },
+               "email_id": {
+                  required: true,
+                  email: true,
+                  maxlength: 55
+               },
+               "mob_no": {
+                  required: true,
+                  alphanumeric: true,
+                  maxlength: 25
+               },
+               "seller_password": {
+                  required: true,
+                  maxlength: 25
+               },
+               "seller_confirm_password": {
+                  required: true,
+                  equalTo: "#seller_password"
+               }
+           }
+       })       
+   });
+</script>

@@ -4,13 +4,8 @@
             //$('#div2').hide('fast');
             $('#output').show('fast');
         });
-        /*$('#id_radio2').click(function () {
-            $('#div1').hide('fast');
-            $('#div2').show('fast');
-        });*/
     });
-</script>
-<script>  
+
                 function get_sub_cat_name(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -33,8 +28,7 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/get_product/?get_product="+str,true);
                   xmlhttp.send();
                 }
-              </script> 
-       <script>  
+           
                 function getFilters(str) {
                 
                 var xmlhttp;
@@ -60,8 +54,6 @@
                 }
               
               
-              </script>    
-          <script>  
                 function createpagenumb(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -84,8 +76,7 @@
                   xmlhttp.open("GET","<?php echo base_url();?>Search_result/create_number/?create_number="+str,true);
                   xmlhttp.send();
                 }
-              </script>    
-               <script>                  
+          
                 function create_numberlinks_material(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -109,8 +100,6 @@
                   xmlhttp.send();
                 }
                   
-                   </script>
-                 <script> 
                 function create_numberlinks_GSM(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -134,8 +123,6 @@
                   xmlhttp.send();
                 }
                   
-                 </script>
-                 <script>  
                 function create_numberlinks_size(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -159,8 +146,6 @@
                   xmlhttp.send();
                 }
                   
-                   </script>
-                  <script> 
                 function create_numberlinks_style(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -184,8 +169,6 @@
                   xmlhttp.send();
                 }
                   
-                 </script>
-                <script>
                 function create_numberlinks_handle(str) {
                   var xmlhttp;
                   if (str.length==0) { 
@@ -727,205 +710,173 @@
      span.unclickable:hover { cursor: default; }
      </style>
 
- <div id="content">
-        <div class="container">
-            
-            <div class="cart_c">
-                
-                <div class="cart_bot">
-                    <div class="title clearfix">
-                        <h2>Your cart - Shipping Information</h2>
-                        <div class="title_right cart_list">
-                            <ul>
-                                <li class="complete"><span></span></li>
-                                <li><span>2</span></li>
-                                <li><span>3</span></li>
-                                <li><span>4</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="sidebar">
-                                <div class="side_box side_box_1 red5">
-                                    <h5>helpful information</h5>
-                                    <ul>
-                                        <li><a href="#">Personal Details</a></li>
-                                        <li><a href="#">Email ID </a></li>
-                                        <li><a href="#">Contact Number</a></li>
-                                        <li><a href="#">Address</a></li>
-                                        <li><a href="#">Product Upload</a></li>
-                                        <li><a href="#">Verfication</a></li>
-                                        <li><a href="#">Ready To Sell</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-                            <div class="ship_frm_c">
-                                <div class="frm ship_frm">
-                                   
-                                   <div class="tabing animated  animation-done bounceInUp" data-animation="bounceInUp" style="margin:0px;">
-                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#custp" data-toggle="tab">Upload Product</a></li>
-                        <li><a href="#rtd" data-toggle="tab">Your Catalog</a></li>
-                        <li><a href="#rtd" data-toggle="tab">Live products</a></li>
-                        
-                     </ul>
-                     <!-- Tab panes -->
-
-                     <form method="post">
-                     <div class="tab-content">
-
-                        <div class="tab-pane active" id="custp">
-
-                           <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                  <div class="lbltxt" style="float:left;">Select Section:
-                                    <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                  </div>
-                                  <?php foreach($section as $row){ ?>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section" id="section_id" value="<?php echo $row['section_id']; ?>" onclick="getFilters(this.id)" class="txtbox"><?php echo $row['section_name']; ?> 
-                                  </div>
-                                  <?php } ?>
-                              </div>
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="GSM_result">
-                                  <div class="lbltxt" style="float:left;">Select Category:
-                                    <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">PaperBag 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">EcoBags 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Boxes 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Poches 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Office Products 
-                                  </div>
-                                  
-                              </div>
-                              <div id="output">Welcome</div>
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                  <div class="lbltxt" style="float:left;">Select Subcategory:
-                                    <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Shopping Carry Bags 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Handmade Paper Bags 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Food Parcel Bags 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Counter Bags 
-                                  </div>
-                                  <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                    
-                                         <input type="radio" name="section"  class="txtbox">Grocery Bags 
-                                  </div>
-                                  
-                              </div>
-                              
-                           </div>
-                        </div>
-                        <div class="tab-pane" id="rtd">
-                          <div class="cart_tbl">
-                                <div class="clearfix title_row">
-                                    <ul>
-                                        <li>Photo</li>
-                                        <li>Name</li>
-                                        <li>Quantity</li>
-                                        <li>Price</li>
-                                    </ul>
-                                </div>
-                                <div class="clearfix con_row">
-                                    <ul>
-                                        <li><div class="thumb"><span> <img alt="alt" src="media/product/big.jpg" class="" draggable="false"> </span></div></li>
-                                        <li>
-                                            <h5><a href="#">POÄNG - Chair, Blomstermåla</a></h5>
-                                            <p>Living room furniture</p>
-                                        </li>
-                                        <li>
-                                            <a class="minus_btn"></a>
-                                            <input type="text" class="txtbox" placeholder="3"> 
-                                            <a class="plus_btn"></a>
-                                        </li>
-                                        <li>
-                                            <div class="price">$360.00</div>
-                                            <a href="#" class="del_btn"></a>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li><div class="thumb"><span><img alt="alt" src="media/product/big.jpg" class="" draggable="false"></span></div></li>
-                                        <li>
-                                            <h5><a href="#">Mugs with yellow stripes</a></h5>
-                                            <p>Kitchen utensils</p>
-                                        </li>
-                                        <li>
-                                            <a class="minus_btn"></a>
-                                            <input type="text" class="txtbox" placeholder="1"> 
-                                            <a class="plus_btn"></a>
-                                        </li>
-                                        <li>
-                                            <div class="price">$15.50</div>
-                                            <a href="#" class="del_btn"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="clearfix total_row">
-                                    <ul>
-                                        <li>
-                                            <p><span class="fa fa-clock-o"></span>Praesent egestas est vitae interdum amet erat varius elementum.</p>
-                                        </li>
-                                        <li>
-                                            <div class="total_val">Total value:</div>
-                                        </li>
-                                        <li>
-                                            <div class="price">$375.50</div>
-                                            <a href="#" class="refresh_btn"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="cart_btn clearfix">
-                                    <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                                    <a href="#" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
-                                </div>
-</div>
-                          
-                        </div>
-                        
-                     </div>
-                  </div> 
-                         </form>          
-                                    
-                                </div>
-                                <div class="cart_btn clearfix">
-                                    <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                                    <a href="<?php echo base_url()?>seller_catalog" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
-                                </div>        
-                            </div>
-                        </div>
-                    </div>
-               </div>     
+<div id="content">
+   <div class="container">
+      <div class="cart_c">
+         <div class="cart_bot">
+            <div class="title clearfix">
+               <h2>Your cart - Shipping Information</h2>
+               <div class="title_right cart_list">
+                  <ul>
+                     <li class="complete"><span></span></li>
+                     <li class="complete"><span></span></li>
+                     <li><span>3</span></li>
+                  </ul>
+               </div>
             </div>
-        </div>
-    </div>
+            <div class="row">
+               <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                  <div class="sidebar">
+                     <div class="side_box side_box_1 red5">
+                        <h5>helpful information</h5>
+                        <ul>
+                           <li><a href="#">Personal Details</a></li>
+                           <li><a href="#">Email ID </a></li>
+                           <li><a href="#">Contact Number</a></li>
+                           <li><a href="#">Address</a></li>
+                           <li><a href="#">Product Upload</a></li>
+                           <li><a href="#">Verfication</a></li>
+                           <li><a href="#">Ready To Sell</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                  <div class="ship_frm_c">
+                     <div class="frm ship_frm">
+                        <div class="tabing animated  animation-done bounceInUp" data-animation="bounceInUp" style="margin:0px;">
+                           <ul class="nav nav-tabs">
+                              <li class="active"><a href="#custp" data-toggle="tab">Upload Product</a></li>
+                              <li><a href="#rtd" data-toggle="tab">Your Catalog</a></li>
+                              <li><a href="#rtd" data-toggle="tab">Live products</a></li>
+                           </ul>
+                           <!-- Tab panes -->
+                           <form method="post">
+                              <div class="tab-content">
+                                 <div class="tab-pane active" id="custp">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="lbltxt" style="float:left;">Select Section:
+                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
+                                          </div>
+                                          <div class="lbltxt" style="float:right;margin-right:45%;">
+                                            <select>
+                                              <option value="volvo">Volvo</option>
+                                              <option value="saab">Saab</option>
+                                              <option value="mercedes">Mercedes</option>
+                                              <option value="audi">Audi</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="GSM_result">
+                                          <div class="lbltxt" style="float:left;">Select Category:
+                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
+                                          </div>
+                                          <div class="lbltxt" style="float:right;margin-right:45%;">
+                                            <select>
+                                              <option value="volvo">Volvo</option>
+                                              <option value="saab">Saab</option>
+                                              <option value="mercedes">Mercedes</option>
+                                              <option value="audi">Audi</option>
+                                            </select>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="lbltxt" style="float:left;">Select Subcategory:
+                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
+                                          </div>
+                                          <div class="lbltxt" style="float:right;margin-right:45%;">
+                                            <select>
+                                              <option value="volvo">Volvo</option>
+                                              <option value="saab">Saab</option>
+                                              <option value="mercedes">Mercedes</option>
+                                              <option value="audi">Audi</option>
+                                            </select>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="tab-pane" id="rtd">
+                                    <div class="cart_tbl">
+                                       <div class="clearfix title_row">
+                                          <ul>
+                                             <li>Photo</li>
+                                             <li>Name</li>
+                                             <li>Quantity</li>
+                                             <li>Price</li>
+                                          </ul>
+                                       </div>
+                                       <div class="clearfix con_row">
+                                          <ul>
+                                             <li>
+                                                <div class="thumb"><span> <img alt="alt" src="media/product/big.jpg" class="" draggable="false"> </span></div>
+                                             </li>
+                                             <li>
+                                                <h5><a href="#">POÄNG - Chair, Blomstermåla</a></h5>
+                                                <p>Living room furniture</p>
+                                             </li>
+                                             <li>
+                                                <a class="minus_btn"></a>
+                                                <input type="text" class="txtbox" placeholder="3"> 
+                                                <a class="plus_btn"></a>
+                                             </li>
+                                             <li>
+                                                <div class="price">$360.00</div>
+                                                <a href="#" class="del_btn"></a>
+                                             </li>
+                                          </ul>
+                                          <ul>
+                                             <li>
+                                                <div class="thumb"><span><img alt="alt" src="media/product/big.jpg" class="" draggable="false"></span></div>
+                                             </li>
+                                             <li>
+                                                <h5><a href="#">Mugs with yellow stripes</a></h5>
+                                                <p>Kitchen utensils</p>
+                                             </li>
+                                             <li>
+                                                <a class="minus_btn"></a>
+                                                <input type="text" class="txtbox" placeholder="1"> 
+                                                <a class="plus_btn"></a>
+                                             </li>
+                                             <li>
+                                                <div class="price">$15.50</div>
+                                                <a href="#" class="del_btn"></a>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="clearfix total_row">
+                                          <ul>
+                                             <li>
+                                                <p><span class="fa fa-clock-o"></span>Praesent egestas est vitae interdum amet erat varius elementum.</p>
+                                             </li>
+                                             <li>
+                                                <div class="total_val">Total value:</div>
+                                             </li>
+                                             <li>
+                                                <div class="price">$375.50</div>
+                                                <a href="#" class="refresh_btn"></a>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="cart_btn clearfix">
+                                          <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
+                                          <a href="#" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                        </form>          
+                     </div>
+                     <div class="cart_btn clearfix">
+                        <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
+                        <a href="<?php echo base_url()?>seller_catalog" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
