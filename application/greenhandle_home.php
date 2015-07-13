@@ -1,3 +1,78 @@
+<!DOCTYPE HTML>
+<html class="noIE">
+
+<!-- Mirrored from templines.com/demo/html/shoptime-html/cooncook/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2015 06:10:27 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>CoonCook</title>
+
+<!--Master css-->
+<link rel="stylesheet" href="<?php echo base_url('css/master.css')?>">
+<script type="text/javascript" src="<?php echo base_url('js/jquery.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/jquery.icheck.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/package.min.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/jquery.flexslider.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/bxslider/jquery.bxslider.min.js')?>"></script> 
+<script type="text/javascript" src="<?php echo base_url('js/scripts.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/path.js')?>"></script>
+
+<!--<script type="text/javascript" src="<?php echo base_url('js/colorpicker.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/eye.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/js/jquery.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/layout.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/utils.js')?>"></script>-->
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<!--<link href="<?php echo base_url('css/colorpicker.css')?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('css/layout.css')?>" rel="stylesheet" type="text/css">-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('js/j360.js')?>" ></script>
+</head>
+<body>
+<div id="header"> 
+  <div class="header_bot">
+    <div class="container">
+      <div class="logo" style="  padding-top: 10px;">Sell With GreenHandle</div>
+      <div id="nav" class="yamm">
+        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"> 
+
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+        </button>
+         <nav id="navbar-collapse-1" class="navbar-collapse collapse" style="padding-left: 284px;">
+            Free Shipping across India
+        </nav>
+      </div>
+      <div class="right_menu">
+           <ul>
+          <li><span class="fa fa-phone" style="padding-right: 6px;"></span>022 6127 5286</li>
+          <li><span class="fa fa-envelope" style="padding-right: 10px;"></span>Bulk Order</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flexslider home-slider">
+  <ul class="slides" style="max-height: 467px;">
+    <li class="" style="max-height: 467px; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"> <img alt="alt" src="<?php echo base_url(); ?>images/background.jpg" width="1600" height="850" draggable="false" style="height:452px">
+      
+    </li>
+  </ul>
+  <div class="container">
+    <div class="banner_nav ">
+      <div class="scroll_down">Scroll down <span class="fa fa-arrow-circle-down"></span></div>
+    </div>
+  </div>
+</div>
+<!--SLIDER END -->
+<div id="content" style="padding: 0px 0 50px 0;">
+ 
+</div>
 <div id="footer" >
   <!--<div class="f_top">
     <div class="container">
@@ -34,7 +109,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <h4>Greenhandle Story</h4>
-          <div class="desc">Greenhandle will be a platform where anyone can check customize and order shoping carrybags, paperbags,handmadepaper bags,ecobags,boxes, pouches office products and many more with there brand name.Through our well define sections i.e customizable products, ready to print and ready to deliver.<a href="javascript:void(0);" class="fa fa-arrow-circle-right"></a></div>
+          <div class="desc">Nulla laoreet, orci at fringilla consectetur, urna dui aliquam urna, sit amet dapibus odio orci vitae risus. Praesent egestas est vitae interdum varius. Sed ac mauris sit amet erat varius elementum. Morbi leo metus, dictum vitae justo ac, posuere porttitor augue. <a href="#" class="fa fa-arrow-circle-right"></a></div>
           <div class="partner">
             <h4>Our Partners</h4>
             <ul>

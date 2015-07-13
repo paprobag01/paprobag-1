@@ -652,9 +652,10 @@
 											<div class="control-group">
 													<label class="control-label">Approve Product</label>
 													    <div class="controls">
-															<select name="prod_state" class="span4 m-wrap">																
-																<option value="0">Pending</option>
-																<option value="1">Approve</option>																
+															<select name="prod_state" class="span4 m-wrap">													
+																
+																<option value="1">Approve</option>
+																<option value="2">Live</option>																
 															</select>
 															
 														</div>

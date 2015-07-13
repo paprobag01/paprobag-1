@@ -132,7 +132,31 @@ class Common_model extends CI_Model
 
 	function status_prod_list($status) 
 	{
-		$sql = $this->db->query("select * from products where seller_request_status=$status");
+		$sql = $this->db->query("select * from products where product_status=$status");
+	    $rst = $sql->result_array();
+
+		return $rst;
+	}
+
+	function customize_prod_list($status) 
+	{
+		$sql = $this->db->query("select * from products where section_id=5 and product_status=$status");
+	    $rst = $sql->result_array();
+
+		return $rst;
+	}
+
+	function readyToprint_prod_list($status) 
+	{
+		$sql = $this->db->query("select * from products where section_id=6 and product_status=$status");
+	    $rst = $sql->result_array();
+
+		return $rst;
+	}
+
+	function readyTodeliver_prod_list($status) 
+	{
+		$sql = $this->db->query("select * from products where section_id=7 and product_status=$status");
 	    $rst = $sql->result_array();
 
 		return $rst;

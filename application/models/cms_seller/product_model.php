@@ -4,7 +4,11 @@ class Product_model extends CI_Model
 	
 function Save_Products()
 {
+
+	
 	$prod_id=$this->input->post('prod_id');
+
+	
 	$link="";
 	$link1="";
 	$link2="";
@@ -276,52 +280,33 @@ function Save_Products()
 	
 		
 		$this->db->where('prod_id', $prod_id);//prod_price prod_sell_price prod_qty prod_stock require_shipping prod_shipping_price fileinput1 fileinput2 fileinput3 fileinput4 prod_meta_title prod_discount
-	$data=array(  
-	'prod_name'=>$this->input->post('prod_name'),
-	'prod_price'=>$this->input->post('prod_price'),
-	'prod_meta_title'=>$this->input->post('prod_meta_title'),
-	'prod_meta_keyword'=>$this->input->post('prod_meta_keyword'),
-	'prod_meta_description'=>$this->input->post('prod_meta_description'),
-	'prod_description'=>$this->input->post('prod_description'),
-	'cat_id'=>$this->input->post('prod_sub_categories'),
-	'section_id'=>$this->input->post('sec_id'),
-	'sub_cat_id'=>$this->input->post('sub_categories'),
-	'prod_short_description'=>$this->input->post('prod_short_description'),//prod_customizable
-	//'prod_sub_categories'=>$this->input->post('prod_sub_categories'),
-	//filter_val'=>$this->input->post('filter_val'),
-	'prod_sku'=>$this->input->post('prod_sku'),
-	'taggings'=>$this->input->post('taggings'),
-	'complete_the_look'=>$this->input->post('complete_the_look'),
-	'prod_gift_card'=>$gift_card,
-	'filter_id'=>$this->input->post('material_id'),
-	'prod_status'=>$this->input->post('prod_status'),
-	'prod_on_home'=>$this->input->post('prod_on_home'),
-	'prod_customizable'=>$this->input->post('prod_customizable'),
-	'url_for_product_details'=>$this->input->post('url_for_product_details'),
-	'created_on'=>$this->input->post('created_on'),
-	'prod_discount'=>$this->input->post('prod_discount'),
-	'prod_sell_price'=>$this->input->post('prod_sell_price'),
-	'prod_qty'=>$this->input->post('prod_qty'),
-	'prod_stock'=>$this->input->post('prod_stock'),
-	'sold_by'=>$this->input->post('sold_by'),
-	'prod_gift_code'=>$rand,
-	'prod_image'=>$link,
-	'prod_image1'=>$link1,
-	'prod_image2'=>$link2,
-	'prod_image3'=>$link3,
-	'prod_image4'=>$link4,
-	'require_shipping'=>$this->input->post('require_shipping'),
-	'prod_shipping_price'=>$this->input->post('prod_shipping_price'),
-	//'material_name' => $this->input->post('material_id'),	
-	'GSM_name' => $this->input->post('GSM_id'),
-	'size' => $this->input->post('size_id'),	
-	'style' => $this->input->post('style'),	
-	'handle' => $this->input->post('handle_id'),	
-	'print' => $this->input->post('print'),	
-	'print_color' => $this->input->post('printclr'),	
-	'lamination' => $this->input->post('lamination'),	
-	'special_wrk' => $this->input->post('specialwrk')
-	);
+	
+
+		$product_on_site = $this->input->post('status');
+		$product_status = 3;
+	
+		if($product_on_site)
+		{
+			$data=array(  
+		
+				'prod_status'=>$this->input->post('prod_status'),
+				'product_status'=>$product_status,
+				
+				);
+		}
+		else
+		{
+			$data=array(  
+		
+				'product_status'=>$this->input->post('prod_state'),
+				
+				);
+		}
+
+	
+		
+	
+
 	$this->db->trans_start();
 	$this->db->update('products', $data); 
 	$this->db->trans_complete();
@@ -619,6 +604,7 @@ function Save_Products()
 	'prod_image3'=>$link3,
 	'prod_image4'=>$link4,
 	'sold_by'=>$this->input->post('sold_by'),
+	'product_status'=>$this->input->post('prod_state'),
 	'require_shipping'=>$this->input->post('require_shipping'),
 	'prod_shipping_price'=>$this->input->post('prod_shipping_price'),	
 	'filter_id'=>$this->input->post('material_id'),	

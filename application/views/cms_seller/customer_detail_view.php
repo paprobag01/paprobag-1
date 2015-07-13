@@ -38,6 +38,11 @@
 									 Images
 								</a>
 							</li>
+							<li>
+								<a href="#tab_2" data-toggle="tab">
+									 Customer Details
+								</a>
+							</li>
 						</ul>
 						<form action="<?php echo base_url()?>cms_seller/productList/save_products" class="" method="post" enctype="multipart/form-data" />
 						<div class="tab-content">
@@ -285,15 +290,7 @@
 						  
 												
 												
-												<div class="control-group">
-													<label class="control-label">Product Status</label>
-													    <div class="controls">
-															<select name="prod_status" id="prod_status">
-																<option value="0">Enable</option>
-																<option value="1">Disable</option>
-															</select>
-													    </div>
-												</div>
+												
 												
 												
 											
@@ -649,16 +646,17 @@
                               </div>
                            </div> 
 											</div>
+
 											<div class="control-group">
-													<label class="control-label">Approve Product</label>
+													<label class="control-label">Product Status</label>
 													    <div class="controls">
-															<select name="prod_state" class="span4 m-wrap">																
-																<option value="0">Pending</option>
-																<option value="1">Approve</option>																
+															<select name="status" id="prod_status">
+																<option value="0">Enable</option>
+																<option value="1">Disable</option>
 															</select>
-															
-														</div>
-													</div>
+													    </div>
+												</div>
+											
 											<div class="control-group">
 											<div class="controls">
 											<?php if($type='edit'){?>

@@ -45,9 +45,9 @@ class Search_result extends CI_Controller{
      
     
 
-    $data = $this->common_model->status_prod_list($status);
-
-         
+    $customize = $this->common_model->customize_prod_list($status);
+    $readyToprint = $this->common_model->readyToprint_prod_list($status);
+    $readyTodeliver = $this->common_model->readyTodeliver_prod_list($status);
                 
                ?><div class="tab-pane active" id="tab_0">
                      <div class="portlet box blue">
@@ -70,7 +70,10 @@ class Search_result extends CI_Controller{
                            <!-- BEGIN FORM-->
                            
                            <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                             <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="portlet-body">
+
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
                                        <tr>
@@ -87,8 +90,8 @@ class Search_result extends CI_Controller{
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                                       <?php $cnt=0; if(count($customize)>0){
+                                          foreach($customize as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -110,16 +113,17 @@ class Search_result extends CI_Controller{
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']!==0)
                                               {
                                             ?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php }else {?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             
+                                             <?php }else {?>
+                                            <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -131,7 +135,7 @@ class Search_result extends CI_Controller{
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -165,6 +169,8 @@ class Search_result extends CI_Controller{
                            <!-- BEGIN FORM-->
                            
                            <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="portlet-body">
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
@@ -182,8 +188,8 @@ class Search_result extends CI_Controller{
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                                       <?php $cnt=0; if(count($readyToprint)>0){
+                                          foreach($readyToprint as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -205,16 +211,17 @@ class Search_result extends CI_Controller{
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']!==0)
                                               {
                                             ?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             
                                              <?php }else {?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -226,7 +233,7 @@ class Search_result extends CI_Controller{
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -260,7 +267,7 @@ class Search_result extends CI_Controller{
                            <!-- BEGIN FORM-->
                            <div class="form-body">
                               <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
-
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="portlet-body">
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
@@ -278,8 +285,8 @@ class Search_result extends CI_Controller{
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                                       <?php $cnt=0; if(count($readyTodeliver)>0){
+                                          foreach($readyTodeliver as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -301,18 +308,19 @@ class Search_result extends CI_Controller{
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']!==0)
                                               {
                                             ?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             
                                              <?php }else {?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-                                             <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
+                                             <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;-->
+                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                                <!--<a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
                                        </tr>
                                        <?php 
@@ -322,7 +330,7 @@ class Search_result extends CI_Controller{
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -351,7 +359,9 @@ function get_approved_prodlist()
      $status = $this->input->get('get_approved_prodlist');   
      
     
-    $data = $this->common_model->status_prod_list($status);
+    $customize = $this->common_model->customize_prod_list($status);
+    $readyToprint = $this->common_model->readyToprint_prod_list($status);
+    $readyTodeliver = $this->common_model->readyTodeliver_prod_list($status);
 
          
                 
@@ -376,6 +386,8 @@ function get_approved_prodlist()
                            <!-- BEGIN FORM-->
                            
                            <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="portlet-body">
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
@@ -393,8 +405,8 @@ function get_approved_prodlist()
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                                       <?php $cnt=0; if(count($customize)>0){
+                                          foreach($customize as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -416,7 +428,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']!==0)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -425,7 +437,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditApproveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -437,7 +449,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -471,6 +483,8 @@ function get_approved_prodlist()
                            <!-- BEGIN FORM-->
                            
                            <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="portlet-body">
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
@@ -488,8 +502,8 @@ function get_approved_prodlist()
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                                       <?php $cnt=0; if(count($readyToprint)>0){
+                                          foreach($readyToprint as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -511,7 +525,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']!==0)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -520,7 +534,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditApproveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -532,7 +546,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -565,6 +579,8 @@ function get_approved_prodlist()
                         <div class="portlet-body form form-horizontal">
                            <!-- BEGIN FORM-->
                            <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
 
                               <div class="portlet-body">
@@ -584,8 +600,8 @@ function get_approved_prodlist()
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                                       <?php $cnt=0; if(count($readyTodeliver)>0){
+                                          foreach($readyTodeliver as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -607,7 +623,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']!==0)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -616,7 +632,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditApproveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -628,7 +644,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -657,13 +673,54 @@ function get_approved_prodlist()
      $status = $this->input->get('get_live_prodlist');
    
       
-
-    $data = $this->common_model->status_prod_list($status);
+    $customize = $this->common_model->customize_prod_list($status);
+    $readyToprint = $this->common_model->readyToprint_prod_list($status);
+    $readyTodeliver = $this->common_model->readyTodeliver_prod_list($status);
 
          
-    echo "<tbody>";?>
-                                       <?php $cnt=0; if(count($data)>0){
-                                          foreach($data as $row){
+                
+               ?><div class="tab-pane active" id="tab_0">
+                     <div class="portlet box blue">
+                        <div class="portlet-title">
+                           <div class="caption">
+                              <i class="fa fa-reorder"></i>Approved Customizable Product List
+                              <div class="tools">
+                                 <a href="javascript:;" class="collapse">
+                                 </a>
+                                 <a href="#portlet-config" data-toggle="modal" class="config">
+                                 </a>
+                                 <a href="javascript:;" class="reload">
+                                 </a>
+                                 <a href="javascript:;" class="remove">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="portlet-body form form-horizontal">
+                           <!-- BEGIN FORM-->
+                           
+                           <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
+                              <div class="portlet-body">
+                                 <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                    <thead>
+                                       <tr>
+                                          <th class="hidden-phone">Srno</th>
+                                          <!-- <th class="hidden-phone">Image</th> -->
+                                          <th class="hidden-phone">Products</th>
+                                          <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Product ID</th>
+                                          <th class="hidden-phone">Price</th>
+                                          <th class="hidden-phone">Image</th>
+                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Options</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php $cnt=0; if(count($customize)>0){
+                                          foreach($customize as $row){
                                             $cnt++;
                                           ?>
                                       <tr class="odd gradeX">
@@ -685,7 +742,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['seller_request_status']==1)
+                                              if($row['product_status']==2)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -694,7 +751,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditLiveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -706,13 +763,214 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="8">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
                                           }
                                           ?>
                                     </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane" id="tab_1">
+                     <div class="portlet box blue">
+                        <div class="portlet-title">
+                           <div class="caption">
+                              <i class="fa fa-reorder"></i>Ready To Print Product List
+                              <div class="tools">
+                                 <a href="javascript:;" class="collapse">
+                                 </a>
+                                 <a href="#portlet-config" data-toggle="modal" class="config">
+                                 </a>
+                                 <a href="javascript:;" class="reload">
+                                 </a>
+                                 <a href="javascript:;" class="remove">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="portlet-body form form-horizontal">
+                           <!-- BEGIN FORM-->
+                           
+                           <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
+                              <div class="portlet-body">
+                                 <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                    <thead>
+                                       <tr>
+                                          <th class="hidden-phone">Srno</th>
+                                          <!-- <th class="hidden-phone">Image</th> -->
+                                          <th class="hidden-phone">Products</th>
+                                          <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Product ID</th>
+                                          <th class="hidden-phone">Price</th>
+                                          <th class="hidden-phone">Image</th>
+                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Options</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php $cnt=0; if(count($readyToprint)>0){
+                                          foreach($readyToprint as $row){
+                                            $cnt++;
+                                          ?>
+                                      <tr class="odd gradeX">
+                                          <td><?php echo $cnt;?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone">
+                                             <!-- <span  class="label label-success"  class="label label-important" > -->
+                                             <?php echo $row['prod_description']?>
+                                             <!-- </span> -->
+                                          </td>
+                                          <td class="hidden-phone"><?php echo $row['prod_price']?></td>
+                                          <td class="hidden-phone">
+                                             <?php if($row['prod_image']!=""){?>
+                                             <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
+                                             <?php } else {?>
+                                             <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
+                                             <?php }?>
+                                          </td>
+                                          <td class="hidden-phone" id="prod_status">
+                                            <?php 
+                                              if($row['product_status']==2)
+                                              {
+                                            ?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php }else {?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php } ?>
+                                          </td>
+                                          <td class="hidden-phone">
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditLiveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
+                                          </td>
+                                       </tr>
+                                       <?php 
+                                          }
+                                           }
+                                          else
+                                          {
+                                          ?>
+                                       <tr class="odd gradeX">
+                                          <td colspan="8">No records found</td>
+                                       </tr>
+                                       </tr>
+                                       <?php 
+                                          }
+                                          ?>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane" id="tab_2">
+                     <div class="portlet box blue">
+                        <div class="portlet-title">
+                           <div class="caption">
+                              <i class="fa fa-reorder"></i>Ready To Deliver Product List
+                              <div class="tools">
+                                 <a href="javascript:;" class="collapse">
+                                 </a>
+                                 <a href="#portlet-config" data-toggle="modal" class="config">
+                                 </a>
+                                 <a href="javascript:;" class="reload">
+                                 </a>
+                                 <a href="javascript:;" class="remove">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="portlet-body form form-horizontal">
+                           <!-- BEGIN FORM-->
+                           <div class="form-body">
+                            <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
+                              <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
+
+                              <div class="portlet-body">
+                                 <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                    <thead>
+                                       <tr>
+                                          <th class="hidden-phone">Srno</th>
+                                          <!-- <th class="hidden-phone">Image</th> -->
+                                          <th class="hidden-phone">Products</th>
+                                          <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Product ID</th>
+                                          <th class="hidden-phone">Price</th>
+                                          <th class="hidden-phone">Image</th>
+                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Options</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php $cnt=0; if(count($readyTodeliver)>0){
+                                          foreach($readyTodeliver as $row){
+                                            $cnt++;
+                                          ?>
+                                      <tr class="odd gradeX">
+                                          <td><?php echo $cnt;?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone">
+                                             <!-- <span  class="label label-success"  class="label label-important" > -->
+                                             <?php echo $row['prod_description']?>
+                                             <!-- </span> -->
+                                          </td>
+                                          <td class="hidden-phone"><?php echo $row['prod_price']?></td>
+                                          <td class="hidden-phone">
+                                             <?php if($row['prod_image']!=""){?>
+                                             <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
+                                             <?php } else {?>
+                                             <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
+                                             <?php }?>
+                                          </td>
+                                          <td class="hidden-phone" id="prod_status">
+                                            <?php 
+                                              if($row['product_status']==2)
+                                              {
+                                            ?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php }else {?>
+                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
+                                             <?php } ?>
+                                          </td>
+                                          <td class="hidden-phone">
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditLiveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
+                                          </td>
+                                       </tr>
+                                       <?php 
+                                          }
+                                           }
+                                          else
+                                          {
+                                          ?>
+                                       <tr class="odd gradeX">
+                                          <td colspan="8">No records found</td>
+                                       </tr>
+                                       </tr>
+                                       <?php 
+                                          }
+                                          ?>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                                   
                                 <?php
     

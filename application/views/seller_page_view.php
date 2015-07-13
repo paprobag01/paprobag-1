@@ -115,8 +115,12 @@
                            </div>
                         </div>
                         <div class="tab-pane" id="rtd">
-                           <p>Etiam pretium, arcu id mattis aliquet, est neque sagittis quam, id mollis leo urna non dui. Phasellus lacinia facilisis ipsum, a tempor nibh. Aliquam nec interdum mi. Nunc laoreet molestie massa, at euismod ipsum fringilla id. Vivamus vehicula metus velit, sit amet congue turpis suscipit in. Etiam interdum felis sed consequat varius. Aliquam erat volutpat. </p>
-                           <p>Etiam pretium, arcu id mattis aliquet, est neque sagittis quam, id mollis leo urna non dui. Phasellus lacinia facilisis ipsum, a tempor nibh. Aliquam nec interdum mi. Nunc laoreet molestie massa, at euismod ipsum fringilla id. Vivamus vehicula metus velit, sit amet congue turpis suscipit in. Etiam interdum felis sed consequat varius. Aliquam erat volutpat. </p>
+                           <img src="<?php echo base_url();?>media/blog/registration.jpg" style="width: 803px;">
+                           <p><br><strong>Step 1:</strong>&nbsp;Registration</p>
+                           <p><br><strong>Step 2:</strong>&nbsp; Product Testing</p>
+                           <p><br><strong>Step 3:</strong>&nbsp; Customer See & buy</p>
+                           <p><br><strong>Step 4:</strong>&nbsp; Delivery</p>
+                           <p><br><strong>Step 5:</strong>&nbsp; Payment</p>
                         </div>
                         <div class="tab-pane" id="rtp">
                            <p>Etiam pretium, arcu id mattis aliquet, est neque sagittis quam, id mollis leo urna non dui. Phasellus lacinia facilisis ipsum, a tempor nibh. Aliquam nec interdum mi. Nunc laoreet molestie massa, at euismod ipsum fringilla id. Vivamus vehicula metus velit, sit amet congue turpis suscipit in. Etiam interdum felis sed consequat varius. Aliquam erat volutpat. </p>

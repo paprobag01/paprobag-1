@@ -1,25 +1,9 @@
-<?php 
-if(isset($moq))
-{
-  echo $moq;
-}
 
-?>
 <div class="flexslider home-slider">
-  <ul class="slides">
-  <?php foreach($page_data10 as $row){ ?>
-    <li> <img alt="alt" src="<?php echo base_url()?>/<?php echo $row['slider_image']?>" width="1600" height="800">
-      <div class="flex-caption">
-        <div class="banner">
-          <h1>Chinese Porcelain Tea Set</h1>
-          <div class="line_1"></div>
-          <h4>Maecenas non justo varius, egestas nisi nec, ultrices erat. Aliquam elit urna</h4>
-          <p>Sed iaculis, nisi vel rhoncus sagittis, est risus ultricies eros, a varius diam eros pretium arcu. <br>
-            Etiam mattis orci ut pharetra laoreet.</p>
-          <a class="btn_c" href="#">Details</a> </div>
-      </div>
-    </li>   
-  <?php } ?>
+  <ul class="slides" style="max-height: 467px;">
+    <li class="" style="max-height: 467px; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"> <img alt="alt" src="<?php echo base_url(); ?>images/background.jpg" width="1600" height="850" draggable="false" style="height:452px">
+      
+    </li>
   </ul>
   <div class="container">
     <div class="banner_nav ">
@@ -28,6 +12,6 @@ if(isset($moq))
   </div>
 </div>
 <!--SLIDER END -->
-<div id="content">
+<div id="content" style="padding: 0px 0 50px 0;">
  
 </div>
