@@ -93,6 +93,7 @@
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">Section</th>
                                           <th class="hidden-phone">category</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
@@ -106,12 +107,18 @@
                                     <tbody>
                                        <?php $cnt=0; if(count($customize_prod_list)>0){
                                           foreach($customize_prod_list as $row){
+                                             $section_id = $row['section_id'];
+                                             $sql1 = $this->db->query("select section_name from sections where section_id=$section_id");
+                                             $result = $sql1->result_array();
+                                             foreach($result as $row1){
+                                            
                                           	$cnt++;
                                           ?>
                                        <tr id="" class="odd gradeX">
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row1['section_name']?>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -137,12 +144,13 @@
                                        </tr>
                                        <?php 
                                           }
+                                          }
                                            }
                                           else
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="10">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -185,6 +193,7 @@
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">Section</th>
                                           <th class="hidden-phone">category</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
@@ -198,12 +207,16 @@
                                     <tbody>
                                        <?php $cnt=0; if(count($ready_to_print_prod_list)>0){
                                           foreach($ready_to_print_prod_list as $row){
+                                             $section_id = $row['section_id'];
+                                             $sql1 = $this->db->query("select section_name from sections where section_id=$section_id");
+                                             $result = $sql1->result_array();
+                                             foreach($result as $row1){
                                           	$cnt++;
                                           ?>
                                        <tr id="" class="odd gradeX">
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
-                                          
+                                          <td class="hidden-phone"><?php echo $row1['section_name']; ?>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -242,12 +255,13 @@
                                        </tr>
                                        <?php 
                                           }
+                                          }
                                            }
                                           else
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="10">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -290,6 +304,7 @@
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">Section</th>
                                           <th class="hidden-phone">category</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
@@ -302,13 +317,19 @@
                                     </thead>
                                     <tbody>
                                        <?php $cnt=0; if(count($ready_to_deliver_prod_list)>0){
+
                                           foreach($ready_to_deliver_prod_list as $row){
+                                             $section_id = $row['section_id'];
+                                             $sql1 = $this->db->query("select section_name from sections where section_id=$section_id");
+                                             $result = $sql1->result_array();
+                                             foreach($result as $row1){
                                           	$cnt++;
                                           ?>
                                        <tr id="" class="odd gradeX">
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
-                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+
+                                          <td class="hidden-phone"><?php echo $row1['section_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -346,12 +367,13 @@
                                        </tr>
                                        <?php 
                                           }
+                                          }
                                            }
                                           else
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="10">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 

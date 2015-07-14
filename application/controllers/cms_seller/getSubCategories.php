@@ -49,6 +49,26 @@ class GetSubCategories extends CI_Controller
 		   echo $finres;
 		}
 	}
+
+	function category_list()
+	{
+		//code for value in text box
+		if (isset($_POST) && isset($_POST['section'])) 
+		{
+           $category_id = $_POST['section'];
+		   
+            $arrSubcat = $this->getSubCatAjax->getmaterial($category_id);
+			
+				foreach($arrSubcat as $row){
+					?>
+						<input type="radio" name="cat" onclick="getcategorylist(this.value)" id="section" value="<?php echo $row['cat_name'];?>" class="txtbox"><?php echo $row['cat_name'];?>  
+			<?php		
+				}
+		   //return $category_id;
+		}
+		
+		
+	}
 	
 	function material_dropdown()
 	{

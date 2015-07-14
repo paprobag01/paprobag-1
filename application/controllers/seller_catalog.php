@@ -22,10 +22,9 @@ class seller_catalog extends CI_Controller{
 
 
 		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
-		
-		
+				
 		$this->load->view('header',$data);
-		$this->load->view('seller_catalog_view',$data);
+		$this->load->view('seller_catalog_view1',$data);
 		$this->load->view('footer');
 	}
 }	

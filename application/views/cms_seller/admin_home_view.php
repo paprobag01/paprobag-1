@@ -27,16 +27,16 @@
                   <div class="tab-pane active" id="tab_0">
                      <div class="portlet box blue" style="border: 1px solid #FFFFFF;background-color: #FFFFFF">
                         
-                       <a href="<?php echo base_url();?>cms_seller/Admin_home"><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 220px;">Pending catlog<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="<?php echo base_url();?>cms_buyer/Admin_home"><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Approved Catlog</a>
-                       <a href="<?php echo base_url();?>cms_buyer/Admin_home"><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Live Products</a>
+                       <img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 119px;">Pending catlog : <?php echo count($pending);?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Approved Catlog : <?php echo count($approve);?>
+                       <img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Live Products : <?php echo count($live);?>
                      </div>
                      
                      <div class="portlet box blue" style="border: 1px solid #FFFFFF;background-color: #FFFFFF">
                         
-                       <a href="<?php echo base_url();?>cms_seller/Admin_home"><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 220px;">Number of sellers<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="<?php echo base_url();?>cms_buyer/Admin_home"><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Sold Products</a>
-                       <a href="<?php echo base_url();?>cms_buyer/Admin_home"><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Number Of Feedbacks</a>
+                       <img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 119px;">Number of sellers : <?php echo count($seller);?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Sold Products
+                       <img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 114px;">Feedbacks
                      </div>
                   </div>
                  

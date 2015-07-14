@@ -39,7 +39,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#tab_2" data-toggle="tab">
+								<a href="#tab_3" data-toggle="tab">
 									 Customer Details
 								</a>
 							</li>
@@ -75,88 +75,88 @@
 											<div class="control-group">
 													<label class="control-label">Product ID</label>
 													    <div class="controls">
-															<input type="text" name="prod_id" id="prod_id" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_id;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_id" id="prod_id" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_id;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Product Name</label>
 													    <div class="controls">
-															<input type="text" name="prod_name" id="prod_name" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_name" id="prod_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Section</label>
 													
 													    <div class="controls">
-															<input type="text" name="sec_data" id="sec_data" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="sec_data" id="sec_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 													 
 												</div>
 												<div class="control-group">
 													<label class="control-label">Category</label>
 													    <div class="controls">
-															<input type="text" name="cat_data" id="cat_data" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="cat_data" id="cat_data" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Subcategory</label>
 													    <div class="controls">
-															<input type="text" name="prod_name" id="prod_name" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_name" id="prod_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												
 											<div class="control-group">
 												  <label class="control-label">Material Name</label>
 													  <div class="controls">
-															<input type="text" name="material_name" id="material_name" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="material_name" id="material_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 												  <label class="control-label">GSM</label>
 													  <div class="controls">
-															<input type="text" name="GSM_name" id="GSM_name" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $GSM_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="GSM_name" id="GSM_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $GSM_name;?>" class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 												  <label class="control-label">Size</label>
 												  <div class="controls">
-															<input type="text" name="size" id="size" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $size;?>" class="span4 m-wrap"> 
+															<input type="text" name="size" id="size" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $size;?>" class="span4 m-wrap"> 
 													</div>
 											   </div>
 											   <div class="control-group">
 												  <label class="control-label">Style</label>
 												  <div class="controls">
-															<input type="text" name="style" id="style" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $style;?>" class="span4 m-wrap"> 
+															<input type="text" name="style" id="style" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $style;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 											   <div class="control-group">
 												  <label class="control-label">Handle</label>
 												  <div class="controls">
-															<input type="text" name="handle" id="handle" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $handle;?>" class="span4 m-wrap"> 
+															<input type="text" name="handle" id="handle" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $handle;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 											   <div class="control-group">
 												  <label class="control-label">Print</label>
 												  <div class="controls">
-															<input type="text" name="print" id="print" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $print;?>" class="span4 m-wrap"> 
+															<input type="text" name="print" id="print" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $print;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 											   <div class="control-group">
 												  <label class="control-label">Number Of Color</label>
 												  <div class="controls">
-															<input type="text" name="print_color" id="print_color" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $print_color;?>" class="span4 m-wrap"> 
+															<input type="text" name="print_color" id="print_color" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $print_color;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 											   <div class="control-group">
 												  <label class="control-label">Lamination</label>
 												  <div class="controls">
-															<input type="text" name="lamination" id="lamination" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $lamination;?>" class="span4 m-wrap"> 
+															<input type="text" name="lamination" id="lamination" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $lamination;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 											   <div class="control-group">
 												  <label class="control-label">Special Work</label>
 												  <div class="controls">
-															<input type="text" name="special_wrk" id="special_wrk" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $special_wrk;?>" class="span4 m-wrap"> 
+															<input type="text" name="special_wrk" id="special_wrk" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $special_wrk;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 											   
@@ -446,26 +446,26 @@
 													<div class="control-group">
 													<label class="control-label">MRP</label>
 													    <div class="controls">
-															<input type="text" name="prod_price" id="prod_price" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_price" id="prod_price" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
 													<div class="control-group">
 													<label class="control-label">Sell Price</label>
 													    <div class="controls">
-															<input type="text" name="prod_sell_price" id="prod_sell_price" onfocus="getDiscount()" onblur="getDiscount()" onkeyup="getDiscount()" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_sell_price" id="prod_sell_price" onfocus="getDiscount()" onblur="getDiscount()" onkeyup="getDiscount()" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
 													<div class="control-group">
 													<label class="control-label">Discount %</label>
 													    <div class="controls">
-															<input type="text" name="prod_discount" id="prod_discount" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo round($prod_discount, 2);?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_discount" id="prod_discount" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo round($prod_discount, 2);?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
 													<!--/span-->
 													<div class="control-group">
 													<label class="control-label">Quantity</label>
 													    <div class="controls">
-															<input type="text" name="prod_qty" id="prod_qty" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_qty;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_qty" id="prod_qty" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_qty;?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
 													
@@ -473,14 +473,14 @@
 												<div class="control-group">
 													<label class="control-label">Sold By</label>
 													    <div class="controls">
-															<input type="text" name="sold_by" id="sold_by" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
 													
 													<div class="control-group">
 													<label class="control-label">Stock</label>
 													    <div class="controls">
-															<select name="prod_stock" class="span4 m-wrap" <?php if($type!=='view'){?>disabled<?php }?>>
+															<select name="prod_stock" class="span4 m-wrap" <?php if($type=='view'){?>disabled<?php }?>>
 																<option value="<?php echo $prod_stock ?>">In stock</option>
 																<option value="0">In stock</option>
 																<option value="1">Out of stock</option>
@@ -491,7 +491,7 @@
 													<div class="control-group">
 												  <label class="control-label">Product SKU</label>
 												  <div class="controls">
-															<input type="text" name="prod_sku" id="prod_sku" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_sku;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_sku" id="prod_sku" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_sku;?>" class="span4 m-wrap"> 
 													    </div>
 											   </div>
 													<!--/span-->
@@ -509,9 +509,126 @@
 													<div class="control-group"> 
 													<label class="control-label">Shipping Price</label>
 													    <div class="controls">
-															<input type="text" name="prod_shipping_price" id="prod_shipping_price" <?php if($type!=='view'){?>disabled<?php }?> value="<?php echo $prod_shipping_price;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_shipping_price" id="prod_shipping_price" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_shipping_price;?>" class="span4 m-wrap"> 
 													    </div>
 													</div>
+											</div>
+											
+										<script type="text/javascript">
+				function getDiscount()
+				{
+					if(isNaN((document.getElementById('prod_price').value*1 - document.getElementById('prod_sell_price').value*1)*100/document.getElementById('prod_price').value*1))
+					{
+						document.getElementById('prod_discount').value=0;
+					}
+					else{
+					document.getElementById('prod_discount').value=((document.getElementById('prod_price').value*1 - document.getElementById('prod_sell_price').value*1)*100/document.getElementById('prod_price').value*1).toFixed(2);;
+					}
+				}
+				</script>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab_3">
+								<div class="portlet box blue">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-reorder"></i>Price Info
+										
+										<div class="tools">
+											<a href="javascript:;" class="collapse">
+											</a>
+											<a href="#portlet-config" data-toggle="modal" class="config">
+											</a>
+											<a href="javascript:;" class="reload">
+											</a>
+											<a href="javascript:;" class="remove">
+											</a>
+										</div>
+									</div>
+									</div>
+									<div class="portlet-body form form-horizontal">
+										<!-- BEGIN FORM-->
+										
+											<div class="form-body">
+												
+												
+													<div class="control-group">
+													<label class="control-label">Customer Name</label>
+													    <div class="controls">
+															<input type="text" name="prod_price" id="prod_price" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<div class="control-group">
+													<label class="control-label">Mobile Number</label>
+													    <div class="controls">
+															<input type="text" name="prod_sell_price" id="prod_sell_price" onfocus="getDiscount()" onblur="getDiscount()" onkeyup="getDiscount()" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<div class="control-group">
+													<label class="control-label">Land Line Number</label>
+													    <div class="controls">
+															<input type="text" name="prod_sell_price" id="prod_sell_price" onfocus="getDiscount()" onblur="getDiscount()" onkeyup="getDiscount()" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<div class="control-group">
+													<label class="control-label">Email ID</label>
+													    <div class="controls">
+															<input type="text" name="prod_discount" id="prod_discount" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo round($prod_discount, 2);?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<!--/span-->
+													<div class="control-group">
+													<label class="control-label">Address 1</label>
+													    <div class="controls">
+															<input type="text" name="prod_qty" id="prod_qty" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_qty;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													
+													<!--/span-->
+												<div class="control-group">
+													<label class="control-label">Address 2</label>
+													    <div class="controls">
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													
+													<div class="control-group">
+													<label class="control-label">Pincode</label>
+													    
+														<div class="controls">
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+													    </div>
+														
+													</div>
+													
+													 <div class="control-group">
+													<label class="control-label">City</label>
+													    <div class="controls">
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>   
+													<div class="control-group">
+													<label class="control-label">State</label>
+													    <div class="controls">
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<div class="control-group">
+													<label class="control-label">Purchas Date</label>
+													    <div class="controls">
+															<input type="date" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<div class="control-group">
+													<label class="control-label">Deliver Date</label>
+													    <div class="controls">
+															<input type="date" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+													    </div>
+													</div>
+													<!--/span-->
+													
+													
 											</div>
 											
 										<script type="text/javascript">
@@ -647,15 +764,7 @@
                            </div> 
 											</div>
 
-											<div class="control-group">
-													<label class="control-label">Product Status</label>
-													    <div class="controls">
-															<select name="status" id="prod_status">
-																<option value="0">Enable</option>
-																<option value="1">Disable</option>
-															</select>
-													    </div>
-												</div>
+											
 											
 											<div class="control-group">
 											<div class="controls">

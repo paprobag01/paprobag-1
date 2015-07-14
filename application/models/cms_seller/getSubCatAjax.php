@@ -25,6 +25,7 @@ class GetSubCatAjax extends CI_Model
 				$query = $this->db->query("select * from subcategory where cat_id=$id and section_id=$new");
 			return $query->result_array();
 		}
+
 		
 		function getmaterial($category_id)
 		{

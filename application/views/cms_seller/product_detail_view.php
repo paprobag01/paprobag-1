@@ -122,9 +122,10 @@
          <div class="tabbable tabbable-custom boxless tabbable-reversed">
             <div class="portlet box blue" style="border: 1px solid #FFFFFF;background-color: #FFFFFF">
                         
-                       <img src="<?php echo base_url();?>images/seller.jpg" id="0" width="200px" height="200px" style="padding-left: 220px;" onclick="showProdList_pending(this.id);">Pending&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <img src="<?php echo base_url();?>images/seller.jpg" id="1" width="200px" height="200px" style="padding-left: 67px;" onclick="showProdList_approved(this.id);">Approved
-                       <img src="<?php echo base_url();?>images/seller.jpg" id="2" width="200px" height="200px" style="padding-left: 67px;" onclick="showProdList_live(this.id);">Live
+                       <img src="<?php echo base_url();?>images/seller.jpg" id="1" width="200px" height="200px" style="padding-left: 16px;" onclick="showProdList_pending(this.id);">Pending :<?php echo count($pending);?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <img src="<?php echo base_url();?>images/seller.jpg" id="2" width="200px" height="200px" style="padding-left: 67px;" onclick="showProdList_approved(this.id);">Approved :<?php echo count($approve);?>
+                       <img src="<?php echo base_url();?>images/seller.jpg" id="3" width="200px" height="200px" style="padding-left: 67px;" onclick="showProdList_live(this.id);">Live : <?php echo count($live);?>
+                       <img src="<?php echo base_url();?>images/seller.jpg" id="0" width="200px" height="200px" style="padding-left: 67px;" onclick="showProdList_live(this.id);">OutOfStock :<?php echo count($out_of_stock);?>
                     
             <ul class="nav nav-tabs">
                <li class="active">

@@ -1,3 +1,4 @@
+
 <script>
     $(document).ready(function () {
         $('#section_id').click(function () {
@@ -751,36 +752,35 @@
                               <li><a href="#rtd" data-toggle="tab">Live products</a></li>
                            </ul>
                            <!-- Tab panes -->
+                            
                            <form method="post">
+
                               <div class="tab-content">
                                  <div class="tab-pane active" id="custp">
                                     <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Select Section:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
-                                        </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="lbltxt" style="float:left;">Subcategory:
+                                                  <span class="req" required data-validation-required-message="Please Select Subject">*</span>
+                                                </div>
+                                                <?php foreach($section as $row){?>
+                                                <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
+                                                  
+                                                       <input type="radio" name="section" onchange="return confirm('Are you sure you want to delete this item?');" id="<?php echo $row['section_id']?>" class="txtbox"><?php echo $row['section_name']?>  
+                                                </div>
+                                                
+                                                <?php } ?>
+                                              </div>
                                         
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="GSM_result">
-                                          <div class="lbltxt" style="float:left;">Select Category:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cat_result">
+                                          <div class="lbltxt" style="float:left;">Category:
+                                                  <span class="req" required data-validation-required-message="Please Select Subject">*</span>
+                                                </div>
+                                                <?php foreach($section as $row){?>
+                                                <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
+                                                  
+                                                       <input type="radio" id="<?php echo $row['section_id']?>" class="txtbox"><?php echo $row['section_name']?>  
+                                                </div>
+                                                <?php } ?>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                           <div class="lbltxt" style="float:left;">Select Subcategory:

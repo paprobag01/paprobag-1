@@ -45,10 +45,7 @@
       <div class="span12">
          <div class="tabbable tabbable-custom boxless tabbable-reversed">
             <div class="portlet box blue" style="border: 1px solid #FFFFFF;background-color: #FFFFFF">
-                        
-                       <a href=""><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 220px;">Pending<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href=""><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Approved</a>
-                       <a href=""><img src="<?php echo base_url();?>images/seller.jpg" width="200px" height="200px" style="padding-left: 67px;">Live</a>
+                       
                     
             <ul class="nav nav-tabs">
                <li class="active">
@@ -101,14 +98,15 @@
                                     <thead>
                                        <tr>
                                           <th class="hidden-phone">Srno</th>
-                                          <!-- <th class="hidden-phone">Image</th> -->
-                                          <th class="hidden-phone">Products</th>
+                                          <th class="hidden-phone">Image</th>
+                                          <!-- <th class="hidden-phone">Image</th> -->                                          
                                           <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">Section</th>
                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Products</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
-                                          <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>                                                                                   
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -119,14 +117,6 @@
                                           ?>
                                        <tr id="" class="odd gradeX">
                                           <td><?php echo $cnt;?></td>
-                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
-                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
-                                          <td class="hidden-phone">
-                                             <!-- <span  class="label label-success"  class="label label-important" > -->
-                                             <?php echo $row['prod_description']?>
-                                             <!-- </span> -->
-                                          </td>
-                                          <td class="hidden-phone"><?php echo $row['prod_price']?></td>
                                           <td class="hidden-phone">
                                              <?php if($row['prod_image']!=""){?>
                                              <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
@@ -134,18 +124,18 @@
                                              <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
                                              <?php }?>
                                           </td>
-                                          <td class="hidden-phone" id="prod_status">
-                                          	<?php 
-                                          		if($row['status']==1)
-                                          		{
-                                          	?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php }else {?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php } ?>
-                                          </td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <!-- <span  class="label label-success"  class="label label-important" > -->
+                                             <?php echo $row['prod_description']?>
+                                             <!-- </span> -->
+                                          </td>
+                                          <td class="hidden-phone"><?php echo $row['prod_price']?></td>                                                                                   
+                                          <td class="hidden-phone">
+                                             <a href="<?php echo base_url()?>cms_seller/productList/viewcustomerdetail/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -157,7 +147,7 @@
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="6">No records found</td>
+                                          <td colspan="9">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -196,14 +186,15 @@
                                     <thead>
                                        <tr>
                                           <th class="hidden-phone">Srno</th>
-                                          <!-- <th class="hidden-phone">Image</th> -->
-                                          <th class="hidden-phone">Products</th>
+                                          <th class="hidden-phone">Image</th>
+                                          <!-- <th class="hidden-phone">Image</th> -->                                          
                                           <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">Section</th>
                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Products</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
-                                          <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>                                                                                   
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -214,8 +205,16 @@
                                           ?>
                                        <tr id="" class="odd gradeX">
                                           <td><?php echo $cnt;?></td>
+                                          <td class="hidden-phone">
+                                             <?php if($row['prod_image']!=""){?>
+                                             <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
+                                             <?php } else {?>
+                                             <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
+                                             <?php }?>
+                                          </td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
-                                          
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -242,17 +241,7 @@
                                              <?php } else {?>
                                              <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
                                              <?php }?>
-                                          </td>
-                                          <td class="hidden-phone" id="prod_status">
-                                          	<?php 
-                                          		if($row['status']==1)
-                                          		{
-                                          	?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php }else {?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php } ?>
-                                          </td>
+                                          </td>                                          
                                           <td class="hidden-phone">
                                              <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
@@ -266,7 +255,7 @@
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="9">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -306,14 +295,15 @@
                                     <thead>
                                        <tr>
                                           <th class="hidden-phone">Srno</th>
-                                          <!-- <th class="hidden-phone">Image</th> -->
-                                          <th class="hidden-phone">Products</th>
+                                          <th class="hidden-phone">Image</th>
+                                          <!-- <th class="hidden-phone">Image</th> -->                                          
                                           <!-- <th class="hidden-phone">Section</th> -->
+                                          <th class="hidden-phone">Section</th>
                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Products</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
-                                          <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>                                                                                   
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -324,6 +314,15 @@
                                           ?>
                                        <tr id="" class="odd gradeX">
                                           <td><?php echo $cnt;?></td>
+                                          <td class="hidden-phone">
+                                             <?php if($row['prod_image']!=""){?>
+                                             <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
+                                             <?php } else {?>
+                                             <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
+                                             <?php }?>
+                                          </td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
@@ -334,23 +333,8 @@
                                           <td class="hidden-phone"><?php echo $row['prod_price']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_price']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_price']?></td>
-                                          <td class="hidden-phone">
-                                             <?php if($row['prod_image']!=""){?>
-                                             <img src="<?php echo base_url().$row['prod_image']?>" style="height:50px;width:50px;"/>
-                                             <?php } else {?>
-                                             <img src="<?php echo base_url()?>images/noimage.gif" style="width:50px; height:50px;" alt="" />
-                                             <?php }?>
-                                          </td>
-                                          <td class="hidden-phone" id="prod_status">
-                                          	<?php 
-                                          		if($row['status']==1)
-                                          		{
-                                          	?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php }else {?>
-                                             <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/disable.jpeg" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
-                                             <?php } ?>
-                                          </td>
+                                          
+                                          
                                           <td class="hidden-phone">
                                              <a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
@@ -364,7 +348,7 @@
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="9">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 

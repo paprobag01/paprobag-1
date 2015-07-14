@@ -72,7 +72,7 @@
                               </div>
                            </div>
                         </div>
-                        <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select>Total Number of sellers</label></div></div>
+                        
                         <div class="portlet-body form form-horizontal">
                            <!-- BEGIN FORM-->
                            

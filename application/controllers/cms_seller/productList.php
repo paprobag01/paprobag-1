@@ -308,7 +308,7 @@ function viewcustomerdetail($id=null, $type=null)
 	{
 	$result=$this->product_model->getProducts($id);
 	
-	$data['page']='productList';
+	$data['page']='producttrade';
 	
 	foreach($result as $row)
 {//         

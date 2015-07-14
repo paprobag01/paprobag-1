@@ -17,16 +17,8 @@ class Myaccount extends CI_Controller{
 	function index()
 	{
 		
-		$data['page']='productList';
+		$data['page']='myaccount';
 		
-		/*$arr['table']='products';
-		$arr['where']="where section_id=5";
-		$arr['and']="";
-		$arr['order_by']="order by prod_id desc"; 
-		$data['customize_prod_list']=$this->site_sentry->get_all($arr); */
-
-		
-		$data['page']='productList';
 		
 		$arr['table']='products';
 		$arr['where']="where section_id=5";

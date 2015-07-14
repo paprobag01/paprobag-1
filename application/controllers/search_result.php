@@ -1,3 +1,5 @@
+
+
 <?php
 class Search_result extends CI_Controller{
   
@@ -34,6 +36,15 @@ class Search_result extends CI_Controller{
    
     $material_data = $this->common_model->update_status($section_id,$cat_id,$sub_cat_id,$prod_id,$status);
     //redirect(base_url().'cms_seller/productDetailList');
+ }
+
+ function get_seller_cat()
+ {
+     echo "hello";
+     $material_id = $this->input->get('get_seller_cat');
+
+    print_r($material_id);
+    die();
  }
 
  
@@ -82,10 +93,13 @@ class Search_result extends CI_Controller{
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -98,6 +112,10 @@ class Search_result extends CI_Controller{
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -135,7 +153,7 @@ class Search_result extends CI_Controller{
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -180,10 +198,13 @@ class Search_result extends CI_Controller{
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -196,6 +217,9 @@ class Search_result extends CI_Controller{
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -233,7 +257,7 @@ class Search_result extends CI_Controller{
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -276,11 +300,14 @@ class Search_result extends CI_Controller{
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -293,6 +320,9 @@ class Search_result extends CI_Controller{
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -330,7 +360,7 @@ class Search_result extends CI_Controller{
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -356,9 +386,9 @@ class Search_result extends CI_Controller{
 function get_approved_prodlist()
   {
     
-     $status = $this->input->get('get_approved_prodlist');   
-     
-    
+     $status = $this->input->get('get_approved_prodlist');
+   
+      
     $customize = $this->common_model->customize_prod_list($status);
     $readyToprint = $this->common_model->readyToprint_prod_list($status);
     $readyTodeliver = $this->common_model->readyTodeliver_prod_list($status);
@@ -387,20 +417,23 @@ function get_approved_prodlist()
                            
                            <div class="form-body">
                             <div class="span6"><div id="sample_1_length" class="dataTables_length"><label><select size="1" name="sample_1_length" aria-controls="sample_1" class="m-wrap xsmall"><option value="10">5</option><option value="25">15</option><option value="50">20</option><option value="-1">All</option></select> records per page</label></div></div>
-                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
+                              <div class="span6"><div class="dataTables_filter" id="sample_1_filter"><label>Search: <input type="text" onkeyup="showResult(this.value)" id="search_value" aria-controls="sample_1" class="m-wrap medium"></label></div></div>
                               <div class="portlet-body">
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
                                        <tr>
-                                          <th class="hidden-phone">Srno</th>
+                                         <th class="hidden-phone">Srno</th>
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -413,6 +446,9 @@ function get_approved_prodlist()
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -428,7 +464,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['product_status']!==0)
+                                              if($row['product_status']==2)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -437,7 +473,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/EditApproveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditLiveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -449,7 +485,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -493,11 +529,14 @@ function get_approved_prodlist()
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -510,6 +549,9 @@ function get_approved_prodlist()
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -525,7 +567,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['product_status']!==0)
+                                              if($row['product_status']==2)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -534,7 +576,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/EditApproveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditLiveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -546,7 +588,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -591,11 +633,14 @@ function get_approved_prodlist()
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -608,6 +653,9 @@ function get_approved_prodlist()
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -623,7 +671,7 @@ function get_approved_prodlist()
                                           </td>
                                           <td class="hidden-phone" id="prod_status">
                                             <?php 
-                                              if($row['product_status']!==0)
+                                              if($row['product_status']==2)
                                               {
                                             ?>
                                              <a href="<?php echo base_url()?>cms_seller/productDetailList"><img src="<?php echo base_url();?>images/enable.png" id="<?php echo $row['section_id']?>/<?php echo $row['cat_id']?>/<?php echo $row['sub_cat_id']?>/<?php echo $row['prod_id']?>/<?php echo $row['seller_request_status']?>" onclick="getstatus(this.id);" width="25px" height="25px"></a>&nbsp;&nbsp;&nbsp;
@@ -632,7 +680,7 @@ function get_approved_prodlist()
                                              <?php } ?>
                                           </td>
                                           <td class="hidden-phone">
-                                             <a href="<?php echo base_url()?>cms_seller/productList/EditApproveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+                                             <a href="<?php echo base_url()?>cms_seller/productList/EditLiveProducts/<?php echo $row['prod_id']?>/edit" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
                                              <!--<a href="<?php echo base_url()?>cms_seller/productList/viewEditProducts/<?php echo $row['prod_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="<?php echo base_url()?>cms_seller/productList/deleteProducts/<?php echo $row['prod_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>-->
                                           </td>
@@ -644,7 +692,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -659,6 +707,7 @@ function get_approved_prodlist()
                   </div>
                                   
                                 <?php
+    
                      
             
       
@@ -670,7 +719,7 @@ function get_approved_prodlist()
 
   function get_live_prodlist()
   {
-     $status = $this->input->get('get_live_prodlist');
+     echo $status = $this->input->get('get_live_prodlist');
    
       
     $customize = $this->common_model->customize_prod_list($status);
@@ -706,15 +755,18 @@ function get_approved_prodlist()
                                  <table class="table table-striped table-bordered table-hover" id="sample_1">
                                     <thead>
                                        <tr>
-                                          <th class="hidden-phone">Srno</th>
+                                         <th class="hidden-phone">Srno</th>
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -727,6 +779,9 @@ function get_approved_prodlist()
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -763,7 +818,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -807,11 +862,14 @@ function get_approved_prodlist()
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -824,6 +882,9 @@ function get_approved_prodlist()
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -860,7 +921,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 
@@ -905,11 +966,14 @@ function get_approved_prodlist()
                                           <!-- <th class="hidden-phone">Image</th> -->
                                           <th class="hidden-phone">Products</th>
                                           <!-- <th class="hidden-phone">Section</th> -->
-                                          <th class="hidden-phone">category</th>
+                                           <th class="hidden-phone">category</th>
+                                          <th class="hidden-phone">Subcategory</th>
                                           <th class="hidden-phone">Product ID</th>
                                           <th class="hidden-phone">Price</th>
                                           <th class="hidden-phone">Image</th>
-                                          <th class="hidden-phone">Status</th>
+                                          <th class="hidden-phone">Quantity</th>
+                                          <th class="hidden-phone">Mobile Number</th>
+                                          <th class="hidden-phone">Email ID</th>                                          
                                           <th class="hidden-phone">Options</th>
                                        </tr>
                                     </thead>
@@ -922,6 +986,9 @@ function get_approved_prodlist()
                                           <td><?php echo $cnt;?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                          <td class="hidden-phone"><?php echo $row['prod_name']?></td>
+                                           <td class="hidden-phone"><?php echo $row['prod_name']?></td>
                                           <td class="hidden-phone">
                                              <!-- <span  class="label label-success"  class="label label-important" > -->
                                              <?php echo $row['prod_description']?>
@@ -958,7 +1025,7 @@ function get_approved_prodlist()
                                           {
                                           ?>
                                        <tr class="odd gradeX">
-                                          <td colspan="8">No records found</td>
+                                          <td colspan="11">No records found</td>
                                        </tr>
                                        </tr>
                                        <?php 

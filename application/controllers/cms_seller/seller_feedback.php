@@ -1,5 +1,5 @@
 <?php 
-class ProductTrade extends CI_Controller{
+class Seller_feedback extends CI_Controller{
 	
 	function __Construct(){
 
@@ -17,35 +17,33 @@ class ProductTrade extends CI_Controller{
 	function index()
 	{
 		
-		$data['page']='producttrade';
+		$data['page']='feedback';
 		
 		$arr['table']='products';
-		$arr['where']="where section_id=5";
+		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
-		$data['customize_prod_list']=$this->site_sentry->get_all($arr);
+		$data['page_data']=$this->site_sentry->get_all($arr);
+		
+		
+		$data['type']='view';		
+		$this->load->view('cms_seller/header_view',$data);
+		$this->load->view('cms_seller/feedbackList_view',$data);
+		$this->load->view('cms_seller/footer_view',$data);
 
-		$arr['table']='sections';
-		$arr['where']="where section_id=5";
-		$arr['and']="";
-		$arr['order_by']=""; 
-		$data['customize_prod_list_name']=$this->site_sentry->get_all($arr);
-
-		//$array = extract($data['customize_prod_list_name']);
-		//print_r($data['customize_prod_list']);
-		//die();
-
+		
+	}
+	
+	function view_feedback($id=null, $type=null)
+	{
+		
+		$data['page']='feedback';
+		
 		$arr['table']='products';
-		$arr['where']="where section_id=6";
+		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
-		$data['ready_to_print_prod_list']=$this->site_sentry->get_all($arr);
-
-		$arr['table']='products';
-		$arr['where']="where section_id=7";
-		$arr['and']="";
-		$arr['order_by']="order by prod_id desc"; 
-		$data['ready_to_deliver_prod_list']=$this->site_sentry->get_all($arr);
+		$data['page_data']=$this->site_sentry->get_all($arr); 
 		
 		$arr1['table']='category';
 		$arr1['where']="";
@@ -119,7 +117,10 @@ class ProductTrade extends CI_Controller{
 		
 		$data['type']='add';		
 		$this->load->view('cms_seller/header_view',$data);
-		$this->load->view('cms_seller/product_trade_view',$data);
+		$this->load->view('cms_seller/seller_feedback_view',$data);
 		$this->load->view('cms_seller/footer_view',$data);
 	}
+	
+
 }
+?>

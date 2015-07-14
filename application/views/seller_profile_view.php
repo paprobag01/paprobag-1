@@ -48,6 +48,7 @@
           <li><a href="#rtd" data-toggle="tab">Order In Process</a></li>
           <li><a href="#rtp" data-toggle="tab">Past Order</a></li>
           <li><a href="#help" data-toggle="tab">Billing Info</a></li>
+          <li><a href="#feedback" data-toggle="tab">Feedback</a></li>
         </ul>
         
         <!-- Tab panes -->
@@ -203,6 +204,48 @@
           <div class="tab-pane" id="help">
             <p>Etiam pretium, arcu id mattis aliquet, est neque sagittis quam, id mollis leo urna non dui. Phasellus lacinia facilisis ipsum, a tempor nibh. Aliquam nec interdum mi. Nunc laoreet molestie massa, at euismod ipsum fringilla id. Vivamus vehicula metus velit, sit amet congue turpis suscipit in. Etiam interdum felis sed consequat varius. Aliquam erat volutpat. </p>
             <p>Etiam pretium, arcu id mattis aliquet, est neque sagittis quam, id mollis leo urna non dui. Phasellus lacinia facilisis ipsum, a tempor nibh. Aliquam nec interdum mi. Nunc laoreet molestie massa, at euismod ipsum fringilla id. Vivamus vehicula metus velit, sit amet congue turpis suscipit in. Etiam interdum felis sed consequat varius. Aliquam erat volutpat. </p>
+          </div>
+          <div class="tab-pane" id="feedback">
+            <form action="http://templines.com/demo/html/shoptime-html/cooncook/action.php">
+                                    
+                            <div class="frm clearfix">
+                    
+                                <div class="row">  
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="lbltxt">Seller Name:<span class="req">*</span></div>
+                                        <input type="text" class="txtbox">
+                                    </div> 
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="lbltxt">Date:<span class="req">*</span></div>
+                                        <input type="text" value="<?php echo date("Y/m/d"); ?>" class="txtbox">
+                                    </div>  
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="lbltxt">Rate:<span class="req">*</span></div>
+                                        <ul class="start_list">
+                                          <li class="fa fa-star"></li>
+                                          <li class="fa fa-star"></li>
+                                          <li class="fa fa-star"></li>
+                                          <li class="fa fa-star"></li>
+                                          <li class="fa fa-star"></li>
+                                        </ul>
+                                    </div>                              
+                                </div>
+                                <div class="row">  
+                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="lbltxt">Greenhandle In Word:<span class="req">*</span></div>
+                                        <input type="text" class="txtbox">
+                                    </div>                                 
+                                    
+                                </div>
+                                <div class="lbltxt">Message: <span class="req">*</span></div>
+                                <textarea></textarea>
+                                <div class="clearfix frm_bot">
+                                    <input type="submit" class="btn_c" value="Submit">
+                                    <input type="reset" class="clear_btn" value="Clear">
+                                    <span class="reqired">* Required Fields</span>
+                                </div>
+                            </div>
+                            </form>
           </div>
         </div>
       </div>                        

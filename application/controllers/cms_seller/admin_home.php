@@ -10,6 +10,7 @@ class Admin_home extends CI_Controller{
 		
 		$this->load->library('site_sentry');
 		 $this->load->model('cms_seller/product_model');
+		 $this->load->model('cms_seller/common_model');
 		
 	}
 
@@ -17,8 +18,35 @@ class Admin_home extends CI_Controller{
 	function index()
 	{
 		
+		
+
+    	
 		$data['page']='home';
 		
+		$customize['table']='products';
+		$customize['where']="where product_status=1";
+		$customize['and']="";
+		$customize['order_by']=""; 
+		$data['pending']=$this->site_sentry->get_all($customize); 
+
+		$readyToprint['table']='products';
+		$readyToprint['where']="where product_status=2";
+		$readyToprint['and']="";
+		$readyToprint['order_by']=""; 
+		$data['approve']=$this->site_sentry->get_all($readyToprint); 
+
+		$readyTodeliver['table']='products';
+		$readyTodeliver['where']="where product_status=2";
+		$readyTodeliver['and']="";
+		$readyTodeliver['order_by']=""; 
+		$data['live']=$this->site_sentry->get_all($readyTodeliver); 
+
+		$seller['table']='seller';
+		$seller['where']="";
+		$seller['and']="";
+		$seller['order_by']=""; 
+		$data['seller']=$this->site_sentry->get_all($seller); 
+
 		$arr['table']='products';
 		$arr['where']="where section_id=5";
 		$arr['and']="";

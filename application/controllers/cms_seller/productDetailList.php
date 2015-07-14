@@ -104,7 +104,30 @@ class ProductDetailList extends CI_Controller{
 		$arr3['and']="";
 		$arr3['order_by']="";		
 		$data['sec_data']=$this->site_sentry->get_all($arr3);
+
+		$customize['table']='products';
+		$customize['where']="where product_status=1";
+		$customize['and']="";
+		$customize['order_by']=""; 
+		$data['pending']=$this->site_sentry->get_all($customize); 
+
+		$readyToprint['table']='products';
+		$readyToprint['where']="where product_status=2";
+		$readyToprint['and']="";
+		$readyToprint['order_by']=""; 
+		$data['approve']=$this->site_sentry->get_all($readyToprint); 
+
+		$readyTodeliver['table']='products';
+		$readyTodeliver['where']="where product_status=2";
+		$readyTodeliver['and']="";
+		$readyTodeliver['order_by']=""; 
+		$data['live']=$this->site_sentry->get_all($readyTodeliver); 
 		
+		$out_of_stock['table']='products';
+		$out_of_stock['where']="where prod_status=0";
+		$out_of_stock['and']="";
+		$out_of_stock['order_by']="";		
+		$data['out_of_stock']=$this->site_sentry->get_all($out_of_stock);
 		
 		
 		$data['type']='add';		

@@ -104,7 +104,7 @@ $profile_pic=$this->session->userdata("profile_pic");
 					<span class="selected"></span>
 					</a>					
 			    </li>
-				<li <?php if(isset($page) && $page=="slider"){?> class="active"<?php }?>>
+				<li <?php if(isset($page) && $page=="myaccount"){?> class="active"<?php }?>>
 				    <a href="<?php echo base_url()?>index.php/cms_seller/myaccount">
 					<i class="icon-home"></i>Seller Account
 					<span class="selected"></span>
@@ -123,24 +123,24 @@ $profile_pic=$this->session->userdata("profile_pic");
 					<span class="selected"></span>
 					</a>					
 			    </li>
-				<li <?php if(isset($page) && $page=="sections"){?> class="active"<?php }?>>
+			     <li <?php if(isset($page) && $page=="feedback"){?> class="active"<?php }?>>
+				    <a href="<?php echo base_url()?>index.php/cms_seller/seller_feedback">
+					<i class="icon-home"></i>Feedback
+					<span class="selected"></span>
+					</a>					
+			    </li>						   
+			    <li <?php if(isset($page) && $page=="Review"){?> class="active"<?php }?>>
+				    <a href="<?php echo base_url()?>index.php/cms_seller/seller_feedback">
+					<i class="icon-home"></i>Review
+					<span class="selected"></span>
+					</a>					
+			    </li>
+			    <li <?php if(isset($page) && $page=="sections"){?> class="active"<?php }?>>
 				    <a href="<?php echo base_url()?>index.php/cms_seller/sections">
 					<i class="icon-home"></i>Billing Information
 					<span class="selected"></span>
 					</a>					
-			    </li>
-			    <li <?php if(isset($page) && $page=="feedback"){?> class="active"<?php }?>>
-				    <a href="<?php echo base_url()?>index.php/cms_seller/ProductTrade">
-					<i class="icon-home"></i>Feedback
-					<span class="selected"></span>
-					</a>					
-			    </li>
-			    <li <?php if(isset($page) && $page=="sold_product"){?> class="active"<?php }?>>
-				    <a href="<?php echo base_url()?>index.php/cms_seller/ProductTrade">
-					<i class="icon-home"></i>Sold Product
-					<span class="selected"></span>
-					</a>					
-			    </li>
+			    </li>	
 				
 			</ul>
 			<!-- END SIDEBAR MENU -->

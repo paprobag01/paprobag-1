@@ -17,7 +17,7 @@ class Seller_view extends CI_Controller{
 	function index()
 	{
 		
-		//$data['page']='productList';
+		$data['page']='myaccount';
 		
 		$arr['table']='products';
 		$arr['where']="where section_id=5";
