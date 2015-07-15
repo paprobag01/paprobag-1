@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php echo base_url('js/seller_catelog_upload.js')?>"></script>
 <div id="content">
    <div class="container">
       <div class="cart_c">
@@ -50,11 +51,8 @@
                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
+                                            <select id="section_list">
+                                              <option>Select section</option>
                                             </select>
                                           </div>
                                        </div>
@@ -64,11 +62,8 @@
                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
+                                            <select id="category_list">
+                                              <option>Select Category</option>                                              
                                             </select>
                                           </div>
                                        </div>
