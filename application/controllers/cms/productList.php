@@ -116,6 +116,46 @@ class ProductList extends CI_Controller{
 		$this->load->view('cms/product_section_view',$data);
 		$this->load->view('cms/footer_view',$data);
 	}
+
+	function verify_product_details($type=null)
+	{
+		$arr3['table']='sections';
+		$arr3['where']="";
+		$arr3['and']="";
+		$arr3['order_by']="";		
+		$data['sec_data']=$this->site_sentry->get_all($arr3);
+
+		$this->form_validation->set_rules('prod_name', 'Product Name', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha');
+		$this->form_validation->set_rules('prod_description', 'Product Description', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]');
+		$this->form_validation->set_rules('section_id', 'Sections', 'required');
+		$this->form_validation->set_rules('prod_sku', 'Product Sku', 'trim|required|is_numeric');
+		$this->form_validation->set_rules('taggings', 'Product Taggings', 'required');
+		$this->form_validation->set_rules('prod_gift_card', 'Gift Card', 'required');
+		$this->form_validation->set_rules('prod_status', 'Product Status', 'required');
+		$this->form_validation->set_rules('prod_on_home', 'Product On Home', 'required');
+		$this->form_validation->set_rules('prod_price', 'MRP', 'trim|required|is_numeric');
+		$this->form_validation->set_rules('prod_sell_price', 'Sell Price', 'trim|required|is_numeric');
+		$this->form_validation->set_rules('prod_discount', 'Discount %', 'trim|required|is_numeric');
+		$this->form_validation->set_rules('prod_qty', 'Quantity', 'trim|required|is_numeric');
+		$this->form_validation->set_rules('sold_by', 'Sold By', 'trim|required|min_length[3]|max_length[12]|xss_clean|alpha');
+		$this->form_validation->set_rules('prod_stock', 'Stock', 'required');
+		$this->form_validation->set_rules('require_shipping', 'Require Shipping', 'required');
+		$this->form_validation->set_rules('prod_shipping_price', 'Shipping Price', 'trim|required|is_numeric');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['error'] = 'Please Enter Correct Category name';
+			$data['type']=$type;
+			$this->load->view('cms/header_view',$data);
+			$this->load->view('cms/product_section_view',$data);
+			$this->load->view('cms/footer_view',$data);
+			
+		}
+		else
+		{
+			$this->save_products();
+		}
+	}
+
 	function save_products()
 	{
 		$id=$this->input->post('prod_id');

@@ -1,6 +1,9 @@
 <?php 
-extract($page_data);
-print_r($section_id);
+if(!isset($error)) 
+{
+	extract($page_data);
+	print_r($section_id);
+}
 ?>
 <!-- BEGIN PAGE -->  
       <div class="page-content"> 
@@ -32,7 +35,9 @@ print_r($section_id);
                      <div class="portlet-body form">
                         <!-- BEGIN FORM-->
                         <form action="<?php echo base_url()?>cms/subcategories/save_subcategories" class="form-horizontal" method="post" enctype="multipart/form-data" />
-							<input type="hidden" name="cat_id" value="<?php echo $cat_id;?>"/>
+							<div class="control-group"><span style="color:#FE544D;font-size: 15px;"><?php  echo validation_errors();?></span>
+                     		</div>
+							<input type="hidden" name="cat_id" <?php if(!(isset($error))){?>value="<?php echo $cat_id;?>"<?php }?>/>
 							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>
 							 
 						    
@@ -40,7 +45,7 @@ print_r($section_id);
                               <label class="control-label">Sections</label>
                               <div class="controls">
                                 <!-- <textarea  name="details"  id="ai" class="span12 ckeditor m-wrap" cols="30" rows="10">  </textarea> -->
-									<select name="sec_id" id="sec_id" onchange="getFilters(this.value)" <?php if($type=='view'){?>disabled<?php }?>>
+									<select name="sec_id" id="sec_id" required data-validation-required-message="Please Fill Data" onchange="getFilters(this.value)" <?php if($type=='view'){?>disabled<?php }?>>
 										<option value="">Select</option>
 										<?php foreach($sec_data as $row){ ?>
 										<option value="<?php echo $row['section_id']; ?>"><?php echo $row['section_name']; ?></option>
@@ -111,7 +116,7 @@ print_r($section_id);
 										<div class="control-group">
 													<label class="control-label">Subcategory</label>
 													    <div class="controls">
-															<input type="text" name="sub_cat" id="sub_cat" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sub_cat;?>" class="span4 m-wrap"> 
+															<input type="text" name="sub_cat" id="sub_cat" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $sub_cat;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 												</div>
                            <!-- <div class="control-group">

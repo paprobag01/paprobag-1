@@ -48,6 +48,25 @@ class slider extends CI_Controller{
 		$this->load->view('cms/footer_view',$data);
 	}
 
+	function verify_slide_data($type=null)
+	{
+		$this->form_validation->set_rules('slider_name', 'Name', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha');
+		$this->form_validation->set_rules('slider_status', 'status', 'required');
+		$this->form_validation->set_rules('slide_on_home', 'Slide On Home', 'required');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$arr['type']=$type;
+			$arr['error'] = 'Please Enter Correct Category name';
+			
+			$this->load->view('cms/header_view',$arr);
+			$this->load->view('cms/add_slider',$arr);
+			$this->load->view('cms/footer_view',$arr);
+		}
+		else
+		{
+			$this->save_slider();
+		}
+	}
 	function save_slider(){ 
 		
 		$img_url=$this->input->post('img_url');		

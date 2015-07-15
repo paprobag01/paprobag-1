@@ -66,39 +66,40 @@
 									
 									<div class="portlet-body form form-horizontal">
 										<!-- BEGIN FORM-->
-										
-										<input type="hidden" value="<?php echo $prod_id;?>" name="prod_id"/>
-										<input type="hidden" value="<?php echo $created_on;?>" name="created_on" value="<?php echo date("Y-m-d");?>"/>
+										<div class="control-group"><span style="color:#FE544D;font-size: 15px;"><?php  echo validation_errors();?></span>
+                     					</div>
+										<input type="hidden" <?php if(!(isset($error))){?>value="<?php echo $prod_id;?>"<?php } ?> name="prod_id"/>
+										<input type="hidden" <?php if(!(isset($error))){?>value="<?php echo $created_on;?>"<?php }?> name="created_on" value="<?php echo date("Y-m-d");?>"/>
 											<div class="form-body">
 												<div class="control-group">
 													<label class="control-label">Product Name</label>
 													    <div class="controls">
-															<input type="text" name="prod_name" id="prod_name" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_name;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_name" id="prod_name" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo $prod_name;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 												  <label class="control-label">Meta Title</label>
 													  <div class="controls">
-														<textarea name="prod_meta_title" id="prod_meta_title" <?php if($type=='view'){?>disabled<?php }?> class="span12 m-wrap"><?php echo $prod_meta_title;?></textarea>
+														<textarea name="prod_meta_title" id="prod_meta_title" <?php if($type=='view'){?>disabled<?php }?> class="span12 m-wrap"><?php if(!(isset($error))){echo $prod_meta_title;}?></textarea>
 													  </div>
 												</div>
 												<div class="control-group">
 												  <label class="control-label">Meta Keywords</label>
 													  <div class="controls">
-														<textarea name="prod_meta_keyword" id="prod_meta_keyword" <?php if($type=='view'){?>disabled<?php }?> class="span12 m-wrap"><?php echo $prod_meta_keyword;?></textarea>
+														<textarea name="prod_meta_keyword" id="prod_meta_keyword" <?php if($type=='view'){?>disabled<?php }?> class="span12 m-wrap"><?php if(!(isset($error))){ echo $prod_meta_keyword;}?></textarea>
 													  </div>
 												</div>
 												<div class="control-group">
 												  <label class="control-label">Meta Description</label>
 												  <div class="controls">
-													 <textarea name="prod_meta_description" id="prod_meta_description" <?php if($type=='view'){?>disabled<?php }?>  class="span12 m-wrap"><?php echo $prod_meta_description;?></textarea>
+													 <textarea name="prod_meta_description" id="prod_meta_description" <?php if($type=='view'){?>disabled<?php }?>  class="span12 m-wrap"><?php if(!(isset($error))){ echo $prod_meta_description;}?></textarea>
 												   </div>
 											   </div>
 											   
 											 <div class="control-group">
 												  <label class="control-label">Product Description</label>
 												  <div class="controls">
-													 <textarea  name="prod_description" id="prod_description" <?php if($type=='view'){?>disabled<?php }?>  class="span12 ckeditor  m-wrap" cols="30" rows="10"><?php echo $prod_description;?> </textarea> 
+													 <textarea  name="prod_description" id="prod_description" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?>  class="span12 ckeditor  m-wrap" cols="30" rows="10"><?php if(!(isset($error))){echo $prod_description;}?> </textarea> 
 													 
 												  </div>
 											</div>
@@ -231,7 +232,7 @@
 											  var filters1 = $('#sec_id').val();
 											  var filters2 = $('#sub_categories').val();
 											  
-									//console.log(sub_categories);
+									console.log(prod_sub_categories);
 									$.ajax({   
 											   url: "<?php echo base_url()?>cms/getSubCategories/material_name",
 												async: false,
@@ -303,27 +304,7 @@
 							  }
 							}
 						  ?>
-						    <!--<div class="control-group">
-                              <label class="control-label">Section Name</label>
-                              <div class="controls">
-								  <input type="hidden" name="section_id" id="section_id" class="span4  m-wrap" /> 
-								  <input type="text" disabled id="section_name" value="<?php echo $section_name; ?>" class="span4  m-wrap" /> 
-								  
-                              </div>
-                           </div>-->
-						 
-						    
-                           <!-- <div class="control-group">
-													<label class="control-label">Gift Card</label>
-													    <div class="controls">
-															<select name="gift_card" id="gift_card">
-																<option value="0">No</option>
-																<option value="1">Yes</option>
-															</select>
-													    </div>
-							</div> -->
-                           
-						  
+						   
 											<div class="control-group" id="subcategories" style="display:none;">
 											  
 											</div>
@@ -335,13 +316,13 @@
 											<div class="control-group">
 													<label class="control-label">Product Sku</label>
 													    <div class="controls">
-															<input type="text" name="prod_sku" id="prod_sku" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_sku;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_sku" id="prod_sku" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo $prod_sku;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Product Taggings</label>
 													    <div class="controls">
-															<select name="taggings" <?php if($type=='view'){?>disabled<?php }?>>
+															<select name="taggings" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?>>
 															<?php if($taggings!=0){?>
 																<option value="<?php echo $taggings;?>"><?php if($taggings==1){echo "New";} if($taggings==2){echo "Premium";}?></option>
 																<?php }else{?>
@@ -358,7 +339,7 @@
 												<div class="control-group">
 													<label class="control-label">Gift Card</label>
 													    <div class="controls">
-															<select name="prod_gift_card" id="prod_gift_card">
+															<select name="prod_gift_card" id="prod_gift_card" required data-validation-required-message="Please Fill Data">
 																<option value="0">No</option>
 																<option value="1">Yes</option>
 															</select>
@@ -367,7 +348,7 @@
 												<div class="control-group">
 													<label class="control-label">Product Status</label>
 													    <div class="controls">
-															<select name="prod_status" id="prod_status">
+															<select name="prod_status" id="prod_status" required data-validation-required-message="Please Fill Data">
 																<option value="0">Enable</option>
 																<option value="1">Disable</option>
 															</select>
@@ -376,23 +357,14 @@
 												<div class="control-group">
 													<label class="control-label">Product On Home</label>
 													    <div class="controls">
-															<select name="prod_on_home" id="prod_on_home">
+															<select name="prod_on_home" id="prod_on_home" required data-validation-required-message="Please Fill Data">
 																<option value="1">Yes</option>
 																<option value="0">No</option>
 															</select>
 													    </div>
 												</div>
-												<div class="control-group">
-													<label class="control-label">Product On Complete The Look</label>
-													    <div class="controls">
-															<select name="complete_the_look" id="complete_the_look">
-																<option value="0">Yes</option>
-																<option value="1">No</option>
-															</select>
-													    </div>
-												</div>
-											
-														  <script type="text/javascript">
+												
+							<script type="text/javascript">
 							  $(document).ready(function() {
 								  
 									
@@ -505,25 +477,12 @@
 												<div class="control-group">
 												  <label class="control-label">Product Short Description</label>
 												  <div class="controls">
-													 <textarea name="prod_short_description" id="prod_short_description"  <?php if($type=='view'){?>disabled<?php }?> class="span12   m-wrap"><?php echo $prod_short_description;?></textarea>
+													 <textarea name="prod_short_description" id="prod_short_description" required data-validation-required-message="Please Fill Data"  <?php if($type=='view'){?>disabled<?php }?> class="span12   m-wrap"><?php if(!(isset($error))){ echo $prod_short_description; }?></textarea>
 												   </div>
 											   </div>
-											   <div class="control-group">
-													<label class="control-label">Customizable</label>
-													    <div class="controls">
-															<select name="prod_customizable" id="prod_customizable">
-																<option value="0">Yes</option>
-																<option value="1">No</option>
-															</select>
-													    </div>
-												</div>
+											   
 <!-- 												url_for_product_details -->
-												<div class="control-group">
-													<label class="control-label">Product Detail Url</label>
-													    <div class="controls">
-															<input type="text" name="url_for_product_details" id="url_for_product_details" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $url_for_product_details;?>" class="span4 m-wrap"> 
-													    </div>
-												</div>
+												
 											   <div class="control-group">
 										  <label class="control-label">Image On Product page:</label>
 										  <div class="controls">
@@ -586,26 +545,26 @@
 													<div class="control-group">
 													<label class="control-label">MRP</label>
 													    <div class="controls">
-															<input type="text" name="prod_price" id="prod_price" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_price" id="prod_price" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo $prod_price;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 													</div>
 													<div class="control-group">
 													<label class="control-label">Sell Price</label>
 													    <div class="controls">
-															<input type="text" name="prod_sell_price" id="prod_sell_price" onfocus="getDiscount()" onblur="getDiscount()" onkeyup="getDiscount()" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_price;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_sell_price" id="prod_sell_price" required data-validation-required-message="Please Fill Data" onfocus="getDiscount()" onblur="getDiscount()" onkeyup="getDiscount()" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo $prod_price;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 													</div>
 													<div class="control-group">
 													<label class="control-label">Discount %</label>
 													    <div class="controls">
-															<input type="text" name="prod_discount" id="prod_discount" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo round($prod_discount, 2);?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_discount" id="prod_discount" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo round($prod_discount, 2);?>"<?php }?> class="span4 m-wrap"> 
 													    </div>
 													</div>
 													<!--/span-->
 													<div class="control-group">
 													<label class="control-label">Quantity</label>
 													    <div class="controls">
-															<input type="text" name="prod_qty" id="prod_qty" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_qty;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_qty" id="prod_qty" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?> value="<?php echo $prod_qty;?>"<?php }?> class="span4 m-wrap"> 
 													    </div>
 													</div>
 													
@@ -613,7 +572,7 @@
 												<div class="control-group">
 													<label class="control-label">Sold By</label>
 													    <div class="controls">
-															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $sold_by;?>" class="span4 m-wrap"> 
+															<input type="text" name="sold_by" id="sold_by" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo $sold_by;?>"<?php }?> class="span4 m-wrap"> 
 													    </div>
 													</div>
 													
@@ -621,7 +580,7 @@
 													<label class="control-label">Stock</label>
 													    <div class="controls">
 															<select name="prod_stock" class="span4 m-wrap">
-																<option value="<?php echo $prod_stock ?>">In stock</option>
+																<option <?php if(!(isset($error))){?>value="<?php echo $prod_stock ?>"<?php }?> >In stock</option>
 																<option value="0">In stock</option>
 																<option value="1">Out of stock</option>
 															</select>
@@ -644,7 +603,7 @@
 													<div class="control-group"> 
 													<label class="control-label">Shipping Price</label>
 													    <div class="controls">
-															<input type="text" name="prod_shipping_price" id="prod_shipping_price" <?php if($type=='view'){?>disabled<?php }?> value="<?php echo $prod_shipping_price;?>" class="span4 m-wrap"> 
+															<input type="text" name="prod_shipping_price" id="prod_shipping_price" required data-validation-required-message="Please Fill Data" <?php if($type=='view'){?>disabled<?php }?> <?php if(!(isset($error))){?>value="<?php echo $prod_shipping_price;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 													</div>
 											</div>
@@ -682,7 +641,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="portlet-body form form-horizontal"">
+									<div class="portlet-body form form-horizontal">
 										<!-- BEGIN FORM-->
 										
 											<div class="form-body">
@@ -808,7 +767,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="portlet-body form form-horizontal"">
+									<div class="portlet-body form form-horizontal">
 										<!-- BEGIN FORM-->
 										
 											<div class="form-body">

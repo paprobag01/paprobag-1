@@ -5,7 +5,8 @@ class site_sentry {
 	public function __construct(){
 		
 		$this->CI =& get_instance();
-		$this->CI->load->library('session');		
+		$this->CI->load->library('session');
+		$this->CI->load->library('form_validation');				
 		$this->CI->load->database();
 	}
 
@@ -37,7 +38,8 @@ class site_sentry {
 
 			//$index = $this->session->userdata('indexgbr');
 
-			$this->CI->load->library('upload', $config);
+			$this
+			->CI->load->library('upload', $config);
 							
 		if ( ! $this->CI->upload->do_upload("fileinput")){
 
@@ -62,7 +64,8 @@ class site_sentry {
 		
 		$CI =& get_instance();
 		
-		$primary="";$table=$data['table'];
+		$primary="";
+		$table=$data['table'];
 
 		if($table!=""){
 			

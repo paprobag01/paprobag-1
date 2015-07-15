@@ -240,7 +240,7 @@ class GetSubCategories extends CI_Controller
 			
             
 			$arrFilterVal = $this->getSubCatAjax->get_materialdata($filters,$filters1,$filters2);
-          $res='<label class="control-label">Select Material</label><div class="controls"><select name="material_value" onchange="getmaterial()" id="material_value"><option value="">--Select--</option>';
+          $res='<label class="control-label">Select Material</label><div class="controls"><select name="material_value" required data-validation-required-message="Please Fill Data" onchange="getmaterial()" id="material_value"><option value="">--Select--</option>';
 		   
 		  
            foreach($arrFilterVal as $row)

@@ -29,7 +29,7 @@
                </li>
                
             </ul>
-            <form action="<?php echo base_url()?>cms_seller/productList/save_products" class="" method="post" enctype="multipart/form-data" />
+            <form action="<?php echo base_url()?>cms_seller/productList/save_products" class="" method="post" enctype="multipart/form-data" id="ratingsForm" />
                <div class="tab-content">
                   <div class="tab-pane active" id="tab_0">
                      <div class="portlet box blue">
@@ -64,8 +64,19 @@
 												<div class="control-group">
 													<label class="control-label">Rate</label>
 													    <div class="controls">
-															*****
-													    </div>
+															<span class="starRating">
+                                               <input id="rating5" type="hidden" name="rating" value="5">
+                                               <label for="rating5">5</label>
+                                               <input id="rating4" type="hidden" name="rating" value="4">
+                                               <label for="rating4">4</label>
+                                               <input id="rating3" type="hidden" name="rating" value="3">
+                                               <label for="rating3">3</label>
+                                               <input id="rating2" type="hidden" name="rating" value="2">
+                                               <label for="rating2">2</label>
+                                               <input id="rating1" type="hidden" name="rating" value="1">
+                                               <label for="rating1">1</label>
+                                             </span>
+                                          </div>
 												</div>
 												<div class="control-group">
 												  <label class="control-label">Date</label>

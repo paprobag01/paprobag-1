@@ -24,6 +24,40 @@
 		 $this->load->view('cms/footer_view');
 		
      }
+
+     function verify_category($type=null)
+     {
+
+     	$arr1['table']='sections';
+		$arr1['where']="";
+		$arr1['and']="";
+		$arr1['order_by']=""; 
+
+		 $data['section_data']=$this->site_sentry->get_all($arr1);
+
+     	$this->form_validation->set_rules('cat_name', 'Category Name', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[category.cat_name]|alpha');
+     	$this->form_validation->set_rules('section_id', 'Select Section', 'required');
+     	$this->form_validation->set_rules('cat_type', 'Category Type', 'required');
+     	$this->form_validation->set_rules('cat_meta_title', 'Meta Title', 'trim|required');
+     	$this->form_validation->set_rules('cat_meta_keywords', 'Meta Keywords', 'trim|required');
+     	$this->form_validation->set_rules('cat_meta_description', 'Meta Description', 'trim|required');
+     	if ($this->form_validation->run() == FALSE)
+		{
+				
+			   $data['error'] = 'Please Enter Correct Category name';
+			   $data['type']=$type;
+
+				$this->load->view('cms/header_view', $data);
+				 $this->load->view('cms/add_categories_view', $data);
+				 $this->load->view('cms/footer_view', $data);
+		}
+		else
+		{
+			$this->save_categories();
+		}
+     }
+
+
 	 function save_categories(){ 
 		
 		$data['table']="category"; 
@@ -40,7 +74,7 @@
 		$arr['order_by']="order by cat_id desc";
 		  $data['page_data']=$this->site_sentry->PopulateValues($arr); 
 		  
-		   $arr1['table']='sections';
+		$arr1['table']='sections';
 		$arr1['where']="";
 		$arr1['and']="";
 		$arr1['order_by']=""; 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2015 at 07:46 PM
+-- Generation Time: Jul 15, 2015 at 03:57 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -150,14 +150,13 @@ CREATE TABLE IF NOT EXISTS `category` (
   `subcat` int(11) NOT NULL DEFAULT '0',
   `cat_type` int(11) NOT NULL,
   `section_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`cat_id`, `cat_meta_title`, `cat_meta_keywords`, `cat_meta_description`, `cat_name`, `parent`, `created_on`, `cat_group`, `subcat`, `cat_type`, `section_id`) VALUES
-(1, 'Paper Bag', 'Paper Bag', 'Paper Bag', 'Paper Bag', 0, '22-06-2015', 0, 0, 1, 5),
 (2, 'Ecobags', 'Ecobags', 'Ecobags', 'Ecobags', 0, '22-06-2015', 0, 0, 1, 5),
 (3, 'Ecobags', 'Ecobags', 'Ecobags', 'Boxes', 0, '22-06-2015', 0, 0, 1, 5),
 (4, 'Pouches', 'Pouches', 'Pouches', 'Pouches', 0, '22-06-2015', 0, 0, 1, 5),
@@ -179,7 +178,14 @@ CREATE TABLE IF NOT EXISTS `category_table` (
   `category` varchar(110) NOT NULL,
   `category_id` varchar(5) NOT NULL,
   `section_ids` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category_table`
+--
+
+INSERT INTO `category_table` (`id`, `category`, `category_id`, `section_ids`) VALUES
+(1, 'paperbags', 'pab', '1');
 
 -- --------------------------------------------------------
 
@@ -259,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `filters` (
   `print_color` int(11) NOT NULL,
   `lamination` varchar(100) NOT NULL,
   `special_wrk` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `filters`
@@ -322,7 +328,8 @@ INSERT INTO `filters` (`filter_id`, `material_id`, `material_name`, `section_id`
 (89, 71, 'White duplex Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
 (90, 72, 'White duplex Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
 (91, 73, 'Art Duplex Paper', 5, '1', '10', '', '2w*14h*1g', '', '', '', 0, '', ''),
-(92, 74, '12w*10h*4g', 5, '1', '3', '', '', '', '', '', 0, '', '');
+(92, 74, '12w*10h*4g', 5, '1', '3', '', '', '', '', '', 0, '', ''),
+(93, 67, 'Natural Brown Craft Paper', 5, '2', '11', '', '', '', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -390,15 +397,14 @@ CREATE TABLE IF NOT EXISTS `gsm` (
   `id` int(11) NOT NULL,
   `gsm_name` varchar(100) NOT NULL,
   `gsm_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `gsm`
 --
 
 INSERT INTO `gsm` (`id`, `gsm_name`, `gsm_id`) VALUES
-(1, '140', '1'),
-(2, '100', '2');
+(3, '100', '10');
 
 -- --------------------------------------------------------
 
@@ -410,15 +416,14 @@ CREATE TABLE IF NOT EXISTS `handle` (
   `id` int(11) NOT NULL,
   `handle_name` varchar(100) NOT NULL,
   `handle_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `handle`
 --
 
 INSERT INTO `handle` (`id`, `handle_name`, `handle_id`) VALUES
-(1, 'Twisted', '1'),
-(2, 'Rope', '2');
+(1, 'twisted handle', 'twh');
 
 -- --------------------------------------------------------
 
@@ -450,15 +455,14 @@ CREATE TABLE IF NOT EXISTS `lamination` (
   `id` int(11) NOT NULL,
   `lamination_name` varchar(100) NOT NULL,
   `lamination_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lamination`
 --
 
 INSERT INTO `lamination` (`id`, `lamination_name`, `lamination_id`) VALUES
-(1, 'No', '1'),
-(2, 'yes', '2');
+(1, 'Gloosy', 'glo');
 
 -- --------------------------------------------------------
 
@@ -510,82 +514,17 @@ INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `name`, `password`, `
 --
 
 CREATE TABLE IF NOT EXISTS `material` (
-  `id` int(11) NOT NULL,
+  `Ai` int(11) NOT NULL,
   `material_name` varchar(100) NOT NULL,
   `material_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `material`
 --
 
-INSERT INTO `material` (`id`, `material_name`, `material_id`) VALUES
-(1, 'Recycle White Craft', ''),
-(2, 'Recycle Brown', ''),
-(11, 'Recycle White Craft Paper1', ''),
-(12, 'Natural Brown Craft Paper', ''),
-(13, 'Natural Brown Craft Paper', ''),
-(14, 'Natural Brown Kraft Paper', ''),
-(15, 'Natural White Kraft Paper', ''),
-(16, 'Natural Colour Kraft Paper', ''),
-(17, 'Recycled Brown Kraft Paper', ''),
-(18, 'Recycled White Kraft Paper', ''),
-(19, 'Recycled Color Kraft Paper', ''),
-(20, 'Glossy Paper', ''),
-(21, 'Grey Duplex Paper', ''),
-(22, 'White duplex Paper', ''),
-(23, 'Art Duplex Paper', ''),
-(24, 'Recycled Brown Kraft Paper', ''),
-(25, 'Recycled White Kraft Paper', ''),
-(26, 'Recycled Color Kraft Paper', ''),
-(27, 'Natural Brown Paper', ''),
-(28, 'Vergine Brown Paper', ''),
-(29, 'Recycled Brown Kraft Paper', ''),
-(30, 'Vergine White Paper', ''),
-(31, 'Recycled White Kraft Paper', ''),
-(32, 'Recycled Color Kraft Paper', ''),
-(33, 'Vergine Brown Paper', ''),
-(34, 'Recycled Brown Kraft Paper', ''),
-(35, 'Vergine White Paper', ''),
-(36, 'Recycled White Kraft Paper', ''),
-(37, 'Recycled Color Kraft Paper', ''),
-(38, 'Recycled Brown Kraft Paper', ''),
-(39, 'Recycled White Kraft Paper', ''),
-(40, 'Recycled Color Kraft Paper', ''),
-(41, 'Glossy Paper', ''),
-(42, 'Grey Duplex Paper', ''),
-(43, 'White duplex Paper', ''),
-(44, 'Art Duplex Paper', ''),
-(45, 'Recycled Brown Kraft Paper', ''),
-(46, 'Recycled White Kraft Paper', ''),
-(47, 'Recycled Color Kraft Paper', ''),
-(48, 'Glossy Paper', ''),
-(49, 'Grey Duplex Paper', ''),
-(50, 'White duplex Paper', ''),
-(51, 'Art Duplex Paper', ''),
-(52, 'Recycled Brown Kraft Paper', ''),
-(53, 'Recycled White Kraft Paper', ''),
-(54, 'Recycled Color Kraft Paper', ''),
-(55, 'Glossy Paper', ''),
-(56, 'Grey Duplex Paper', ''),
-(57, 'White duplex Paper', ''),
-(58, 'Art Duplex Paper', ''),
-(59, 'Recycled Brown Kraft Paper', ''),
-(60, 'Recycled White Kraft Paper', ''),
-(61, 'Recycled Color Kraft Paper', ''),
-(62, 'Glossy Paper', ''),
-(63, 'Grey Duplex Paper', ''),
-(64, 'White duplex Paper', ''),
-(65, 'Art Duplex Paper', ''),
-(66, 'Recycled Brown Kraft Paper', ''),
-(67, 'Recycled White Kraft Paper', ''),
-(68, 'Recycled Color Kraft Paper', ''),
-(69, 'Glossy Paper', ''),
-(70, 'Grey Duplex Paper', ''),
-(71, 'White duplex Paper', ''),
-(72, 'White duplex Paper', ''),
-(73, 'Art Duplex Paper', ''),
-(74, '12w*10h*4g', '');
+INSERT INTO `material` (`Ai`, `material_name`, `material_id`) VALUES
+(1, 'vergine brown paper', 'vbp');
 
 -- --------------------------------------------------------
 
@@ -616,15 +555,14 @@ CREATE TABLE IF NOT EXISTS `print` (
   `id` int(11) NOT NULL,
   `print_id` varchar(10) NOT NULL,
   `print` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `print`
 --
 
 INSERT INTO `print` (`id`, `print_id`, `print`) VALUES
-(1, '1', 'offset'),
-(2, '2', 'screen');
+(1, 'off', 'offset');
 
 -- --------------------------------------------------------
 
@@ -637,15 +575,14 @@ CREATE TABLE IF NOT EXISTS `print_color` (
   `print_color` int(11) NOT NULL,
   `print_color_id` varchar(10) NOT NULL,
   `print_ids` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `print_color`
 --
 
 INSERT INTO `print_color` (`id`, `print_color`, `print_color_id`, `print_ids`) VALUES
-(1, 0, '', ''),
-(2, 0, '', '');
+(1, 1, '01', 'off,scr');
 
 -- --------------------------------------------------------
 
@@ -703,7 +640,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `approved` tinyint(4) NOT NULL,
   `seller_request_status` int(11) NOT NULL,
   `product_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
@@ -747,7 +684,14 @@ CREATE TABLE IF NOT EXISTS `section` (
   `id` int(11) NOT NULL,
   `section` varchar(50) NOT NULL,
   `section_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `section`
+--
+
+INSERT INTO `section` (`id`, `section`, `section_id`) VALUES
+(1, 'customizable_products', 'cup');
 
 -- --------------------------------------------------------
 
@@ -759,7 +703,7 @@ CREATE TABLE IF NOT EXISTS `sections` (
   `section_id` int(11) NOT NULL,
   `section_name` varchar(100) NOT NULL,
   `created_on` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sections`
@@ -807,15 +751,14 @@ CREATE TABLE IF NOT EXISTS `size` (
   `id` int(11) NOT NULL,
   `size` varchar(50) NOT NULL,
   `size_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `size`
 --
 
 INSERT INTO `size` (`id`, `size`, `size_id`) VALUES
-(1, '16w*14h*10g', '1'),
-(2, '46', '2');
+(1, '16w*13h*4g', 'b1h6');
 
 -- --------------------------------------------------------
 
@@ -829,7 +772,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
   `slider_image` varchar(250) NOT NULL,
   `slider_status` varchar(25) NOT NULL,
   `slide_on_home` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `slider`
@@ -850,15 +793,14 @@ CREATE TABLE IF NOT EXISTS `special_work` (
   `id` int(11) NOT NULL,
   `special_work` varchar(100) NOT NULL,
   `special_work_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `special_work`
 --
 
 INSERT INTO `special_work` (`id`, `special_work`, `special_work_id`) VALUES
-(1, 'No', '1'),
-(2, 'No', '2');
+(1, 'Emmbossing', 'emb');
 
 -- --------------------------------------------------------
 
@@ -871,15 +813,14 @@ CREATE TABLE IF NOT EXISTS `style` (
   `style` varchar(100) NOT NULL,
   `style_id` varchar(10) NOT NULL,
   `size_ids` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `style`
 --
 
 INSERT INTO `style` (`id`, `style`, `style_id`, `size_ids`) VALUES
-(1, 'Horizontal', '1', ''),
-(2, 'vertical', '2', '');
+(1, 'vertical', 'ver', '10');
 
 -- --------------------------------------------------------
 
@@ -893,14 +834,13 @@ CREATE TABLE IF NOT EXISTS `subcategory` (
   `cat_id` int(11) NOT NULL,
   `section_id` int(11) NOT NULL,
   `material_link_id` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subcategory`
 --
 
 INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`, `material_link_id`) VALUES
-(1, 'Shopping Carry Bags', 1, 5, ''),
 (2, 'Handmade Paper bags', 1, 5, ''),
 (3, 'Food Parcel Bags', 1, 5, ''),
 (4, 'Counter Bags', 1, 5, ''),
@@ -949,7 +889,14 @@ CREATE TABLE IF NOT EXISTS `subcategory_table` (
   `subcategory_id` varchar(10) NOT NULL,
   `category_ids` varchar(30) NOT NULL,
   `section_ids` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subcategory_table`
+--
+
+INSERT INTO `subcategory_table` (`id`, `subcategory`, `subcategory_id`, `category_ids`, `section_ids`) VALUES
+(1, 'shopping carry bags', 'scb', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -1072,7 +1019,7 @@ ALTER TABLE `login`
 -- Indexes for table `material`
 --
 ALTER TABLE `material`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`Ai`);
 
 --
 -- Indexes for table `newsletter`
@@ -1187,12 +1134,12 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `category_table`
 --
 ALTER TABLE `category_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `customizations`
 --
@@ -1207,7 +1154,7 @@ ALTER TABLE `customize_type`
 -- AUTO_INCREMENT for table `filters`
 --
 ALTER TABLE `filters`
-  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=93;
+  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT for table `filter_detail`
 --
@@ -1222,12 +1169,12 @@ ALTER TABLE `filter_details`
 -- AUTO_INCREMENT for table `gsm`
 --
 ALTER TABLE `gsm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `handle`
 --
 ALTER TABLE `handle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `home_details`
 --
@@ -1237,7 +1184,7 @@ ALTER TABLE `home_details`
 -- AUTO_INCREMENT for table `lamination`
 --
 ALTER TABLE `lamination`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -1247,7 +1194,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `material`
 --
 ALTER TABLE `material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=75;
+  MODIFY `Ai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
@@ -1257,17 +1204,17 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `print`
 --
 ALTER TABLE `print`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `print_color`
 --
 ALTER TABLE `print_color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -1277,12 +1224,12 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `seller`
 --
@@ -1292,32 +1239,32 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `size`
 --
 ALTER TABLE `size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slider_id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+  MODIFY `slider_id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `special_work`
 --
 ALTER TABLE `special_work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `style`
 --
 ALTER TABLE `style`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `subcategory`
 --
 ALTER TABLE `subcategory`
-  MODIFY `sub_cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
+  MODIFY `sub_cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `subcategory_table`
 --
 ALTER TABLE `subcategory_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sub_subcategories`
 --

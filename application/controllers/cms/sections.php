@@ -22,7 +22,28 @@
 		 $this->load->view('cms/footer_view');
 		
      }
-	 function save_section(){ 
+
+     function verify_section($type=null)
+     {
+
+     	$this->form_validation->set_rules('section_name', 'Section Name', 'trim|required|min_length[5]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha');
+     	if ($this->form_validation->run() == FALSE)
+		{
+				
+			   $data['error'] = 'Please Enter Correct Section name';
+			   $data['type']=$type;
+
+				$this->load->view('cms/header_view', $data);
+				 $this->load->view('cms/add_sections_view', $data);
+				 $this->load->view('cms/footer_view', $data);
+		}
+		else
+		{
+			$this->save_section();
+		}
+     }
+
+	function save_section(){ 
 		
 		$data['table']="sections"; 
 		$this->site_sentry->Save_records($data);

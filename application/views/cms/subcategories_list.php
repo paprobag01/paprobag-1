@@ -49,13 +49,13 @@
 									?>
 								<tr id="" class="odd gradeX"> 
 									<td><?php echo $cnt;?></td>
-									<td class="hidden-phone"><?php echo $row['cat_name']?></td>
-									<td class="hidden-phone"><?php echo $row['cat_name']?></td>
+									<td class="hidden-phone"><?php echo $row['sub_cat_name']?></td>
+									<td class="hidden-phone"><?php echo $row['sub_cat_name']?></td>
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['cat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['cat_id']?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/subcategories/deleteCategory/<?php echo $row['cat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
+									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['sub_cat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['sub_cat_id']?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/subcategories/deleteCategory/<?php echo $row['sub_cat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>
 								</tr>

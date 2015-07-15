@@ -28,8 +28,6 @@
 <!--<link href="<?php echo base_url('css/colorpicker.css')?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('css/layout.css')?>" rel="stylesheet" type="text/css">-->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url('js/j360.js')?>" ></script>
 </head>
 <body>
 <div id="header"> 
