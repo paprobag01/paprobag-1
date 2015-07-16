@@ -8,7 +8,7 @@ class ProductDetailList extends CI_Controller{
 				   redirect("cms_seller/login");
 				}
 		
-		$this->load->library('site_sentry');
+		$this->load->library('site_sentry');		
 		 $this->load->model('cms_seller/product_model');
 		
 	}

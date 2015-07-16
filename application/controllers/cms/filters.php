@@ -8,6 +8,7 @@
 				}
 				$this->load->model('Filter_model');
                $this->load->library('site_sentry');
+               $this->load->helper('string');
 			}
       
 	  function index(){

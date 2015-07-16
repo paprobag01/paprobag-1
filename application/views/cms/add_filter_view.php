@@ -1022,7 +1022,12 @@
                               </div>
                            </div>
 						   
-						   
+						   <div class="control-group">
+                              <label class="control-label">Material ID</label>
+                              <div class="controls">                                
+								  <input type="text" <?php if($type=='view'){?>disabled<?php }?> name="material_id" id="material_id" value="<?php echo random_string('alnum',5); ?>" class="span4  m-wrap" /> 
+                              </div>
+                           </div>
 						   
 						   
 						  <?php if($type!='view'){ ?>

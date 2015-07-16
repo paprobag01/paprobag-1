@@ -89,7 +89,7 @@
 
 		$this->form_validation->set_rules('sec_id', 'Sections', 'required');
 		$this->form_validation->set_rules('prod_sub_categories', 'Category', 'required');
-		$this->form_validation->set_rules('sub_cat', 'Subcategory', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha');
+		$this->form_validation->set_rules('sub_cat', 'Subcategory', 'trim|required|min_length[3]|max_length[30]|xss_clean|is_unique[sections.section_name]|alpha|regex_match[/^[A-Z]/]');
 		if ($this->form_validation->run() == FALSE)
 		{
 				

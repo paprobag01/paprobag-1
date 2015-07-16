@@ -26,7 +26,7 @@
      function verify_section($type=null)
      {
 
-     	$this->form_validation->set_rules('section_name', 'Section Name', 'trim|required|min_length[5]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha');
+     	$this->form_validation->set_rules('section_name', 'Section Name', 'trim|required|min_length[5]|max_length[30]|xss_clean|is_unique[sections.section_name]|alpha|regex_match[/^[A-Z]/]');
      	if ($this->form_validation->run() == FALSE)
 		{
 				

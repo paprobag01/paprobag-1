@@ -125,8 +125,8 @@ class ProductList extends CI_Controller{
 		$arr3['order_by']="";		
 		$data['sec_data']=$this->site_sentry->get_all($arr3);
 
-		$this->form_validation->set_rules('prod_name', 'Product Name', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha');
-		$this->form_validation->set_rules('prod_description', 'Product Description', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]');
+		$this->form_validation->set_rules('prod_name', 'Product Name', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[sections.section_name]|alpha|regex_match[/^[A-Z]/]');
+		$this->form_validation->set_rules('prod_description', 'Product Description', 'trim|required|min_length[3]|max_length[30]|xss_clean|is_unique[sections.section_name]|regex_match[/^[A-Z]/]');
 		$this->form_validation->set_rules('section_id', 'Sections', 'required');
 		$this->form_validation->set_rules('prod_sku', 'Product Sku', 'trim|required|is_numeric');
 		$this->form_validation->set_rules('taggings', 'Product Taggings', 'required');
@@ -137,7 +137,7 @@ class ProductList extends CI_Controller{
 		$this->form_validation->set_rules('prod_sell_price', 'Sell Price', 'trim|required|is_numeric');
 		$this->form_validation->set_rules('prod_discount', 'Discount %', 'trim|required|is_numeric');
 		$this->form_validation->set_rules('prod_qty', 'Quantity', 'trim|required|is_numeric');
-		$this->form_validation->set_rules('sold_by', 'Sold By', 'trim|required|min_length[3]|max_length[12]|xss_clean|alpha');
+		$this->form_validation->set_rules('sold_by', 'Sold By', 'trim|required|min_length[3]|max_length[12]|xss_clean|alpha|regex_match[/^[A-Z]/]');
 		$this->form_validation->set_rules('prod_stock', 'Stock', 'required');
 		$this->form_validation->set_rules('require_shipping', 'Require Shipping', 'required');
 		$this->form_validation->set_rules('prod_shipping_price', 'Shipping Price', 'trim|required|is_numeric');

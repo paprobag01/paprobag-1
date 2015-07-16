@@ -37,8 +37,7 @@ if(!isset($error))
                         <form action="<?php echo base_url()?>cms/sections/verify_section" class="form-horizontal" method="post" enctype="multipart/form-data" />
 							<!--<input type="hidden" name="section_id" value="<?php echo $section_id;?>"/>
 							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>-->
-							 <div class="control-group">
-						      <span style="color:#FE544D;font-size: 15px;"><?php if(isset($error)){ echo $error; }?></span>
+							 <div class="control-group"><span style="color:#FE544D;font-size: 15px;"><?php  echo validation_errors();?></span>
                      </div>
 						   <div class="control-group">
                               <label class="control-label">Section Name</label>

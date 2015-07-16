@@ -120,6 +120,7 @@
    <div class="row-fluid">
       <div class="span12">
          <div class="tabbable tabbable-custom boxless tabbable-reversed">
+          
             <div class="portlet box blue" style="border: 1px solid #FFFFFF;background-color: #FFFFFF">
                         
                        <img src="<?php echo base_url();?>images/seller.jpg" id="1" width="200px" height="200px" style="padding-left: 16px;" onclick="showProdList_pending(this.id);">Pending :<?php echo count($pending);?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -144,9 +145,13 @@
                   </a>
                </li>
             </ul>
+
             <form action="<?php echo base_url()?>cms_seller/productList/save_products" class="" method="post" enctype="multipart/form-data" />
 
                <div class="tab-content" id="status_id">                  
+                
+               </div>
+                <div class="tab-content" id="output">                  
                 
                </div>
                
@@ -155,3 +160,27 @@
       </div>
    </div>
 </div>
+
+<script>
+                function showResult(str) {
+                  if (str.length==0) { 
+                    document.getElementById("output").innerHTML="";
+                    document.getElementById("output").style.border="0px";
+                    return;
+                  }
+                  if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                      document.getElementById("output").innerHTML=xmlhttp.responseText;
+                      document.getElementById("output").style.border="0px solid #A5ACB2";
+                    }
+                  }
+                  xmlhttp.open("GET","<?php echo base_url();?>Search_result/search_filter_data/?search_value="+str,true);
+                  xmlhttp.send();
+                }
+                </script>

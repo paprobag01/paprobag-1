@@ -12,7 +12,8 @@ class Filter_model extends CI_Model
 		$data1['material_name'] = $this->input->post('material_name');
 		//$data1['material_name'] = $this->input->post('material_name');
 
-		$material['material_name'] = $this->input->post('material_name');	
+		$material['material_name'] = $this->input->post('material_name');
+		$material['material_id'] = $this->input->post('material_id');	
 		
 		//$this->db->where('filter_id', $id);
 		$this->db->insert('material',$material);
