@@ -72,11 +72,8 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
+                                            <select id="sub_category_list">
+                                              <option>Select sub category</option>
                                             </select>
                                           </div>
                                        </div>
@@ -85,11 +82,8 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
+                                            <select id="material_list">
+                                              <option>Select Material</option>
                                             </select>
                                           </div>
                                        </div>
