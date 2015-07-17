@@ -13,9 +13,6 @@ class Search_result extends CI_Controller{
   { 
     
     $data = $this->common_model->get_head();
-    
-    
-    
     $this->load->view('header',$data);
     $this->load->view('blog_view');
     $this->load->view('footer');
@@ -24,9 +21,6 @@ class Search_result extends CI_Controller{
   function search_filter_data()
   {
     echo $data = $this->input->get('search_value');
-    
-    
-
   }
 
  function get_status()

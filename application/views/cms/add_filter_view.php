@@ -123,8 +123,7 @@
 											  var filters = $('#prod_sub_categories').val();
 											  var filters1 = $('#sec_id').val();
 											  var filters2 = $('#sub_categories').val();
-											  
-									//console.log(sub_categories);
+									
 									$.ajax({   
 											   url: "<?php echo base_url()?>cms/getSubCategories/material_name",
 												async: false,
@@ -136,8 +135,6 @@
 												{
 													var dt=data.split("|");
 													
-																	//$('#material_drop').fadeIn();
-																	//$('#material_drop').html(dt[0]);
 																	
 																	if(dt[0]!='<label class="control-label">Select Material</label><div class="controls" id="material_id"><select name="material_value" onchange="getmaterial()"  id="material_value"></select></div>')
 																{
@@ -150,6 +147,41 @@
 																else{
 																	$('#material_drop').fadeIn();
 																	$('#material_drop').html('<div class="controls">Material is not found under this Category</div>');
+																}
+																
+													
+												}
+										});
+									 });
+									 $('#filters').on('click', function() {
+										 
+											  var filters = $('#prod_sub_categories').val();
+											  var filters1 = $('#sec_id').val();
+											  var filters2 = $('#sub_categories').val();
+									
+									$.ajax({   
+											   url: "<?php echo base_url()?>cms/getSubCategories/style_name",
+												async: false,
+												type: "POST", 
+												data: {'filters':filters,'filters1':filters1,'filters2':filters2},
+												dataType: "html",
+										
+												success: function(data) 
+												{
+													var dt=data.split("|");
+													
+																	
+																	if(dt[0]!='<label class="control-label">Select Style</label><div class="controls" id="material_id"><select name="material_value" onchange="getmaterial()"  id="material_value"></select></div>')
+																{
+																	$('#style_drop').fadeIn();
+																	$('#style_drop').html(dt[0]);
+																	
+																	
+																
+																}
+																else{
+																	$('#style_drop').fadeIn();
+																	$('#style_drop').html('<div class="controls">Material is not found under this Category</div>');
 																}
 																
 													
@@ -436,9 +468,7 @@
 								  <input type="text" <?php if($type=='view'){?>disabled<?php }?> name="GSM_data" id="GSM_data" value="<?php echo $GSM_name?>" class="span4  m-wrap" /> 
                               </div>
                            </div>
-						   
-						   
-						   
+                           
 						   
 						  <?php if($type!='view'){ ?>
                            <div class="form-actions">
@@ -508,7 +538,7 @@
 											<div class="control-group" name="filter_id" id="output" style="display:none;">
 											
 											</div>
-											<div class="control-group" name="material_drop" id="material_drop" style="display:none;">
+											<div class="control-group" name="style_drop" id="style_drop" style="display:none;">
 											
 											</div>
 											
@@ -521,10 +551,6 @@
 								  <input type="text" <?php if($type=='view'){?>disabled<?php }?> name="size" id="size" value="<?php echo $size?>" class="span4  m-wrap" /> 
                               </div>
                            </div>
-						   
-						   
-						   
-						   
 						  <?php if($type!='view'){ ?>
                            <div class="form-actions">
                            <button type="submit" class="btn blue">Save</button>
@@ -536,39 +562,7 @@
 						<form action="<?php echo base_url()?>cms/Filters/save_handle" class="form-horizontal" method="post" enctype="multipart/form-data" />
 							<input type="hidden" name="filter_id" value="<?php echo $filter_id;?>"/>
 							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>
-						   <!-- <div class="control-group">
-                              <label class="control-label">Image :</label>
-                              <div class="controls">
-                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                       <?php if($air_image!=""){?>
-										<img src="<?php echo base_url().$air_image;?>" /> 
-										<?php } else {?>
-									   <img src="<?php echo base_url()?>assets/img/noimage.gif" alt="" />
-									   <?php }?>
-									   <input type="hidden" value="<?php echo $air_image; ?>" name="img_url">	
-                                    </div>
-                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                    <div>
-                                       <span class="btn btn-file"><span class="fileupload-new">Select image</span>
-                                       <span class="fileupload-exists">Change</span>
-                                       <input type="file" name="fileinput" <?php if($type=='view'){?>disabled<?php }?> class="default" /></span>
-                                       <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                    </div>
-									
-                                 </div> 
-                              </div>
-                           </div> 
-						    <!-- <div class="control-group">
-                              <label class="control-label">Date</label>
-                              <div class="controls">
-                                 <input type="text" <?php if($type=='view'){?>disabled<?php }?>  name="paper_date" id="paper_date" class="span4  m-wrap" value="<?php 
-								 if($paper_date!='')
-								 {
-									echo date("d/m/Y",strtotime($paper_date)); 
-								}?>" /> 
-                              </div>
-                           </div>-->	 
+						  
 						    <div class="control-group">
                               <label class="control-label">Sections</label>
                               <div class="controls">
@@ -619,40 +613,7 @@
 						<?php }else if(isset($_POST['add_print_filter'])){?>
 						<form action="<?php echo base_url()?>cms/Filters/save_print" class="form-horizontal" method="post" enctype="multipart/form-data" />
 							<input type="hidden" name="filter_id" value="<?php echo $filter_id;?>"/>
-							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>
-						   <!-- <div class="control-group">
-                              <label class="control-label">Image :</label>
-                              <div class="controls">
-                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                       <?php if($air_image!=""){?>
-										<img src="<?php echo base_url().$air_image;?>" /> 
-										<?php } else {?>
-									   <img src="<?php echo base_url()?>assets/img/noimage.gif" alt="" />
-									   <?php }?>
-									   <input type="hidden" value="<?php echo $air_image; ?>" name="img_url">	
-                                    </div>
-                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                    <div>
-                                       <span class="btn btn-file"><span class="fileupload-new">Select image</span>
-                                       <span class="fileupload-exists">Change</span>
-                                       <input type="file" name="fileinput" <?php if($type=='view'){?>disabled<?php }?> class="default" /></span>
-                                       <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                    </div>
-									
-                                 </div> 
-                              </div>
-                           </div> 
-						    <!-- <div class="control-group">
-                              <label class="control-label">Date</label>
-                              <div class="controls">
-                                 <input type="text" <?php if($type=='view'){?>disabled<?php }?>  name="paper_date" id="paper_date" class="span4  m-wrap" value="<?php 
-								 if($paper_date!='')
-								 {
-									echo date("d/m/Y",strtotime($paper_date)); 
-								}?>" /> 
-                              </div>
-                           </div>-->	 
+							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>						   
 						    <div class="control-group">
                               <label class="control-label">Sections</label>
                               <div class="controls">
@@ -1009,7 +970,7 @@
 											  
 											</div>
 											
-											<div class="control-group" id="filters" style="display:none;">
+											<div class="control-group"  id="filters" style="display:none;">
 											  
 											</div>
 											

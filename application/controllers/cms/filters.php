@@ -179,7 +179,8 @@
 		  $data['filter_id'] = '';
 		  $data['material_name'] = '';	
 		  $data['GSM_numb'] = '';
-		 $data['GSM_name'] = '';	
+		 $data['GSM_name'] = '';
+		 $data['wcc'] = '';	
 		  $data['size'] = '';	
 		   $data['style'] = '';	
 		    $data['handle'] = '';	

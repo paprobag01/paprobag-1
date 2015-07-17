@@ -42,6 +42,11 @@ class GetSubCatAjax extends CI_Model
 				$query1 = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
 				return $query1->result_array();
 		}
+		function get_styledata($cat_id,$section_id,$sub_cat_id)
+		{
+				$query1 = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
+				return $query1->result_array();
+		}
 		
 }
 ?>

@@ -234,11 +234,6 @@ class GetSubCategories extends CI_Controller
 			$filters1 = $_POST['filters1'];
 			$filters2 = $_POST['filters2'];
 			
-			/*echo $cat_id = $_POST['cat_id'];
-			echo $section_id = $_POST['section_id'];
-			echo $sub_cat_id = $_POST['sub_cat_id'];*/
-			
-            
 			$arrFilterVal = $this->getSubCatAjax->get_materialdata($filters,$filters1,$filters2);
           $res='<label class="control-label">Select Material</label><div class="controls"><select name="material_value" required data-validation-required-message="Please Fill Data" onchange="getmaterial()" id="material_value"><option value="">--Select--</option>';
 		   
@@ -246,7 +241,33 @@ class GetSubCategories extends CI_Controller
            foreach($arrFilterVal as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['filter_id'].'">'.$row['material_name'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['material_name'].'</option>';
+			  
+			  
+		   }
+		 
+		   $finres=$res.'</select></div>';
+		   echo $finres;
+		}
+	}
+	function style_name()
+	{
+		//echo "Welcome";
+		if (isset($_POST) && isset($_POST['filters']) && isset($_POST['filters1']) && isset($_POST['filters2'])) {
+            $filters = $_POST['filters'];
+			$filters1 = $_POST['filters1'];
+			$filters2 = $_POST['filters2'];
+			
+			$arrFilterVal = $this->getSubCatAjax->get_materialdata($filters,$filters1,$filters2);
+          $res='<label class="control-label">Select Style</label><div class="controls"><select name="material_value" required data-validation-required-message="Please Fill Data" onchange="getmaterial()" id="material_value"><option value="">--Select--</option>';
+		   
+		  
+           foreach($arrFilterVal as $row)
+		   {
+			   if($row['style']!="")
+			   {
+			   		$res=$res.'<option value="'.$row['material_id'].'">'.$row['style'].'</option>';
+			   }		   
 			  
 			  
 		   }
