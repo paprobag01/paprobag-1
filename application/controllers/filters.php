@@ -96,6 +96,7 @@ class Filters extends CI_Controller{
 		$filters = $this->common_model->getAllDetails($data);
 		$filters_array = array();
 		$i = 0;
+
 		foreach ($filters as $key => $value) {
 			// Get gsm data
 			$gsm_array = explode(',', $value['gsm_ids']);
@@ -118,7 +119,7 @@ class Filters extends CI_Controller{
 			$styles = $this->common_model->getAllDetails($data);
 			foreach ($styles as $style_key => $style_value) {
 				$filters_array['style'][$i]['style'] = $style_value['style'];
-				$filters_array['style'][$i]['style_id'] = $size_value['style_id'];				 
+				$filters_array['style'][$i]['style_id'] = $style_value['style_id'];				 
 				$i++;
 			}
 
@@ -144,7 +145,7 @@ class Filters extends CI_Controller{
 			$handles = $this->common_model->getAllDetails($data);
 			foreach ($handles as $handle_key => $handle_value) {
 				$filters_array['handle'][$i]['handle'] = $handle_value['handle'];
-				$filters_array['handle'][$i]['handle_id'] = $size_value['handle_id'];				 
+				$filters_array['handle'][$i]['handle_id'] = $handle_value['handle_id'];				 
 				$i++;
 			}
 
@@ -183,11 +184,58 @@ class Filters extends CI_Controller{
 			$special_works = $this->common_model->getAllDetails($data);
 			foreach ($special_works as $special_work_key => $special_work_value) {
 				$filters_array['special_work'][$i]['special_work'] = $special_work_value['special_work'];
-				$filters_array['special_work'][$i]['special_work'] = $special_work_value['special_work_id'];				 
+				$filters_array['special_work'][$i]['special_work_id'] = $special_work_value['special_work_id'];				 
 				$i++;
 			}
 		}
 		echo json_encode($filters_array);
+	}
+
+	function get_style_dependent_filters()
+	{
+		$style_id = $_POST['style_id'];
+		$data['where']="where style_id = '".$style_id."'";
+		$data['table']='style';
+		$data['order_by']='';
+		$styles = $this->common_model->getAllDetails($data);
+		$size_array = array();
+		$i = 0;
+
+		foreach ($styles as $key => $value) {
+			// Get size data
+			$data['where']="where size_id in (".$value['size_ids'].")";
+			$data['table']='size';
+			$data['order_by']='';
+			$sizes = $this->common_model->getAllDetails($data);
+			foreach ($sizes as $size_key => $size_value) {
+				$size_array[$i]['size'] = $size_value['size'];
+				$size_array[$i]['size_id'] = $size_value['size_id'];	
+				$i++;			 
+			}
+		}
+		echo json_encode($size_array);
+	}
+
+	function get_print_colors()
+	{
+		$print_id = $_POST['print_id'];
+		$data['where']="";
+		$data['table']='print_color';
+		$data['order_by']='';
+		$print_colors = $this->common_model->getAllDetails($data);
+		$print_colors_array = array();
+
+		$i = 0;
+		foreach ($print_colors as $key => $value) {
+			$print_id_array = explode(',', $value['print_ids']);
+			if(in_array($print_id, $print_id_array))
+			{
+				$print_colors_array[$i]['print_color'] = $value['print_color'];
+				$print_colors_array[$i]['print_color_id'] = $value['print_color_id'];
+				$i++;
+			}
+		}
+		echo json_encode($print_colors_array);
 	}
 }
 ?>

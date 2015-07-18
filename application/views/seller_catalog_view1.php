@@ -46,188 +46,32 @@
                               <div class="tab-content">
                                  <div class="tab-pane active" id="custp">
                                     <div class="row">
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Sections:
-                                            <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select id="section_list">
-                                              <option>Select section</option>
-                                            </select>
-                                          </div>
+                                       
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="section_list">
                                        </div>
-                                  
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cat_result">
-                                          <div class="lbltxt" style="float:left;">Category:
-                                            <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select id="category_list">
-                                              <option>Select Category</option>                                              
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="category_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Subcategory:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select id="sub_category_list">
-                                              <option>Select sub category</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="sub_category_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Material:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select id="material_list">
-                                              <option>Select Material</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="material_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">GSM:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="gsm_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Style:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="style_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Size:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="size_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Handle:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="handle_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Print:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="print_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">No of Color:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="print_color_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Lamination:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="lamination_list">
                                        </div>
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Special Work:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <select>
-                                              <option value="volvo">Volvo</option>
-                                              <option value="saab">Saab</option>
-                                              <option value="mercedes">Mercedes</option>
-                                              <option value="audi">Audi</option>
-                                            </select>
-                                          </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="special_work_list">
                                        </div>
                                        
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">MRP:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="text" name="sellername" id="sellername" class="txtbox">
-                                          </div>
-                                       </div>
-
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Sell Price:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="text" name="sellername" id="sellername" class="txtbox">
-                                          </div>
-                                       </div>
-
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Discount:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="text" name="sellername" id="sellername" class="txtbox">
-                                          </div>
-                                       </div>
-
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Quantity in Stock:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="text" name="sellername" id="sellername" class="txtbox">
-                                          </div>
-                                       </div>
-
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                           <div class="lbltxt" style="float:left;">Require Shipping:
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
@@ -239,16 +83,57 @@
                                              <input type="radio" name="section"class="txtbox">No  
                                           </div>
                                        </div>
-
-                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="lbltxt" style="float:left;">Shipping Price:
-                                             <span class="req" required data-validation-required-message="Please Select Subject">*</span>
-                                          </div>
-                                          <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="text" name="sellername" id="sellername" class="txtbox">
-                                          </div>
-                                       </div>
-
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th>Qty</th>
+                                              <th>MRP</th>
+                                              <th>Sell Price</th>
+                                              <th>Discount</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>500</td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>1000</td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>1500</td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>2000</td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>3000</td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>5000</td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                              <td><input type="text"></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                       
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                           <div class="lbltxt" style="float:left;">Upload Image 1:
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
