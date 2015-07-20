@@ -7,8 +7,9 @@ class Common_model extends CI_Model
 			
 			$where=$data['where'];
 			$table=$data['table'];
-			$order_by=$data['order_by'];
-			$sql=$this->db->query('select * from '.$table.' '.$where.' '.$order_by.'');
+			//$order_by=$data['order_by'];
+			//$sql=$this->db->query('select * from '.$table.' '.$where.' '.$order_by.'');
+			$sql=$this->db->query('select * from '.$table.' '.$where.'');
 			return $sql->result_array();
 		}
 	}
@@ -253,7 +254,7 @@ class Common_model extends CI_Model
 
 		$this->db->select("*");
 		$this->db->from('material');
-		$this->db->like('material_name',$for);
+		$this->db->like('material',$for);
 		$query1 = $this->db->get();
 
 		
@@ -560,6 +561,8 @@ class Common_model extends CI_Model
 		$data['catNameArr']=$catNameArr;
 		$data['subCatIdArr']=$subCatIdArr;
 		$data['subCatNameArr']=$subCatNameArr;
+
+		
 		return $data;
 	}
 

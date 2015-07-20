@@ -186,6 +186,7 @@ class Catalog extends CI_Controller{
 		$data['page'] = "All Product";
 
 		$this->load->view('header',$data);
+		$this->load->view('filter_script');
 		$this->load->view('product_catelog',$data);
 		$this->load->view('footer');
 	}
@@ -259,6 +260,7 @@ class Catalog extends CI_Controller{
 		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
 		
 		$this->load->view('header',$data);
+		$this->load->view('filter_script');
 		$this->load->view('product_sub_catelog',$data);
 		$this->load->view('footer');
 	}

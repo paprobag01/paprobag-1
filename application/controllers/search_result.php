@@ -588,7 +588,7 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
     {
               echo "<div class='col-lg-4 col-md-6 col-sm-6 col-xs-12'>";
                 echo "<div class='main_box'>";?> 
-                <div class="box_1"> <img alt="alt"  width="259" height="200" src="<?php echo base_url().$row['prod_image'] ?>" draggable="false">
+                <div class="box_1"> <img alt="alt"  width="259" height="200" src="<?php echo base_url()?>/images/<?php echo $row['prod_image'] ?>" draggable="false">
                     <div class="overlay" id="add_to"> 
                       <a href="<?php echo base_url()?>/" class="btn_c cart_btn_1">Add to cart</a> 
                       <a href="<?php echo base_url()?>Catalog/getmore/<?php

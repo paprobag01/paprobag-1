@@ -47,7 +47,7 @@
       </div>
       <div class="hed_right">
         <ul>
-          <li><span class="fa fa-phone"></span>8 800 909 50 60 </li>
+          <li><span class="fa fa-phone"></span>022 6127 5286</li>
           <li><a href="<?php echo base_url()?>Bulk_order"><span class="fa fa-envelope"></span>Bulk Order</a></li>
         </ul>
       </div>
@@ -74,15 +74,10 @@
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                           <h5>Paper Bags</h5>
                           <ul>
-                            <li><a href="catalog.html">Shopping Carry Bags</a></li>
-                            <li><a href="catalog.html">Handmade Paper Bags</a></li>
-                            <li><a href="catalog.html">Food Parcel Bags</a></li>
-                            <li><a href="catalog.html">Counter Bags</a></li>
-                            <li><a href="catalog.html">Grocery Bags</a></li>
-                            <li><a href="catalog.html">Medical Bags</a></li>
-                            <li><a href="catalog.html">Box Bags</a></li>
-                            <li><a href="catalog.html">Basket Bags</a></li>
-                            <li><a href="catalog.html">More Products</a></li>                           
+                            <?php if(isset($paper_prod_head)){foreach($paper_prod_head as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>
+                            <li><a href="catalog.html">+ More</a></li>                           
                           </ul>
                          
                         </div>
@@ -90,8 +85,7 @@
                            <h5>Ecobags</h5>
                           <ul>
                             <li><a href="catalog.html">Nonwoven Bags</a></li>
-                            <li><a href="catalog.html">Woven Stich Bags</a></li>
-                            <li><a href="catalog.html">Woven Stich Bags</a></li>
+                            <li><a href="catalog.html">Woven Stich Bags</a></li>                            
                             <li><a href="catalog.html">Jute Bags</a></li>
                             <li><a href="catalog.html">Canvas Bags</a></li>
                             <li><a href="catalog.html">Cotton Bags</a></li>
@@ -122,21 +116,9 @@
                             <li><a href="catalog.html">File & Folders</a></li>
                             <li><a href="catalog.html">Stickers</a></li>
                             <li><a href="catalog.html">Pamplets</a></li>
-                            <li><a href="catalog.html">Mascouat</a></li>  
-                                                      
+                                                   
                           </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                         
-                          <h5>Accessories</h5>
-                          <ul>
-                            <li><a href="catalog.html">Tags</a></li>
-                            <li><a href="catalog.html">Tissue Papers</a></li>
-                            <li><a href="catalog.html">Bookmarks</a></li>
-                            <li><a href="catalog.html">Shutcover</a></li>
-                             <li><a href="catalog.html">More Products</a></li> 
-                          </ul>                         
-                        </div>
+                        </div>                       
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                           <div class="new_item">
                             <div class="clearfix item_title">
@@ -181,27 +163,25 @@
                             <li><a href="catalog.html">Food Parcel Bags</a></li>
                             <li><a href="catalog.html">Counter Bags</a></li>
                             <li><a href="catalog.html">Grocery Bags</a></li>
+                            <li><a href="catalog.html">Wine Bags</a></li>
                             <li><a href="catalog.html">Medical Bags</a></li>
                             <li><a href="catalog.html">Box Bags</a></li>
                             <li><a href="catalog.html">Basket Bags</a></li>
-                            <li><a href="catalog.html">Neckties Bags</a></li>                            
-                            <li><a href="catalog.html">More Products</a></li>                           
+                            <li><a href="catalog.html">Bag For Necktile</a></li> 
+                            <li><a href="catalog.html">+ More</a></li>                           
                           </ul>
-                          <h5>Ecobags</h5>
-                          <ul>
-                            <li><a href="catalog.html">Nonwoven Bags</a></li>
-                            <li><a href="catalog.html">Woven Stich Bags</a></li>
-                           
-                          </ul>
+                         
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                           <h5>Ecobags</h5>
                           <ul>
-                             <li><a href="catalog.html">Jute Bags</a></li>
+                            <li><a href="catalog.html">Nonwoven Bags</a></li>
+                            <li><a href="catalog.html">Woven Stich Bags</a></li>                            
+                            <li><a href="catalog.html">Jute Bags</a></li>
                             <li><a href="catalog.html">Canvas Bags</a></li>
                             <li><a href="catalog.html">Cotton Bags</a></li>
                             <li><a href="catalog.html">Bamboo Bags</a></li>
                             <li><a href="catalog.html">Khadi Bags</a></li>
-                             <li><a href="catalog.html">More Products</a></li> 
                           </ul>
                           <h5>Boxes</h5>
                           <ul>
@@ -209,42 +189,29 @@
                             <li><a href="catalog.html">Mailing Boxes</a></li>
                             <li><a href="catalog.html">Food Boxes</a></li>
                             <li><a href="catalog.html">Paper Board Conisters</a></li>                           
-                             <li><a href="catalog.html">More Products</a></li> 
-                          </ul>
+                         
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                           <h5>Pouches</h5>
                           <ul>
                             <li><a href="catalog.html">Paper Pouches</a></li>
-                           
-                          </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                          <ul>
                              <li><a href="catalog.html">Nonwoven Pouches</a></li>
                             <li><a href="catalog.html">Woven Pouches</a></li>
                             <li><a href="catalog.html">Jute Pouches</a></li>
                             <li><a href="catalog.html">Cotton Pouches</a></li>
-                             <li><a href="catalog.html">Canvas Pouches</a></li>
-                            <li><a href="catalog.html">More Products</a></li> 
+                             <li><a href="catalog.html">Canvas Pouches</a></li>                           
                           </ul>
                           <h5>Office Products</h5>
                           <ul>
-                             <li><a href="catalog.html">Nonwoven Pouches</a></li>
-                            <li><a href="catalog.html">Woven Pouches</a></li>
-                            <li><a href="catalog.html">Jute Pouches</a></li>
-                            <li><a href="catalog.html">Cotton Pouches</a></li>
-                             <li><a href="catalog.html">Canvas Pouches</a></li>
-                            <li><a href="catalog.html">Mirrors</a></li>
-                            <li><a href="catalog.html">Envolopes</a></li>                           
+                             <li><a href="catalog.html">Envolopes</a></li>
+                            <li><a href="catalog.html">File & Folders</a></li>
+                            <li><a href="catalog.html">Stickers</a></li>
+                            <li><a href="catalog.html">Pamplets</a></li>
+                                                   
                           </ul>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                          <ul>
-                             <li><a href="catalog.html">File & Folders</a></li>
-                            <li><a href="catalog.html">Stickers</a></li>
-                            <li><a href="catalog.html">Pamplets</a></li>
-                            <li><a href="catalog.html">Mascouat</a></li>                           
-                            <li><a href="catalog.html">More Products</a></li> 
-                          </ul>
+                         
                           <h5>Accessories</h5>
                           <ul>
                             <li><a href="catalog.html">Tags</a></li>
@@ -284,9 +251,132 @@
                 </li>
               </ul>
             </li>
-            <li class="dropdown"><a href="catalog.html"  >Ready To Deliver </a> </li>
-            <li class="dropdown"><a href="blog.html"  >Ecological Ad Bags</a> </li>
-           
+            <li class="dropdown yamm-fw"><a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">Ready To Deliver<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="container">
+                      <div class="row">
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>Retail Products</h5>                              
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>                        
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>Offers</h5>                              
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>Wholesale Products</h5>                              
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+             <li class="dropdown yamm-fw"><a href="catalog.html" data-toggle="dropdown" class="dropdown-toggle">Ecological Ad Bags<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="container">
+                      <div class="row">
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>Printed Newspaper Bags</h5>                              
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>                        
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>Ad-Newspaper Bags</h5>                              
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="new_item">
+                            <div class="clearfix item_title">
+                              <h5>Rejected Paper Bags</h5>                              
+                            </div>
+                            <div class="item_thumb">
+                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                            </div>
+                            <div class="item_desc">
+                              <div class="pull-left">
+                                <h5>Mugs with yellow stripes</h5>
+                                <p>Kitchen utensils</p>
+                              </div>
+                              <div class="price">$15.50</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>

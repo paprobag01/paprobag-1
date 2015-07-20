@@ -16,36 +16,55 @@ class Index extends CI_Controller{
 
 		$data = $this->common_model->header_cart_details();
 		
-		$arr6['where']="where section_id=5 and cat_id=1  and prod_on_home=1";
-		$arr6['table']='products';
-		$arr6['order_by']='';
-		$data['paper_prod']=$this->common_model->getAllDetails($arr6);
+		$paper_prod['where']="where section_id=5 and cat_id=11 and prod_on_home=1";
+		$paper_prod['table']='products';
+		$paper_prod['order_by']='';
+		$data['paper_prod']=$this->common_model->getAllDetails($paper_prod);
 		
-		$arr7['where']="where section_id=5 and cat_id=2 and prod_on_home=1";
-		$arr7['table']='products';
-		$arr7['order_by']='';
-		$data['eco_prod']=$this->common_model->getAllDetails($arr7);
+		$eco_prod['where']="where section_id=5 and cat_id=2 and prod_on_home=1";
+		$eco_prod['table']='products';
+		$eco_prod['order_by']='';
+		$data['eco_prod']=$this->common_model->getAllDetails($eco_prod);
 		
-		$arr2['where']="where section_id=5 and cat_id=3 and prod_on_home=1";
-		$arr2['table']='products';
-		$arr2['order_by']='';
-		$data['box_prod']=$this->common_model->getAllDetails($arr2);
+		$box_prod['where']="where section_id=5 and cat_id=3 and prod_on_home=1";
+		$box_prod['table']='products';
+		$box_prod['order_by']='';
+		$data['box_prod']=$this->common_model->getAllDetails($box_prod);
 		
-		$arr3['where']="where section_id=5 and cat_id=4 and prod_on_home=1";
-		$arr3['table']='products';
-		$arr3['order_by']='';
-		$data['pouch_prod']=$this->common_model->getAllDetails($arr3);
+		$pouch_prod['where']="where section_id=5 and cat_id=4 and prod_on_home=1";
+		$pouch_prod['table']='products';
+		$pouch_prod['order_by']='';
+		$data['pouch_prod']=$this->common_model->getAllDetails($pouch_prod);
 		
-		$arr4['where']="where section_id=5 and cat_id=5 and prod_on_home=1";
-		$arr4['table']='products';
-		$arr4['order_by']='';
-		$data['office_prod']=$this->common_model->getAllDetails($arr4);	
+		$office_prod['where']="where section_id=5 and cat_id=5 and prod_on_home=1";
+		$office_prod['table']='products';
+		$office_prod['order_by']='';
+		$data['office_prod']=$this->common_model->getAllDetails($office_prod);		
 		
-		
-		$arr5['where']="where section_id=6 and prod_on_home=0";
-		$arr5['table']='products';
-		$arr5['order_by']='';
-		$data['page_data9']=$this->common_model->getAllDetails($arr5);
+		$paper_prod_head['where']="where section_id=5 and cat_id=1";
+		$paper_prod_head['table']='subcategory';
+		$paper_prod_head['order_by']='';
+		$data['paper_prod_head']=$this->common_model->getAllDetails($paper_prod_head);
+
+		$eco_prod_head['where']="where section_id=5 and cat_id=2";
+		$eco_prod_head['table']='subcategory';
+		$eco_prod_head['order_by']='';
+		$data['eco_prod_head']=$this->common_model->getAllDetails($eco_prod_head);
+
+		$box_prod_head['where']="where section_id=5 and cat_id=3";
+		$box_prod_head['table']='subcategory';
+		$box_prod_head['order_by']='';
+		$data['box_prod_head']=$this->common_model->getAllDetails($box_prod_head);
+
+		$pouch_prod_head['where']="where section_id=5 and cat_id=4";
+		$pouch_prod_head['table']='subcategory';
+		$pouch_prod_head['order_by']='';
+		$data['pouch_prod_head']=$this->common_model->getAllDetails($pouch_prod_head);
+
+		$office_prod_head['where']="where section_id=5 and cat_id=5";
+		$office_prod_head['table']='subcategory';
+		$office_prod_head['order_by']='';
+		$data['office_prod_head']=$this->common_model->getAllDetails($office_prod_head);
 
 		$prod_img['where']="where section_id=5";
 		$prod_img['table']='products';
@@ -54,26 +73,31 @@ class Index extends CI_Controller{
 		
 		/*$sql = $this->db->query('select * from products where section_id=6');
 		$data['page_data9'] = $sql->result_array();*/
+
+		$ready_to_print['where']="where section_id=6 and prod_on_home=1";
+		$ready_to_print['table']='products';
+		$ready_to_print['order_by']='';
+		$data['ready_to_print']=$this->common_model->getAllDetails($ready_to_print);
 		
-		$arr8['where']="where section_id=7 and cat_id=24 and prod_on_home=0";
-		$arr8['table']='products';
-		$arr8['order_by']='';
-		$data['page_data3']=$this->common_model->getAllDetails($arr8);
+		$ready_to_deliver['where']="where section_id=7 and cat_id=7 and prod_on_home=1";
+		$ready_to_deliver['table']='products';
+		$ready_to_deliver['order_by']='';
+		$data['retail_deliver']=$this->common_model->getAllDetails($ready_to_deliver);
 		
-		$arr9['where']="where section_id=7 and cat_id=25 and prod_on_home=0";
-		$arr9['table']='products';
-		$arr9['order_by']='';
-		$data['page_data4']=$this->common_model->getAllDetails($arr9);
+		$offer_deliver['where']="where section_id=7 and cat_id=8 and prod_on_home=1";
+		$offer_deliver['table']='products';
+		$offer_deliver['order_by']='';
+		$data['offer_deliver']=$this->common_model->getAllDetails($offer_deliver);
 		
 		$arr10['where']="where slider_status='Active' and slide_on_home=0";
 		$arr10['table']='slider';
 		$arr10['order_by']='';
 		$data['page_data10']=$this->common_model->getAllDetails($arr10);
 		
-		$arr1['where']="where section_id=7 and cat_id=26 and prod_on_home=0";
-		$arr1['table']='products';
-		$arr1['order_by']='';
-		$data['page_data5']=$this->common_model->getAllDetails($arr1);
+		$wholesale_deliver['where']="where section_id=7 and cat_id=6 and prod_on_home=1";
+		$wholesale_deliver['table']='products';
+		$wholesale_deliver['order_by']='';
+		$data['wholesale_deliver']=$this->common_model->getAllDetails($wholesale_deliver);
 		
 		$this->load->view('header',$data);
 		$this->load->view('index_view',$data);

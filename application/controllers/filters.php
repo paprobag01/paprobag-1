@@ -99,7 +99,6 @@ class Filters extends CI_Controller{
 
 		foreach ($filters as $key => $value) {
 			// Get gsm data
-			$gsm_array = explode(',', $value['gsm_ids']);
 			$data['where']="where gsm_id in (".$value['gsm_ids'].")";
 			$data['table']='gsm';
 			$data['order_by']='';
@@ -112,7 +111,6 @@ class Filters extends CI_Controller{
 
 			// Get style data
 			$i = 0;
-			$style_array = explode(',', $value['style_ids']);
 			$data['where']="where style_id in (".$value['style_ids'].")";
 			$data['table']='style';
 			$data['order_by']='';
@@ -125,7 +123,7 @@ class Filters extends CI_Controller{
 
 			// Get size data
 			$i = 0;
-			$size_array = explode(',', $value['size_ids']);
+
 			$data['where']="where size_id in (".$value['size_ids'].")";
 			$data['table']='size';
 			$data['order_by']='';

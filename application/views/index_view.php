@@ -1,13 +1,6 @@
-<?php 
-if(isset($moq))
-{
-  echo $moq;
-}
-
-?>
-<div class="flexslider home-slider">
+n<div class="flexslider home-slider">
   <ul class="slides">
-  <?php foreach($page_data10 as $row){ ?>
+    <?php foreach($page_data10 as $row){ ?>
     <li> <img alt="alt" src="<?php echo base_url()?>/<?php echo $row['slider_image']?>" width="1600" height="800">
       <div class="flex-caption">
         <div class="banner">
@@ -32,74 +25,72 @@ if(isset($moq))
   <div class="container">
     <div class="h_row_1 ideas-hover">
       <div class="row">
-	  <?php foreach($paper_prod as $row){ ?>
-       
+        <?php foreach($paper_prod as $row){?>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  animated" data-animation="rollIn" >
           <div class="box hg_510 box_1 red5">
             <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="760" height="510" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
-              <h1>5 Fun Family Breakfast Ideas</h1>
+              <h1><?php echo $row['prod_name']; ?></h1>
               <p>Nullam eros diam, rhoncus sit amet laoreet nec,<br>
-                commodo pharetra lorem.<a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>" class="fa fa-arrow-circle-right"></a></p>
+                commodo pharetra lorem.<a href="#" class="fa fa-arrow-circle-right"></a></p>
             </div>
           </div>
         </div>
-	  <?php } ?>
-	   <?php foreach($eco_prod as $row){ ?>
+        <?php } ?>
+        <?php foreach($eco_prod as $row){?>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 animated" data-animation="bounceInRight">
           <div class="box hg_510 box_2 red5">
             <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico"> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="360" height="510" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
-              <h1>Bake cakes <br>
+              <h1><?php echo $row['prod_name']; ?><br>
                 at home</h1>
-              <p>Nullam eros diam, rhoncus sit amet laoreet nec, commodo pharetra lorem.<a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><span class="fa fa-arrow-circle-right"></a></p>
+              <p>Nullam eros diam, rhoncus sit amet laoreet nec, commodo pharetra lorem.<a href="#" class="fa fa-arrow-circle-right"></a></p>
             </div>
           </div>
         </div>
+        <?php } ?>
       </div>
-	  <?php } ?>
     </div>
-	   
     <div class="h_row_2 ideas-hover">
       <div class="row">
-	  <?php foreach($box_prod as $row){ ?>
+        <?php foreach($box_prod as $row){?>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  animated" data-animation="rollIn">
           <div class="box hg_310 box_1 red5">
-            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="260" height="310" >
+            <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="260" height="310" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
-              <h5>functional shelves</h5>
+              <h5><?php echo $row['prod_name']; ?></h5>
               <p>Donec blandit erat rutrum</p>
             </div>
           </div>
         </div>
-	  <?php } ?>
-	   <?php foreach($pouch_prod as $row){ ?>
+        <?php } ?>
+        <?php foreach($pouch_prod as $row){?>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 animated" data-animation="fadeInUpBig">
           <div class="box hg_310 box_2 red5">
             <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="560" height="310" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
-              <h1>Selection of tea sets</h1>
+              <h1><?php echo $row['prod_name']; ?></h1>
               <p>Egestas nisi nec, ultrices erat. Aliquam elit urna, rutrum et accumsan in <a href="#" class="fa fa-arrow-circle-right"></a></p>
             </div>
           </div>
         </div>
-	   <?php } ?>
-	   <?php foreach($office_prod as $row){ ?>
+        <?php } ?>
+        <?php foreach($office_prod as $row){?>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 animated" data-animation="bounceInRight">
           <div class="box hg_310 box_3 red5">
             <a href="<?php echo base_url() ?>catalog/getall_catprod/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="310" >
               <figcaption> </figcaption>
             </figure></a>
             <div class="box_inn">
-              <h5>Multicolored Pans</h5>
+              <h5><?php echo $row['prod_name']; ?></h5>
               <ul>
                 <li><span></span></li>
                 <li><span></span></li>
@@ -109,100 +100,91 @@ if(isset($moq))
             </div>
           </div>
         </div>
-	   <?php }?>
+        <?php } ?>
       </div>
     </div>
     <div class="h_row_3 animated" data-animation="fadeInUp">
       <h1>Grand Sale - Discounts up to 70%</h1>
       <p>Etiam rhoncus velit vel volutpat tristique. Cras ac ornare est. Sed ac orci velit. Morbi pulvinar quam vel magna vehicula ullamcorper id at arcu. Curabitur interdum facilisis arcu a tempus. Sed vitae consequat velit, in laoreet ipsum. Pellentesque consequat tortor nec. Aliquam tempus lorem non nisi facilisis, at commodo massa facilisis.</p>
-      <a href="<?php echo base_url()?>Grade_catalog" class="btn_c">Detail</a>
+      <a href="#" class="btn_c">Detail</a>
       <div class="thumb animated" data-animation="fadeInUp"> <img alt="alt" src="images/sale.png" > </div>
     </div>
-    
-	 <div class=" animated" data-animation="fadeInUp">
-      <div class="clearfix">
-        <h3 align="center">--- Ready To Print ---</h3>
-		
+    <div class=" animated" data-animation="fadeInUp">
+       <div class="clearfix">
+        <h3 align="center">--- Ready To Print ---</h3><br>
       </div>
       <div class="carosel product_c">
-	 
-          <div class="row"> 
+          <div class="row"   style ="height: 415px;"> 
             <!-- Place somewhere in the <body> of your page -->
             <div >
-              <ul class="bxcarousel" >
-			  <?php foreach($page_data9 as $row){ 
-					//$a = $row['cat_id'];
-			  ?>
-             <li>
+              <ul class="bxcarousel" >             
+              <?php foreach($ready_to_print as $row){?> 
+              <li>                            
                   <div class="main_box">
-					 <div class="desc">
+                    <div class="desc">
                       <h5 align="center"><?php echo $row['prod_name']; ?></h5>
-					<p align="center"><?php echo $row['prod_short_description']; ?></p>
+                      <p align="center"><?php echo $row['prod_short_description']; ?></p>                      
                     </div>
-                    <div class="box_1"> <img src="<?php echo base_url().$row['prod_image'] ?>" class="img-responsive" alt="img" width="259" height="200">
+                    <div class="box_1"> <img alt="alt"  src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="200">
                     
                     
-						<div class="overlay"> <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"" class="btn_c cart_btn_1" href="#">More Info</a> </div>
+                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
                     
                     </div>
                     <div class="desc">                      
-                     <p>Starting Price</p>
-                      <div class="price">$5</div>
+                      <p>Kitchen utensils</p>
+                      <div class="price">$1.50</div>
                     </div>
-                  </div>
-                </li>
-			  <?php }?>
-                
+                  </div>  
+                  </li>
+                <?php } ?>
               </ul>
-	  
             </div>
           </div>
         </div>
-    </div>
-	
-	   <div class="clearfix">
-			<h3 align="center">---  Ready To Deliver  ---</h3>
-			
-		</div>
-    <div class="h_row_2 ideas-hover">
-		
-      <div class="row">	
-		<?php foreach($page_data3 as $row){ ?>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  animated" data-animation="rollIn">		
+    <div class="clearfix">
+        <h3 align="center">--- Ready To Deliver ---</h3>
+      </div>
+      <div class="carosel product_c">
+          <div class="row"> 
+            <!-- Place somewhere in the <body> of your page -->
+            <div >
+                  <div class="h_row_2 ideas-hover">
+      <div class="row">
+        <?php foreach($retail_deliver as $row){?> 
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  animated" data-animation="rollIn">
           <div class="box hg_310 box_1 red5">
-           <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico "><img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="260" height="310" >		
+            <figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="260" height="310" >
               <figcaption> </figcaption>
-            </figure></a>
+            </figure>
             <div class="box_inn">
-              <a href="#"><h5>Retail</h5></a>
-              <p><?php echo $row['prod_name']; ?><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><span class="fa fa-arrow-circle-right"></a></p>
+              <h5><?php echo $row['prod_name']; ?></h5>
+              <p>Donec blandit erat rutrum</p>
             </div>
-			
           </div>
         </div>
-		<?php } ?>
-		<?php foreach($page_data4 as $row){ ?>
+        <?php } ?>
+        <?php foreach($offer_deliver as $row){?> 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 animated" data-animation="fadeInUpBig">
           <div class="box hg_310 box_2 red5">
-            <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="560" height="310" >
+            <figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="560" height="310" >
               <figcaption> </figcaption>
-            </figure></a>
+            </figure>
             <div class="box_inn">
-              <h1>OFFERS</h1>
-              <p>Donec blandit erat rutrum <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><span class="fa fa-arrow-circle-right"></a></p>
+              <h1><?php echo $row['prod_name']; ?></h1>
+              <p>Egestas nisi nec, ultrices erat. Aliquam elit urna, rutrum et accumsan in <a href="#" class="fa fa-arrow-circle-right"></a></p>
             </div>
           </div>
         </div>
-		<?php } ?>
-		<?php foreach($page_data5 as $row){ ?>
+        <?php } ?>
+        <?php foreach($wholesale_deliver as $row){?>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 animated" data-animation="bounceInRight">
           <div class="box hg_310 box_3 red5">
-           <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"> <figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="310" >
+            <figure class="effect-chico "> <img alt="alt" src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="310" >
               <figcaption> </figcaption>
-            </figure></a>
+            </figure>
             <div class="box_inn">
-              <h5>Wholesale</h5>
-			  <p>Donec blandit erat rutrum <a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $this->encrypt->sha1($row['cat_id']); ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['prod_id']; ?>"><span class="fa fa-arrow-circle-right"></a></p>
+              <h5><?php echo $row['prod_name']; ?></h5>
               <ul>
                 <li><span></span></li>
                 <li><span></span></li>
@@ -212,248 +194,12 @@ if(isset($moq))
             </div>
           </div>
         </div>
-		<?php }?>
+         <?php } ?>
       </div>
     </div>
-	<br><br>
-		    <div class=" animated" data-animation="fadeInUp">
-      <div class="clearfix">
-        <h3 align="center">--- Client Board ---</h3>
-      </div>
-      <div class="carosel product_c">
-          <div class="row"> 
-            <!-- Place somewhere in the <body> of your page -->
-            <div >
-              <ul class="bxcarousel" >
-             <li>
-                  <div class="main_box">
-				  <div class="desc">
-                      <h5 align="center">2-piece salad servers set</h5>
-                      <p align="center">Kitchen utensils</p>                      
-                    </div>
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                    
-                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">                      
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-               <li>
-                  <div class="main_box">
-				  <div class="desc">
-                      <h5 align="center">2-piece salad servers set</h5>
-                      <p align="center">Kitchen utensils</p>                      
-                    </div>
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                    
-                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">                      
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-				  <div class="desc">
-                      <h5 align="center">2-piece salad servers set</h5>
-                      <p align="center">Kitchen utensils</p>                      
-                    </div>
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                    
-                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">                      
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-               <li>
-                  <div class="main_box">
-				  <div class="desc">
-                      <h5 align="center">2-piece salad servers set</h5>
-                      <p align="center">Kitchen utensils</p>                      
-                    </div>
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                    
-                    <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">                      
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/2.jpg" width="259" height="200">
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/3.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/4.jpg" width="259" height="200">
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/2.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/3.jpg" width="259" height="200">
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/4.jpg" width="259" height="200">
-                    
-                    
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="main_box">
-                    <div class="box_1"> <img alt="alt"  src="media/product/1.jpg" width="259" height="200"> 
-                    
-                                <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
-                    
-                    </div>
-                    <div class="desc">
-                      <h5>2-piece salad servers set</h5>
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
     </div>
-	
   </div>
 </div>
