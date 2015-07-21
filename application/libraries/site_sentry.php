@@ -38,8 +38,7 @@ class site_sentry {
 
 			//$index = $this->session->userdata('indexgbr');
 
-			$this
-			->CI->load->library('upload', $config);
+			$this->CI->load->library('upload', $config);
 							
 		if ( ! $this->CI->upload->do_upload("fileinput")){
 
@@ -70,20 +69,21 @@ class site_sentry {
 		if($table!=""){
 			
 		$primary_key = $this->CI->db->field_data($table);
+
 		
 		foreach ($primary_key as $field){
 		   
 		   if($field->primary_key==1){
 
 				$primary=$field->name;
+
 		   }
 		}		 
 
 		$id=$this->CI->input->post($primary);
-		
-		
-		
+
 		$arr = $this->CI->db->list_fields($table);
+		
 
 		foreach ($arr as $field)
 		{
@@ -107,15 +107,18 @@ class site_sentry {
 		}
 		//die;
 		if($id==" " || $id==null){
-			
-			$this->CI->db->insert($table,$data1);
-		
+
+			$this->CI->db->insert($table,$data1);			
+			$num = $this->CI->db->insert_id();
+			print_r($data1);
+			die();			
+		  		
 		}else if($id!=" "){
-			//print'<pre>';print_r($data1);exit;				
+			//print'<pre>';print_r($data1);exit;						
 			$this->CI->db->where($primary,$id);
 			$this->CI->db->update($table,$data1);	
 		}
-		return 1;
+		return $num;
 	
 	}else{
 		return 0;
@@ -187,12 +190,15 @@ function save_slide($data){
 		if($table!=""){
 			
 		$primary_key = $this->CI->db->field_data($table);
+
+
 		
 		foreach ($primary_key as $field){
 		   
 		   if($field->primary_key==1){
 
 				$primary=$field->name;
+
 		   }
 		}		 
 
@@ -200,7 +206,7 @@ function save_slide($data){
 		
 		
 			$data1['slide_on_home'] = $this->CI->input->post('slide_on_home');
-		
+
 		
 		$arr = $this->CI->db->list_fields($table);
 
@@ -228,7 +234,8 @@ function save_slide($data){
 		if($id==" " || $id==null){
 			
 			$this->CI->db->insert($table,$data1);
-		
+
+
 		}else if($id!=" "){
 			//print'<pre>';print_r($data1);exit;				
 			$this->CI->db->where($primary,$id);
@@ -241,6 +248,8 @@ function save_slide($data){
 	}
 	
 }
+
+
 
 	function PopulateValues($data){
 

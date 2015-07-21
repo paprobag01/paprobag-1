@@ -10,7 +10,7 @@
                   <a href="blog_single_post.html">
                      <div class="box ">
                         <figure class="effect-chico">
-                           <img alt="alt"  src="media/blog/1.jpg"  />          
+                           <img alt="alt"  src="media/blog/front_page.jpg" width="928px" height="361px"/>          
                            <figcaption></figcaption>
                         </figure>
                         <div class=""></div>

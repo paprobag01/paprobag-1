@@ -168,7 +168,7 @@ $profile_pic=$this->session->userdata("profile_pic");
 					</a>					
 			    </li>
 			     <li <?php if(isset($page) && $page=="headerbanner"){?> class="active"<?php }?>>
-				    <a href="<?php echo base_url()?>index.php/cms/headerBanner">
+				    <a href="<?php echo base_url()?>index.php/cms/header_banner">
 					<i class="icon-home"></i>Header Banner
 					<span class="selected"></span>
 					</a>					

@@ -1,5 +1,4 @@
 <!-- BEGIN PAGE -->
-
 <div class="page-content">
 	
 	<!-- BEGIN PAGE CONTAINER-->			
@@ -9,21 +8,21 @@
 			<div class="span12">
 				<!-- BEGIN STYLE CUSTOMIZER--> 
 				<h3 class="page-title">
-					Banner Details
-					<small>Add, Delete, and Modify Banner</small>
+					Home page slider
+					<small>new Slider view here</small>
 				</h3>
 				
+				<p style="text-align:right"><button type="button" id="add_new" class="btn blue">Add Slider details</button></p>
 				
 			</div>
 		</div>
 		<!-- END PAGE HEADER-->
 		<!-- BEGIN PAGE CONTENT-->
 		<div class="row-fluid">
-			<div class="span12">	
-			<p style="text-align:right"><button type="button" id="add_new" class="btn blue">Add Banner Details</button></p>			
+			<div class="span12">						 
 				<div class="portlet box light-grey">
 					<div class="portlet-title">
-						<h4><i class="icon-reorder"></i>Home Page Details View</h4>
+						<h4><i class="icon-reorder"></i>Slider View</h4>
 						<div class="tools">
 							<a href="javascript:;" class="collapse"></a> 
 							<a href="javascript:;" class="reload"></a>
@@ -36,43 +35,44 @@
 								<tr> 
 									<th class="hidden-phone">Srno</th>
 									<!-- <th class="hidden-phone">Image</th> -->
-									<th class="hidden-phone">Category Name</th> 
-									<!-- <th class="hidden-phone">Section</th> -->
+									<th class="hidden-phone">Image</th> 
 									
+									<th class="hidden-phone">Status</th>
 									<th class="hidden-phone">Options</th>
 								</tr>
 							</thead>
 							<tbody>
-								 <?php $cnt=0; if(count($page_data)>0){
+								  <?php $cnt=0; if(count($page_data)>0){
 									foreach($page_data as $row){
 										$cnt++;
 									?>
-								<tr id="" class="odd gradeX"> 
+								<tr id="<?php echo $row['id'];?>" class="odd gradeX"> 
 									<td><?php echo $cnt;?></td>
-									<td class="hidden-phone"><?php echo $row['banner_content']?></td>
+									
+								 <td class="hidden-phone"><img src="<?php echo base_url().$row['image'];?> " style="height:50px;width:50px;"/></td> 
+									
+									 
+									<td class="hidden-phone"><span <?php if($row['status']=='Active'){?> class="label label-success" <?php } else {?> class="label label-important" <?php }?>>
+										<?php echo $row['status'];?>
+									</span>
+									</td>
 									
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms/headerBanner/viewHeaderBanner/<?php echo $row['banner_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/headerBanner/viewHeaderBanner/<?php echo $row['banner_id']?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/headerBanner/deleteHeaderBanner/<?php echo $row['banner_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
+									<a href="<?php echo base_url()?>cms/header_banner/add_slider/<?php echo $row['id'];?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+									
+									<a href="<?php echo base_url()?>cms/header_banner/add_slider/<?php echo $row['id'];?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									
+									<a href="<?php echo base_url()?>cms/header_banner/delete_rec/<?php echo $row['id'];?>" class="btn mini red delete_rec" id="<?php echo $row['id'];?>" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>
 								</tr>
-								<?php 
-								}
-								 }
-								else
-								{
-								?>
+								<?php } }else{?>
 									 <tr class="odd gradeX"> 
-										<td colspan="6">No records found</td> 
+										<td colspan="5">No records found</td> 
 									</tr> 
 								</tr>
-								<?php 
-								
-								 }
-								?>
+								<?php }?>
 							</tbody>
 						</table>
 					</div>
@@ -104,16 +104,16 @@
 
 			$("#add_new").click(function(){
 
-				document.location="<?php echo base_url()?>cms/headerBanner/viewHeaderBanner";
+				document.location="<?php echo base_url()?>cms/header_banner/add_slider";
 			});
 
 			$(".btn_delete").click(function(){
 
 				var id=$(this).attr("id");
 				 
-				$.post("<?php echo base_url()?>cms/categories/deleteCustomization", {
+				$.post("<?php echo base_url()?>cms/slider/delete_rec", {
 
-					id: id
+					slider_id: id
 							
 				},function(response){
 					

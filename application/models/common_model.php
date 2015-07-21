@@ -84,6 +84,11 @@ class Common_model extends CI_Model
 		}
 	}
 
+	function save_header_slider()
+	{
+
+	}
+
 	function update_status($section_id,$cat_id,$sub_cat_id,$prod_id,$status)
 	{
 		
@@ -449,13 +454,31 @@ class Common_model extends CI_Model
 			
 	}
 	
-	function getsubprodimg($section_id=null,$cat_id=null,$prod_id=null)
+	function getsubprodimg($section_id=null,$cat_id=null,$sub_cat_id=null)
 	{
 			
-			$sql = $this->db->query("select * from products where cat_id=$cat_id and section_id=$section_id and prod_id=$prod_id");
+			$sql = $this->db->query("select * from products where cat_id=$cat_id and section_id=$section_id and prod_id=$sub_cat_id");
 			return $sql->result_array();
 			
 	}
+
+	function getheader_subcatimg($section_id=null,$cat_id=null,$sub_cat_id=null)
+	{
+		
+			$data = array(
+				'section_id'=>$section_id,
+				'cat_id' => $cat_id,
+				'sub_cat_id' => $sub_cat_id,
+				);
+			
+			$this->db->select("*");
+		  $this->db->from('header_slider');
+		  $this->db->where($data);		  
+		  $query = $this->db->get();
+		  return $query->result_array();
+			
+	}
+
 	function getsubprod($section_id=null,$cat_id=null,$sub_cat_id=null)
 	{
 		$sub_cat_id;
@@ -561,6 +584,8 @@ class Common_model extends CI_Model
 		$data['catNameArr']=$catNameArr;
 		$data['subCatIdArr']=$subCatIdArr;
 		$data['subCatNameArr']=$subCatNameArr;
+
+		
 
 		
 		return $data;

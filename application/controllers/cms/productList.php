@@ -109,8 +109,6 @@ class ProductList extends CI_Controller{
 		$arr3['order_by']="";		
 		$data['sec_data']=$this->site_sentry->get_all($arr3);
 		
-		
-		
 		$data['type']='add';		
 		$this->load->view('cms/header_view',$data);
 		$this->load->view('cms/product_section_view',$data);

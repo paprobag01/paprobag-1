@@ -1,3 +1,5 @@
+
+
 <style type='text/css'>
      
      span.unclickable:hover { cursor: default; }
@@ -9,9 +11,9 @@
       <div class="slider clearfix animated rollIn " data-animation="rollIn"  >
         <div class="category-slider">
           <ul class="slides">
-		  <?php foreach($page_data2 as $row) { ?>
+		  <?php foreach($product_banner as $row) { ?>
 				<li>
-			   <div class="slider_img"> <img alt="alt"  src="<?php echo base_url()?>/<?php echo $row['prod_image'];?>" width="400" height="400"> </div>
+			   <div class="slider_img"> <img alt="alt"  src="<?php echo base_url()?>/<?php echo $row['image'];?>" width="400" height="400"> </div>
 				  <div class="slider_desc">
 					<h1>Quisque Porttitor </h1>
 					<p>Etiam rhoncus velit vel volutpat tristique. Cras ac ornare est. Sed ac orci velit. Morbi pulvinar quam vel magna vehicula ullamcorper id at arcu. </p>

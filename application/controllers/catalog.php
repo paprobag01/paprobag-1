@@ -20,136 +20,7 @@ class Catalog extends CI_Controller{
 		$sub_cat_data['table']='subcategory';
 		$sub_cat_data['order_by']='';
 		$sub_cat_ids = $this->common_model->getAllDetails($sub_cat_data);
-		/*foreach ($sub_cat_ids as $key => $value) {
-			$filter_data['where']="where sub_cat_id =".$value['sub_cat_id'];
-			$filter_data['table']='filter_detail';
-			$filter_data['order_by']='';
-			$filter_details = $this->common_model->getDetail($filter_data);
-			//print_r($filter_details);
-			//die();
-			extract($filter_details);
-
-			// Get material filter details
-			$material_ids_string = $material_IDs;
-			
-
-			if(strlen($material_ids_string) > 0)
-			{
-				$material_ids_array = explode(',', $material_ids_string);
-				//print_r($material_ids_array);
-				//die();
-				
-				
-				foreach ($material_ids_array as $material_id) {
-					$material_data['where']="where material_id = $material_id";
-					$material_data['table']='material';
-					$material_data['order_by']='';
-					$data['material_data'] = $this->common_model->getDetail($material_data);
-					
-				}				
-			}
-
-			// Get gsm filter details
-			$gsm_ids_string = $GSM_IDs;
-			if(strlen($gsm_ids_string) > 0)
-			{
-				$gsm_ids_array = explode(',', $gsm_ids_string);
-				//print_r($gsm_ids_array);
-				//die();
-				
-				foreach ($gsm_ids_array as $gsm_id) {
-					$gsm_data['where']="where GSM_IDs = $gsm_id";
-					$gsm_data['table']='gsm';
-					$gsm_data['order_by']='';
-					$data['gsm_data'] = $this->common_model->getDetail($gsm_data);
-				}				
-			}
-
-			// Get size filter details
-			$size_ids_string = $size_IDs;
-			if(strlen($size_ids_string) > 0)
-			{
-				$size_ids_array = explode(',', $size_ids_string);
-				
-				foreach ($size_ids_array as $size_id) {
-					$size_data['where']="where size_id = $size_id";
-					$size_data['table']='size';
-					$size_data['order_by']='';
-					$data['size_data'] = $this->common_model->getDetail($size_data);
-				}				
-			}
-
-			// Get handle filter details
-			$handle_ids_string = $handle_IDs;
-			if(strlen($handle_ids_string) > 0)
-			{
-				$handle_ids_array = explode(',', $handle_ids_string);
-				
-				foreach ($handle_ids_array as $handle_id) {
-					$handle_data['where']="where handle_id = $handle_id";
-					$handle_data['table']='handle';
-					$handle_data['order_by']='';
-					$data['handle_data'] = $this->common_model->getDetail($handle_data);
-				}				
-			}
-
-			// Get style filter details
-			$style_ids_string = $style_IDs;
-			if(strlen($style_ids_string) > 0)
-			{
-				$style_ids_array = explode(',', $style_ids_string);
-				
-				foreach ($style_ids_array as $style_id) {
-					$style_data['where']="where style_id = $style_id";
-					$style_data['table']='style';
-					$style_data['order_by']='';
-					$data['style_data'] = $this->common_model->getDetail($style_data);
-				}
-			}
-
-			// Get print filter details
-			$print_ids_string = $print_IDs;
-			if(strlen($material_ids_string) > 0)
-			{
-				$material_ids_array = explode(',', $print_ids_string);
-				
-				foreach ($material_ids_array as $print_id) {
-					$print_data['where']="where print_id = $print_id";
-					$print_data['table']='print';
-					$print_data['order_by']='';
-					$data['print_data'] = $this->common_model->getDetail($material_data);
-				}				
-			}
-
-			// Get lamination filter details
-			$lamination_ids_string = $lamination_IDs;
-			if(strlen($lamination_ids_string) > 0)
-			{
-				$lamination_ids_array = explode(',', $lamination_ids_string);
-				
-				foreach ($lamination_ids_array as $lamination_id) {
-					$lamination_data['where']="where lamination_id = $lamination_id";
-					$lamination_data['table']='lamination';
-					$lamination_data['order_by']='';
-					$data['lamination_data'] = $this->common_model->getDetail($lamination_data);
-				}				
-			}
-
-			// Get special work filter details
-			$spw_ids_string = $special_work_IDs;
-			if(strlen($spw_ids_string) > 0)
-			{
-				$spw_ids_array = explode(',', $spw_ids_string);
-				
-				foreach ($spw_ids_array as $spw_id) {
-					$spw_data['where']="where special_work_id = $spw_id";
-					$spw_data['table']='special_work';
-					$spw_data['order_by']='';
-					$data['spw_data'] = $this->common_model->getDetail($spw_data);
-				}				
-			}			
-		}
-		// Get filters*/
+		
 
 		if($this->session->userdata('cart_id'))
 		{
@@ -230,31 +101,32 @@ class Catalog extends CI_Controller{
 		
 		}
 
-		$arr1['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
-		$arr1['table']='products';
-		$arr1['order_by']='';
-		$data['sub_prod']=$this->common_model->getAllDetails($arr1);
+		$sub_prod['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
+		$sub_prod['table']='products';
+		$sub_prod['order_by']='';
+		$data['sub_prod']=$this->common_model->getAllDetails($sub_prod);
 		
-		$arr2['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
-		$arr2['table']='subcategory';
-		$arr2['order_by']='';
-		$data['sub_prod_name']=$this->common_model->getAllDetails($arr2);
+		$sub_prod_name['where']="where section_id=$section_id and cat_id=$cat_id  and sub_cat_id=$sub_cat_id";
+		$sub_prod_name['table']='subcategory';
+		$sub_prod_namesub_prod_name['order_by']='';
+		$data['sub_prod_name']=$this->common_model->getAllDetails($sub_prod_name);
 
 		
 		
-		$arr3['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
-		$arr3['table']='filters';
-		$arr3['order_by']='';
-		$data['material_data']=$this->common_model->getAllDetails($arr3);
+		$material_data['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
+		$material_data['table']='filters';
+		$material_data['order_by']='';
+		$data['material_data']=$this->common_model->getAllDetails($material_data);
 		
-		$arr3['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
-		$arr3['table']='filters';
-		$arr3['order_by']='';
-		$data['specific_material_data']=$this->common_model->getAllDetails($arr3);
+		$specific_material_data['where']="where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id";
+		$specific_material_data['table']='filters';
+		$specific_material_data['order_by']='';
+		$data['specific_material_data']=$this->common_model->getAllDetails($specific_material_data);
 
 		$data['page_data2'] = $this->common_model->getdataprod($cat_id,$section_id);
 		$data['page_data3'] = $this->common_model->getdatacat($cat_id,$section_id);		
 		$data['category_list'] = $this->common_model->getcategory($section_id);
+		$data['product_banner'] = $this->common_model->getheader_subcatimg($cat_id,$section_id,$sub_cat_id);
 		//$data['sub_prod'] = $this->common_model->getsubprod($cat_id,$section_id,$sub_cat_id);
 		$data['wholesale_flag'] = $wholesale_flag;
 		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);

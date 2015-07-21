@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2015 at 03:57 PM
+-- Generation Time: Jul 21, 2015 at 03:40 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `subcat` int(11) NOT NULL DEFAULT '0',
   `cat_type` int(11) NOT NULL,
   `section_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -165,7 +165,10 @@ INSERT INTO `category` (`cat_id`, `cat_meta_title`, `cat_meta_keywords`, `cat_me
 (7, 'Retail', 'Retail', 'Retail', 'Retail', 0, '22-06-2015', 0, 0, 1, 7),
 (8, 'Offers', 'Offers', 'Offers', 'Offers', 0, '22-06-2015', 0, 0, 1, 7),
 (9, 'Paper Bag', 'Paper Bag', 'Paper Bag', 'Paper Bag', 0, '22-06-2015', 0, 0, 1, 6),
-(10, 'Accessories', 'Accessories', 'Accessories', 'Accesseries', 0, '22-06-2015', 0, 0, 1, 5);
+(10, 'Accessories', 'Accessories', 'Accessories', 'Accesseries', 0, '22-06-2015', 0, 0, 1, 5),
+(11, 'Paper Bag', 'Paper Bag', 'Paper Bag', 'PaperBags', 0, '20-07-2015', 0, 0, 1, 5),
+(12, 'Ijmnmbnm', 'Ijmnmbnm', 'Ijmnmbnm', 'Ijmnmbnm', 0, '21-07-2015', 0, 0, 1, 5),
+(13, 'Cdcwcewcew', 'Cdcwcewcew', 'Cdcwcewcew', 'Cdcwcewcew', 0, '21-07-2015', 0, 0, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -258,6 +261,7 @@ CREATE TABLE IF NOT EXISTS `filters` (
   `cat_id` varchar(100) DEFAULT NULL,
   `sub_cat_id` varchar(100) DEFAULT NULL,
   `GSM_name` varchar(100) NOT NULL,
+  `wcc` int(11) NOT NULL,
   `size` varchar(100) NOT NULL,
   `style` varchar(50) NOT NULL,
   `handle` varchar(50) NOT NULL,
@@ -265,71 +269,28 @@ CREATE TABLE IF NOT EXISTS `filters` (
   `print_color` int(11) NOT NULL,
   `lamination` varchar(100) NOT NULL,
   `special_wrk` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `filters`
 --
 
-INSERT INTO `filters` (`filter_id`, `material_id`, `material_name`, `section_id`, `cat_id`, `sub_cat_id`, `GSM_name`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`) VALUES
-(35, 17, 'Recycled Brown Kraft Paper', 5, '1', '1', '140', '16w*13h*4g', 'Horizontal', '', '', 0, '', ''),
-(36, 18, 'Recycled White Kraft Paper', 5, '1', '1', '', '', '', '', '', 0, '', ''),
-(37, 19, 'Recycled Color Kraft Paper', 5, '1', '1', '', '', '', '', '', 0, '', ''),
-(38, 20, 'Glossy Paper', 5, '1', '1', '', '', '', '', '', 0, '', ''),
-(39, 21, 'Grey Duplex Paper', 5, '1', '1', '', '', '', '', '', 0, '', ''),
-(40, 22, 'White duplex Paper', 5, '1', '1', '', '', '', '', '', 0, '', ''),
-(41, 23, 'Art Duplex Paper', 5, '1', '1', '', '', '', '', '', 0, '', ''),
-(42, 24, 'Recycled Brown Kraft Paper', 5, '1', '3', '140', '', 'Horizontal', '', '', 0, '', ''),
-(43, 25, 'Recycled White Kraft Paper', 5, '1', '3', '', '', '', '', '', 0, '', ''),
-(44, 26, 'Recycled Color Kraft Paper', 5, '1', '3', '', '', '', '', '', 0, '', ''),
-(46, 28, 'Vergine Brown Paper', 5, '1', '5', '100', '14w*12*6g', 'Vertical', '', '', 0, '', ''),
-(47, 29, 'Recycled Brown Kraft Paper', 5, '1', '5', '', '', '', '', '', 0, '', ''),
-(48, 30, 'Vergine White Paper', 5, '1', '5', '', '', '', '', '', 0, '', ''),
-(49, 31, 'Recycled White Kraft Paper', 5, '1', '5', '', '', '', '', '', 0, '', ''),
-(50, 32, 'Recycled Color Kraft Paper', 5, '1', '5', '', '', '', '', '', 0, '', ''),
-(51, 33, 'Vergine Brown Paper', 5, '1', '4', '60', '7w*8h', '', '', '', 0, '', ''),
-(52, 34, 'Recycled Brown Kraft Paper', 5, '1', '4', '', '', '', '', '', 0, '', ''),
-(53, 35, 'Vergine White Paper', 5, '1', '4', '', '', '', '', '', 0, '', ''),
-(54, 36, 'Recycled White Kraft Paper', 5, '1', '4', '', '', '', '', '', 0, '', ''),
-(55, 37, 'Recycled Color Kraft Paper', 5, '1', '4', '', '', '', '', '', 0, '', ''),
-(56, 38, 'Recycled Brown Kraft Paper', 5, '1', '7', '', '', '', '', '', 0, '', ''),
-(57, 39, 'Recycled White Kraft Paper', 5, '1', '7', '', '', '', '', '', 0, '', ''),
-(58, 40, 'Recycled Color Kraft Paper', 5, '1', '7', '', '', '', '', '', 0, '', ''),
-(59, 41, 'Glossy Paper', 5, '1', '7', '170', '7w*8h', '', '', '', 0, '', ''),
-(60, 42, 'Grey Duplex Paper', 5, '1', '7', '', '', '', '', '', 0, '', ''),
-(61, 43, 'White duplex Paper', 5, '1', '7', '', '', '', '', '', 0, '', ''),
-(62, 44, 'Art Duplex Paper', 5, '1', '7', '', '', '', '', '', 0, '', ''),
-(63, 45, 'Recycled Brown Kraft Paper', 5, '1', '6', '', '', '', '', '', 0, '', ''),
-(64, 46, 'Recycled White Kraft Paper', 5, '1', '6', '', '', '', '', '', 0, '', ''),
-(65, 47, 'Recycled Color Kraft Paper', 5, '1', '6', '', '', '', '', '', 0, '', ''),
-(66, 48, 'Glossy Paper', 5, '1', '6', '', '', '', '', '', 0, '', ''),
-(67, 49, 'Grey Duplex Paper', 5, '1', '6', '280', '', '', '', '', 0, '', ''),
-(68, 50, 'White duplex Paper', 5, '1', '6', '', '', '', '', '', 0, '', ''),
-(69, 51, 'Art Duplex Paper', 5, '1', '6', '', '', '', '', '', 0, '', ''),
-(70, 52, 'Recycled Brown Kraft Paper', 5, '1', '8', '', '', '', '', '', 0, '', ''),
-(71, 53, 'Recycled White Kraft Paper', 5, '1', '8', '', '', '', '', '', 0, '', ''),
-(72, 54, 'Recycled Color Kraft Paper', 5, '1', '8', '', '', '', '', '', 0, '', ''),
-(73, 55, 'Glossy Paper', 5, '1', '8', '', '', '', '', '', 0, '', ''),
-(74, 56, 'Grey Duplex Paper', 5, '1', '8', '', '12w*12*4g', '', '', '', 0, '', ''),
-(75, 57, 'White duplex Paper', 5, '1', '8', '280', '', '', '', '', 0, '', ''),
-(76, 58, 'Art Duplex Paper', 5, '1', '8', '', '', '', '', '', 0, '', ''),
-(77, 59, 'Recycled Brown Kraft Paper', 5, '1', '9', '', '', '', '', '', 0, '', ''),
-(78, 60, 'Recycled White Kraft Paper', 5, '1', '9', '', '', '', '', '', 0, '', ''),
-(79, 61, 'Recycled Color Kraft Paper', 5, '1', '9', '', '', '', '', '', 0, '', ''),
-(80, 62, 'Glossy Paper', 5, '1', '9', '', '', '', '', '', 0, '', ''),
-(81, 63, 'Grey Duplex Paper', 5, '1', '9', '', '', '', '', '', 0, '', ''),
-(82, 64, 'White duplex Paper', 5, '1', '9', '', '14w*14*8g', '', '', '', 0, '', ''),
-(83, 65, 'Art Duplex Paper', 5, '1', '9', '300', '', '', '', '', 0, '', ''),
-(84, 66, 'Recycled Brown Kraft Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
-(85, 67, 'Recycled White Kraft Paper', 5, '1', '10', '150', '', '', '', '', 0, '', ''),
-(86, 68, 'Recycled Color Kraft Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
-(87, 69, 'Glossy Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
-(88, 70, 'Grey Duplex Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
-(89, 71, 'White duplex Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
-(90, 72, 'White duplex Paper', 5, '1', '10', '', '', '', '', '', 0, '', ''),
-(91, 73, 'Art Duplex Paper', 5, '1', '10', '', '2w*14h*1g', '', '', '', 0, '', ''),
-(92, 74, '12w*10h*4g', 5, '1', '3', '', '', '', '', '', 0, '', ''),
-(93, 67, 'Natural Brown Craft Paper', 5, '2', '11', '', '', '', '', '', 0, '', '');
+INSERT INTO `filters` (`filter_id`, `material_id`, `material_name`, `section_id`, `cat_id`, `sub_cat_id`, `GSM_name`, `wcc`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`) VALUES
+(85, 67, 'Recycled White Kraft Paper', 5, '2', '11', '150,120,163,10', 0, '16w*13h*4g,12w*12*4g,14w*12*6g', 'Horizontal', 'Twisted Handle,Rope', '', 0, 'offset,Scrren', ''),
+(86, 68, 'Recycled Color Kraft Paper', 5, '1', '10', '', 0, '', '', '', '', 0, '', ''),
+(87, 69, 'Glossy Paper', 5, '1', '10', '', 0, '', '', '', '', 0, '', ''),
+(88, 70, 'Grey Duplex Paper', 5, '1', '10', '', 0, '', '', '', '', 0, '', ''),
+(89, 71, 'White duplex Paper', 5, '1', '10', '', 0, '', '', '', '', 0, '', ''),
+(90, 72, 'White duplex Paper', 5, '1', '10', '', 0, '', '', '', '', 0, '', ''),
+(91, 73, 'Art Duplex Paper', 5, '1', '10', '', 0, '2w*14h*1g', '', '', '', 0, '', ''),
+(92, 74, '12w*10h*4g', 5, '1', '3', '', 0, '', '', '', '', 0, '', ''),
+(94, 2, 'Natural Brown Craft Paper', 5, '2', '11', '135-2kg', 0, '', '', 'Ribbon', '', 0, '', ''),
+(95, 3, 'Recycle Brown Craft Paper', 5, '2', '12', '', 0, '', '', 'Ribbon', '', 0, '', ''),
+(96, 15, 'Natural Brown Paper', 5, '2', '12', '', 0, '45', '', '', '', 0, '', ''),
+(97, 16, 'Recycle Brown Craft Paper', 5, '2', '12', '', 0, '', '', 'Twisted Handle', '', 0, '', ''),
+(98, 17, 'Natural Colour Kraft Paper', 5, '3', '18', '', 0, '', '', '', '', 0, '', ''),
+(99, 18, 'Glossy Paper', 5, '4', '22', '', 0, '', '', '', '', 0, '', ''),
+(100, 19, 'Natural Brown Craft Paper', 5, '5', '28', '', 0, '', '', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -375,9 +336,6 @@ INSERT INTO `filter_detail` (`id`, `sub_cat_id`, `material`, `material_IDs`, `GS
 CREATE TABLE IF NOT EXISTS `filter_details` (
   `filter_id` int(11) NOT NULL,
   `material_id` varchar(10) NOT NULL,
-  `section_ids` varchar(35) NOT NULL,
-  `cat_ids` varchar(35) NOT NULL,
-  `sub_cat_ids` varchar(35) NOT NULL,
   `gsm_ids` varchar(100) NOT NULL,
   `size_ids` varchar(100) NOT NULL,
   `style_ids` varchar(25) NOT NULL,
@@ -385,7 +343,14 @@ CREATE TABLE IF NOT EXISTS `filter_details` (
   `print_ids` varchar(25) NOT NULL,
   `lamination_ids` varchar(30) NOT NULL,
   `special_work_ids` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `filter_details`
+--
+
+INSERT INTO `filter_details` (`filter_id`, `material_id`, `gsm_ids`, `size_ids`, `style_ids`, `handle_ids`, `print_ids`, `lamination_ids`, `special_work_ids`) VALUES
+(1, '1', '10', '1', '3', '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -395,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `filter_details` (
 
 CREATE TABLE IF NOT EXISTS `gsm` (
   `id` int(11) NOT NULL,
-  `gsm_name` varchar(100) NOT NULL,
+  `gsm` varchar(100) NOT NULL,
   `gsm_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -403,7 +368,7 @@ CREATE TABLE IF NOT EXISTS `gsm` (
 -- Dumping data for table `gsm`
 --
 
-INSERT INTO `gsm` (`id`, `gsm_name`, `gsm_id`) VALUES
+INSERT INTO `gsm` (`id`, `gsm`, `gsm_id`) VALUES
 (3, '100', '10');
 
 -- --------------------------------------------------------
@@ -414,7 +379,7 @@ INSERT INTO `gsm` (`id`, `gsm_name`, `gsm_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `handle` (
   `id` int(11) NOT NULL,
-  `handle_name` varchar(100) NOT NULL,
+  `handle` varchar(100) NOT NULL,
   `handle_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -422,8 +387,32 @@ CREATE TABLE IF NOT EXISTS `handle` (
 -- Dumping data for table `handle`
 --
 
-INSERT INTO `handle` (`id`, `handle_name`, `handle_id`) VALUES
-(1, 'twisted handle', 'twh');
+INSERT INTO `handle` (`id`, `handle`, `handle_id`) VALUES
+(1, 'twisted handle', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `header_slider`
+--
+
+CREATE TABLE IF NOT EXISTS `header_slider` (
+  `id` int(11) NOT NULL,
+  `section_id` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `sub_cat_id` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `image_name` varchar(50) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `slide_on_head` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `header_slider`
+--
+
+INSERT INTO `header_slider` (`id`, `section_id`, `cat_id`, `sub_cat_id`, `image`, `image_name`, `status`, `slide_on_head`) VALUES
+(9, 5, 1, 1, 'upload/slide/23449.jpg', 'Ecobag', 'Active', 1);
 
 -- --------------------------------------------------------
 
@@ -453,7 +442,7 @@ INSERT INTO `home_details` (`id`, `details`, `name`, `status`) VALUES
 
 CREATE TABLE IF NOT EXISTS `lamination` (
   `id` int(11) NOT NULL,
-  `lamination_name` varchar(100) NOT NULL,
+  `lamination` varchar(100) NOT NULL,
   `lamination_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -461,8 +450,8 @@ CREATE TABLE IF NOT EXISTS `lamination` (
 -- Dumping data for table `lamination`
 --
 
-INSERT INTO `lamination` (`id`, `lamination_name`, `lamination_id`) VALUES
-(1, 'Gloosy', 'glo');
+INSERT INTO `lamination` (`id`, `lamination`, `lamination_id`) VALUES
+(1, 'Gloosy', '1');
 
 -- --------------------------------------------------------
 
@@ -515,16 +504,24 @@ INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `name`, `password`, `
 
 CREATE TABLE IF NOT EXISTS `material` (
   `Ai` int(11) NOT NULL,
-  `material_name` varchar(100) NOT NULL,
-  `material_id` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `material` varchar(100) NOT NULL,
+  `material_id` varchar(10) NOT NULL,
+  `sub_category_ids` varchar(60) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `material`
 --
 
-INSERT INTO `material` (`Ai`, `material_name`, `material_id`) VALUES
-(1, 'vergine brown paper', 'vbp');
+INSERT INTO `material` (`Ai`, `material`, `material_id`, `sub_category_ids`) VALUES
+(1, 'vergine brown paper', '1', '1'),
+(2, 'Natural Brown Craft Paper', '2', 'scb'),
+(3, 'Recycle Brown Craft Paper', 'Avwgk', 'scb'),
+(4, 'papernew', 'Ck0G0', ''),
+(16, 'Recycle Brown Craft Paper', 'oapwR', ''),
+(17, 'Natural Colour Kraft Paper', 'axXfY', ''),
+(18, 'Glossy Paper', 'tedQz', ''),
+(19, 'Natural Brown Craft Paper', '8BTJ4', '');
 
 -- --------------------------------------------------------
 
@@ -562,7 +559,7 @@ CREATE TABLE IF NOT EXISTS `print` (
 --
 
 INSERT INTO `print` (`id`, `print_id`, `print`) VALUES
-(1, 'off', 'offset');
+(1, '1', 'offset');
 
 -- --------------------------------------------------------
 
@@ -582,7 +579,7 @@ CREATE TABLE IF NOT EXISTS `print_color` (
 --
 
 INSERT INTO `print_color` (`id`, `print_color`, `print_color_id`, `print_ids`) VALUES
-(1, 1, '01', 'off,scr');
+(1, 1, '01', '1');
 
 -- --------------------------------------------------------
 
@@ -640,15 +637,26 @@ CREATE TABLE IF NOT EXISTS `products` (
   `approved` tinyint(4) NOT NULL,
   `seller_request_status` int(11) NOT NULL,
   `product_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`prod_id`, `prod_name`, `prod_description`, `prod_short_description`, `cat_id`, `section_id`, `sub_cat_id`, `prod_sub_categories`, `prod_sku`, `prod_price`, `prod_tax_class`, `prod_status`, `prod_meta_title`, `prod_meta_keyword`, `prod_meta_description`, `prod_image`, `prod_image1`, `prod_image2`, `prod_image3`, `prod_image4`, `prod_on_home`, `created_on`, `prod_sell_price`, `prod_qty`, `prod_stock`, `require_shipping`, `prod_shipping_price`, `prod_discount`, `filter_id`, `complete_the_look`, `taggings`, `prod_customizable`, `url_for_product_details`, `prod_gift_card`, `prod_gift_code`, `sold_by`, `material_id`, `GSM_name`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `seller_id`, `approved`, `seller_request_status`, `product_status`) VALUES
-(13, '0', '0', '0', 0, 0, 0, 1, '0', '0', NULL, 0, '0', '0', '0', '', '', '', '', '', 0, '0000-00-00', '0', '0', '0', '1', '0', '0', 0, 0, 0, 0, '0', 0, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 1, 3),
-(16, 'ecobags', '<p>ecobags</p>\r\n', '0', 1, 5, 3, 1, 'ecobags', '500', NULL, 0, 'ecobags', 'ecobags', 'ecobags', '', '', '', '', '', 1, '0000-00-00', '480', '400', '0', '1', '30', '4.00', 0, 0, 1, 0, '0', 0, 0, 'abc', 13, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 2);
+(16, 'ecobags', '<p>ecobags</p>\r\n', '0', 1, 5, 3, 1, 'ecobags', '500', NULL, 0, 'ecobags', 'ecobags', 'ecobags', '', '', '', '', '', 1, '0000-00-00', '480', '400', '0', '1', '30', '4.00', 0, 0, 1, 0, '0', 0, 0, 'abc', 13, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 2),
+(23, 'customize_paperbag', '<p>customize_paperbag</p>\r\n', 'customize_paperbag', 11, 5, 0, 2, 'customize_paperbag', '500', NULL, 0, 'customize_paperbag', 'customize_paperbag', 'customize_paperbag', 'upload/products/da8ce53cf0240070ce6c69c48cd588ee.jpg', '', '', '', '', 1, '0000-00-00', '500', '30', '', '1', '10', '4', 0, 0, 1, 0, '0', 0, 0, 'vghh', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(24, 'customize_ecobag', '<p>customize_ecobag</p>\r\n', 'customize_ecobag', 2, 5, 11, 2, 'customize_ecobag', '500', NULL, 0, 'customize_ecobag', 'customize_ecobag', 'customize_ecobag', 'upload/products/9e020ebb181dfd3fb1229c6ceb076a60.jpg', '0', '0', '0', '0', 1, '0000-00-00', '480', '10', '', '1', '20', '4.00', 0, 0, 1, 0, '0', 0, 0, 'cmdnckj', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(25, 'Boxes', '<p>Boxes</p>\r\n', 'Boxes', 3, 5, 18, 3, 'Boxes', '300', NULL, 0, 'Boxes', 'Boxes', 'Boxes', 'upload/products/0bf727e907c5fc9d5356f11e4c45d613.jpg', '0', '0', '0', '0', 1, '0000-00-00', '250', '30', '', '1', '60', '16.67', 0, 0, 1, 0, '0', 0, 0, 'bjbjh', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(26, 'pouches', '<p>pouches</p>\r\n', 'pouches', 4, 5, 22, 4, 'pouches', '400', NULL, 0, 'pouches', 'pouches', 'pouches', 'upload/products/523b96f500fcb4459aa8718e387c9b23.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '30', '', '1', '20', '12.50', 0, 0, 1, 0, '0', 0, 0, 'fdvfd', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(27, 'Office Product', '<p>Office Product</p>\r\n', 'Office Product', 5, 5, 28, 5, 'Office Product', '400', NULL, 0, 'Office Product', 'Office Product', 'Office Product', 'upload/products/3c19211bcc34fabc8ec48e601e97e4a5.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '4', '', '1', '10', '12.50', 0, 0, 0, 0, '0', 0, 0, 'xdce', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(28, 'Ready To Print', '<p>Ready To Print</p>\r\n', 'Ready To Print', 9, 6, 0, 9, 'Ready To Print', '500', NULL, 0, 'Ready To Print', 'Ready To Print', 'Ready To Print', 'upload/products/6fae4e7975cfb72a356e6a8682456c6e.png', '0', '0', '0', '0', 1, '0000-00-00', '480', '30', '', '1', '20', '4.00', 0, 0, 1, 0, '0', 0, 0, 'vnbmgfn', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(29, 'Ready To Print_prod', '<p>Ready To Print_prod</p>\r\n', 'Ready To Print_prod', 9, 6, 0, 9, 'Ready To Print_prod', '300', NULL, 0, 'Ready To Print_prod', 'Ready To Print_prod', 'Ready To Print_prod', 'upload/products/e03814c1d555e06aa5d562d95ed29bd2.png', '0', '0', '0', '0', 1, '0000-00-00', '250', '10', '', '1', '50', '16.67', 0, 0, 1, 0, '0', 0, 0, 'nmmk', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(30, 'ready_prod3', '<p>ready_prod3</p>\r\n', 'ready_prod3', 9, 6, 0, 9, 'ready_prod3', '300', NULL, 0, 'ready_prod3', 'ready_prod3', 'ready_prod3', 'upload/products/cc26f87f3f9f7c0fbf2d36ad880a9a4e.png', '0', '0', '0', '0', 1, '0000-00-00', '250', '50', '', '1', '50', '16.67', 0, 0, 1, 0, '0', 0, 0, 'xdrdrf', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(33, 'ready_prod4', '<p>ready_prod4</p>\r\n', 'ready_prod4', 9, 6, 0, 9, 'ready_prod4', '400', NULL, 0, 'ready_prod4', 'ready_prod4', 'ready_prod4', 'upload/products/2907d2584b4215ec733f9b4b09d83765.png', '0', '0', '0', '0', 1, '0000-00-00', '350', '20', '', '1', '4', '12.50', 0, 0, 1, 0, '0', 0, 0, 'cxvcxv', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(34, 'retail_products', '<p>retail_products</p>\r\n', 'retail_products', 7, 7, 0, 7, 'retail_products', '400', NULL, 0, 'retail_products', 'retail_products', 'retail_products', 'upload/products/515f4b1414c40dd89c5d73bb0c1671ac.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '20', '', '1', '40', '12.50', 0, 0, 1, 0, '0', 0, 0, 'smcsc', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(35, 'offers', '<p>offers</p>\r\n', 'offers', 8, 7, 0, 8, 'offers', '300', NULL, 0, 'offers', 'offers', 'offers', 'upload/products/478ee79434a295d016f91d90ea301bcc.jpg', '0', '0', '0', '0', 1, '0000-00-00', '250', '30', '', '1', '40', '16.67', 0, 0, 2, 0, '0', 0, 0, 'sercbv', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(36, 'wholesale_products', '<p>wholesale_products</p>\r\n', 'wholesale_products', 6, 7, 0, 6, 'wholesale_products', '400', NULL, 0, 'wholesale_products', 'wholesale_products', 'wholesale_products', 'upload/products/546ba6ad0ece03a14523470c72264e09.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '20', '', '1', '30', '12.50', 0, 0, 1, 0, '0', 0, 0, 'srdfgcv', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -684,14 +692,16 @@ CREATE TABLE IF NOT EXISTS `section` (
   `id` int(11) NOT NULL,
   `section` varchar(50) NOT NULL,
   `section_id` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `section`
 --
 
 INSERT INTO `section` (`id`, `section`, `section_id`) VALUES
-(1, 'customizable_products', 'cup');
+(1, 'customizable_products', '1'),
+(2, 'ready to print', '2'),
+(3, 'ready to deliever', '3');
 
 -- --------------------------------------------------------
 
@@ -703,13 +713,14 @@ CREATE TABLE IF NOT EXISTS `sections` (
   `section_id` int(11) NOT NULL,
   `section_name` varchar(100) NOT NULL,
   `created_on` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sections`
 --
 
 INSERT INTO `sections` (`section_id`, `section_name`, `created_on`) VALUES
+(0, 'Rvxvxc', '0'),
 (5, 'Customizable', '18-06-2015'),
 (6, 'Ready To Print', '31-05-2015'),
 (7, 'Ready To Deliver', '31-05-2015'),
@@ -758,7 +769,7 @@ CREATE TABLE IF NOT EXISTS `size` (
 --
 
 INSERT INTO `size` (`id`, `size`, `size_id`) VALUES
-(1, '16w*13h*4g', 'b1h6');
+(1, '16w*13h*4g', '1');
 
 -- --------------------------------------------------------
 
@@ -772,7 +783,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
   `slider_image` varchar(250) NOT NULL,
   `slider_status` varchar(25) NOT NULL,
   `slide_on_home` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `slider`
@@ -800,7 +811,7 @@ CREATE TABLE IF NOT EXISTS `special_work` (
 --
 
 INSERT INTO `special_work` (`id`, `special_work`, `special_work_id`) VALUES
-(1, 'Emmbossing', 'emb');
+(1, 'Emmbossing', '1');
 
 -- --------------------------------------------------------
 
@@ -820,7 +831,7 @@ CREATE TABLE IF NOT EXISTS `style` (
 --
 
 INSERT INTO `style` (`id`, `style`, `style_id`, `size_ids`) VALUES
-(1, 'vertical', 'ver', '10');
+(1, 'vertical', '3', '1');
 
 -- --------------------------------------------------------
 
@@ -832,50 +843,50 @@ CREATE TABLE IF NOT EXISTS `subcategory` (
   `sub_cat_id` int(11) NOT NULL,
   `sub_cat_name` varchar(100) NOT NULL,
   `cat_id` int(11) NOT NULL,
-  `section_id` int(11) NOT NULL,
-  `material_link_id` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+  `section_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subcategory`
 --
 
-INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`, `material_link_id`) VALUES
-(2, 'Handmade Paper bags', 1, 5, ''),
-(3, 'Food Parcel Bags', 1, 5, ''),
-(4, 'Counter Bags', 1, 5, ''),
-(5, 'Grocery Bags', 1, 5, ''),
-(6, 'Wine Bags', 1, 5, ''),
-(7, 'Medical Bags', 1, 5, ''),
-(8, 'Box Bags', 1, 5, ''),
-(9, 'Basket Bags', 1, 5, ''),
-(10, 'Bag For Neckties', 1, 5, ''),
-(11, 'Non woven Bags', 2, 5, ''),
-(12, 'Woven Stitch Bags', 2, 5, ''),
-(13, 'Jute Bags', 2, 5, ''),
-(14, 'Canvas Bags', 2, 5, ''),
-(15, 'Cotton Bags', 2, 5, ''),
-(16, 'Khadi Bags', 2, 5, ''),
-(17, 'Bamboo Bags', 2, 5, ''),
-(18, 'Currier Boxes', 3, 5, ''),
-(19, 'Packaging Boxes', 3, 5, ''),
-(20, 'Mailing Boxes', 3, 5, ''),
-(21, 'Food Boxes', 3, 5, ''),
-(22, 'Non Woven Pouches', 4, 5, ''),
-(23, 'Woven Stitch Pouches', 4, 5, ''),
-(24, 'Jute Pouches', 4, 5, ''),
-(25, 'Cotton Pouches', 4, 5, ''),
-(26, 'Canvas Pouches', 4, 5, ''),
-(27, 'Mixed Pouches', 4, 5, ''),
-(28, 'Envolopes', 5, 5, ''),
-(29, 'Files & Folders', 5, 5, ''),
-(30, 'Stickers', 5, 5, ''),
-(31, 'Pampletes', 5, 5, ''),
-(32, 'Mascouats', 5, 5, ''),
-(33, 'Tags', 10, 5, ''),
-(34, 'Suite cover', 10, 5, ''),
-(35, 'Tissue Paper', 10, 5, ''),
-(36, 'Bookmark', 10, 5, '');
+INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`) VALUES
+(1, 'Shopping Carry Bags', 1, 5),
+(2, 'Handmade Paper bags', 1, 5),
+(3, 'Food Parcel Bags', 1, 5),
+(4, 'Counter Bags', 1, 5),
+(5, 'Grocery Bags', 1, 5),
+(6, 'Wine Bags', 1, 5),
+(7, 'Medical Bags', 1, 5),
+(8, 'Box Bags', 1, 5),
+(9, 'Basket Bags', 1, 5),
+(10, 'Bag For Neckties', 1, 5),
+(11, 'Non woven Bags', 2, 5),
+(12, 'Woven Stitch Bags', 2, 5),
+(13, 'Jute Bags', 2, 5),
+(14, 'Canvas Bags', 2, 5),
+(15, 'Cotton Bags', 2, 5),
+(16, 'Khadi Bags', 2, 5),
+(17, 'Bamboo Bags', 2, 5),
+(18, 'Currier Boxes', 3, 5),
+(19, 'Packaging Boxes', 3, 5),
+(20, 'Mailing Boxes', 3, 5),
+(21, 'Food Boxes', 3, 5),
+(22, 'Non Woven Pouches', 4, 5),
+(23, 'Woven Stitch Pouches', 4, 5),
+(24, 'Jute Pouches', 4, 5),
+(25, 'Cotton Pouches', 4, 5),
+(26, 'Canvas Pouches', 4, 5),
+(27, 'Mixed Pouches', 4, 5),
+(28, 'Envolopes', 5, 5),
+(29, 'Files & Folders', 5, 5),
+(30, 'Stickers', 5, 5),
+(31, 'Pampletes', 5, 5),
+(32, 'Mascouats', 5, 5),
+(33, 'Tags', 10, 5),
+(34, 'Suite cover', 10, 5),
+(35, 'Tissue Paper', 10, 5),
+(36, 'Bookmark', 10, 5);
 
 -- --------------------------------------------------------
 
@@ -896,7 +907,7 @@ CREATE TABLE IF NOT EXISTS `subcategory_table` (
 --
 
 INSERT INTO `subcategory_table` (`id`, `subcategory`, `subcategory_id`, `category_ids`, `section_ids`) VALUES
-(1, 'shopping carry bags', 'scb', '1', '1');
+(1, 'shopping carry bags', 'scb', 'pab', '1');
 
 -- --------------------------------------------------------
 
@@ -995,6 +1006,12 @@ ALTER TABLE `gsm`
 -- Indexes for table `handle`
 --
 ALTER TABLE `handle`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `header_slider`
+--
+ALTER TABLE `header_slider`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1134,7 +1151,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `category_table`
 --
@@ -1154,7 +1171,7 @@ ALTER TABLE `customize_type`
 -- AUTO_INCREMENT for table `filters`
 --
 ALTER TABLE `filters`
-  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
+  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
 --
 -- AUTO_INCREMENT for table `filter_detail`
 --
@@ -1164,7 +1181,7 @@ ALTER TABLE `filter_detail`
 -- AUTO_INCREMENT for table `filter_details`
 --
 ALTER TABLE `filter_details`
-  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `gsm`
 --
@@ -1175,6 +1192,11 @@ ALTER TABLE `gsm`
 --
 ALTER TABLE `handle`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `header_slider`
+--
+ALTER TABLE `header_slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `home_details`
 --
@@ -1194,7 +1216,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `material`
 --
 ALTER TABLE `material`
-  MODIFY `Ai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `Ai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
@@ -1214,7 +1236,7 @@ ALTER TABLE `print_color`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -1224,12 +1246,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `sections`
---
-ALTER TABLE `sections`
-  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `seller`
 --
@@ -1244,7 +1261,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slider_id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+  MODIFY `slider_id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `special_work`
 --
@@ -1259,7 +1276,7 @@ ALTER TABLE `style`
 -- AUTO_INCREMENT for table `subcategory`
 --
 ALTER TABLE `subcategory`
-  MODIFY `sub_cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
+  MODIFY `sub_cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `subcategory_table`
 --
