@@ -9,7 +9,7 @@
 			<div class="span12">
 				<!-- BEGIN STYLE CUSTOMIZER--> 
 				<h3 class="page-title">
-					Category Details
+					Section Details
 					<small>Add, Delete, and Modify sections</small>
 				</h3>
 				
@@ -20,7 +20,7 @@
 		<!-- BEGIN PAGE CONTENT-->
 		<div class="row-fluid">
 			<div class="span12">	
-			<p style="text-align:right"><button type="button" id="add_new" class="btn blue">Add Category Details</button></p>			
+			<p style="text-align:right"><button type="button" id="add_new" class="btn blue">Add Section Details</button></p>			
 				<div class="portlet box light-grey">
 					<div class="portlet-title">
 						<h4><i class="icon-reorder"></i>Home Page Details View</h4>
@@ -55,7 +55,7 @@
 									<td class="hidden-phone">
 									
 									<a href="<?php echo base_url()?>cms/sections/viewSection/<?php echo $row['section_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/sections/viewSection/<?php echo $row['section_id']?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/sections/viewSection/<?php echo $row['section_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
 									<a href="<?php echo base_url()?>cms/sections/deleteSection/<?php echo $row['section_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>

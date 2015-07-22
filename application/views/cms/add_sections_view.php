@@ -1,7 +1,8 @@
 <?php
 if(!isset($error)) 
 {
-   extract($page_data);   
+   extract($page_data);
+
 }
 
 ?>
@@ -13,9 +14,9 @@ if(!isset($error))
             <div class="row-fluid">
                <div class="span12"> 
                   <h3 class="page-title">
-                     Create Categories
+                     Create Section
                   </h3> 
-               <p style="text-align:right"><button type="button" id="add_new" class="btn blue">View Subcategory Details</button></p>         
+               <p style="text-align:right"><button type="button" id="add_new" class="btn blue">View Section Details</button></p>         
                </div>
             </div>
             <!-- END PAGE HEADER-->
@@ -26,7 +27,7 @@ if(!isset($error))
              
                   <div class="portlet box blue">
                      <div class="portlet-title">
-                        <h4><i class="icon-reorder"></i>Add Category details</h4>
+                        <h4><i class="icon-reorder"></i>Add Section details</h4>
                         <div class="tools">
                            <a href="javascript:;" class="collapse"></a> 
                            <a href="javascript:;" class="remove"></a>
@@ -43,9 +44,9 @@ if(!isset($error))
                               <label class="control-label">Section Name</label>
                               <div class="controls">
                                  
-                          <input type="text" <?php if($type=='view'){?>disabled<?php }?> name="section_name" id="section_name" required data-validation-required-message="Please Enter category name" <?php if(!(isset($error))){?>value="<?php echo $section_name?>"<?php }?>  class="span4  m-wrap" /> 
-                             
-                              <input type="text" name="section_id" <?php if(!(isset($error))){ $section_id = $section_id+1;?>value="<?php echo $sec_id;?>"<?php } ?>/>
+                          <input type="text" <?php if($type=='view'){?>disabled value="<?php echo $section_name;?>"<?php }?> name="section_name" id="section_name" required data-validation-required-message="Please Enter category name" <?php if($type=='edit'){?>value="<?php echo $section_name;?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $sec_name;?>"<?php } }?>  class="span4  m-wrap" /> 
+                            
+                              <input type="text" name="section_id" <?php if($type=='view'){?>disabled value="<?php echo $section_id;?>"<?php }?> <?php if($type=='view'||$type=='edit'){?>value="<?php echo $section_id;?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $sec_id;?>"<?php } }?>/>                             
                               </div>
                            </div>
                   
@@ -66,7 +67,7 @@ if(!isset($error))
           $(document).ready(function(){
              $("#add_new").click(function(){
 
-            document.location="<?php echo base_url()?>cms/subcategories";
+            document.location="<?php echo base_url()?>cms/sections";
          });
             $(".cancel").click(function()
                {

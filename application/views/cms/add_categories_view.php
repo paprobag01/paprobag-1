@@ -15,7 +15,7 @@ if(!isset($error))
                   <h3 class="page-title">
                      Create Categories
                   </h3> 
-				   <p style="text-align:right"><button type="button" id="add_new" class="btn blue">View Subcategory Details</button></p>			
+				   <p style="text-align:right"><button type="button" id="add_new" class="btn blue">View Category Details</button></p>			
                </div>
             </div>
             <!-- END PAGE HEADER-->
@@ -52,7 +52,12 @@ if(!isset($error))
 								 
                               </div>
                            </div>
-						    
+						    <div class="control-group">
+                              <label class="control-label">Category ID</label>
+                              <div class="controls">
+                               <input type="text" name="cat_id" <?php if($type=='view'){?>disabled value="<?php echo $cat_id;?>"<?php }?> <?php if($type=='view'||$type=='edit'){?>value="<?php echo $cat_id;?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $category_id;?>"<?php } }?>/>
+                              </div>
+                           </div>
 						   <div class="control-group">
                               <label class="control-label">Category Name</label>
                               <div class="controls">
@@ -136,7 +141,7 @@ if(!isset($error))
 			 $(document).ready(function(){
 				 $("#add_new").click(function(){
 
-				document.location="<?php echo base_url()?>cms/subcategories";
+				document.location="<?php echo base_url()?>cms/categories";
 			});
 				$(".cancel").click(function()
 					{

@@ -29,26 +29,27 @@
 	{
 		
 		$arr['primary_id']=$id;
-		$arr['table']='category';
+		$arr['table']='subcategory';
 		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']="order by cat_id desc";
 		$data['page_data']=$this->site_sentry->PopulateValues($arr); 
 		$data['page']='subcategories';
+
+		 $data['sub_category_id'] = count($this->site_sentry->max_id_value('subcategory','sub_cat_id'));	
+		
+		// $arr1['table']='subcategory';
+		// $arr1['where']="";
+		// $arr1['and']="";
+		// $arr1['order_by']=""; 
+		// $data['cat_data']=$this->site_sentry->get_all($arr1); 
 		
 		
-		$arr1['table']='category';
-		$arr1['where']="";
-		$arr1['and']="";
-		$arr1['order_by']=""; 
-		$data['cat_data']=$this->site_sentry->get_all($arr1); 
-		
-		
-		$arr2['table']='category';
-		$arr2['where']="where cat_type!=1";
-		$arr2['and']="";
-		$arr2['order_by']=""; 
-		$data['subcat_data']=$this->site_sentry->get_all($arr2); 
+		// $arr2['table']='category';
+		// $arr2['where']="where cat_type!=1";
+		// $arr2['and']="";
+		// $arr2['order_by']=""; 
+		// $data['subcat_data']=$this->site_sentry->get_all($arr2); 
 		
 		$arr3['table']='sections';
 		$arr3['where']="";
@@ -68,9 +69,10 @@
 	function save_subcategories($type=null)
 	{
 		//$data['cat_id'] = $this->input->post('cat_id');
-		$data['section_id'] = $this->input->post('sec_id');
-		$data['cat_id'] = $this->input->post('prod_sub_categories');
-		$data['sub_cat_name'] = $this->input->post('sub_cat');
+		$data1['table']="subcategory"; 
+		$data1['section_id'] = $this->input->post('sec_id');
+		$data1['cat_id'] = $this->input->post('prod_sub_categories');
+		$data1['sub_cat_name'] = $this->input->post('sub_cat');
 
 		$cat_id=$this->input->post('cat_id');
 		
@@ -102,7 +104,8 @@
 		}
 		else
 		{
-			$this->db->insert('subcategory',$data);
+			$id = $this->site_sentry->Save_records($data1);		
+			redirect('cms/Subcategories/viewCategory/'.$id);			
 		}
 		
 		

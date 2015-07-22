@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2015 at 03:40 PM
+-- Generation Time: Jul 22, 2015 at 03:29 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -150,25 +150,23 @@ CREATE TABLE IF NOT EXISTS `category` (
   `subcat` int(11) NOT NULL DEFAULT '0',
   `cat_type` int(11) NOT NULL,
   `section_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`cat_id`, `cat_meta_title`, `cat_meta_keywords`, `cat_meta_description`, `cat_name`, `parent`, `created_on`, `cat_group`, `subcat`, `cat_type`, `section_id`) VALUES
-(2, 'Ecobags', 'Ecobags', 'Ecobags', 'Ecobags', 0, '22-06-2015', 0, 0, 1, 5),
-(3, 'Ecobags', 'Ecobags', 'Ecobags', 'Boxes', 0, '22-06-2015', 0, 0, 1, 5),
-(4, 'Pouches', 'Pouches', 'Pouches', 'Pouches', 0, '22-06-2015', 0, 0, 1, 5),
-(5, 'Office Product', 'Office Product', 'Office Product', 'Office Product', 0, '22-06-2015', 0, 0, 1, 5),
-(6, 'wholesale', 'wholesale', 'wholesale', 'Wholesale', 0, '22-06-2015', 0, 0, 1, 7),
-(7, 'Retail', 'Retail', 'Retail', 'Retail', 0, '22-06-2015', 0, 0, 1, 7),
-(8, 'Offers', 'Offers', 'Offers', 'Offers', 0, '22-06-2015', 0, 0, 1, 7),
-(9, 'Paper Bag', 'Paper Bag', 'Paper Bag', 'Paper Bag', 0, '22-06-2015', 0, 0, 1, 6),
-(10, 'Accessories', 'Accessories', 'Accessories', 'Accesseries', 0, '22-06-2015', 0, 0, 1, 5),
-(11, 'Paper Bag', 'Paper Bag', 'Paper Bag', 'PaperBags', 0, '20-07-2015', 0, 0, 1, 5),
-(12, 'Ijmnmbnm', 'Ijmnmbnm', 'Ijmnmbnm', 'Ijmnmbnm', 0, '21-07-2015', 0, 0, 1, 5),
-(13, 'Cdcwcewcew', 'Cdcwcewcew', 'Cdcwcewcew', 'Cdcwcewcew', 0, '21-07-2015', 0, 0, 1, 5);
+(0, 'PaperBag', 'PaperBag', 'PaperBag', 'PaperBag', 0, '22-07-2015', 0, 0, 1, 0),
+(1, 'Ecobags', 'Ecobags', 'Ecobags', 'Ecobags', 0, '22-07-2015', 0, 0, 1, 0),
+(2, 'Boxes', 'Boxes', 'Boxes', 'Boxes', 0, '22-07-2015', 0, 0, 1, 0),
+(3, 'Pouches', 'Pouches', 'Pouches', 'Pouches', 0, '22-07-2015', 0, 0, 1, 0),
+(4, 'OfficeProducts', 'OfficeProducts', 'OfficeProducts', 'OfficeProducts', 0, '22-07-2015', 0, 0, 1, 0),
+(5, 'PaperBags', 'PaperBags', 'PaperBags', 'PaperBags', 0, '22-07-2015', 0, 0, 1, 1),
+(6, 'Ecobags', 'Ecobags', 'Ecobags', 'Ecobags', 0, '22-07-2015', 0, 0, 1, 1),
+(7, 'Boxes', 'Boxes', 'Boxes', 'Boxes', 0, '22-07-2015', 0, 0, 1, 1),
+(8, 'Pouches', 'Pouches', 'Pouches', 'Pouches', 0, '22-07-2015', 0, 0, 1, 1),
+(9, 'OfficeProducts', 'OfficeProducts', 'OfficeProducts', 'OfficeProducts', 0, '22-07-2015', 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -269,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `filters` (
   `print_color` int(11) NOT NULL,
   `lamination` varchar(100) NOT NULL,
   `special_wrk` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `filters`
@@ -290,7 +288,8 @@ INSERT INTO `filters` (`filter_id`, `material_id`, `material_name`, `section_id`
 (97, 16, 'Recycle Brown Craft Paper', 5, '2', '12', '', 0, '', '', 'Twisted Handle', '', 0, '', ''),
 (98, 17, 'Natural Colour Kraft Paper', 5, '3', '18', '', 0, '', '', '', '', 0, '', ''),
 (99, 18, 'Glossy Paper', 5, '4', '22', '', 0, '', '', '', '', 0, '', ''),
-(100, 19, 'Natural Brown Craft Paper', 5, '5', '28', '', 0, '', '', '', '', 0, '', '');
+(100, 19, 'Natural Brown Craft Paper', 5, '5', '28', '', 0, '', '', '', '', 0, '', ''),
+(101, 20, 'ColorCraftPaper', 0, '0', '0', '120,150', 0, '', '', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -507,7 +506,7 @@ CREATE TABLE IF NOT EXISTS `material` (
   `material` varchar(100) NOT NULL,
   `material_id` varchar(10) NOT NULL,
   `sub_category_ids` varchar(60) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `material`
@@ -521,7 +520,8 @@ INSERT INTO `material` (`Ai`, `material`, `material_id`, `sub_category_ids`) VAL
 (16, 'Recycle Brown Craft Paper', 'oapwR', ''),
 (17, 'Natural Colour Kraft Paper', 'axXfY', ''),
 (18, 'Glossy Paper', 'tedQz', ''),
-(19, 'Natural Brown Craft Paper', '8BTJ4', '');
+(19, 'Natural Brown Craft Paper', '8BTJ4', ''),
+(20, 'ColorCraftPaper', '20', '');
 
 -- --------------------------------------------------------
 
@@ -720,11 +720,10 @@ CREATE TABLE IF NOT EXISTS `sections` (
 --
 
 INSERT INTO `sections` (`section_id`, `section_name`, `created_on`) VALUES
-(0, 'Rvxvxc', '0'),
-(5, 'Customizable', '18-06-2015'),
-(6, 'Ready To Print', '31-05-2015'),
-(7, 'Ready To Deliver', '31-05-2015'),
-(8, 'Ecological AdBags', '18-06-2015');
+(0, 'Customizable', '0'),
+(1, 'ReadyToPrint', '0'),
+(2, 'ReadyToDeliver', '0'),
+(3, 'EcologicalAdBags', '0');
 
 -- --------------------------------------------------------
 
@@ -844,49 +843,17 @@ CREATE TABLE IF NOT EXISTS `subcategory` (
   `sub_cat_name` varchar(100) NOT NULL,
   `cat_id` int(11) NOT NULL,
   `section_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subcategory`
 --
 
 INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`) VALUES
-(1, 'Shopping Carry Bags', 1, 5),
-(2, 'Handmade Paper bags', 1, 5),
-(3, 'Food Parcel Bags', 1, 5),
-(4, 'Counter Bags', 1, 5),
-(5, 'Grocery Bags', 1, 5),
-(6, 'Wine Bags', 1, 5),
-(7, 'Medical Bags', 1, 5),
-(8, 'Box Bags', 1, 5),
-(9, 'Basket Bags', 1, 5),
-(10, 'Bag For Neckties', 1, 5),
-(11, 'Non woven Bags', 2, 5),
-(12, 'Woven Stitch Bags', 2, 5),
-(13, 'Jute Bags', 2, 5),
-(14, 'Canvas Bags', 2, 5),
-(15, 'Cotton Bags', 2, 5),
-(16, 'Khadi Bags', 2, 5),
-(17, 'Bamboo Bags', 2, 5),
-(18, 'Currier Boxes', 3, 5),
-(19, 'Packaging Boxes', 3, 5),
-(20, 'Mailing Boxes', 3, 5),
-(21, 'Food Boxes', 3, 5),
-(22, 'Non Woven Pouches', 4, 5),
-(23, 'Woven Stitch Pouches', 4, 5),
-(24, 'Jute Pouches', 4, 5),
-(25, 'Cotton Pouches', 4, 5),
-(26, 'Canvas Pouches', 4, 5),
-(27, 'Mixed Pouches', 4, 5),
-(28, 'Envolopes', 5, 5),
-(29, 'Files & Folders', 5, 5),
-(30, 'Stickers', 5, 5),
-(31, 'Pampletes', 5, 5),
-(32, 'Mascouats', 5, 5),
-(33, 'Tags', 10, 5),
-(34, 'Suite cover', 10, 5),
-(35, 'Tissue Paper', 10, 5),
-(36, 'Bookmark', 10, 5);
+(0, 'GroceryBags', 0, 0),
+(1, 'GroceryBags', 1, 0),
+(2, 'HandmadePaperbags', 0, 0),
+(3, 'ShoppingCarryBags', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -1148,11 +1115,6 @@ ALTER TABLE `cart_product`
 ALTER TABLE `categories`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
 --
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
---
 -- AUTO_INCREMENT for table `category_table`
 --
 ALTER TABLE `category_table`
@@ -1171,7 +1133,7 @@ ALTER TABLE `customize_type`
 -- AUTO_INCREMENT for table `filters`
 --
 ALTER TABLE `filters`
-  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
+  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT for table `filter_detail`
 --
@@ -1216,7 +1178,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `material`
 --
 ALTER TABLE `material`
-  MODIFY `Ai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `Ai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
@@ -1272,11 +1234,6 @@ ALTER TABLE `special_work`
 --
 ALTER TABLE `style`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `subcategory`
---
-ALTER TABLE `subcategory`
-  MODIFY `sub_cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `subcategory_table`
 --

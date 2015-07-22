@@ -9,7 +9,7 @@
 			<div class="span12">
 				<!-- BEGIN STYLE CUSTOMIZER--> 
 				<h3 class="page-title">
-					Category Details
+					subcategory Details
 					<small>Add, Delete, and Modify Categories</small>
 				</h3>
 				
@@ -54,7 +54,7 @@
 									<td class="hidden-phone">
 									
 									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['sub_cat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['sub_cat_id']?>" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/subcategories/viewCategory/<?php echo $row['sub_cat_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
 									<a href="<?php echo base_url()?>cms/subcategories/deleteCategory/<?php echo $row['sub_cat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>

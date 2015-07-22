@@ -219,6 +219,11 @@
 											  
 											  <script type="text/javascript">
 		$(document).ready(function(){
+
+			$("#add_material_filter").click(function(){
+
+				document.location="<?php echo base_url()?>cms/filters/add_filter";
+			});
 			
 			$("#add_GSM_filter").click(function(){
 
@@ -280,7 +285,7 @@
             <div class="row-fluid">
                <div class="span12">
                   <!-- BEGIN SAMPLE FORM PORTLET-->   
-				<p style="text-align:right"><form  class="form-horizontal" method="post" enctype="multipart/form-data" /><input value="Add GSM Details" name="add_GSM_filter" type="submit" id="add_GSM_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_size_filter" value="Add Size Details" id="add_size_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_style_filter" value="Add Style Details" id="add_style_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_handle_filter" id="add_handle_filter" value="Add Handle Details" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_print_filter" id="add_print_filter" value="Add Print Details" class="btn blue">&nbsp;&nbsp;&nbsp;<input name="add_printclr_filter" type="submit" id="add_printclr_filter" value="Add PrintColor Details" class="btn blue"></button>&nbsp;&nbsp;&nbsp;<input type="submit" name="add_lam_filter" id="add_lam_filter" value="Add Lamination Details" class="btn blue">&nbsp;&nbsp;&nbsp;</p><p><input type="submit" name="add_splwrk_filter" id="add_splwrk_filter" value="Add SpecialWork Details" class="btn blue"></form></p>	
+				<p style="text-align:right"><form  class="form-horizontal" method="post" enctype="multipart/form-data" /><input value="Add Material Details" name="add_material_filter" type="submit" id="add_material_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input value="Add GSM Details" name="add_GSM_filter" type="submit" id="add_GSM_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_size_filter" value="Add Size Details" id="add_size_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_style_filter" value="Add Style Details" id="add_style_filter" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_handle_filter" id="add_handle_filter" value="Add Handle Details" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_print_filter" id="add_print_filter" value="Add Print Details" class="btn blue">&nbsp;&nbsp;&nbsp;<input name="add_printclr_filter" type="submit" id="add_printclr_filter" value="Add PrintColor Details" class="btn blue">&nbsp;&nbsp;&nbsp;</p><p><input type="submit" name="add_lam_filter" id="add_lam_filter" value="Add Lamination Details" class="btn blue">&nbsp;&nbsp;&nbsp;<input type="submit" name="add_splwrk_filter" id="add_splwrk_filter" value="Add SpecialWork Details" class="btn blue"></form></p>	
                   <div class="portlet box blue">
                      <div class="portlet-title">
                         <h4><i class="icon-reorder"></i>Add Filter details</h4>
@@ -983,10 +988,10 @@
                               </div>
                            </div>
 						   
-						   <div class="control-group">
+						  <div class="control-group">
                               <label class="control-label">Material ID</label>
-                              <div class="controls">                                
-								  <input type="text" <?php if($type=='view'){?>disabled<?php }?> name="material_id" id="material_id" value="<?php echo random_string('alnum',5); ?>" class="span4  m-wrap" /> 
+                              <div class="controls">
+                               <input type="text" name="material_id" <?php if($type=='view'){?>disabled value="<?php echo $material_id;?>"<?php }?> <?php if($type=='view'||$type=='edit'){?>value="<?php echo $material_id;?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $mate_id;?>"<?php } }?>/>
                               </div>
                            </div>
 						   

@@ -187,7 +187,9 @@
 			 $data['print'] = '';	
 			  $data['print_color'] = '';	
 			   $data['lamination'] = '';	
-			    $data['special_wrk'] = '';	
+			    $data['special_wrk'] = '';
+			     $data['mate_id'] = '';	
+			     $data['mate_id'] = count($this->site_sentry->max_id_value('material','material_id'));
 				 //$data['price'] = '';	
 		 
 		 

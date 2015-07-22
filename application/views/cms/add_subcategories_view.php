@@ -2,7 +2,7 @@
 if(!isset($error)) 
 {
 	extract($page_data);
-	print_r($section_id);
+	
 }
 ?>
 <!-- BEGIN PAGE -->  
@@ -13,7 +13,7 @@ if(!isset($error))
             <div class="row-fluid">
                <div class="span12"> 
                   <h3 class="page-title">
-                     Create Categories
+                     Create Subcategory
                   </h3> 
 				   <p style="text-align:right"><button type="button" id="add_new" class="btn blue">View Subcategory Details</button></p>			
                </div>
@@ -116,19 +116,16 @@ if(!isset($error))
 										<div class="control-group">
 													<label class="control-label">Subcategory</label>
 													    <div class="controls">
-															<input type="text" name="sub_cat" id="sub_cat" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $sub_cat;?>"<?php } ?> class="span4 m-wrap"> 
+															<input type="text" name="sub_cat" id="sub_cat" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $sub_cat_name;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 												</div>
-                           <!-- <div class="control-group">
-													<label class="control-label">Gift Card</label>
+												<div class="control-group">
+													<label class="control-label">Subcategory ID</label>
 													    <div class="controls">
-															<select name="gift_card" id="gift_card">
-																<option value="0">No</option>
-																<option value="1">Yes</option>
-															</select>
+															<input type="text" name="sub_cat_id" id="sub_cat_id" <?php if($type=='view'){?>disabled value="<?php echo $sub_cat_id;?>"<?php }?> <?php if($type=='view'||$type=='edit'){?>value="<?php echo $sub_cat_id;?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $sub_category_id;?>"<?php } }?> class="span4 m-wrap"> 
 													    </div>
-							</div> -->
-                           
+												</div>
+                          
 						  <?php if($type!='view'){ ?>
                            <div class="form-actions">
                            <button type="submit" class="btn blue">Save</button>

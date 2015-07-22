@@ -34,7 +34,7 @@ class GetSubCategories extends CI_Controller
 			
             $arrSubcat = $this->getSubCatAjax->get_subcategories($category_id);
 			//$arrFilter = $this->getSubCatAjax->get_filters($category_id);
-           $res='<label class="control-label">Products</label><div class="controls"><select name="prod_sub_categories" onchange="getFilterVals()" id="prod_sub_categories">';
+           $res='<label class="control-label">Category</label><div class="controls"><select name="prod_sub_categories" onchange="getFilterVals()" id="prod_sub_categories">';
 		 //  $res1='<label class="control-label">Filters</label><div class="controls"><select onclick="getFilterVals()" name="filter_id" id="filter_id">';
 		  
            foreach($arrSubcat as $row)
@@ -210,7 +210,7 @@ class GetSubCategories extends CI_Controller
 			
             
 			$arrFilterVal = $this->getSubCatAjax->get_filter_vals($filters,$filters1);
-          $res='<label class="control-label">Category</label><div class="controls"><select name="sub_categories"  id="sub_categories">';
+          $res='<label class="control-label">Subcategory</label><div class="controls"><select name="sub_categories"  id="sub_categories">';
 		   
 		  
            foreach($arrFilterVal as $row)

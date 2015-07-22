@@ -35,7 +35,7 @@
 
 		 $data['section_data']=$this->site_sentry->get_all($arr1);
 
-     	$this->form_validation->set_rules('cat_name', 'Category Name', 'trim|required|min_length[3]|max_length[12]|xss_clean|is_unique[category.cat_name]|alpha|regex_match[/^[A-Z]/]');
+     	$this->form_validation->set_rules('cat_name', 'Category Name', 'trim|required|min_length[3]|max_length[30]|xss_clean|alpha|regex_match[/^[A-Z]/]');
      	$this->form_validation->set_rules('section_id', 'Select Section', 'required');
      	$this->form_validation->set_rules('cat_type', 'Category Type', 'required');
      	$this->form_validation->set_rules('cat_meta_title', 'Meta Title', 'trim|required');
@@ -80,6 +80,8 @@
 		$arr1['order_by']=""; 
 
 		 $data['section_data']=$this->site_sentry->get_all($arr1);
+		 $data['category_id'] = count($this->site_sentry->max_id_value('category','cat_id'));  
+		 
 		  
 		  $data['page']='categories';
 		  

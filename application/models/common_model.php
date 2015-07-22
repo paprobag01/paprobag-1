@@ -84,11 +84,6 @@ class Common_model extends CI_Model
 		}
 	}
 
-	function save_header_slider()
-	{
-
-	}
-
 	function update_status($section_id,$cat_id,$sub_cat_id,$prod_id,$status)
 	{
 		
@@ -127,6 +122,13 @@ class Common_model extends CI_Model
 		
 		
 
+	}
+
+	function max_id_value($table,$column)
+	{
+		$query = $this->db->query("select max($column) from $table");
+		$row=$query->result_array();
+		return count($row);
 	}
 
 	function get_all_filter_product($per_page,$offset) 

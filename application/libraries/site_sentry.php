@@ -69,18 +69,19 @@ class site_sentry {
 		if($table!=""){
 			
 		$primary_key = $this->CI->db->field_data($table);
-
+		// print_r($primary_key);
+		// die();
 		
 		foreach ($primary_key as $field){
 		   
 		   if($field->primary_key==1){
 
 				$primary=$field->name;
-
 		   }
 		}		 
 
 		$id=$this->CI->input->post($primary);
+		
 
 		$arr = $this->CI->db->list_fields($table);
 		
@@ -110,13 +111,27 @@ class site_sentry {
 
 			$this->CI->db->insert($table,$data1);			
 			$num = $this->CI->db->insert_id();
-			print_r($data1);
-			die();			
+					
 		  		
 		}else if($id!=" "){
-			//print'<pre>';print_r($data1);exit;						
-			$this->CI->db->where($primary,$id);
-			$this->CI->db->update($table,$data1);	
+			//print'<pre>';print_r($data1);exit;
+			$sql = $this->CI->db->query("select * from $table where $primary=$id");			
+	  		$result = $sql->result_array();  		
+
+	  		if(count($result)>0)
+	  		{
+	  			$this->CI->db->where($primary,$id);
+				$this->CI->db->update($table,$data1);
+				$num = $this->CI->db->insert_id();	
+	  			
+	  		}
+	  		else
+	  		{
+	  			$this->CI->db->insert($table,$data1);			
+				$num = $this->CI->db->insert_id();
+	  		}
+
+			
 		}
 		return $num;
 	
@@ -294,6 +309,13 @@ function save_slide($data){
 				return $arr;
 			}
 		}
+	}
+
+function max_id_value($table,$column)
+	{
+		$query = $this->CI->db->query("select * from $table");
+		$row=$query->result_array();
+		return $row;
 	}
 
 function get_selected($data=null){

@@ -5,14 +5,15 @@ class Filter_model extends CI_Model
 		function save_material()
 		{
 			//$CI =& get_instance();
-		
+		$data1['material_id'] = $this->input->post('material_id');
 		$data1['section_id'] = $this->input->post('sec_id');
 		$data1['cat_id'] = $this->input->post('prod_sub_categories');
 		$data1['sub_cat_id'] = $this->input->post('sub_categories');
-		$data1['material_name'] = $this->input->post('material_name');
+		$data1['material'] = $this->input->post('material_name');
 		//$data1['material_name'] = $this->input->post('material_name');
 
-		$material['material_name'] = $this->input->post('material_name');
+		//$material['material_name'] = $this->input->post('material_name');
+		$material['material'] = $this->input->post('material_name');
 		$material['material_id'] = $this->input->post('material_id');	
 		
 		//$this->db->where('filter_id', $id);
@@ -23,7 +24,7 @@ class Filter_model extends CI_Model
 		
 		$material_data = array(
 				'material_id' => $data['material_id'],
-				'material_name' => $material['material_name'],
+				'material_name' => $material['material'],
 				'section_id' => $this->input->post('sec_id'),
 				'cat_id'=> $this->input->post('prod_sub_categories'),
 				'sub_cat_id'=> $this->input->post('sub_categories'),

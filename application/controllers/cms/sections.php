@@ -4,8 +4,9 @@
 		function __Construct(){
 		parent::__construct();
 		
-				
+				//$this->load->model('common_model');
                $this->load->library('site_sentry');
+
 			}
       
 	  function index(){
@@ -15,6 +16,7 @@
 		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']=""; 
+		$data['sec_id'] = count($this->site_sentry->max_id_value('sections','section_id'));
 
 		 $data['page_data']=$this->site_sentry->get_all($arr); 
 		 $this->load->view('cms/header_view', $data);
@@ -46,21 +48,25 @@
 	function save_section(){ 
 		
 		$data['table']="sections"; 
-		$id = $this->site_sentry->Save_records($data);			
-		redirect('cms/sections/viewSection/');
+		$id = $this->site_sentry->Save_records($data);		
+		redirect('cms/sections/viewSection/'.$id);
 	}
 	function viewSection($id=null,$type=null)
 	{
 			
 		  $arr['primary_id']=$id;
-		  $arr['table']='sections';
-		$arr['where']="";
+		$arr['table']='sections';
+		$arr['where']="where section_id=$id";
 		$arr['and']="";
-		$arr['order_by']="order by section_id desc";
-		  $data['page_data']=$this->site_sentry->PopulateValues($arr); 
+		$arr['order_by']="";
+		$data['page_data']=$this->site_sentry->PopulateValues($arr);		
 		  
-		  $data['page']='sections';
-		 $data['sec_id'] = $id+1;
+		 $data['page']='sections';
+		
+		 $data['sec_id'] = count($this->site_sentry->max_id_value('sections','section_id'));  
+		 $data['sec_name'] = "";
+		 
+		 
 		  
 		  $data['type']=$type;
 		 $this->load->view('cms/header_view', $data);

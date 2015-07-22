@@ -55,7 +55,7 @@
   </div>
   <div class="header_bot">
     <div class="container">
-      <div class="logo"> <a href="index-2.html"><img alt="alt" src="<?php echo base_url('images/logo.png')?>" ></a> </div>
+      <div class="logo"> <a href="index-2.html"><img alt="alt" src="<?php echo base_url('images/1.jpg')?>" ></a> </div>
       <div id="nav" class="yamm">
         <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"> 
           <span class="icon-bar"></span> 
