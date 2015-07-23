@@ -39,9 +39,7 @@
 									<th class="hidden-phone">Section Name</th> 
 									<th class="hidden-phone">Category Name</th>
 									<th class="hidden-phone">Subcategory Name</th> 
-									<th class="hidden-phone">Filter Name</th> 
-									<!-- <th class="hidden-phone">Section</th> -->
-									
+									<th class="hidden-phone">Sub_Subcategory Name</th>
 									<th class="hidden-phone">Options</th>
 								</tr>
 							</thead>
@@ -69,14 +67,13 @@
 										$sub_cat=$this->db->query("select * from subcategory where section_id=".$row['section_id']."  and cat_id = ".$row['cat_id']." and sub_cat_id = ".$row['sub_cat_id']."");
 										$res2=$sub_cat->result_array();										
 									?>
-									<td class="hidden-phone"><?php foreach($res2 as $row2){echo $row2['sub_cat_name'];}?></td>
-									<td class="hidden-phone"><?php echo $row['material_name']?></td>
-									
+									<td class="hidden-phone"><?php foreach($res2 as $row2){echo $row2['sub_cat_name'];}?></td>									
+									<td class="hidden-phone"><?php echo $sub_subcat_name; ?></td>
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['material_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['material_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/Filters/deleteFilter/<?php echo $row['material_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
+									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['sub_subcat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['sub_subcat_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/Filters/deleteFilter/<?php echo $row['sub_subcat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>
 								</tr>
@@ -125,7 +122,7 @@
 
 			$("#add_new_filter").click(function(){
 
-				document.location="<?php echo base_url()?>cms/filters/add_filter";
+				document.location="<?php echo base_url()?>cms/Sub_Subcategories/viewCategory";
 			});
 			
 			
@@ -134,7 +131,7 @@
 
 				var id=$(this).attr("id");
 				 
-				$.post("<?php echo base_url()?>cms/filters/deleteFilter", {
+				$.post("<?php echo base_url()?>cms/Sub_Subcategories/deleteFilter", {
 
 					id: id
 							

@@ -25,10 +25,15 @@
 		
      }
 
+      function alpha($str)
+	{
+	    return ( ! preg_match("/^([A-Z a-z ])+$/i", $str)) ? FALSE : TRUE;
+	} 
+
      function verify_section($type=null)
      {
 
-     	$this->form_validation->set_rules('section_name', 'Section Name', 'trim|required|min_length[3]|max_length[30]|xss_clean|is_unique[sections.section_name]|alpha|regex_match[/^[A-Z]/]');
+     	$this->form_validation->set_rules('section_name', 'Section Name', 'required|min_length[3]|max_length[30]|xss_clean|is_unique[sections.section_name]|callback_alpha|regex_match[/^[A-Z]/]');
      	if ($this->form_validation->run() == FALSE)
 		{
 				

@@ -25,6 +25,11 @@
 		
      }
 
+     function alpha($str)
+	{
+	    return ( ! preg_match("/^([A-Z a-z ])+$/i", $str)) ? FALSE : TRUE;
+	} 
+
      function verify_category($type=null)
      {
 
@@ -35,12 +40,12 @@
 
 		 $data['section_data']=$this->site_sentry->get_all($arr1);
 
-     	$this->form_validation->set_rules('cat_name', 'Category Name', 'trim|required|min_length[3]|max_length[30]|xss_clean|alpha|regex_match[/^[A-Z]/]');
+     	$this->form_validation->set_rules('cat_name', 'Category Name', 'required|min_length[3]|max_length[30]|xss_clean|callback_alpha|regex_match[/^[A-Z]/]');
      	$this->form_validation->set_rules('section_id', 'Select Section', 'required');
      	$this->form_validation->set_rules('cat_type', 'Category Type', 'required');
-     	$this->form_validation->set_rules('cat_meta_title', 'Meta Title', 'trim|required');
-     	$this->form_validation->set_rules('cat_meta_keywords', 'Meta Keywords', 'trim|required');
-     	$this->form_validation->set_rules('cat_meta_description', 'Meta Description', 'trim|required');
+     	$this->form_validation->set_rules('cat_meta_title', 'Meta Title', 'required');
+     	$this->form_validation->set_rules('cat_meta_keywords', 'Meta Keywords', 'required');
+     	$this->form_validation->set_rules('cat_meta_description', 'Meta Description', 'required');
      	if ($this->form_validation->run() == FALSE)
 		{
 				

@@ -170,7 +170,7 @@
 		  $arr['table']='filters';
 		$arr['where']="";
 		$arr['and']="";
-		$arr['order_by']="order by filter_id desc";
+		$arr['order_by']="";
 		  $data['page_data']=$this->site_sentry->PopulateValues($arr); 
 		  
 		  $data['page']='filters';
@@ -218,7 +218,7 @@
 			$data1['cat_id'] = $row['cat_id'];
 			$data1['sub_cat_id'] = $row['sub_cat_id'];
 			$data1['material_name'] = $row['material_name'];
-			$data1['filter_id'] = $row['filter_id'];
+			$data1['material_id'] = $row['material_id'];
 		}
 		$data['type']=$type;
 			$this->load->view('cms/header_view', $data);
@@ -242,7 +242,7 @@
 	}
 	function deleteFilter($id=null)
 	{
-		$this->db->where('filter_id', $id);		
+		$this->db->where('material_id', $id);		
 		$this->db->delete('filters');
 		
 		redirect('cms/filters');

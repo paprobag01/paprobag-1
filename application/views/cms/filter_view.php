@@ -978,7 +978,7 @@
                         </form>
 						<?php }else{?>
 						   <form action="<?php echo base_url()?>cms/Filters/save_material" class="form-horizontal" method="post" enctype="multipart/form-data" />
-							<input type="hidden" name="filter_id" value="<?php echo $filter_id;?>"/>
+							<input type="hidden" name="filter_id" value="<?php echo $material_id;?>"/>
 							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>
 						   <!-- <div class="control-group">
                               <label class="control-label">Image :</label>
@@ -1039,7 +1039,7 @@
                               <label class="control-label">Add Material</label>
                               <div class="controls">
                                 <!-- <textarea  name="details"  id="ai" class="span12 ckeditor m-wrap" cols="30" rows="10">  </textarea> -->
-									<input type="hidden" name="filter_id" value="<?php echo $filter_id;?>"/>
+									<input type="hidden" name="filter_id" value="<?php echo $material_id;?>"/>
 								  <input type="text" <?php if($type=='view'){?>disabled<?php }?> name="material_name" id="material_name" value="<?php echo $material_name?>" class="span4  m-wrap" /> 
                               </div>
                            </div>

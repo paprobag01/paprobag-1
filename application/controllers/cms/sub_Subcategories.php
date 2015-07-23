@@ -1,5 +1,5 @@
 <?php 
- class Subcategories extends CI_Controller{
+ class Sub_Subcategories extends CI_Controller{
 
 		function __Construct(){
 		parent::__construct();
@@ -11,16 +11,16 @@
 			}
       
 	  function index(){
-		  $data['page']='subcategories';
+		  $data['page']='Sub_Subcategories';
 		  
-		$arr['table']='subcategory';
+		$arr['table']='sub_subcategory';
 		$arr['where']="";
 		$arr['and']="";
-		$arr['order_by']=""; 
+		$arr['order_by']="";
+		$data['page_data']=$this->site_sentry->get_all($arr); 
 
-		  $data['page_data']=$this->site_sentry->get_all($arr); 
 		 $this->load->view('cms/header_view', $data);
-		 $this->load->view('cms/subcategories_list');
+		 $this->load->view('cms/sub_subcategory_list');
 		 $this->load->view('cms/footer_view');
 		
      }
@@ -29,27 +29,15 @@
 	{
 		
 		$arr['primary_id']=$id;
-		$arr['table']='subcategory';
+		$arr['table']='sub_subcategory';
 		$arr['where']="";
 		$arr['and']="";
-		$arr['order_by']="order by cat_id desc";
+		$arr['order_by']="";
 		$data['page_data']=$this->site_sentry->PopulateValues($arr); 
-		$data['page']='subcategories';
+		$data['page']='Sub_Subcategories';
 
-		 $data['sub_category_id'] = count($this->site_sentry->max_id_value('subcategory','sub_cat_id'));	
+		 $data['sub_subcategory_id'] = count($this->site_sentry->max_id_value('sub_subcategory','sub_subcat_id'));	
 		
-		// $arr1['table']='subcategory';
-		// $arr1['where']="";
-		// $arr1['and']="";
-		// $arr1['order_by']=""; 
-		// $data['cat_data']=$this->site_sentry->get_all($arr1); 
-		
-		
-		// $arr2['table']='category';
-		// $arr2['where']="where cat_type!=1";
-		// $arr2['and']="";
-		// $arr2['order_by']=""; 
-		// $data['subcat_data']=$this->site_sentry->get_all($arr2); 
 		
 		$arr3['table']='sections';
 		$arr3['where']="";
@@ -60,19 +48,21 @@
 		
 		 $data['type']=$type;
 		 $this->load->view('cms/header_view', $data);
-		 $this->load->view('cms/add_subcategories_view', $data);
+		 $this->load->view('cms/add_sub_subcategory', $data);
 		 $this->load->view('cms/footer_view', $data);
 		
 	}
 
 
-	function save_subcategories($type=null)
+	function save_sub_subcategories($type=null)
 	{
 		//$data['cat_id'] = $this->input->post('cat_id');
-		$data1['table']="subcategory"; 
+		$data1['table']="sub_subcategory"; 
 		$data1['section_id'] = $this->input->post('sec_id');
 		$data1['cat_id'] = $this->input->post('prod_sub_categories');
-		$data1['sub_cat_name'] = $this->input->post('sub_cat');
+		$data1['sub_subcat_name'] = $this->input->post('sub_subcat_name');
+		$data1['sub_cat_id'] = $this->input->post('sub_categories');
+		$data1['sub_subcat_id'] = $this->input->post('sub_subcat_id');
 
 		$cat_id=$this->input->post('cat_id');
 		
@@ -91,7 +81,8 @@
 
 		$this->form_validation->set_rules('sec_id', 'Sections', 'required');
 		$this->form_validation->set_rules('prod_sub_categories', 'Category', 'required');
-		$this->form_validation->set_rules('sub_cat', 'Subcategory', 'required|min_length[3]|max_length[30]|xss_clean|callback_alpha|regex_match[/^[A-Z]/]');
+		$this->form_validation->set_rules('sub_subcat_id', 'Sub_Subcategory ID', 'required');
+		$this->form_validation->set_rules('sub_subcat_name', 'Sub_Subcategory Name', 'required|min_length[3]|max_length[30]|xss_clean|callback_alpha|regex_match[/^[A-Z]/]');
 		if ($this->form_validation->run() == FALSE)
 		{
 				
@@ -104,8 +95,10 @@
 		}
 		else
 		{
+			// print_r($data1);
+			// die();
 			$id = $this->site_sentry->Save_records($data1);		
-			redirect('cms/subcategories/viewCategory');			
+			redirect('cms/Sub_Subcategories/viewCategory');			
 		}
 		
 		
@@ -121,10 +114,10 @@
 
 	function deleteCategory($id=null)
 	{
-		$this->db->where('sub_cat_id', $id);	
+		$this->db->where('sub_subcat_id', $id);	
 		
-		$this->db->delete('subcategory'); 
-		redirect('cms/Subcategories');
+		$this->db->delete('sub_subcategory'); 
+		redirect('cms/Sub_Subcategories');
 	}
 		
 	

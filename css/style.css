@@ -920,7 +920,7 @@ h5 {
 	left:40px;
 	right:40px;
 	bottom:25px;
-	background:#f5f5f5;
+	background:rgba(238, 238, 238, 0.70);
 	text-align:center;
 	padding:20px 0;
 	z-index:3;
@@ -954,7 +954,7 @@ h5 {
 	top:24px;
 	left:10px;
 	right:10px;
-	background:#eeeeee;
+	background:rgba(238, 238, 238, 0.70);
 	text-align:center;
 }
 #content .h_row_2 .box_2 .box_inn {
@@ -983,7 +983,7 @@ h5 {
 	left:10px;
 	right:10px;
 	text-align:center;
-	background:#f5f5f5;
+	background:rgba(238, 238, 238, 0.70);
 	padding:22px 0;
 }
 #content .h_row_2 .box_3 .box_inn ul {

@@ -65,16 +65,16 @@
             <div class="side_box side_box_1 red5">
               <h5><a href="#" class="tgl_btn">categories</a></h5>
               <ul class="tgl_c1">
-			  <?php
+			 <!--  <?php
                         if(strtoupper($row['cat_id']) == 'WHOLESALE')
                         {
                           $wholesale_flag = 1;
                         } else {
                           $wholesale_flag = 0;
                         }
-                        ?>
+                        ?> -->
 			  <?php foreach($sub_category_list as $row){?>
-                <li <?php if(isset($row)) {?>class="active" <?php } ?>><a href="<?php echo base_url()?>catalog/getProducts/<?php echo $wholesale_flag;?>/<?php echo $row['section_id'];?>/<?php echo $row['cat_id'];?>/<?php echo $row['sub_cat_id'];?>"><?php  echo $row['sub_cat_name']; ?></a></li>
+                <li <?php if(isset($row)) {?>class="active" <?php } ?>><a href="<?php echo base_url()?>catalog/getProducts/<?php echo 0;?>/<?php echo $row['section_id'];?>/<?php echo $row['cat_id'];?>/<?php echo $row['sub_cat_id'];?>"><?php  echo $row['sub_cat_name']; ?></a></li>
 			  <?php } ?>
               </ul>
             </div>

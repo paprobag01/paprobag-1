@@ -20,7 +20,7 @@ class Filter_model extends CI_Model
 		$this->db->insert('material',$material);
 		
 		$rst = $this->db->insert_id();
-		$data['material_id'] = $rst;
+		$data['material_id'] = count($this->max_id_value('material','material_id'))-1;
 		
 		$material_data = array(
 				'material_id' => $data['material_id'],
@@ -39,7 +39,12 @@ class Filter_model extends CI_Model
 	
 		}
 
-		
+		function max_id_value($table,$column)
+		{
+			$query = $this->db->query("select * from $table");
+			$row=$query->result_array();
+			return $row;
+		}
 		function save_GSM()
 		{
 			$gsm = $this->input->post('GSM_data');
@@ -195,7 +200,7 @@ class Filter_model extends CI_Model
 		
 		function getfilterdata($filter_id=null)
 		{
-			$sql = $this->db->query("select * from filters where filter_id=$filter_id");
+			$sql = $this->db->query("select * from filters where material_id=$filter_id");
 			return $sql->result_array();
 		}
 		function updatefilters($id=null)
