@@ -65,15 +65,19 @@
 									<td class="hidden-phone"><?php foreach($cat_name as $row1){echo $row1['cat_name'];}?></td>
 									<?php
 										$sub_cat=$this->db->query("select * from subcategory where section_id=".$row['section_id']."  and cat_id = ".$row['cat_id']." and sub_cat_id = ".$row['sub_cat_id']."");
-										$res2=$sub_cat->result_array();										
+										$subcategory=$sub_cat->result_array();										
 									?>
-									<td class="hidden-phone"><?php foreach($res2 as $row2){echo $row2['sub_cat_name'];}?></td>									
-									<td class="hidden-phone"><?php echo $sub_subcat_name; ?></td>
+									<?php
+										$sub_sub_cat=$this->db->query("select * from sub_subcategory where section_id=".$row['section_id']."  and cat_id = ".$row['cat_id']." and sub_cat_id = ".$row['sub_cat_id']." and sub_subcat_id = ".$row['sub_subcat_id']."");
+										$sub_subcategory=$sub_sub_cat->result_array();										
+									?>
+									<td class="hidden-phone"><?php foreach($subcategory as $row2){echo $row2['sub_cat_name'];}?></td>									
+									<td class="hidden-phone"><?php foreach($sub_subcategory as $row3){echo $row3['sub_subcat_name'];}?></td>
 									<td class="hidden-phone">
 									
-									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['sub_subcat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/Filters/viewfilters/<?php echo $row['sub_subcat_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo base_url()?>cms/Filters/deleteFilter/<?php echo $row['sub_subcat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
+									<a href="<?php echo base_url()?>cms/Sub_Subcategories/viewCategory/<?php echo $row['sub_subcat_id']?>/view" class="btn mini purple"><i class="icon-edit"></i> View</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/Sub_Subcategories/viewCategory/<?php echo $row['sub_subcat_id']?>/edit" class="btn mini blue"><i class="icon-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+									<a href="<?php echo base_url()?>cms/Sub_Subcategories/deleteCategory/<?php echo $row['sub_subcat_id']?>" class="btn mini red delete_rec" id="" class="config btn mini red"><i class="icon-trash"></i> Delete</a>
 									
 									</td>
 								</tr>

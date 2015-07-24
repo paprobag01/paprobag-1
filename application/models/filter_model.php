@@ -10,6 +10,7 @@ class Filter_model extends CI_Model
 		$data1['cat_id'] = $this->input->post('prod_sub_categories');
 		$data1['sub_cat_id'] = $this->input->post('sub_categories');
 		$data1['material'] = $this->input->post('material_name');
+
 		//$data1['material_name'] = $this->input->post('material_name');
 
 		//$material['material_name'] = $this->input->post('material_name');
@@ -21,6 +22,15 @@ class Filter_model extends CI_Model
 		
 		$rst = $this->db->insert_id();
 		$data['material_id'] = count($this->max_id_value('material','material_id'))-1;
+
+		if($this->input->post('sub_subcat_id')!=null)
+		{
+			$sub_subcat_id = $this->input->post('sub_subcat_id');
+		}
+		else
+		{
+			$sub_subcat_id = "Not available";
+		}
 		
 		$material_data = array(
 				'material_id' => $data['material_id'],
@@ -28,6 +38,7 @@ class Filter_model extends CI_Model
 				'section_id' => $this->input->post('sec_id'),
 				'cat_id'=> $this->input->post('prod_sub_categories'),
 				'sub_cat_id'=> $this->input->post('sub_categories'),
+				'sub_subcat_id'=> $sub_subcat_id,
 			);
 
 		

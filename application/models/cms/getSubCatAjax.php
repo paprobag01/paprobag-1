@@ -37,6 +37,11 @@ class GetSubCatAjax extends CI_Model
 				$query1 = $this->db->query("select * from filters where filter_id=$category_id");
 				return $query1->result_array();
 		}
+		function get_subcattype_data($cat_id,$section_id,$sub_cat_id)
+		{
+				$query1 = $this->db->query("select * from sub_subcategory where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
+				return $query1->result_array();
+		}
 		function get_materialdata($cat_id,$section_id,$sub_cat_id)
 		{
 				$query1 = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");

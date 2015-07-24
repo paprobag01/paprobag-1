@@ -225,6 +225,35 @@ class GetSubCategories extends CI_Controller
 		   echo $finres;
 		}
 	}
+
+	function subtype_subcategory()
+	{
+		//echo "Welcome";
+
+		if (isset($_POST) && isset($_POST['filters']) && isset($_POST['filters1']) && isset($_POST['filters2'])) {
+            $filters = $_POST['filters'];
+			$filters1 = $_POST['filters1'];
+			$filters2 = $_POST['filters2'];
+			
+			$arrFilterVal = $this->getSubCatAjax->get_subcattype_data($filters,$filters1,$filters2);
+
+          $res='<label class="control-label">Select Subcategory Type</label><div class="controls"><select name="sub_subcat_id"   id="sub_subcat_id"><option value="">--Select--</option>';
+		   
+		  
+           foreach($arrFilterVal as $row)
+		   {
+			   if($row['sub_subcat_id']!="")
+			   {
+			   		$res=$res.'<option value="'.$row['sub_subcat_id'].'">'.$row['sub_subcat_name'].'</option>';
+			   }		   
+			  
+			  
+		   }
+		 
+		   $finres=$res.'</select></div>';
+		   echo $finres;
+		}
+	}
 	
 	function material_name()
 	{

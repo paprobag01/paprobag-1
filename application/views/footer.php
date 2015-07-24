@@ -73,8 +73,8 @@
   </div>
   <div class="f_bot">
     <div class="container">
-      <div class="f_bot_left"><strong>Greenhandle  </strong>copyright  © 2015 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms & Condition | Privacy Policy | FAQ | Career | Company Blog | Feedback</div>
-      <div class="f_bot_right">Design By <a href="#">Svetlov</a></div>
+      <div class="f_bot_left"><strong>Greenhandle  </strong>copyright  © 2015 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="padding-left: 122px;">FAQ | Terms & Condition | Privacy Policy | Career </span></div>
+      <div class="f_bot_right">Know To Us <a href="#">GH Blog</a></div>
     </div>
   </div>
 </div>

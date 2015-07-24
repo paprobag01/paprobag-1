@@ -28,14 +28,26 @@
 	function viewCategory($id=null,$type=null)
 	{
 		
-		$arr['primary_id']=$id;
-		$arr['table']='sub_subcategory';
-		$arr['where']="";
-		$arr['and']="";
-		$arr['order_by']="";
-		$data['page_data']=$this->site_sentry->PopulateValues($arr); 
+		// $arr['primary_id']=$id;
+		// $arr['table']='sub_subcategory';
+		// $arr['where']="";
+		// $arr['and']="";
+		// $arr['order_by']="order by cat_id desc";
+		// $data['page_data']=$this->site_sentry->PopulateValues($arr); 
+		//$data['primary_id']=$id;
 		$data['page']='Sub_Subcategories';
 
+			if($id!=null)
+			{
+				$arr3['table']='sub_subcategory';
+				$arr3['where']="where sub_subcat_id=$id";
+				$arr3['and']="";
+				$arr3['order_by']="";		
+				$data['page_data']=$this->site_sentry->get_all($arr3);
+			}
+			
+
+		
 		 $data['sub_subcategory_id'] = count($this->site_sentry->max_id_value('sub_subcategory','sub_subcat_id'));	
 		
 		
@@ -57,6 +69,8 @@
 	function save_sub_subcategories($type=null)
 	{
 		//$data['cat_id'] = $this->input->post('cat_id');
+		$data1['primary_id']=$this->input->post('sub_subcat_id');
+
 		$data1['table']="sub_subcategory"; 
 		$data1['section_id'] = $this->input->post('sec_id');
 		$data1['cat_id'] = $this->input->post('prod_sub_categories');
@@ -66,10 +80,11 @@
 
 		$cat_id=$this->input->post('cat_id');
 		
-		$arr['table']='subcategory';
-		$arr['where']="";
-		$arr['and']="";
-		$arr['order_by']=""; 
+		// $arr['table']='sub_subcategory';
+		// $arr['where']="";
+		// $arr['and']="";
+		// $arr['order_by']=""; 
+		// $data['page_data']=$this->site_sentry->get_all($arr); 
 
 		$arr3['table']='sections';
 		$arr3['where']="";
@@ -77,7 +92,7 @@
 		$arr3['order_by']="";		
 		$data['sec_data']=$this->site_sentry->get_all($arr3);
 
-		$data['page_data']=$this->site_sentry->get_all($arr); 
+		
 
 		$this->form_validation->set_rules('sec_id', 'Sections', 'required');
 		$this->form_validation->set_rules('prod_sub_categories', 'Category', 'required');
@@ -90,13 +105,12 @@
 			   $data['type']=$type;
 
 				 $this->load->view('cms/header_view', $data);
-				 $this->load->view('cms/add_subcategories_view',$data);
+				 $this->load->view('cms/add_sub_subcategory',$data);
 				 $this->load->view('cms/footer_view');
 		}
 		else
 		{
-			// print_r($data1);
-			// die();
+			
 			$id = $this->site_sentry->Save_records($data1);		
 			redirect('cms/Sub_Subcategories/viewCategory');			
 		}

@@ -1,4 +1,10 @@
+<?php 
+if(!isset($error) && isset($page_data)) 
+{
+	extract($page_data);
 
+}
+?>
 <script type="text/javascript">
 							  $(document).ready(function() {
 								  
@@ -105,13 +111,7 @@
 								  
 											  </script> 
 
-<?php 
-if(!isset($error)) 
-{
-	extract($page_data);
-	
-}
-?>
+
 <!-- BEGIN PAGE -->  
       <div class="page-content"> 
          <!-- BEGIN PAGE CONTAINER-->
@@ -144,7 +144,7 @@ if(!isset($error))
                         <form action="<?php echo base_url()?>cms/Sub_Subcategories/save_sub_subcategories" class="form-horizontal" method="post" enctype="multipart/form-data" />
 							<div class="control-group"><span style="color:#FE544D;font-size: 15px;"><?php  echo validation_errors();?></span>
                      		</div>
-							<input type="hidden" name="cat_id" <?php if(!(isset($error))){?>value="<?php echo $cat_id;?>"<?php }?>/>
+							<!-- <input type="hidden" name="cat_id" <?php if(!(isset($error))){?>value="<?php echo $cat_id;?>"<?php }?>/> -->
 							<input type="hidden" name="created_on" value="<?php echo date('d-m-Y')?>"/>
 							 
 						    
@@ -163,15 +163,6 @@ if(!isset($error))
                            </div>
 				
 						 
-						    <?php 
-							$section_name="";
-						  if($section_id!=null or $section_id!="")
-						  {
-						  $sql=$this->db->query("select * from section where section_id=".$section_id."");
-						  $res=$sql->row_array();
-						  extract($res);
-						  }
-						  ?>
 						    
 						 
 						  <div class="control-group" id="subcategories" style="display:none;">
@@ -181,19 +172,33 @@ if(!isset($error))
 											<div class="control-group" id="filters" style="display:none;">
 											  
 											</div>
+											<?php if(isset($page_data)){foreach($page_data as $row){ ?>
 												<div class="control-group">
 													<label class="control-label">Sub_Subcategory ID</label>
 													    <div class="controls">
-															<input type="text" name="sub_subcat_id" id="sub_subcat_id" <?php if($type=='view'){?>disabled value="<?php echo $sub_subcat_id;?>"<?php }?> <?php if($type=='view'||$type=='edit'){?>value="<?php echo $sub_subcat_id;?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $sub_subcategory_id;?>"<?php } }?> class="span4 m-wrap"> 
+															<input type="text" name="sub_subcat_id" id="sub_subcat_id" <?php if($type=='view' && !(isset($error))){?>disabled value="<?php echo $row['sub_subcat_id'];?>"<?php }?> <?php if($type=='view'||$type=='edit' && !(isset($error))){?>value="<?php echo $row['sub_subcat_id'];?>"<?php }else{?><?php if(!(isset($error))){ ?>value="<?php echo $sub_subcategory_id;?>"<?php } }?> class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Sub_Subcategory Name</label>
 													    <div class="controls">
-															<input type="text" name="sub_subcat_name" id="sub_subcat_name" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $sub_subcat_name;?>"<?php } ?> class="span4 m-wrap"> 
+															<input type="text" name="sub_subcat_name" id="sub_subcat_name" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $row['sub_subcat_name'];?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 												</div>
-                          
+                          					<?php }}else {?>
+                          					<div class="control-group">
+													<label class="control-label">Sub_Subcategory ID</label>
+													    <div class="controls">
+															<input type="text" name="sub_subcat_id" id="sub_subcat_id" <?php if(!(isset($error))){ ?>value="<?php echo $sub_subcategory_id;?>"<?php }?> class="span4 m-wrap"> 
+													    </div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Sub_Subcategory Name</label>
+													    <div class="controls">
+															<input type="text" name="sub_subcat_name" id="sub_subcat_name" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" class="span4 m-wrap"> 
+													    </div>
+												</div>
+												<?php } ?>
 						  <?php if($type!='view'){ ?>
                            <div class="form-actions">
                            <button type="submit" class="btn blue">Save</button>

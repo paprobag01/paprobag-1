@@ -188,6 +188,41 @@
 												}
 										});
 									 });
+									$('#filters').on('click', function() {
+										 
+											  var filters = $('#prod_sub_categories').val();
+											  var filters1 = $('#sec_id').val();
+											  var filters2 = $('#sub_categories').val();
+									
+									$.ajax({   
+											   url: "<?php echo base_url()?>cms/getSubCategories/subtype_subcategory",
+												async: false,
+												type: "POST", 
+												data: {'filters':filters,'filters1':filters1,'filters2':filters2},
+												dataType: "html",
+										
+												success: function(data) 
+												{
+													var dt=data.split("|");
+													
+																	
+																	if(dt[0]!='<label class="control-label">Select Sub_Subcat Type</label><div class="controls" id="material_id"><select name="sub_subcat_id"  id="sub_subcat_id"></select></div>')
+																{
+																	$('#subcat_type').fadeIn();
+																	$('#subcat_type').html(dt[0]);
+																	
+																	
+																
+																}
+																else{
+																	$('#subcat_type').fadeIn();
+																	$('#subcat_type').html('<div class="controls">Sub_Subcategory Type is not found under this Subcategory</div>');
+																}
+																
+													
+												}
+										});
+									 });
 								  function getFilterVals()
 										{										
 											  var filters = $('#prod_sub_categories').val();
@@ -976,6 +1011,9 @@
 											</div>
 											
 											<div class="control-group"  id="filters" style="display:none;">
+											  
+											</div>
+											<div class="control-group"  id="subcat_type" style="display:none;">
 											  
 											</div>
 											
