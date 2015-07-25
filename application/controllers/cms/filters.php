@@ -71,7 +71,7 @@
 	{ 
 		
 		//$data['table']="filters"; 
-		//$id=$this->input->post('filter_id');
+		//$id=$this->input->post('style_id');
 		$this->Filter_model->save_style();
 		//redirect('cms/filters');
 		if(true)

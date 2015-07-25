@@ -60,7 +60,7 @@ class Filter_model extends CI_Model
 		{
 			$gsm = $this->input->post('GSM_data');
 			//$this->session->userdata('filter_id');
-			$sql = $this->db->query('select * from filters where material_id="'.$this->session->userdata('filter_id').'"');
+			$sql = $this->db->query('select * from filters where material_id="'.$this->session->userdata('material_id').'"');
 			$result = $sql->result_array();
 
 				$data = array();
@@ -74,15 +74,82 @@ class Filter_model extends CI_Model
 				$data[] = $this->input->post('GSM_data');
 			echo $GSM_data =  implode(",",$data);	
 			
-			$sql = $this->db->query('UPDATE filters SET GSM_name="'.$GSM_data.'" WHERE material_id="'.$this->session->userdata('filter_id').'"');
-			$this->session->unset_userdata('filter_id');
+			$sql = $this->db->query('UPDATE filters SET GSM_name="'.$GSM_data.'" WHERE material_id="'.$this->session->userdata('material_id').'"');
+			$this->session->unset_userdata('material_id');
 			session_destroy();
+		}
+		// function save_size()
+		// {
+			
+		// 	$size = $this->input->post('size');
+		// 	$sql = $this->db->query('select * from filters where material_id="'.$this->session->userdata('material_id').'"');
+		// 	$result = $sql->result_array();			
+			
+		// 		$data = array();
+		// 		foreach ($result as $row) {	
+		// 			if($row['size']!="")
+		// 			{
+		// 				$data[] = $row['size'];
+		// 			}								
+		// 		}
+		// 		$data[] = $this->input->post('size');				
+		// 		 echo $size_data =  implode(",",$data);			
+		
+		// 	$sql = $this->db->query('UPDATE filters SET size="'.$size_data.'" WHERE material_id="'.$this->session->userdata('material_id').'"');
+		// 	$this->session->unset_userdata('material_id');
+		// 	session_destroy();
+		// }
+		// function save_style()
+		// {
+			
+		// 	$style = $this->input->post('style');
+			
+		// 	$sql = $this->db->query('UPDATE filters SET style="'.$this->input->post('style').'" WHERE material_id="'.$this->session->userdata('material_id').'"');
+		// 	$this->session->unset_userdata('material_id');
+		// 	session_destroy();
+		// }
+		// function save_style()
+		// {
+			
+		// 	$style_details = array(
+		// 		'section_id' => $this->input->post('sec_id'),
+		// 		'cat_id'=> $this->input->post('prod_sub_categories'),
+		// 		'sub_cat_id'=> $this->input->post('sub_categories'),
+		// 		'style' => $this->input->post('style'),
+		// 		'style_id' => $style_id,				
+		// 	);
+			
+		// 	$sql = $this->db->query('UPDATE filters SET style="'.$this->input->post('style').'" WHERE $style_details');
+			
+		// }
+		function save_style()
+		{
+			$style_id = count($this->site_sentry->max_id_value('style_details','style_id'));
+			$style_details = array(
+				'section_id' => $this->input->post('sec_id'),
+				'cat_id'=> $this->input->post('prod_sub_categories'),
+				'sub_cat_id'=> $this->input->post('sub_categories'),
+				'style' => $this->input->post('style'),
+				'style_id' => $style_id,				
+			);
+			$style_data = array(
+				'section_id' => $this->input->post('sec_id'),
+				'cat_id'=> $this->input->post('prod_sub_categories'),
+				'sub_cat_id'=> $this->input->post('sub_categories')								
+			);		
+			$this->db->insert('style_details',$style_details);
+			$rst = $this->db->insert_id();
+			$this->db->where($style_data);
+			$data = array('style_id' => $style_id);
+			$this->db->update('filters',$data);
+			
 		}
 		function save_size()
 		{
+
 			
 			$size = $this->input->post('size');
-			$sql = $this->db->query('select * from filters where material_id="'.$this->session->userdata('filter_id').'"');
+			$sql = $this->db->query('select * from style_details where style_id="'.$this->session->userdata('filter_id').'"');
 			$result = $sql->result_array();			
 			
 				$data = array();
@@ -93,18 +160,9 @@ class Filter_model extends CI_Model
 					}								
 				}
 				$data[] = $this->input->post('size');				
-				 echo $size_data =  implode(",",$data);			
-		
-			$sql = $this->db->query('UPDATE filters SET size="'.$size_data.'" WHERE material_id="'.$this->session->userdata('filter_id').'"');
-			$this->session->unset_userdata('filter_id');
-			session_destroy();
-		}
-		function save_style()
-		{
-			
-			$style = $this->input->post('style');
-			
-			$sql = $this->db->query('UPDATE filters SET style="'.$this->input->post('style').'" WHERE material_id="'.$this->session->userdata('filter_id').'"');
+				$size_data =  implode(",",$data);
+					
+			$sql = $this->db->query('UPDATE style_details SET size="'.$size_data.'" WHERE style_id="'.$this->session->userdata('filter_id').'"');
 			$this->session->unset_userdata('filter_id');
 			session_destroy();
 		}

@@ -31,10 +31,18 @@ class GetSubCatAjax extends CI_Model
 				$query = $this->db->query("select * from filters where material_name=$category_id");
 				return $query->result_array();
 		}
+
+		function get_size_details($category_id)
+		{
+				
+				$query1 = $this->db->query("select * from style_details where style_id=$category_id");
+				return $query1->result_array();
+		}	
+			
 		function get_GSM($category_id)
 		{
 				
-				$query1 = $this->db->query("select * from filters where filter_id=$category_id");
+				$query1 = $this->db->query("select * from filters where material_id=$category_id");
 				return $query1->result_array();
 		}
 		function get_subcattype_data($cat_id,$section_id,$sub_cat_id)
@@ -47,11 +55,16 @@ class GetSubCatAjax extends CI_Model
 				$query1 = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
 				return $query1->result_array();
 		}
-		function get_styledata($cat_id,$section_id,$sub_cat_id)
+		function get_styledetails($cat_id,$section_id,$sub_cat_id)
 		{
-				$query1 = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
+				$query1 = $this->db->query("select * from style_details where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
 				return $query1->result_array();
 		}
+		// function get_styledata($cat_id,$section_id,$sub_cat_id)
+		// {
+		// 		$query1 = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
+		// 		return $query1->result_array();
+		// }
 		
 }
 ?>

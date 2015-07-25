@@ -39,7 +39,7 @@ class ProductList extends CI_Controller{
 		$arr['where']="";
 		$arr['and']="";
 		$arr['order_by']="order by prod_id desc"; 
-		$data['page_data']=$this->site_sentry->get_all($arr); 
+		$data['page_data']=$this->site_sentry->get_all($arr); 		 
 		
 		$arr1['table']='category';
 		$arr1['where']="";

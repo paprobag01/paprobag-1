@@ -120,35 +120,83 @@
 								  
                               </div>
                            </div>
+                           <script type="text/javascript">
+                           	function getsize_details(str) {
+				                  var xmlhttp;
+				                  if (str.length==0) { 
+				                    document.getElementById("size_details").innerHTML="";
+				                    document.getElementById("size_details").style.border="0px";
+				                    return;
+				                  }
+				                  if (window.XMLHttpRequest) {
+				                    // code for IE7+, Firefox, Chrome, Opera, Safari
+				                    xmlhttp=new XMLHttpRequest();
+				                  } else {  // code for IE6, IE5
+				                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				                  }
+				                  xmlhttp.onreadystatechange=function() {
+				                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				                      document.getElementById("size_details").innerHTML=xmlhttp.responseText;
+				                      document.getElementById("size_details").style.border="0px solid #A5ACB2";
+				                    }
+				                  }
+				                  xmlhttp.open("GET","<?php echo base_url();?>getSubCategories/sizedropdown/?size_id="+str,true);
+				                  xmlhttp.send();
+				                }
+                           </script>
 						   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-											<script type="text/javascript">
-											 function getmaterial()
+									<script type="text/javascript">
+										function getmaterial()
 										{										
-											  var filters = $('#material_value').val();
-											  
-												console.log(filters);
-												$.ajax({   
-												   url: "<?php echo base_url()?>cms/getSubCategories/GSM_dropdown",
-													async: false,
-													type: "POST", 
-													data: "filters="+filters,
-													dataType: "html",
-													
-													success: function(data) {
-														var dt=data.split("|");
-														
-														$("#output").fadeIn();
-														$('#output').html(data);
-														
-														
-														
-													}
-												})
-								  
-									 
-								  }
+										  var filters = $('#material_value').val();											 
+										  
+											console.log(filters);
+											$.ajax({   
+											   url: "<?php echo base_url()?>cms/getSubCategories/GSM_dropdown",
+												async: false,
+												type: "POST", 
+												data: {"filters":filters},
+												dataType: "html",
 												
-											</script>
+												success: function(data) {
+													var dt=data.split("|");
+													
+													$("#output").fadeIn();
+													$('#output').html(data);
+													
+													
+													
+												}
+											})
+								  
+								  		}
+
+								  		function getsize_data()
+										{										
+										  var filters = $('#style_id').val();											 
+										  
+											console.log(filters);
+											$.ajax({   
+											   url: "<?php echo base_url()?>cms/getSubCategories/sizedropdown",
+												async: false,
+												type: "POST", 
+												data: {"filters":filters},
+												dataType: "html",
+												
+												success: function(data) {
+													var dt=data.split("|");
+													
+													$("#size_details").fadeIn();
+													$('#size_details').html(data);
+													
+													
+													
+												}
+											})
+								  
+								  		}
+								  		
+									</script>
 						   
 											  <script type="text/javascript">
 							  $(document).ready(function() {
@@ -264,6 +312,8 @@
 												}
 										});
 									 });
+									
+									
 								  function getFilterVals()
 										{										
 											  var filters = $('#prod_sub_categories').val();
@@ -364,116 +414,7 @@
 													    </div>
 												</div>
 												
-							<script type="text/javascript">
-							  $(document).ready(function() {
-								  
-									
-								  $('#cat_id').on('click', function() {
-									
-											 
-											  var categories = $('#cat_id').val();
-									
-								/*	$.ajax({   
-									
-									alert(categories);
-									   url: "cms/getSubCategories/dropdown",
-										async: false,
-										type: "POST", 
-										data: "categories="+categories,
-										dataType: "html",
-										
-										success: function(data) {
-										alert(data);
-											
-										}
-									}) */
-									if(categories!=0)
-									{
-								var xmlhttp;
-							if (window.XMLHttpRequest)
-							  {// code for IE7+, Firefox, Chrome, Opera, Safari
-							  xmlhttp=new XMLHttpRequest();
-							  }
-							else
-							  {// code for IE6, IE5
-							  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-							  }
-							xmlhttp.onreadystatechange=function()
-							  {
-							  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-								{
-								var data=xmlhttp.response
-								
-								var dt=data.split("|");
-											
-											if(dt[0]!='<label class="control-label">Sub Categories</label><div class="controls"><select name="prod_sub_categories" id="prod_sub_categories"></select></div>')
-											{
-												$('#subcategories').fadeIn();
-												$('#subcategories').html(dt[0]);
-												
-											
-											}
-											else{
-												$('#subcategories').fadeIn();
-												$('#subcategories').html('<div class="controls">Subcategory is not found under this category</div>');
-											}
-											
-											if(dt[1]!='<label class="control-label">Filters</label><div class="controls"><select onclick="getFilterVals()" name="filter_id" id="filter_id"></select></div>')
-											{
-												$('#filters').fadeIn();
-												$('#filters').html(dt[1]);
-											}
-											else{
-												$('#filters').fadeIn();
-												$('#filters').html('<div class="controls">Filter is not found under this category</div>');
-											}
-								
-								}
-							  }
-							 
-								
-								 xmlhttp.open("POST","<?php echo base_url()?>cms/getSubCategories/dropdown/"+categories,true); 
-							  
-							xmlhttp.send();
-								  
-									} 
-								  });
-								//  $('#filterDropdwn').on('click', function() {
-									
-										
-								});
-								function getFilterVals()
-										{										
-										var filters = $('#filter_id').val();	
-								  var xmlhttp;
-							if (window.XMLHttpRequest)
-							  {// code for IE7+, Firefox, Chrome, Opera, Safari
-							  xmlhttp=new XMLHttpRequest();
-							  }
-							else
-							  {// code for IE6, IE5
-							  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-							  }
-							xmlhttp.onreadystatechange=function()
-							  {
-							  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-								{
-								var data=xmlhttp.response
-								
-								var dt=data.split("|");
-										$("#filterValues").fadeIn();
-											$('#filterValues').html(dt[0]);
-								
-								}
-							  }
-							 
-								
-								 xmlhttp.open("POST","<?php echo base_url()?>cms/getSubCategories/filterdropdown/"+filters,true); 
-							  
-							xmlhttp.send();
-									 
-								  }
-											  </script>
+							
 												<div class="control-group">
 												  <label class="control-label">Product Short Description</label>
 												  <div class="controls">
@@ -779,11 +720,9 @@
 											
 											</div>
 						  
-						   
-						   	
-						    
-											</div> 
-						    
+						   				 <div class="control-group" name="size_details" id="size_details" style="display:none;">
+											
+											</div>
                              
 											<div class="control-group">
 											<div class="controls">

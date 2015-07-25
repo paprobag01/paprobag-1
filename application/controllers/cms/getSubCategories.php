@@ -67,75 +67,37 @@ class GetSubCategories extends CI_Controller
 		   //return $category_id;
 		}
 		
-		//for value in dropdown
-		/*if (isset($_POST) && isset($_POST['filters'])) 
-		{
-           $category_id = $_POST['filters'];
-            $arrSubcat = $this->getSubCatAjax->getmaterial($category_id);
-				
-				$res='<label class="control-label">Filter_id</label><div class="controls"><select name="filter_id"  id="filter_id">';
-		   foreach($arrSubcat as $row)
-		   {
-			   
-			   $res=$res.'<option value="'.$row['filter_id'].'">'.$row['filter_id'].'</option>';
-			  
-			  
-		   }
-		 
-		   $finres=$res.'</select></div>';
-		   echo $finres;
-		}*/
+		
 	}
+	
 	function GSM_dropdown()
 	{
-		if (isset($_POST) && isset($_POST['filters'])) 
+		if(isset($_POST) && isset($_POST['filters'])) 
 		{
           echo  $category_id = $_POST['filters'];
-            $arrSubcat = $this->getSubCatAjax->get_GSM($category_id);
+
+         $arrSubcat = $this->getSubCatAjax->get_GSM($category_id);
+         
 				
 				$res='<label class="control-label">GSM Details</label><div class="controls" id="GSM_id"><select name="GSM_id"  id="GSM_id">';
 		   foreach($arrSubcat as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['GSM_name'].'">'.$row['GSM_name'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['GSM_name'].'</option>';
 			  
 			  
 		   }
 		 
 		   $finres=$res.'</select></div>';
-		   echo $finres;
+		   echo $finres;		    
+		  
 		   echo "<br>";
-		   
-		   $res='<label class="control-label">Style Details</label><div class="controls"><select name="style"  id="style">';
-		   foreach($arrSubcat as $row)
-		   {
-			   
-			   $res=$res.'<option value="'.$row['style'].'">'.$row['style'].'</option>';
-			  
-			  
-		   }
-		 
-		   $finres=$res.'</select></div>';
-		   echo $finres;
-		   
-		   echo "<br>";
-		   $res='<label class="control-label">Size Details</label><div class="controls"><select name="size_id"  id="size_id">';
-		   foreach($arrSubcat as $row)
-		   {
-			   
-			   $res=$res.'<option value="'.$row['size'].'">'.$row['size'].'</option>';
-			  
-			  
-		   }
-		 
-		   $finres=$res.'</select></div>';
-		   echo $finres;
-		   echo "<br>";
+		  
 		   $res='<label class="control-label">Handle Details</label><div class="controls"><select name="handle_id"  id="handle_id">';
 		   foreach($arrSubcat as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['handle'].'">'.$row['handle'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['handle'].'</option>';
 			  
 			  
 		   }
@@ -148,7 +110,7 @@ class GetSubCategories extends CI_Controller
 		   foreach($arrSubcat as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['print'].'">'.$row['print'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['print'].'</option>';
 			  
 			  
 		   }
@@ -162,7 +124,7 @@ class GetSubCategories extends CI_Controller
 		   foreach($arrSubcat as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['print_color'].'">'.$row['print_color'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['print_color'].'</option>';
 			  
 			  
 		   }
@@ -175,7 +137,7 @@ class GetSubCategories extends CI_Controller
 		   foreach($arrSubcat as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['lamination'].'">'.$row['lamination'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['lamination'].'</option>';
 			  
 			  
 		   }
@@ -188,7 +150,31 @@ class GetSubCategories extends CI_Controller
 		   foreach($arrSubcat as $row)
 		   {
 			   
-			   $res=$res.'<option value="'.$row['special_wrk'].'">'.$row['special_wrk'].'</option>';
+			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['special_wrk'].'</option>';
+			  
+			  
+		   }
+		 
+		   $finres=$res.'</select></div>';
+		   echo $finres;
+		}
+	}
+
+	function sizedropdown()
+	{
+		//echo "Welcome";
+		if(isset($_POST) && isset($_POST['filters'])) 
+		{
+          echo  $category_id = $_POST['filters'];
+			
+			$arrFilterVal = $this->getSubCatAjax->get_size_details($category_id);
+          $res='<label class="control-label">Size</label><div class="controls"><select name="sub_categories"  id="sub_categories">';
+		   
+		  
+           foreach($arrFilterVal as $row)
+		   {
+			   
+			   $res=$res.'<option value="'.$row['style_id'].'">'.$row['size'].'</option>';
 			  
 			  
 		   }
@@ -264,9 +250,10 @@ class GetSubCategories extends CI_Controller
 			$filters2 = $_POST['filters2'];
 			
 			$arrFilterVal = $this->getSubCatAjax->get_materialdata($filters,$filters1,$filters2);
+			$style_details = $this->getSubCatAjax->get_styledetails($filters,$filters1,$filters2);
+
           $res='<label class="control-label">Select Material</label><div class="controls"><select name="material_value" required data-validation-required-message="Please Fill Data" onchange="getmaterial()" id="material_value"><option value="">--Select--</option>';
-		   
-		  
+		 
            foreach($arrFilterVal as $row)
 		   {
 			   
@@ -277,6 +264,20 @@ class GetSubCategories extends CI_Controller
 		 
 		   $finres=$res.'</select></div>';
 		   echo $finres;
+		    echo "<br>";
+
+		   $res='<label class="control-label">Style Details</label><div class="controls"><select name="style_id" onchange="getsize_data()" id="style_id">';
+		   foreach($style_details as $row)
+		   {
+			   
+			   $res=$res.'<option value="'.$row['style_id'].'">'.$row['style'].'</option>';
+			  
+			  
+		   }
+		 
+		   $finres=$res.'</select></div>';
+		   echo $finres;
+		   
 		}
 	}
 	function style_name()
@@ -287,15 +288,15 @@ class GetSubCategories extends CI_Controller
 			$filters1 = $_POST['filters1'];
 			$filters2 = $_POST['filters2'];
 			
-			$arrFilterVal = $this->getSubCatAjax->get_materialdata($filters,$filters1,$filters2);
+			$arrFilterVal = $this->getSubCatAjax->get_styledetails($filters,$filters1,$filters2);
           $res='<label class="control-label">Select Style</label><div class="controls"><select name="material_value" required data-validation-required-message="Please Fill Data" onchange="getmaterial()" id="material_value"><option value="">--Select--</option>';
 		   
 		  
            foreach($arrFilterVal as $row)
 		   {
-			   if($row['style']!="")
+			   if($row['style_id']!="")
 			   {
-			   		$res=$res.'<option value="'.$row['material_id'].'">'.$row['style'].'</option>';
+			   		$res=$res.'<option value="'.$row['style_id'].'">'.$row['style'].'</option>';
 			   }		   
 			  
 			  

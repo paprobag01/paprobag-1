@@ -20,18 +20,6 @@
 														$("#output").fadeIn();
 														$('#output').html(data);
 														
-														/*if(dt[0]!='<label class="control-label">Filter_id</label><div class="controls"><select name="filter_id"  id="filter_id"></select></div>')
-														{
-															$('#output').fadeIn();
-															$('#output').html(dt[0]);
-															
-															
-														
-														}
-														else{
-															$('#output').fadeIn();
-															$('#output').html('<div class="controls">NO value</div>');
-														}*/
 														
 													}
 												})
@@ -171,7 +159,7 @@
 													var dt=data.split("|");
 													
 																	
-																	if(dt[0]!='<label class="control-label">Select Style</label><div class="controls" id="material_id"><select name="material_value" onchange="getmaterial()"  id="material_value"></select></div>')
+																	if(dt[0]!='<label class="control-label">Select Style</label><div class="controls" id="style_id"><select name="style_id" onchange="getmaterial()"  id="style_id"></select></div>')
 																{
 																	$('#style_drop').fadeIn();
 																	$('#style_drop').html(dt[0]);
@@ -398,24 +386,7 @@
 											<div class="control-group" name="filter_id" id="output" style="display:none;">
 											
 											</div>
-											<div class="control-group" name="material_drop" id="material_drop" style="display:none;">
 											
-											</div>
-											
-											<!-- <div class="control-group">
-											  <label class="control-label">Select Material</label>
-												<?php echo $this->session->userdata('filter_id');?>
-											 <div class="controls">-->
-												<!-- <textarea  name="details"  id="ai" class="span12 ckeditor m-wrap" cols="30" rows="10">  </textarea> -->
-													<!--<select  name="material_id" class="material_id" id="material_id" onchange="getmaterial()"   <?php if($type=='view'){?>disabled<?php }?>>
-										<option value="">Select</option>
-										<?php foreach($material_data as $row){ ?>
-										<option   value="<?php echo $row['filter_id']; ?>" ><?php echo $row['material_name']; ?></option>
-										<?php }?>
-									</select>
-								 
-                              </div>
-                           </div>-->	
 						   <div class="control-group">
                               <label class="control-label">Add Style Details</label>
                               <div class="controls">
