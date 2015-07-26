@@ -48,28 +48,328 @@
                                     <div class="row">
                                        
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="section_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Section</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($section); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$section[$i]['section_id'].'">'
+                                                          .'<label style="padding-left:10px">'.$section[$i]['section_name'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$section[$i]['section_id'].'">'
+                                                          .'<label style="padding-left:10px">'.$section[$i]['section_name'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="category_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Category</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($category); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$category[$i]['cat_id'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$category[$i]['cat_name'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$category[$i]['cat_id'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$category[$i]['cat_name'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="sub_category_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>subcategory</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($subcategory); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$subcategory[$i]['sub_cat_name'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$subcategory[$i]['sub_cat_name'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="material_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Material</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($material); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$material[$i]['material_id'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$material[$i]['material'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$material[$i]['material_id'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$material[$i]['material'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="gsm_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>GSM</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                $a = array();
+                                                for ($i = 0; $i < count($GSM); $i++) {
+                                                  $GSM_data = explode(',', $GSM[$i]['GSM_name']);
+                                                  
+                                                  foreach ($GSM_data as $key => $value) {
+                                                    if(!in_array($value, $a)){
+                                                      $a[]=$value;
+                                                    }
+                                                  }
+                                                }
+                                                for ($j=0; $j < count($a); $j++) { 
+                                                  if ($j%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$a[$j].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$a[$j] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$a[$j].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$a[$j]
+                                                          .'</label></td>';
+                                                  }
+
+                                                }
+                                                
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="style_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Style</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($style); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$style[$i]['style'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$style[$i]['style'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$style[$i]['style'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$style[$i]['style'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="size_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Size</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($size); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$size[$i]['size'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$size[$i]['size'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$size[$i]['size'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$size[$i]['size'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="handle_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Handle</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($handle); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$handle[$i]['handle'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$handle[$i]['handle'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$handle[$i]['handle'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$handle[$i]['handle'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="print_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Print</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($print); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$print[$i]['print'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$print[$i]['print'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$print[$i]['print'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$print[$i]['print'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="print_color_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Number Of Colours</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($print_color); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$print_color[$i]['print_color'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$print_color[$i]['print_color'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$print_color[$i]['print_color'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$print_color[$i]['print_color'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="lamination_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Lamination</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($lamination); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$lamination[$i]['lamination'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$lamination[$i]['lamination'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$lamination[$i]['lamination'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$lamination[$i]['lamination'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="special_work_list">
+                                        <table class="table table-condensed borderless">
+                                          <thead>  
+                                            <tr><th>Special Work</th></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                                              <?php
+                                                for ($i = 0; $i < count($special_wrk); $i++) {
+                                                  if ($i%3 == 0) {
+                                                    echo '</tr><tr><td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$special_wrk[$i]['special_wrk'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$special_wrk[$i]['special_wrk'] 
+                                                          .'</label></td>';
+                                                  } else {
+                                                    echo '<td style="border:none">'
+                                                          .'<input type="radio" name="section" value="'.$special_wrk[$i]['special_wrk'].'" disabled>'
+                                                          .'<label style="padding-left:10px">'.$special_wrk[$i]['special_wrk'] 
+                                                          .'</label></td>';
+                                                  }
+                                                }
+                                                echo '</tr></tbody></table>';
+                                              ?>
+                                              
+                                            </tr>
+                                          </thead>
+                                        </table>
                                        </div>
                                        
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

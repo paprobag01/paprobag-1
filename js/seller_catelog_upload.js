@@ -1,30 +1,30 @@
 $(document).ready(function() {
 	//load sections
-    $.ajax({
-        dataType: 'json',
-        ContentType: "application/json",
-        url: base_url+"/filters/get_sections",
-        success: function(data) {
-        	var options = '<table class="table table-condensed borderless">'
-						    +'<thead>'
-						    +'  <tr><th>Section</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
-            for (var i = 0; i < data.length; i++) {
-            	if (i%3 == 0) {
-            		options += '</tr><tr><td style="border:none">'
-	                        +'<input type="radio" name="section" value="'+data[i].section_id+'"><label style="padding-left:10px">'+data[i].section 
-	                        +'</label></td>';
-            	} else {
-	            	options += '<td style="border:none">'
-	                        +'<input type="radio" name="section" value="'+data[i].section_id+'"><label style="padding-left:10px">'+data[i].section 
-	                        +'</label></td>';
-            	}
-            }
-            options += '</tr></tbody></table>';
-            $('div#section_list').html(options);
-        },
-    });
+    // $.ajax({
+    //     dataType: 'json',
+    //     ContentType: "application/json",
+    //     url: base_url+"/filters/get_sections",
+    //     success: function(data) {
+    //     	var options = '<table class="table table-condensed borderless">'
+				// 		    +'<thead>'
+				// 		    +'  <tr><th>Section</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
+    //         for (var i = 0; i < data.length; i++) {
+    //         	if (i%3 == 0) {
+    //         		options += '</tr><tr><td style="border:none">'
+	   //                      +'<input type="radio" name="section" value="'+data[i].section_id+'"><label style="padding-left:10px">'+data[i].section 
+	   //                      +'</label></td>';
+    //         	} else {
+	   //          	options += '<td style="border:none">'
+	   //                      +'<input type="radio" name="section" value="'+data[i].section_id+'"><label style="padding-left:10px">'+data[i].section 
+	   //                      +'</label></td>';
+    //         	}
+    //         }
+    //         options += '</tr></tbody></table>';
+    //         $('div#section_list').html(options);
+    //     },
+    // });
 	//load categories
-	$('body').on('change', 'input[name=section]:radio', function() {
+	$('body').on('change', 'input[type=radio][name=section]', function() {		
 		var section_id = this.value;
 		var data = {
 			'section_id': section_id
@@ -36,6 +36,7 @@ $(document).ready(function() {
 	        url: base_url+"/filters/get_categories",
 	        data: data,
 	        success: function(data) { 
+	        	console.log(data);
 	        	var options = '<table class="table table-condensed borderless">'
 							    +'<thead>'
 							    +'  <tr><th>Category</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';

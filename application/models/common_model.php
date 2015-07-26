@@ -14,6 +14,20 @@ class Common_model extends CI_Model
 		}
 	}
 
+	function getdistinct_value($table,$column)
+	{
+		$sql = $this->db->query("SELECT DISTINCT $table.$column FROM $table");
+		$result = $sql->result_array();
+		return $result;
+	}
+
+	function getdistinct_id($table,$column1,$column2)
+	{
+		$sql = $this->db->query("SELECT DISTINCT $table.$column1,$table.$column2 FROM $table");
+		$result = $sql->result_array();
+		return $result;
+	}
+
 	function header_cart_details()
 	{
 		if($this->session->userdata('cart_id'))
