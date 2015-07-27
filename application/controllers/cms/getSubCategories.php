@@ -7,7 +7,7 @@ class GetSubCategories extends CI_Controller
 				   redirect("cms/login");
 				}
 				
-               $this->load->model('cms/getSubCatAjax');
+               $this->load->model('cms/getSubCatAjax');              
 			}
 	function index()
 	{
@@ -31,7 +31,7 @@ class GetSubCategories extends CI_Controller
 	{
 		if (isset($_POST) && isset($_POST['categories'])) {
             $category_id = $_POST['categories'];
-			
+
             $arrSubcat = $this->getSubCatAjax->get_subcategories($category_id);
 			//$arrFilter = $this->getSubCatAjax->get_filters($category_id);
            $res='<label class="control-label">Category</label><div class="controls"><select name="prod_sub_categories" onchange="getFilterVals()" id="prod_sub_categories">';
@@ -74,7 +74,7 @@ class GetSubCategories extends CI_Controller
 	{
 		if(isset($_POST) && isset($_POST['filters'])) 
 		{
-          echo  $category_id = $_POST['filters'];
+          $category_id = $_POST['filters'];
 
          $arrSubcat = $this->getSubCatAjax->get_GSM($category_id);
          
@@ -82,9 +82,10 @@ class GetSubCategories extends CI_Controller
 				$res='<label class="control-label">GSM Details</label><div class="controls" id="GSM_id"><select name="GSM_id"  id="GSM_id">';
 		   foreach($arrSubcat as $row)
 		   {
-			   
-			   $res=$res.'<option value="'.$row['material_id'].'">'.$row['GSM_name'].'</option>';
-			  
+			   $GSM_array=explode(',', $row['GSM_name']);			   
+			   foreach ($GSM_array as $row1) {
+			   	$res=$res.'<option value="'.$row['material_id'].'">'.$row1.'</option>';			   	  
+			   }	
 			  
 		   }
 		 
@@ -162,26 +163,24 @@ class GetSubCategories extends CI_Controller
 
 	function sizedropdown()
 	{
-		//echo "Welcome";
-		if(isset($_POST) && isset($_POST['filters'])) 
-		{
-          echo  $category_id = $_POST['filters'];
-			
-			$arrFilterVal = $this->getSubCatAjax->get_size_details($category_id);
-          $res='<label class="control-label">Size</label><div class="controls"><select name="sub_categories"  id="sub_categories">';
-		   
+		$style_id = $_POST['style_id'];
+		$arrFilterVal = $this->getSubCatAjax->get_size_details($style_id);
+
+          $res='<label class="control-label">Size</label><div class="controls" id ="size_div"><select name="size_id"  id="size_id">';
 		  
            foreach($arrFilterVal as $row)
 		   {
-			   
-			   $res=$res.'<option value="'.$row['style_id'].'">'.$row['size'].'</option>';
-			  
+		   	
+			   $style_array=explode(',', $row['size']);			   
+			   foreach ($style_array as $row1) {
+			   	$res=$res.'<option value="'.$row['style_id'].'">'.$row1.'</option>';			   	  
+			   }		   
 			  
 		   }
 		 
 		   $finres=$res.'</select></div>';
-		   echo $finres;
-		}
+		   echo json_encode($finres);
+		
 	}
 	
 	function filterdropdown()
@@ -266,7 +265,7 @@ class GetSubCategories extends CI_Controller
 		   echo $finres;
 		    echo "<br>";
 
-		   $res='<label class="control-label">Style Details</label><div class="controls"><select name="style_id" onchange="getsize_data()" id="style_id">';
+		   $res='<label class="control-label">Style Details</label><div class="controls"><select name="style_id" onclick="getsizedata()"  id="style_id">';
 		   foreach($style_details as $row)
 		   {
 			   
@@ -280,6 +279,7 @@ class GetSubCategories extends CI_Controller
 		   
 		}
 	}
+
 	function style_name()
 	{
 		//echo "Welcome";
@@ -310,3 +310,4 @@ class GetSubCategories extends CI_Controller
 	
 }
 ?>
+

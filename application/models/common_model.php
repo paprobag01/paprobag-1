@@ -23,7 +23,7 @@ class Common_model extends CI_Model
 
 	function getdistinct_id($table,$column1,$column2)
 	{
-		$sql = $this->db->query("SELECT DISTINCT $table.$column1,$table.$column2 FROM $table");
+		$sql = $this->db->query("SELECT DISTINCT $table.$column2,$table.$column1 FROM $table");
 		$result = $sql->result_array();
 		return $result;
 	}

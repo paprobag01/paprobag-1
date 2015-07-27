@@ -120,30 +120,33 @@
 								  
                               </div>
                            </div>
+
                            <script type="text/javascript">
-                           	function getsize_details(str) {
-				                  var xmlhttp;
-				                  if (str.length==0) { 
-				                    document.getElementById("size_details").innerHTML="";
-				                    document.getElementById("size_details").style.border="0px";
-				                    return;
-				                  }
-				                  if (window.XMLHttpRequest) {
-				                    // code for IE7+, Firefox, Chrome, Opera, Safari
-				                    xmlhttp=new XMLHttpRequest();
-				                  } else {  // code for IE6, IE5
-				                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				                  }
-				                  xmlhttp.onreadystatechange=function() {
-				                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-				                      document.getElementById("size_details").innerHTML=xmlhttp.responseText;
-				                      document.getElementById("size_details").style.border="0px solid #A5ACB2";
-				                    }
-				                  }
-				                  xmlhttp.open("GET","<?php echo base_url();?>getSubCategories/sizedropdown/?size_id="+str,true);
-				                  xmlhttp.send();
-				                }
-                           </script>
+
+                           function getsizedata()
+										{
+								var style_id = $('#style_id').val();
+
+								var data = {
+									'style_id': style_id
+								};
+								console.log(data);
+								$.ajax({
+						            type: 'POST',
+							        dataType: 'json',
+							        ContentType: "application/json",
+							        url:"<?php echo base_url();?>cms/getSubCategories/sizedropdown",
+							        data: data,
+							        success: function(data) { 
+							        	
+							           // $('#size_details').html(data);
+							            $("#size_details").fadeIn();
+										$('#size_details').html(data);
+							        },
+							    });
+							}
+</script>
+
 						   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 									<script type="text/javascript">
 										function getmaterial()
@@ -171,30 +174,6 @@
 								  
 								  		}
 
-								  		function getsize_data()
-										{										
-										  var filters = $('#style_id').val();											 
-										  
-											console.log(filters);
-											$.ajax({   
-											   url: "<?php echo base_url()?>cms/getSubCategories/sizedropdown",
-												async: false,
-												type: "POST", 
-												data: {"filters":filters},
-												dataType: "html",
-												
-												success: function(data) {
-													var dt=data.split("|");
-													
-													$("#size_details").fadeIn();
-													$('#size_details').html(data);
-													
-													
-													
-												}
-											})
-								  
-								  		}
 								  		
 									</script>
 						   

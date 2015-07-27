@@ -307,6 +307,9 @@ $(document).ready(function() {
 	    });
 	});
 
+
+                           	
+
 	// load no of colors onchange of print
 	$('#print_list').change(function(){
 		var print_id = this.value;

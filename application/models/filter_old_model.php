@@ -5,23 +5,23 @@ class Filter_model extends CI_Model
 		function save_material()
 		{
 			//$CI =& get_instance();
-		// $data1['material_id'] = $this->input->post('material_id');
-		// $data1['section_id'] = $this->input->post('sec_id');
-		// $data1['cat_id'] = $this->input->post('prod_sub_categories');
-		// $data1['sub_cat_id'] = $this->input->post('sub_categories');
-		// $data1['material'] = $this->input->post('material_name');
+		$data1['material_id'] = $this->input->post('material_id');
+		$data1['section_id'] = $this->input->post('sec_id');
+		$data1['cat_id'] = $this->input->post('prod_sub_categories');
+		$data1['sub_cat_id'] = $this->input->post('sub_categories');
+		$data1['material'] = $this->input->post('material_name');
 
 		//$data1['material_name'] = $this->input->post('material_name');
 
 		//$material['material_name'] = $this->input->post('material_name');
 		$material['material'] = $this->input->post('material_name');
-		// $material['material_id'] = $this->input->post('material_id');	
+		$material['material_id'] = $this->input->post('material_id');	
 		
 		//$this->db->where('filter_id', $id);
-		// $this->db->insert('material',$material);
+		$this->db->insert('material',$material);
 		
-		// $rst = $this->db->insert_id();
-		$data['material_id'] = count($this->max_id_value('filters','material_id'));
+		$rst = $this->db->insert_id();
+		$data['material_id'] = count($this->max_id_value('material','material_id'))-1;
 
 		if($this->input->post('sub_subcat_id')!=null)
 		{
@@ -44,7 +44,7 @@ class Filter_model extends CI_Model
 		
 		$this->db->insert('filters',$material_data);
 
-		//$filter_id=$this->input->post('filter_id');
+		$filter_id=$this->input->post('filter_id');
 		
 		return 1;
 	
