@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2015 at 03:46 PM
+-- Generation Time: Jul 27, 2015 at 03:37 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -173,26 +173,6 @@ INSERT INTO `category` (`cat_id`, `cat_meta_title`, `cat_meta_keywords`, `cat_me
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_table`
---
-
-CREATE TABLE IF NOT EXISTS `category_table` (
-  `id` int(11) NOT NULL,
-  `category` varchar(110) NOT NULL,
-  `category_id` varchar(5) NOT NULL,
-  `section_ids` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `category_table`
---
-
-INSERT INTO `category_table` (`id`, `category`, `category_id`, `section_ids`) VALUES
-(1, 'paperbags', 'pab', '1');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `customizations`
 --
 
@@ -260,7 +240,6 @@ CREATE TABLE IF NOT EXISTS `filters` (
   `cat_id` varchar(100) DEFAULT NULL,
   `sub_cat_id` varchar(100) DEFAULT NULL,
   `GSM_name` varchar(100) NOT NULL,
-  `wcc` int(11) NOT NULL,
   `style_id` int(11) NOT NULL,
   `handle` varchar(50) NOT NULL,
   `print` varchar(50) NOT NULL,
@@ -274,98 +253,10 @@ CREATE TABLE IF NOT EXISTS `filters` (
 -- Dumping data for table `filters`
 --
 
-INSERT INTO `filters` (`material_id`, `material_name`, `section_id`, `cat_id`, `sub_cat_id`, `GSM_name`, `wcc`, `style_id`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `sub_subcat_id`) VALUES
-(0, 'Recycled Brown Kraft Pape', 0, '0', '0', '100,200', 0, 0, '0', '0', 0, '0', '0', '0'),
-(1, 'Recycled White Kraft Paper', 0, '0', '0', '', 0, 0, '', '', 0, '', '', '0'),
-(2, 'Recycled Color Kraft Paper', 0, '0', '0', '', 0, 0, '', '', 0, '', '', '0'),
-(3, 'Glossy Paper', 0, '0', '0', '', 0, 0, '', '', 0, '', '', '0'),
-(4, 'Gray Duplex Paper', 0, '0', '0', '', 0, 0, '', '', 0, '', '', '0'),
-(5, 'White duplex Paper', 0, '0', '0', '', 0, 0, '', '', 0, '', '', '0'),
-(6, 'Art Duplex Paper', 0, '0', '0', '', 0, 0, '', '', 0, '', '', '0'),
-(7, 'Recycled Brown Kraft Paper', 0, '0', '2', '', 0, 1, '', '', 0, '', '', '0'),
-(8, 'Recycled Color Kraft Paper', 0, '0', '2', '', 0, 1, '', '', 0, '', '', '0'),
-(9, 'Vergine Brown Paper', 0, '0', '4', '', 0, 0, '', '', 0, '', '', '0'),
-(10, 'Vergine White Paper', 0, '0', '4', '', 0, 0, '', '', 0, '', '', '0'),
-(11, 'Recycled Brown Kraft Paper', 0, '0', '4', '', 0, 0, '', '', 0, '', '', '0'),
-(12, 'Recycled White Kraft Paper', 0, '0', '4', '', 0, 0, '', '', 0, '', '', '0'),
-(13, 'Recycled Color Kraft Paper', 0, '0', '4', '', 0, 0, '', '', 0, '', '', '0'),
-(14, 'Vergine Brown Paper', 0, '0', '3', '', 0, 0, '', '', 0, '', '', '0'),
-(15, 'Vergine White Paper', 0, '0', '3', '', 0, 0, '', '', 0, '', '', '0'),
-(16, 'Recycled Brown Kraft Paper', 0, '0', '3', '', 0, 0, '', '', 0, '', '', '0'),
-(17, 'Recycled White Kraft Paper', 0, '0', '3', '', 0, 0, '', '', 0, '', '', '0'),
-(18, 'Recycled Color Kraft Paper', 0, '0', '3', '', 0, 0, '', '', 0, '', '', '0'),
-(19, 'Recycled Brown Kraft Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(20, 'Recycled White Kraft Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(21, 'Recycled White Kraft Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(22, 'Recycled Color Kraft Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(23, 'Glossy Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(24, 'Gray Duplex Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(25, 'White duplex Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(26, 'Art Duplex Paper', 0, '0', '6', '', 0, 0, '', '', 0, '', '', '0'),
-(27, 'Recycled Brown Kraft Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(28, 'Recycled White Kraft Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(29, 'Recycled Color Kraft Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(30, 'Glossy Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(31, 'Gray Duplex Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(32, 'White duplex Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(33, 'Art Duplex Paper', 0, '0', '8', '', 0, 0, '', '', 0, '', '', '0'),
-(34, 'Recycled Brown Kraft Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(35, 'Recycled White Kraft Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(36, 'Recycled Color Kraft Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(37, 'Glossy Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(38, 'Gray Duplex Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(39, 'White duplex Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(40, 'Art Duplex Paper', 0, '0', '5', '', 0, 0, '', '', 0, '', '', '0'),
-(41, 'Recycle Brown Craft Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(42, 'Recycled White Kraft Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(43, 'Recycled Color Kraft Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(44, 'Glossy Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(45, 'Gray Duplex Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(46, 'White duplex Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(47, 'Art Duplex Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(48, 'Art Duplex Paper', 0, '0', '7', '', 0, 3, '', '', 0, '', '', '0'),
-(49, 'Recycled Brown Craft Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0'),
-(50, 'Recycled White Kraft Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0'),
-(51, 'Recycled Color Kraft Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0'),
-(52, 'Glossy Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0'),
-(53, 'Gray Duplex Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0'),
-(54, 'White duplex Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0'),
-(55, 'Art Duplex Paper', 0, '0', '9', '', 0, 0, '', '', 0, '', '', '0');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `filter_detail`
---
-
-CREATE TABLE IF NOT EXISTS `filter_detail` (
-  `id` int(11) NOT NULL,
-  `sub_cat_id` int(11) NOT NULL,
-  `material` tinyint(4) NOT NULL,
-  `material_IDs` varchar(100) NOT NULL,
-  `GSM` tinyint(4) NOT NULL,
-  `GSM_IDs` varchar(100) NOT NULL,
-  `size` tinyint(4) NOT NULL,
-  `size_IDs` varchar(100) NOT NULL,
-  `style` tinyint(4) NOT NULL,
-  `style_IDs` varchar(100) NOT NULL,
-  `handle` tinyint(4) NOT NULL,
-  `handle_IDs` varchar(100) NOT NULL,
-  `print` tinyint(4) NOT NULL,
-  `print_IDs` varchar(100) NOT NULL,
-  `lamination` tinyint(4) NOT NULL,
-  `lamination_IDs` varchar(100) NOT NULL,
-  `special_wrok` tinyint(4) NOT NULL,
-  `special_work_IDs` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `filter_detail`
---
-
-INSERT INTO `filter_detail` (`id`, `sub_cat_id`, `material`, `material_IDs`, `GSM`, `GSM_IDs`, `size`, `size_IDs`, `style`, `style_IDs`, `handle`, `handle_IDs`, `print`, `print_IDs`, `lamination`, `lamination_IDs`, `special_wrok`, `special_work_IDs`) VALUES
-(1, 1, 1, '1', 1, '1', 1, '1', 1, '1', 1, '1', 1, '1', 1, '1', 1, '1'),
-(2, 2, 1, '2', 1, '2', 1, '2', 1, '2', 1, '2', 1, '2', 1, '2', 1, '2');
+INSERT INTO `filters` (`material_id`, `material_name`, `section_id`, `cat_id`, `sub_cat_id`, `GSM_name`, `style_id`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `sub_subcat_id`) VALUES
+(0, 'Recycled Brown Kraft Paper', 0, '0', '0', '', 0, '', '', 0, '', '', 'Not available'),
+(1, 'Recycled white Kraft Paper', 0, '0', '0', '', 0, '', '', 0, '', '', 'Not available'),
+(2, 'Recycled Color Kraft Paper', 1, '5', '31', '', 0, '', '', 0, '', '', 'Not available');
 
 -- --------------------------------------------------------
 
@@ -544,71 +435,70 @@ INSERT INTO `login` (`user_id`, `first_name`, `last_name`, `name`, `password`, `
 
 CREATE TABLE IF NOT EXISTS `material` (
   `material_id` int(11) NOT NULL,
-  `material` varchar(100) NOT NULL,
-  `sub_category_ids` varchar(60) NOT NULL
+  `material` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `material`
 --
 
-INSERT INTO `material` (`material_id`, `material`, `sub_category_ids`) VALUES
-(0, 'Recycled Brown Kraft Pape', '0'),
-(1, 'Recycled White Kraft Paper', ''),
-(2, 'Recycled Color Kraft Paper', ''),
-(3, 'Glossy Paper', ''),
-(4, 'Gray Duplex Paper', ''),
-(5, 'White duplex Paper', ''),
-(6, 'Art Duplex Paper', ''),
-(7, 'Recycled Brown Kraft Paper', ''),
-(8, 'Recycled Color Kraft Paper', ''),
-(9, 'Vergine Brown Paper', ''),
-(10, 'Vergine White Paper', ''),
-(11, 'Recycled Brown Kraft Paper', ''),
-(12, 'Recycled White Kraft Paper', ''),
-(13, 'Recycled Color Kraft Paper', ''),
-(14, 'Vergine Brown Paper', ''),
-(15, 'Vergine White Paper', ''),
-(16, 'Recycled Brown Kraft Paper', ''),
-(17, 'Recycled White Kraft Paper', ''),
-(18, 'Recycled Color Kraft Paper', ''),
-(19, 'Recycled Brown Kraft Paper', ''),
-(20, 'Recycled White Kraft Paper', ''),
-(21, 'Recycled White Kraft Paper', ''),
-(22, 'Recycled Color Kraft Paper', ''),
-(23, 'Glossy Paper', ''),
-(24, 'Gray Duplex Paper', ''),
-(25, 'White duplex Paper', ''),
-(26, 'Art Duplex Paper', ''),
-(27, 'Recycled Brown Kraft Paper', ''),
-(28, 'Recycled White Kraft Paper', ''),
-(29, 'Recycled Color Kraft Paper', ''),
-(30, 'Glossy Paper', ''),
-(31, 'Gray Duplex Paper', ''),
-(32, 'White duplex Paper', ''),
-(33, 'Art Duplex Paper', ''),
-(34, 'Recycled Brown Kraft Paper', ''),
-(35, 'Recycled White Kraft Paper', ''),
-(36, 'Recycled Color Kraft Paper', ''),
-(37, 'Glossy Paper', ''),
-(38, 'Gray Duplex Paper', ''),
-(39, 'White duplex Paper', ''),
-(40, 'Art Duplex Paper', ''),
-(41, 'Recycle Brown Craft Paper', ''),
-(42, 'Recycled White Kraft Paper', ''),
-(43, 'Recycled Color Kraft Paper', ''),
-(44, 'Glossy Paper', ''),
-(45, 'Gray Duplex Paper', ''),
-(46, 'White duplex Paper', ''),
-(47, 'Art Duplex Paper', ''),
-(47, 'Art Duplex Paper', ''),
-(49, 'Recycled Brown Craft Paper', ''),
-(50, 'Recycled White Kraft Paper', ''),
-(51, 'Recycled Color Kraft Paper', ''),
-(52, 'Glossy Paper', ''),
-(53, 'Gray Duplex Paper', ''),
-(54, 'White duplex Paper', ''),
-(55, 'Art Duplex Paper', '');
+INSERT INTO `material` (`material_id`, `material`) VALUES
+(0, 'Recycled Brown Kraft Pape'),
+(1, 'Recycled White Kraft Paper'),
+(2, 'Recycled Color Kraft Paper'),
+(3, 'Glossy Paper'),
+(4, 'Gray Duplex Paper'),
+(5, 'White duplex Paper'),
+(6, 'Art Duplex Paper'),
+(7, 'Recycled Brown Kraft Paper'),
+(8, 'Recycled Color Kraft Paper'),
+(9, 'Vergine Brown Paper'),
+(10, 'Vergine White Paper'),
+(11, 'Recycled Brown Kraft Paper'),
+(12, 'Recycled White Kraft Paper'),
+(13, 'Recycled Color Kraft Paper'),
+(14, 'Vergine Brown Paper'),
+(15, 'Vergine White Paper'),
+(16, 'Recycled Brown Kraft Paper'),
+(17, 'Recycled White Kraft Paper'),
+(18, 'Recycled Color Kraft Paper'),
+(19, 'Recycled Brown Kraft Paper'),
+(20, 'Recycled White Kraft Paper'),
+(21, 'Recycled White Kraft Paper'),
+(22, 'Recycled Color Kraft Paper'),
+(23, 'Glossy Paper'),
+(24, 'Gray Duplex Paper'),
+(25, 'White duplex Paper'),
+(26, 'Art Duplex Paper'),
+(27, 'Recycled Brown Kraft Paper'),
+(28, 'Recycled White Kraft Paper'),
+(29, 'Recycled Color Kraft Paper'),
+(30, 'Glossy Paper'),
+(31, 'Gray Duplex Paper'),
+(32, 'White duplex Paper'),
+(33, 'Art Duplex Paper'),
+(34, 'Recycled Brown Kraft Paper'),
+(35, 'Recycled White Kraft Paper'),
+(36, 'Recycled Color Kraft Paper'),
+(37, 'Glossy Paper'),
+(38, 'Gray Duplex Paper'),
+(39, 'White duplex Paper'),
+(40, 'Art Duplex Paper'),
+(41, 'Recycle Brown Craft Paper'),
+(42, 'Recycled White Kraft Paper'),
+(43, 'Recycled Color Kraft Paper'),
+(44, 'Glossy Paper'),
+(45, 'Gray Duplex Paper'),
+(46, 'White duplex Paper'),
+(47, 'Art Duplex Paper'),
+(47, 'Art Duplex Paper'),
+(49, 'Recycled Brown Craft Paper'),
+(50, 'Recycled White Kraft Paper'),
+(51, 'Recycled Color Kraft Paper'),
+(52, 'Glossy Paper'),
+(53, 'Gray Duplex Paper'),
+(54, 'White duplex Paper'),
+(55, 'Art Duplex Paper');
 
 -- --------------------------------------------------------
 
@@ -771,27 +661,6 @@ INSERT INTO `roles` (`role_id`, `role`, `role_rights`, `active`) VALUES
 (3, 'Staff', 'on,on,on,off', 'yes'),
 (4, 'Agent', 'on,on,off,off', 'yes'),
 (5, 'Seller', 'on,on,off,off', 'yes');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `section`
---
-
-CREATE TABLE IF NOT EXISTS `section` (
-  `id` int(11) NOT NULL,
-  `section` varchar(50) NOT NULL,
-  `section_id` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `section`
---
-
-INSERT INTO `section` (`id`, `section`, `section_id`) VALUES
-(1, 'customizable_products', '1'),
-(2, 'ready to print', '2'),
-(3, 'ready to deliever', '3');
 
 -- --------------------------------------------------------
 
@@ -1043,27 +912,6 @@ INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subcategory_table`
---
-
-CREATE TABLE IF NOT EXISTS `subcategory_table` (
-  `id` int(11) NOT NULL,
-  `subcategory` varchar(60) NOT NULL,
-  `subcategory_id` varchar(10) NOT NULL,
-  `category_ids` varchar(30) NOT NULL,
-  `section_ids` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `subcategory_table`
---
-
-INSERT INTO `subcategory_table` (`id`, `subcategory`, `subcategory_id`, `category_ids`, `section_ids`) VALUES
-(1, 'shopping carry bags', 'scb', 'pab', '1');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sub_subcategories`
 --
 
@@ -1175,12 +1023,6 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `category_table`
---
-ALTER TABLE `category_table`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `customizations`
 --
 ALTER TABLE `customizations`
@@ -1191,12 +1033,6 @@ ALTER TABLE `customizations`
 --
 ALTER TABLE `customize_type`
   ADD PRIMARY KEY (`custom_cat_id`);
-
---
--- Indexes for table `filter_detail`
---
-ALTER TABLE `filter_detail`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `filter_details`
@@ -1271,12 +1107,6 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`role_id`);
 
 --
--- Indexes for table `section`
---
-ALTER TABLE `section`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `sections`
 --
 ALTER TABLE `sections`
@@ -1319,12 +1149,6 @@ ALTER TABLE `subcategory`
   ADD PRIMARY KEY (`sub_cat_id`);
 
 --
--- Indexes for table `subcategory_table`
---
-ALTER TABLE `subcategory_table`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `sub_subcategories`
 --
 ALTER TABLE `sub_subcategories`
@@ -1350,11 +1174,6 @@ ALTER TABLE `cart_product`
 ALTER TABLE `categories`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
 --
--- AUTO_INCREMENT for table `category_table`
---
-ALTER TABLE `category_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
 -- AUTO_INCREMENT for table `customizations`
 --
 ALTER TABLE `customizations`
@@ -1364,11 +1183,6 @@ ALTER TABLE `customizations`
 --
 ALTER TABLE `customize_type`
   MODIFY `custom_cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
---
--- AUTO_INCREMENT for table `filter_detail`
---
-ALTER TABLE `filter_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `filter_details`
 --
@@ -1430,11 +1244,6 @@ ALTER TABLE `products`
 ALTER TABLE `roles`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `section`
---
-ALTER TABLE `section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
@@ -1458,11 +1267,6 @@ ALTER TABLE `special_work`
 -- AUTO_INCREMENT for table `style`
 --
 ALTER TABLE `style`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `subcategory_table`
---
-ALTER TABLE `subcategory_table`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sub_subcategories`
