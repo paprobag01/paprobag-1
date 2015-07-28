@@ -229,6 +229,15 @@ class Login extends CI_Controller{
 		$this->EmailModel->sendVerificatinEmail($email,$verificationtext);
 	}
 
+	function sendoredrEmail(){  		
+		$email = $_POST['email'];
+		
+		$data['Product Name'] = 'Product Name : Paper Bag';
+		$this->EmailModel->sendoredr_By_Email($email,$data);
+		
+		
+	}
+
 	function logout()
 	{
 		session_start();

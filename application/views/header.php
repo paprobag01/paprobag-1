@@ -35,6 +35,43 @@
 <div id="header">
   <div class="header_top">
     <div class="container">
+      <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+       
+      <div class="modal fade" id="modal-container-70333" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+               
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                ×
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                Modal title
+              </h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+               
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Close
+              </button> 
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
       <div class="top_menu">
         <ul>
           <li><a href="<?php echo base_url()?>seller_page">Sale With GreenHandle</a></li>         
@@ -42,7 +79,7 @@
       </div>
     <div class="top_menu">
         <ul>
-          <li align="center"><a href="#">Free Shipping across India</a></li>         
+          <li align="center"><a id="modal-70333" href="#modal-container-70333" role="button" class="btn" data-toggle="modal">Free Shipping Across India / Track Order</a></li>         
         </ul>
       </div>
       <div class="hed_right">

@@ -1,3 +1,45 @@
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+        window.jQuery || document.write('<script src="<?php echo base_url();?>js/vendor/jquery-1.9.1.min.js"><\/script>')
+        </script>
+        <script src="<?php echo base_url();?>js/jQuery.print.js"></script>
+        <script type='text/javascript'>
+            $(function() {
+            $("#printable").find('.print').on('click', function() {
+            $.print("#printable");
+            });
+            });
+        </script> 
+         <script type="text/javascript">                           
+                                jQuery(function () {
+                                    jQuery(".email_order").click(function () {
+                                        var email = $(this).attr('id');                                       
+                                        var data = {
+                                            'email': email
+                                        };
+                                        console.log(data);
+                                        $.ajax({
+                                            type: 'POST',
+                                            dataType: 'json',
+                                            ContentType: "application/json",
+                                            url:"<?php echo base_url();?>login/sendoredrEmail",
+                                            data: data,
+                                            success: function(data) { 
+                                                
+                                               // $('#size_details').html(data);
+                                                $("#email_success").fadeIn();
+                                                $('#email_success').html(data);
+                                            },
+                                        });
+                                    });
+                                });
+
+                            jQuery(function () {
+                                    jQuery(".email_order").click(function () {
+                                        $("#loading2").show();
+                                    });
+                                });
+        </script>
     <div id="content">
         <div class="container">
             <div class="title clearfix">
@@ -6,7 +48,8 @@
                     <a href="#" class="rss"><span class="fa fa-rss"></span>Rss</a>
                 </div>
             </div>
-            <div class="blog_c ideas-hover">
+            
+            <div class="blog_c ideas-hover" id="printable">
                 <div class="row">
                     <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="width: 93%;padding-left: 107px;">
                         <div class="blog_blk red5 clearfix animated" data-animation="rollIn">
@@ -22,41 +65,87 @@
                           
                                 <h2>Order Details</h2><br>
                             <div class="container-fluid">
-    
-    <div class="row">
-        <div class="col-md-6">
-             
-            <address>
-                 <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
-        </div>
-        <div class="col-md-6">
-             
-            <address>
-                 <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
+                            <div class="row">                                
+                                 <div class="col-md-12" id="email_success">
+                                    
+                                    <div id="loading2" style="display:none;"><div class="alert alert-success" role="alert"><img src="media/loading.gif" alt="" />Sending...</div>
+                                </div>
+                                 </div>
+                             </div>
+
+       
+     <div class="row">
+        <div class="col-md-12">
+             <table class="table table-hover table-bordered">
+                <thead style="background-color: #EBEBEB;">
+                    <tr>
+                        <th>Order (Order ID: 23459804) - In Progress</th>
+                        <th>Order (Order ID: 23459804) - In Progress</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                         <td>
+                          <address>
+                             <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>                            
+                         </td>
+                         <td>
+                           <address>
+                                 <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
+                            </address>
+                         </td>
+                        
+                    </tr>
+                   
+                </tbody>
+            </table>
         </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-4">
-            <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
-        </div>
-        <div class="col-md-4">
-            <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
-        </div>
-        <div class="col-md-4">
-            <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
+        <div class="col-md-12">
+             <table class="table table-hover table-bordered">
+                <thead style="background-color: #EBEBEB;">
+                    <tr>
+                        <th>Print Order</th>
+                        <th>Email Oreder</th>
+                        <th>Contact Us</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                         <td>
+                         <div class="col-md-4" style="padding-left: 89px;">
+                            <img alt="Bootstrap Image Preview" src="media/blog/print.jpg" class="print"/>
+                        </div>                            
+                         </td>
+                         <td>
+                           <div class="col-md-4">
+                                <img alt="Bootstrap Image Preview" src="media/blog/email.png" id="<?php echo "help@greenhandle.in";?>" class="email_order" value="<?php echo "GOOD Work";?>" style="height: 115px;padding-left: 44px;"/>
+                            </div>
+                         </td> 
+                         <td>
+                           <div class="col-md-4">
+                                <img alt="Bootstrap Image Preview" src="media/blog/contact_us.jpg" width="100px" height="100px"/>
+                            </div>
+                         </td>                        
+                    </tr>
+                   
+                </tbody>
+            </table>
         </div>
     </div>
     <hr>
+   <br>
+    <br>
     <div class="row">
         <!-- <h5 style="padding-left: 19px;">Product Details</h5><br> -->
         <div class="col-md-12">
              <table class="table table-hover table-bordered">
                 <thead style="background-color: #EBEBEB;">
                     <tr>
-                        <th>Product</th>
+                        <th style="width: 440px;">Product</th>
                         <th>Quantity</th>
                         <th>Price</th>
                         <th>Shipping Charges</th>
