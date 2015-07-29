@@ -6,6 +6,8 @@
 	background: url(../images/colorpicker_background.png);
 	font-family: Arial, Helvetica, sans-serif;
 	display: none;
+	margin-top: 446px; 
+    margin-left: 287px;
 }
 .colorpicker_color {
 	width: 150px;
@@ -80,7 +82,7 @@
 	text-align: right;
 	margin: 0;
 	padding: 0;
-	height: 11px;
+	height: 13px;
 }
 .colorpicker_hex {
 	position: absolute;

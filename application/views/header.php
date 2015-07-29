@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+'<!DOCTYPE HTML>
 <html class="noIE">
 
 <!-- Mirrored from templines.com/demo/html/shoptime-html/cooncook/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2015 06:10:27 GMT -->
@@ -9,6 +9,8 @@
 
 <!--Master css-->
 <link rel="stylesheet" href="<?php echo base_url('css/master.css')?>">
+ <link rel="stylesheet" href="<?php echo base_url('css/colorpicker.css')?>" type="text/css" />
+<link rel="stylesheet" media="screen" type="text/css" href="<?php echo base_url('css/layout.css')?>" /> 
 <script type="text/javascript" src="<?php echo base_url('js/jquery.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/jquery.icheck.js')?>"></script>

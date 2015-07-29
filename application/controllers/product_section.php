@@ -84,4 +84,3 @@ class Product_section extends CI_Controller{
 				$this->load->view('footer');
 			}
 }
-?>

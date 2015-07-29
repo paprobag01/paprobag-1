@@ -51,7 +51,7 @@
             
             <div class="blog_c ideas-hover" id="printable">
                 <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="width: 93%;padding-left: 107px;">
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="width: 93%;padding-left: 107px;">
                         <div class="blog_blk red5 clearfix animated" data-animation="rollIn">
                         
                         
@@ -75,7 +75,7 @@
 
        
      <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
              <table class="table table-hover table-bordered">
                 <thead style="background-color: #EBEBEB;">
                     <tr>
@@ -104,7 +104,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
              <table class="table table-hover table-bordered">
                 <thead style="background-color: #EBEBEB;">
                     <tr>
@@ -141,8 +141,8 @@
     <br>
     <div class="row">
         <!-- <h5 style="padding-left: 19px;">Product Details</h5><br> -->
-        <div class="col-md-12">
-             <table class="table table-hover table-bordered">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+             <table class="table table-hover table-bordered" style="width: 860px;">
                 <thead style="background-color: #EBEBEB;">
                     <tr>
                         <th style="width: 440px;">Product</th>
@@ -202,7 +202,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
              <table class="table table-hover table-bordered">
                 <thead style="background-color: #EBEBEB;">
                     <tr>
