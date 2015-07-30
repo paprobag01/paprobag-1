@@ -119,24 +119,21 @@ n<div class="flexslider home-slider">
             <div >
               <ul class="bxcarousel" >             
               <?php foreach($ready_to_print as $row){?> 
-              <li>                            
+               <li>
                   <div class="main_box">
-                    <div class="desc">
-                      <h5 align="center"><?php echo $row['prod_name']; ?></h5>
-                      <p align="center"><?php echo $row['prod_short_description']; ?></p>                      
-                    </div>
                     <div class="box_1"> <img alt="alt"  src="<?php echo base_url().$row['prod_image'] ?>" width="259" height="200">
                     
                     
                     <div class="overlay"> <a class="btn_c cart_btn_1" href="#">Add to cart</a> <a class="btn_c info_btn" href="product.html">More info</a> </div>
                     
                     </div>
-                    <div class="desc">                      
-                      <p>Kitchen utensils</p>
-                      <div class="price">$1.50</div>
+                    <div class="desc">
+                      <h5><?php echo $row['prod_name']; ?></h5>
+                      <p>Staring Price</p>
+                      <div class="price"><?php echo $row['prod_price']; ?></div>
                     </div>
-                  </div>  
-                  </li>
+                  </div>
+                </li>
                 <?php } ?>
               </ul>
             </div>
@@ -172,7 +169,7 @@ n<div class="flexslider home-slider">
             </figure>
             <div class="box_inn">
               <h1><?php echo $row['prod_name']; ?></h1>
-              <p>Egestas nisi nec, ultrices erat. Aliquam elit urna, rutrum et accumsan in <a href="#" class="fa fa-arrow-circle-right"></a></p>
+             <!--  <p>Egestas nisi nec, ultrices erat. Aliquam elit urna, rutrum et accumsan in <a href="#" class="fa fa-arrow-circle-right"></a></p> -->
             </div>
           </div>
         </div>
@@ -184,13 +181,7 @@ n<div class="flexslider home-slider">
               <figcaption> </figcaption>
             </figure>
             <div class="box_inn">
-              <h5><?php echo $row['prod_name']; ?></h5>
-              <ul>
-                <li><span></span></li>
-                <li><span></span></li>
-                <li><span></span></li>
-                <li><span></span></li>
-              </ul>
+              <h5><?php echo $row['prod_name']; ?></h5>              
             </div>
           </div>
         </div>

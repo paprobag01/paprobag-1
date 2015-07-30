@@ -555,7 +555,7 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
               {
                 ?>
 
-                    <li id="<?php echo $row['filter_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>" onclick="showmaterial(this.id); show_filter_subprod(this.id); createpagenumb(this.id)"><?php echo $row['material_name']; ?></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>" onclick="showmaterial(this.id); show_filter_subprod(this.id); createpagenumb(this.id)"><?php echo $row['material_name']; ?></li>
                   <?php
               
             }
@@ -1049,7 +1049,7 @@ function filter_material($search_for=null)
               {
                 ?>
 
-                    <li id="<?php echo $row['filter_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>" onclick="showResult(this.id); show_filter_material(this.id); create_numberlinks_material(this.id)"><?php echo $row['material_name']; ?></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>" onclick="showResult(this.id); show_filter_material(this.id); create_numberlinks_material(this.id)"><?php echo $row['material_name']; ?></li>
                   <?php
               
             }

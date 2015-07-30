@@ -6,13 +6,15 @@ class Catalog extends CI_Controller{
 		parent::__construct();
 		$this->load->library('site_sentry');
 		$this->load->model('common_model');
+		$this->load->library('../controllers/header_menu');
+		$this->headermenu = new Header_menu();
 		$this->load->library('encrypt');
 	}
 
 	function getall_catprod($wholesale_flag=null, $section_id=null, $cat_id=null)
 	{
-		$data = $this->common_model->get_head();
-		$data = $this->common_model->header_cart_details();
+		$data = $this->headermenu->add();
+		$data['cart_data'] = $this->common_model->header_cart_details();
 
 		// Get filters
 		// Get subcategory ids
@@ -64,8 +66,8 @@ class Catalog extends CI_Controller{
 
 	function getProducts($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null)
 	{
-		$data = $this->common_model->get_head();
-		$data = $this->common_model->header_cart_details();
+		$data = $this->headermenu->add();
+		$data['cart_data'] = $this->common_model->header_cart_details();
 		
 		if($this->session->userdata('cart_id'))
 		{
@@ -168,8 +170,8 @@ class Catalog extends CI_Controller{
 	function getmore($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null, $prod_id=null)
 	{
 
-		$data = $this->common_model->get_head();
-		$data = $this->common_model->header_cart_details();
+		$data = $this->headermenu->add();
+		$data['cart_data'] = $this->common_model->header_cart_details();
 
 		if($this->session->userdata('cart_id'))
 		{

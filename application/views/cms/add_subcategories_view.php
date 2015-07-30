@@ -99,17 +99,7 @@ if(!isset($error))
 								  									 
 								  });
 											  </script>
-						    <?php 
-							$section_name="";
-						  if($section_id!=null or $section_id!="")
-						  {
-						  $sql=$this->db->query("select * from section where section_id=".$section_id."");
-						  $res=$sql->row_array();
-						  extract($res);
-						  }
-						  ?>
-						    
-						 
+						   
 						   <div class="control-group" id="subcategories" style="display:none;">
 											  
 											</div>
@@ -117,6 +107,12 @@ if(!isset($error))
 													<label class="control-label">Subcategory</label>
 													    <div class="controls">
 															<input type="text" name="sub_cat" id="sub_cat" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $sub_cat_name;?>"<?php } ?> class="span4 m-wrap"> 
+													    </div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">MOQ</label>
+													    <div class="controls">
+															<input type="text" name="moq" id="moq" <?php if($type=='view'){?>disabled<?php }?> required data-validation-required-message="Please Fill Data" <?php if(!(isset($error))){?>value="<?php echo $moq;?>"<?php } ?> class="span4 m-wrap"> 
 													    </div>
 												</div>
 												<div class="control-group">

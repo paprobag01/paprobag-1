@@ -42,7 +42,7 @@
     <div class="col-md-12">
        
       <div class="modal fade" id="modal-container-70333" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="padding-left: 97px;padding-right: 187px;padding-bottom: 30px;">
           <div class="modal-content">
             <div class="modal-header">
                
@@ -53,17 +53,35 @@
                 Modal title
               </h4>
             </div>
-            <div class="modal-body">
-              ...
+            <div class="modal-body" style="padding-bottom: 0px;">
+              
+        <div class="form-group">
+           <form method="post" action="<?php echo base_url();?>Track_order_detail">
+          <label for="exampleInputEmail1">
+            Enter Email address :
+          </label>
+          <input type="email" class="form-control" id="exampleInputEmail1" />
+        </div>
+        <div class="form-group">
+           
+          <label for="exampleInputPassword1">
+            Enter Order ID :
+          </label>
+          <input type="text" class="form-control" id="exampleInputPassword1"/>
+        </div>        
+        <div class="checkbox">           
+          <label>
+            <input type="checkbox" style="width: 213px;"/> Check me out
+          </label>
+        </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="padding-bottom: 6px;">
                
               <button type="button" class="btn btn-default" data-dismiss="modal">
                 Close
               </button> 
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
+              <input type="submit" value="Track" class="btn btn-primary">              
+              </form>
             </div>
           </div>
           
@@ -114,7 +132,7 @@
                           <h5>Paper Bags</h5>
                           <ul>
                             <?php if(isset($paper_prod_head)){foreach($paper_prod_head as $row){?>
-                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo '0'; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
                             <?php } }?>
                             <li><a href="catalog.html">+ More</a></li>                           
                           </ul>
@@ -123,39 +141,29 @@
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                            <h5>Ecobags</h5>
                           <ul>
-                            <li><a href="catalog.html">Nonwoven Bags</a></li>
-                            <li><a href="catalog.html">Woven Stich Bags</a></li>                            
-                            <li><a href="catalog.html">Jute Bags</a></li>
-                            <li><a href="catalog.html">Canvas Bags</a></li>
-                            <li><a href="catalog.html">Cotton Bags</a></li>
-                            <li><a href="catalog.html">Bamboo Bags</a></li>
-                            <li><a href="catalog.html">Khadi Bags</a></li>
+                            <?php if(isset($eco_prod_head)){foreach($eco_prod_head as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>
                           </ul>
                           <h5>Boxes</h5>
                           <ul>
-                            <li><a href="catalog.html">Courier Boxes</a></li>
-                            <li><a href="catalog.html">Mailing Boxes</a></li>
-                            <li><a href="catalog.html">Food Boxes</a></li>
-                            <li><a href="catalog.html">Paper Board Conisters</a></li>                           
-                         
+                           <?php if(isset($box_prod_head)){foreach($box_prod_head as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>                           
+                         </u>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                           <h5>Pouches</h5>
                           <ul>
-                            <li><a href="catalog.html">Paper Pouches</a></li>
-                             <li><a href="catalog.html">Nonwoven Pouches</a></li>
-                            <li><a href="catalog.html">Woven Pouches</a></li>
-                            <li><a href="catalog.html">Jute Pouches</a></li>
-                            <li><a href="catalog.html">Cotton Pouches</a></li>
-                             <li><a href="catalog.html">Canvas Pouches</a></li>                           
+                            <?php if(isset($pouch_prod_head)){foreach($pouch_prod_head as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>                           
                           </ul>
                           <h5>Office Products</h5>
                           <ul>
-                             <li><a href="catalog.html">Envolopes</a></li>
-                            <li><a href="catalog.html">File & Folders</a></li>
-                            <li><a href="catalog.html">Stickers</a></li>
-                            <li><a href="catalog.html">Pamplets</a></li>
-                                                   
+                            <?php if(isset($office_prod_head)){foreach($office_prod_head as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>                   
                           </ul>
                         </div>                       
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -171,7 +179,7 @@
                               </div>
                             </div>
                             <div class="item_thumb">
-                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                              <img alt="alt" src="images/costomize_products.jpg" height="255" width="100%">
                             </div>
                             <div class="item_desc">
                               <div class="pull-left">
@@ -197,67 +205,47 @@
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                           <h5>Paper Bags</h5>
                           <ul>
-                            <li><a href="catalog.html">Shopping Carry Bags</a></li>
-                            <li><a href="catalog.html">Handmade Paper Bags</a></li>
-                            <li><a href="catalog.html">Food Parcel Bags</a></li>
-                            <li><a href="catalog.html">Counter Bags</a></li>
-                            <li><a href="catalog.html">Grocery Bags</a></li>
-                            <li><a href="catalog.html">Wine Bags</a></li>
-                            <li><a href="catalog.html">Medical Bags</a></li>
-                            <li><a href="catalog.html">Box Bags</a></li>
-                            <li><a href="catalog.html">Basket Bags</a></li>
-                            <li><a href="catalog.html">Bag For Necktile</a></li> 
-                            <li><a href="catalog.html">+ More</a></li>                           
+                            <?php if(isset($paper_prod_ready)){foreach($paper_prod_ready as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>                            
                           </ul>
                          
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                            <h5>Ecobags</h5>
                           <ul>
-                            <li><a href="catalog.html">Nonwoven Bags</a></li>
-                            <li><a href="catalog.html">Woven Stich Bags</a></li>                            
-                            <li><a href="catalog.html">Jute Bags</a></li>
-                            <li><a href="catalog.html">Canvas Bags</a></li>
-                            <li><a href="catalog.html">Cotton Bags</a></li>
-                            <li><a href="catalog.html">Bamboo Bags</a></li>
-                            <li><a href="catalog.html">Khadi Bags</a></li>
+                            <?php if(isset($eco_prod_ready)){foreach($eco_prod_ready as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>  
                           </ul>
                           <h5>Boxes</h5>
                           <ul>
-                            <li><a href="catalog.html">Courier Boxes</a></li>
-                            <li><a href="catalog.html">Mailing Boxes</a></li>
-                            <li><a href="catalog.html">Food Boxes</a></li>
-                            <li><a href="catalog.html">Paper Board Conisters</a></li>                           
-                         
+                             <?php if(isset($box_prod_ready)){foreach($box_prod_ready as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>
+                          </ul> 
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                           <h5>Pouches</h5>
                           <ul>
-                            <li><a href="catalog.html">Paper Pouches</a></li>
-                             <li><a href="catalog.html">Nonwoven Pouches</a></li>
-                            <li><a href="catalog.html">Woven Pouches</a></li>
-                            <li><a href="catalog.html">Jute Pouches</a></li>
-                            <li><a href="catalog.html">Cotton Pouches</a></li>
-                             <li><a href="catalog.html">Canvas Pouches</a></li>                           
+                            <?php if(isset($pouch_prod_ready)){foreach($pouch_prod_ready as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>                          
                           </ul>
                           <h5>Office Products</h5>
                           <ul>
-                             <li><a href="catalog.html">Envolopes</a></li>
-                            <li><a href="catalog.html">File & Folders</a></li>
-                            <li><a href="catalog.html">Stickers</a></li>
-                            <li><a href="catalog.html">Pamplets</a></li>
-                                                   
+                             <?php if(isset($office_prod_ready)){foreach($office_prod_ready as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?>                      
                           </ul>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                          
                           <h5>Accessories</h5>
                           <ul>
-                            <li><a href="catalog.html">Tags</a></li>
-                            <li><a href="catalog.html">Tissue Papers</a></li>
-                            <li><a href="catalog.html">Bookmarks</a></li>
-                            <li><a href="catalog.html">Shutcover</a></li>
-                             <li><a href="catalog.html">More Products</a></li> 
+                            <?php if(isset($accessory_ready)){foreach($accessory_ready as $row){?>
+                            <li><a href="<?php echo base_url() ?>catalog/getProducts/<?php echo $row['moq']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>"><?php echo $row['sub_cat_name'];?></a></li>                           
+                            <?php } }?> 
                           </ul>                         
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -273,7 +261,7 @@
                               </div>
                             </div>
                             <div class="item_thumb">
-                              <img alt="alt" src="images/bags1.jpg" height="255" width="100%">
+                              <img alt="alt" src="images/readytoprint.jpg" height="255" width="100%">
                             </div>
                             <div class="item_desc">
                               <div class="pull-left">

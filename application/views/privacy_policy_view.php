@@ -15,7 +15,7 @@ $(document).ready(function() {
  
        <div class="container">
         <div class="title clearfix">
-          <h2>FAQ</h2>
+          <h2>Privacy Policy</h2>
         </div>
   <div class="row" style="margin-left: -54px;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bounceInLeft animated animation-done bhoechie-tab-container" data-animation="bounceInLeft">

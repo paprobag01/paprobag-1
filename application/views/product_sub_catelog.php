@@ -85,7 +85,7 @@
               
               <ul class="tgl_c1">
         <?php foreach($material_data as $row){?>
-               <span style="cursor:pointer"> <li  id="<?php echo $row['filter_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>" onclick="showResult(this.id);"><?php echo $row['material_name']; ?></li></span>
+               <span style="cursor:pointer"> <li  id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>" onclick="showResult(this.id);"><?php echo $row['material_name']; ?></li></span>
         <?php } ?>
               </ul>
               

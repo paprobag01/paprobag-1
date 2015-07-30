@@ -1,5 +1,5 @@
 <?php
-class FAQ extends CI_Controller{
+class Privacy_policy extends CI_Controller{
 	
 	function __Construct()
 	{
@@ -14,7 +14,7 @@ class FAQ extends CI_Controller{
 		
 		
 		$this->load->view('header',$data);
-		$this->load->view('FAQ_view');
+		$this->load->view('privacy_policy_view');
 		$this->load->view('footer');
 	}
 }	

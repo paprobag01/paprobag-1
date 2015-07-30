@@ -15,26 +15,26 @@ $(document).ready(function() {
  
        <div class="container">
         <div class="title clearfix">
-          <h2>FAQ</h2>
+          <h2>Career @Greenhanle</h2>
         </div>
   <div class="row" style="margin-left: -54px;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bounceInLeft animated animation-done bhoechie-tab-container" data-animation="bounceInLeft">
             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5 bhoechie-tab-menu">
               <div class="list-group">
-                <a href="#" class="list-group-item active text-center">
-                  <h4 class="glyphicon glyphicon-plane"></h4><br/>Flight
+                <a href="#" class="list-group-item active text-center" style="padding-bottom: 22px;">
+                  Why Join?
                 </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-road"></h4><br/>Train
+                <a href="#" class="list-group-item text-center" style="padding-bottom: 22px;">
+                  Who We Are?
                 </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-home"></h4><br/>Hotel
+                <a href="#" class="list-group-item text-center" style="padding-bottom: 22px;">
+                  Hiring Process
                 </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Restaurant
+                <a href="#" class="list-group-item text-center" style="padding-bottom: 22px;">
+                  Current Vacancies
                 </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Credit Card
+                <a href="#" class="list-group-item text-center" style="padding-bottom: 22px;">
+                  Apply For Job
                 </a>
               </div>
             </div>

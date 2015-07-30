@@ -73,6 +73,7 @@
 		$data1['section_id'] = $this->input->post('sec_id');
 		$data1['cat_id'] = $this->input->post('prod_sub_categories');
 		$data1['sub_cat_name'] = $this->input->post('sub_cat');
+		$data1['moq'] = $this->input->post('moq');
 
 		$cat_id=$this->input->post('cat_id');
 		
@@ -91,6 +92,7 @@
 
 		$this->form_validation->set_rules('sec_id', 'Sections', 'required');
 		$this->form_validation->set_rules('prod_sub_categories', 'Category', 'required');
+		$this->form_validation->set_rules('moq', 'MOQ', 'required|is_numeric');
 		$this->form_validation->set_rules('sub_cat', 'Subcategory', 'required|min_length[3]|max_length[30]|xss_clean|callback_alpha|regex_match[/^[A-Z]/]');
 		if ($this->form_validation->run() == FALSE)
 		{

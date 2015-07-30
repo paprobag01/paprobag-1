@@ -6,98 +6,79 @@ class Index extends CI_Controller{
 		parent::__construct();
 		$this->load->library('site_sentry');
 		$this->load->model('common_model');
+		$this->load->library('../controllers/header_menu');
+		$this->headermenu = new Header_menu();		
 		$this->load->library('encrypt');
 		
 		
 	}
 	function index()
 	{
-		$data = $this->common_model->get_head();
+		$data = $this->headermenu->add();
 
-		$data = $this->common_model->header_cart_details();
+		$data['cart_data'] = $this->common_model->header_cart_details();
 		
-		$paper_prod['where']="where section_id=5 and cat_id=11 and prod_on_home=1";
+		$paper_prod['where']="where section_id=0 and cat_id=0 and prod_on_home=1";
 		$paper_prod['table']='products';
 		$paper_prod['order_by']='';
 		$data['paper_prod']=$this->common_model->getAllDetails($paper_prod);
 		
-		$eco_prod['where']="where section_id=5 and cat_id=2 and prod_on_home=1";
+		$eco_prod['where']="where section_id=0 and cat_id=1 and prod_on_home=1";
 		$eco_prod['table']='products';
 		$eco_prod['order_by']='';
 		$data['eco_prod']=$this->common_model->getAllDetails($eco_prod);
 		
-		$box_prod['where']="where section_id=5 and cat_id=3 and prod_on_home=1";
+		$box_prod['where']="where section_id=0 and cat_id=2 and prod_on_home=1";
 		$box_prod['table']='products';
 		$box_prod['order_by']='';
 		$data['box_prod']=$this->common_model->getAllDetails($box_prod);
 		
-		$pouch_prod['where']="where section_id=5 and cat_id=4 and prod_on_home=1";
+		$pouch_prod['where']="where section_id=0 and cat_id=3 and prod_on_home=1";
 		$pouch_prod['table']='products';
 		$pouch_prod['order_by']='';
 		$data['pouch_prod']=$this->common_model->getAllDetails($pouch_prod);
 		
-		$office_prod['where']="where section_id=5 and cat_id=5 and prod_on_home=1";
+		$office_prod['where']="where section_id=0 and cat_id=4 and prod_on_home=1";
 		$office_prod['table']='products';
 		$office_prod['order_by']='';
 		$data['office_prod']=$this->common_model->getAllDetails($office_prod);		
-		
-		$paper_prod_head['where']="where section_id=5 and cat_id=1";
-		$paper_prod_head['table']='subcategory';
-		$paper_prod_head['order_by']='';
-		$data['paper_prod_head']=$this->common_model->getAllDetails($paper_prod_head);
 
-		$eco_prod_head['where']="where section_id=5 and cat_id=2";
-		$eco_prod_head['table']='subcategory';
-		$eco_prod_head['order_by']='';
-		$data['eco_prod_head']=$this->common_model->getAllDetails($eco_prod_head);
 
-		$box_prod_head['where']="where section_id=5 and cat_id=3";
-		$box_prod_head['table']='subcategory';
-		$box_prod_head['order_by']='';
-		$data['box_prod_head']=$this->common_model->getAllDetails($box_prod_head);
 
-		$pouch_prod_head['where']="where section_id=5 and cat_id=4";
-		$pouch_prod_head['table']='subcategory';
-		$pouch_prod_head['order_by']='';
-		$data['pouch_prod_head']=$this->common_model->getAllDetails($pouch_prod_head);
 
-		$office_prod_head['where']="where section_id=5 and cat_id=5";
-		$office_prod_head['table']='subcategory';
-		$office_prod_head['order_by']='';
-		$data['office_prod_head']=$this->common_model->getAllDetails($office_prod_head);
-
-		$prod_img['where']="where section_id=5";
-		$prod_img['table']='products';
-		$prod_img['order_by']='';
-		$data['prodimg']=$this->common_model->getAllDetails($prod_img);
+		// $prod_img['where']="where section_id=0";
+		// $prod_img['table']='products';
+		// $prod_img['order_by']='';
+		// $data['prodimg']=$this->common_model->getAllDetails($prod_img);
 		
 		/*$sql = $this->db->query('select * from products where section_id=6');
 		$data['page_data9'] = $sql->result_array();*/
 
-		$ready_to_print['where']="where section_id=6 and prod_on_home=1";
+		$ready_to_print['where']="where section_id=1 and prod_on_home=1";
 		$ready_to_print['table']='products';
 		$ready_to_print['order_by']='';
 		$data['ready_to_print']=$this->common_model->getAllDetails($ready_to_print);
 		
-		$ready_to_deliver['where']="where section_id=7 and cat_id=7 and prod_on_home=1";
+		$ready_to_deliver['where']="where section_id=2 and cat_id=11 and prod_on_home=1";
 		$ready_to_deliver['table']='products';
 		$ready_to_deliver['order_by']='';
 		$data['retail_deliver']=$this->common_model->getAllDetails($ready_to_deliver);
 		
-		$offer_deliver['where']="where section_id=7 and cat_id=8 and prod_on_home=1";
+		$offer_deliver['where']="where section_id=2 and cat_id=12 and prod_on_home=1";
 		$offer_deliver['table']='products';
 		$offer_deliver['order_by']='';
 		$data['offer_deliver']=$this->common_model->getAllDetails($offer_deliver);
+
+		$wholesale_deliver['where']="where section_id=2 and cat_id=10 and prod_on_home=1";
+		$wholesale_deliver['table']='products';
+		$wholesale_deliver['order_by']='';
+		$data['wholesale_deliver']=$this->common_model->getAllDetails($wholesale_deliver);
 		
 		$arr10['where']="where slider_status='Active' and slide_on_home=0";
 		$arr10['table']='slider';
 		$arr10['order_by']='';
 		$data['page_data10']=$this->common_model->getAllDetails($arr10);
 		
-		$wholesale_deliver['where']="where section_id=7 and cat_id=6 and prod_on_home=1";
-		$wholesale_deliver['table']='products';
-		$wholesale_deliver['order_by']='';
-		$data['wholesale_deliver']=$this->common_model->getAllDetails($wholesale_deliver);
 		
 		$this->load->view('header',$data);
 		$this->load->view('index_view',$data);
