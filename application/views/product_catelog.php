@@ -58,7 +58,7 @@
               <ul class="tgl_c" id="sub_cat_data">
 			  <?php foreach($sub_category_list as $row){?>
               
-                <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>" onclick="show_filter_subprod(this.id); showsubcat(this.id); createpagenumb(this.id)"><?php echo $row['sub_cat_name']; ?></li>
+                <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>" onclick="show_filter_subprod(this.id); showsubcat(this.id); showstyle(this.id); createpagenumb(this.id)"><?php echo $row['sub_cat_name']; ?></li>
 			  <?php } ?>
 			       </ul>
             </div>

@@ -291,8 +291,7 @@ class Common_model extends CI_Model
 	}
 
 	function getcategorylist($section_id=null)
-	{
-		
+	{	
 
 		$sql1 = $this->db->query("select * from category where section_id=$section_id");
 		return  $sql1->result_array();
@@ -308,7 +307,25 @@ class Common_model extends CI_Model
 
 	function search_material($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null)
 	{
-		$sql = $this->db->query("select * from filters where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id");
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id");
+		return $sql->result_array();
+	}
+
+	function search_style($section_id=null,$cat_id=null,$sub_cat_id=null)
+	{
+		$sql = $this->db->query("select * from style_details where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
+		return $sql->result_array();
+	}
+
+	function getfilterSize_product($style_id=null)
+	{
+		$sql = $this->db->query("select * from style_details where style_id=$style_id");
+		return $sql->result_array();
+	}
+
+	function getfilterSize($style_id=null,$size=null)
+	{
+		$sql = $this->db->query("select * from style_details where style_id=$style_id and size=$size");
 		return $sql->result_array();
 	}
 
@@ -316,29 +333,36 @@ class Common_model extends CI_Model
 	{
 		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name");
 		return $sql->result_array();
-	}
+	}	
 
-	function getfilterSize_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null)
+	function getfilterstyle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$style_id=null)
 	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name");
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and style_id=$style_id");
 		return $sql->result_array();
 	}
 
-	function getfilterstyle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null)
+	function getfilterhandle($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null)
 	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style");
+
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and GSM_name=$GSM_name");
 		return $sql->result_array();
 	}
 
-	function getfilterhandle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null)
+	function getfilterhandle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null)
 	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle");
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and handle=$handle");
+		return $sql->result_array();
+	}
+
+	function getfilterprint($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null,$style_id=null)
+	{
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and handle=$handle and style_id=$style_id");
 		return $sql->result_array();
 	}
 
 	function getfilterprint_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null)
 	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and $print=null");
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and print=$print");
 		return $sql->result_array();
 	}
 	function getfilterlamination_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null,$lamination=null)

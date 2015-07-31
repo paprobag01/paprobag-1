@@ -7,7 +7,6 @@ class Search_result extends CI_Controller{
   {
     parent::__construct();
     $this->load->library('site_sentry');
-    $this->load->library('session');
     $this->load->model('common_model');
   }
   function index()
@@ -626,10 +625,10 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
    //print_r($arr);
 
    // $filter_id=$arr['0'];
-     $section_id = $arr['0'];
-     $cat_id = $arr['1'];
-     $sub_cat_id = $arr['2'];
-    $material_id = $arr['3'];
+     $section_id = $arr['1'];
+     $cat_id = $arr['2'];
+     $sub_cat_id = $arr['3'];
+    echo  $material_id = $arr['4'];
 
     
     $material_data = $this->common_model->getsubprod($section_id,$cat_id,$sub_cat_id,$material_id);
@@ -675,12 +674,12 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
    print_r($arr);//it shows the result to check need die();
    die();
 
-      // $filter_id=$arr['0'];
-      $section_id = $arr['0'];
-      $cat_id = $arr['1'];
-      $sub_cat_id = $arr['2'];
-      $material_id = $arr['3'];
-      $GSM_name = $arr['4'];
+       $filter_id=$arr['0'];
+      $section_id = $arr['1'];
+      $cat_id = $arr['2'];
+      $sub_cat_id = $arr['3'];
+      $material_id = $arr['4'];
+      $GSM_name = $arr['5'];
 
        $material_data = $this->common_model->getfilterGSM_product($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name);
  
@@ -721,20 +720,19 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
     //print_r($material_id);
    
     $arr = explode('/',$material_id);
-    print_r($arr);
-    
-                   $this->session->set_userdata('style_id',$arr['0']);
-                   $this->session->set_userdata('size',$arr['1']);
-                    die();
 
-   
-   
-     //$filter_id=$arr['0'];     
-      $style_id = $arr['0'];
-      $size = $arr['1'];
+   print_r($arr);
+   die();
 
+     $filter_id=$arr['0'];
+      $section_id = $arr['1'];
+      $cat_id = $arr['2'];
+      $sub_cat_id = $arr['3'];
+      $material_id = $arr['4'];
+      $GSM_name = $arr['5'];
+      $size = $arr['6'];
 
-       $material_data = $this->common_model->getfilterSize($style_id,$size);
+       $material_data = $this->common_model->getfilterSize_product($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name,$size);
  
     foreach($material_data as $row)
     {
@@ -775,15 +773,16 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
     $arr = explode('/',$material_id);
 
    print_r($arr);
-      //$filter_id=$arr['0'];
-      $section_id = $arr['0'];
-      $cat_id = $arr['1'];
-      $sub_cat_id = $arr['2'];
-      $material_id = $arr['3'];
-      $style_id = $arr['4'];
-      
+      $filter_id=$arr['0'];
+      $section_id = $arr['1'];
+      $cat_id = $arr['2'];
+      $sub_cat_id = $arr['3'];
+      $material_id = $arr['4'];
+      $GSM_name = $arr['5'];
+      $size = $arr['6'];
+      $style =  $arr['7'];
 
-       $material_data = $this->common_model->getfilterstyle_product($section_id,$cat_id,$sub_cat_id,$style_id);
+       $material_data = $this->common_model->getfilterstyle_product($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name,$size,$style);
  
     foreach($material_data as $row)
     {
@@ -824,13 +823,15 @@ function filter_handle_result($search_for=null)
     $arr = explode('/',$material_id);
 
    print_r($arr);
-    
-    $section_id = $arr['0'];
-    $cat_id = $arr['1'];
-    $sub_cat_id = $arr['2'];
-    $material_id = $arr['3'];
-    $GSM_name = $arr['4'];    
-    $handle = $arr['5'];
+       $filter_id=$arr['0'];
+    $section_id = $arr['1'];
+    $cat_id = $arr['2'];
+    $sub_cat_id = $arr['3'];
+    $material_id = $arr['4'];
+    $GSM_name = $arr['5'];
+    $size = $arr['6'];
+    $style = $arr['7'];
+    $handle = $arr['8'];
 
        $material_data = $this->common_model->getfilterhandle_product($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name,$size,$style,$handle);
  
@@ -1048,7 +1049,7 @@ function filter_material($search_for=null)
               {
                 ?>
 
-                    <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>" onclick="showResult(this.id); show_filter_material(this.id); create_numberlinks_material(this.id)"><?php echo $row['material_name']; ?></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>" onclick="showResult(this.id); show_filter_material(this.id); create_numberlinks_material(this.id)"><?php echo $row['material_name']; ?></li>
                   <?php
               
             }
@@ -1068,13 +1069,13 @@ function filter_material($search_for=null)
     //print_r($material_id);
 
     $arr = explode('/',$material_id);
-    //print_r($arr);    
-    //$filter_id=$arr['0'];
-    $section_id = $arr['0'];
-    $cat_id = $arr['1'];
-    $sub_cat_id = $arr['2'];
-    $material_id = $arr['3'];
-    //$GSM_name = $arr['5'];
+    //print_r($arr);
+    $filter_id=$arr['0'];
+    $section_id = $arr['1'];
+    $cat_id = $arr['2'];
+    $sub_cat_id = $arr['3'];
+    $material_id = $arr['4'];
+    $GSM_name = $arr['5'];
     
     $material_data = $this->common_model->search_material($section_id,$cat_id,$sub_cat_id,$material_id);
 
@@ -1090,7 +1091,7 @@ function filter_material($search_for=null)
                   ?>
                  
 
-                    <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>" onclick="show_filter_GSM(this.id); showhandle(this.id); create_numberlinks_GSM(this.id)"><?php echo $row['GSM_name']; ?></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>" onclick="showsize(this.id); show_filter_GSM(this.id); create_numberlinks_GSM(this.id)"><?php echo $row['GSM_name']; ?></li>
                   <?php
               }
             }
@@ -1123,22 +1124,27 @@ function filter_material($search_for=null)
     print_r($arr);
 
     //$filter_id=$arr['0'];
-    $style_id = $arr['0'];     
-    $size_data = $this->common_model->getfilterSize_product($style_id); 
+    $section_id = $arr['1'];
+    $cat_id = $arr['2'];
+    $sub_cat_id = $arr['3'];
+    $material_id = $arr['4'];
+    $GSM_name = $arr['5'];
 
+    
+    
+    $material_data = $this->common_model->search_material($section_id,$cat_id,$sub_cat_id,$material_id);
         echo "<h5><a href='#'' class='tgl_btn'>Size</a></h5>";
           echo "<ul class='tgl_c'>"; 
           //echo count($material_data);
-          if(count($size_data)>0)
+          if(count($material_data)>0)
           {
-              foreach( $size_data as $row)
+              foreach( $material_data as $row)
               {
-                 $size_array=explode(',', $row['size']); 
-                  foreach ($size_array as $row1) {
+                  ?>
 
-                ?>
-                    <li id="<?php echo $row['style_id']; ?>/<?php echo $row1; ?>" onclick="show_filter_size(this.id); create_numberlinks_size(this.id)"><?php echo $row1; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
-                  <?php } }
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>/<?php echo $row['style_id']; ?>" onclick="showstyle(this.id); show_filter_size(this.id); create_numberlinks_size(this.id)"><input type="radio" class="iradio_minimal" name="mate_name"></li>
+                  <?php
+              }
 
           }
               echo "<ul>";
@@ -1148,23 +1154,24 @@ function filter_material($search_for=null)
 
   function filter_style($search_for=null)
   {
-      $style_id = $this->input->get('filter_style');
-      
+      $material_id = $this->input->get('filter_style');
     //print_r($result['search_for']);
    
-    $arr = explode('/',$style_id);
+    $arr = explode('/',$material_id);
 
     print_r($arr);
 
-    //$filter_id=$arr['0'];
-    $section_id = $arr['0'];
-    $cat_id = $arr['1'];
-    $sub_cat_id = $arr['2'];
-    
+    $filter_id=$arr['0'];
+    $section_id = $arr['1'];
+    $cat_id = $arr['2'];
+    $sub_cat_id = $arr['3'];
+    $material_id = $arr['4'];
+    $GSM_name = $arr['5'];
+    $size = $arr['6'];
    
 
     
-    $material_data = $this->common_model->search_style($section_id,$cat_id,$sub_cat_id);
+    $material_data = $this->common_model->search_material($section_id,$cat_id,$sub_cat_id,$material_id);
         echo "<h5><a href='#'' class='tgl_btn'>Style</a></h5>";
           echo "<ul class='tgl_c'>"; 
            
@@ -1172,7 +1179,7 @@ function filter_material($search_for=null)
               {
                   ?>
 
-                    <li id="<?php echo $row['style_id']; ?>" onclick="showsize(this.id); show_filter_style(this.id); create_numberlinks_style(this.id)"><?php echo $row['style']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>/<?php echo $row['style_id']; ?>" onclick="showhandle(this.id); show_filter_style(this.id); create_numberlinks_style(this.id)"><?php echo $row['style']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
                   <?php
               }
               echo "<ul>";
@@ -1187,15 +1194,17 @@ function filter_material($search_for=null)
     $arr = explode('/',$material_id);
 
     print_r($arr);
+    $filter_id=$arr['0'];
+    $section_id = $arr['1'];
+    $cat_id = $arr['2'];
+    $sub_cat_id = $arr['3'];
+    $material_id = $arr['4'];
+    $GSM_name = $arr['5'];
+    $size = $arr['6'];
+    $style = $arr['7'];
 
-    //$filter_id=$arr['0'];
-    $section_id = $arr['0'];
-    $cat_id = $arr['1'];
-    $sub_cat_id = $arr['2'];
-    $material_id = $arr['3'];
-    $GSM_name = $arr['4'];
-        
-    $material_data = $this->common_model->getfilterhandle($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name);
+    
+    $material_data = $this->common_model->search_material($section_id,$cat_id,$sub_cat_id,$material_id);
         echo "<h5><a href='#'' class='tgl_btn'>Handle</a></h5>";
           echo "<ul class='tgl_c'>"; 
            
@@ -1203,7 +1212,7 @@ function filter_material($search_for=null)
               {
                   ?>
 
-                    <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>/<?php echo $row['handle']; ?>" onclick="show_print(this.id); show_filter_handle(this.id); create_numberlinks_handle(this.id)"><?php echo $row['handle']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>/<?php echo $row['style_id']; ?>/<?php echo $row['handle']; ?>" onclick="filter_print(this.id); show_filter_handle(this.id); create_numberlinks_handle(this.id)"><?php echo $row['handle']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
                   <?php
               }
               echo "<ul>";
@@ -1218,19 +1227,17 @@ function filter_material($search_for=null)
     $arr = explode('/',$material_id);
 
     print_r($arr);
-    print_r($style_id);
-   
-    $style_id = $this->session->userdata('style_id');
-    $size = $this->session->userdata('size');    
+    $filter_id=$arr['0'];
+    $section_id = $arr['1'];
+    $cat_id = $arr['2'];
+    $sub_cat_id = $arr['3'];
+    $material_id = $arr['4'];
+    $GSM_name = $arr['5'];
+    $size = $arr['6'];
+    $style = $arr['7'];
+    $handle = $arr['8'];
     
-    $section_id = $arr['0'];
-    $cat_id = $arr['1'];
-    $sub_cat_id = $arr['2'];
-    $material_id = $arr['3'];
-    $GSM_name = $arr['4'];   
-    $handle = $arr['5'];
-        
-    $material_data = $this->common_model->getfilterprint($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name,$handle,$style_id);
+    $material_data = $this->common_model->search_material($section_id,$cat_id,$sub_cat_id,$material_id);
         echo "<h5><a href='#'' class='tgl_btn'>Print</a></h5>";
           echo "<ul class='tgl_c'>"; 
            
@@ -1238,7 +1245,7 @@ function filter_material($search_for=null)
               {
                   ?>
 
-                    <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>/<?php echo $row['handle']; ?>/<?php echo $row['print']; ?>/<?php echo $row['style_id']; ?>" onclick="filter_lamination(this.id); show_filter_print(this.id); create_numberlinks_print(this.id)"><?php echo $row['print']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
+                    <li id="<?php echo $row['material_id']; ?>/<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $row['material_id']; ?>/<?php echo $row['GSM_name']; ?>/<?php echo $row['style_id']; ?>/<?php echo $row['handle']; ?>/<?php echo $row['print']; ?>" onclick="filter_lamination(this.id); show_filter_print(this.id); create_numberlinks_print(this.id)"><?php echo $row['print']; ?><input type="radio" class="iradio_minimal" name="mate_name"></li>
                   <?php
               }
               echo "<ul>";

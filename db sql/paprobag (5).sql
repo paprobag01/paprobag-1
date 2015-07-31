@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2015 at 03:37 PM
+-- Generation Time: Jul 31, 2015 at 07:32 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -256,7 +256,22 @@ CREATE TABLE IF NOT EXISTS `filters` (
 INSERT INTO `filters` (`material_id`, `material_name`, `section_id`, `cat_id`, `sub_cat_id`, `GSM_name`, `style_id`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `sub_subcat_id`) VALUES
 (0, 'Recycled Brown Kraft Paper', 0, '0', '0', '', 0, '', '', 0, '', '', 'Not available'),
 (1, 'Recycled white Kraft Paper', 0, '0', '0', '', 0, '', '', 0, '', '', 'Not available'),
-(2, 'Recycled Color Kraft Paper', 1, '5', '31', '', 0, '', '', 0, '', '', 'Not available');
+(2, 'Recycled Color Kraft Paper', 1, '5', '31', '', 0, '', '', 0, '', '', 'Not available'),
+(3, 'Recycled Color Kraft Paper', 0, '1', '10', '', 0, '', '', 0, '', '', 'Not available'),
+(4, 'Recycled White Kraft Paper', 0, '2', '17', '', 0, '', '', 0, '', '', 'Not available'),
+(5, 'Glossy Paper', 0, '3', '21', '', 0, '', '', 0, '', '', 'Not available'),
+(6, 'Recycled Brown Kraft Paper', 0, '4', '27', '', 0, '', '', 0, '', '', 'Not available'),
+(7, 'Recycled Color Kraft Paper', 2, '10', '69', '', 0, '', '', 0, '', '', '0'),
+(8, 'Recycled White Kraft Paper', 2, '11', '66', '', 0, '', '', 0, '', '', '27'),
+(9, 'Recycled Brown Craft Paper', 2, '12', '73', '', 0, '', '', 0, '', '', '32'),
+(10, 'Recycle Brown Craft Paper', 1, '6', '41', '', 0, '', '', 0, '', '', 'Not available'),
+(11, 'Recycled Color Kraft Paper', 1, '7', '48', '', 0, '', '', 0, '', '', 'Not available'),
+(12, 'Recycled White Kraft Paper', 1, '8', '52', '', 0, '', '', 0, '', '', 'Not available'),
+(13, 'Glossy Paper', 1, '9', '58', '', 0, '', '', 0, '', '', 'Not available'),
+(14, 'Recycled Color Kraft Paper', 1, '15', '62', '', 0, '', '', 0, '', '', 'Not available'),
+(15, 'Recycled Color Kraft Paper', 1, '9', '59', '', 0, '', '', 0, '', '', 'Not available'),
+(16, 'Glossy Paper', 1, '15', '63', '', 0, '', '', 0, '', '', 'Not available'),
+(17, 'Recycled Color Kraft Paper', 2, '10', '70', '', 0, '', '', 0, '', '', '17');
 
 -- --------------------------------------------------------
 
@@ -614,29 +629,34 @@ CREATE TABLE IF NOT EXISTS `products` (
   `approved` tinyint(4) NOT NULL,
   `seller_request_status` int(11) NOT NULL,
   `product_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`prod_id`, `prod_name`, `prod_description`, `prod_short_description`, `cat_id`, `section_id`, `sub_cat_id`, `prod_sub_categories`, `prod_sku`, `prod_price`, `prod_tax_class`, `prod_status`, `prod_meta_title`, `prod_meta_keyword`, `prod_meta_description`, `prod_image`, `prod_image1`, `prod_image2`, `prod_image3`, `prod_image4`, `prod_on_home`, `created_on`, `prod_sell_price`, `prod_qty`, `prod_stock`, `require_shipping`, `prod_shipping_price`, `prod_discount`, `filter_id`, `complete_the_look`, `taggings`, `prod_customizable`, `url_for_product_details`, `prod_gift_card`, `prod_gift_code`, `sold_by`, `material_id`, `GSM_name`, `size`, `style`, `handle`, `print`, `print_color`, `lamination`, `special_wrk`, `seller_id`, `approved`, `seller_request_status`, `product_status`) VALUES
-(16, 'ecobags', '<p>ecobags</p>\r\n', '0', 1, 5, 3, 1, 'ecobags', '500', NULL, 0, 'ecobags', 'ecobags', 'ecobags', '', '', '', '', '', 1, '0000-00-00', '480', '400', '0', '1', '30', '4.00', 0, 0, 1, 0, '0', 0, 0, 'abc', 13, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 2),
-(23, 'customize_paperbag', '<p>customize_paperbag</p>\r\n', 'customize_paperbag', 11, 5, 0, 2, 'customize_paperbag', '500', NULL, 0, 'customize_paperbag', 'customize_paperbag', 'customize_paperbag', 'upload/products/da8ce53cf0240070ce6c69c48cd588ee.jpg', '', '', '', '', 1, '0000-00-00', '500', '30', '', '1', '10', '4', 0, 0, 1, 0, '0', 0, 0, 'vghh', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(24, 'customize_ecobag', '<p>customize_ecobag</p>\r\n', 'customize_ecobag', 2, 5, 11, 2, 'customize_ecobag', '500', NULL, 0, 'customize_ecobag', 'customize_ecobag', 'customize_ecobag', 'upload/products/9e020ebb181dfd3fb1229c6ceb076a60.jpg', '0', '0', '0', '0', 1, '0000-00-00', '480', '10', '', '1', '20', '4.00', 0, 0, 1, 0, '0', 0, 0, 'cmdnckj', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(25, 'Boxes', '<p>Boxes</p>\r\n', 'Boxes', 3, 5, 18, 3, 'Boxes', '300', NULL, 0, 'Boxes', 'Boxes', 'Boxes', 'upload/products/0bf727e907c5fc9d5356f11e4c45d613.jpg', '0', '0', '0', '0', 1, '0000-00-00', '250', '30', '', '1', '60', '16.67', 0, 0, 1, 0, '0', 0, 0, 'bjbjh', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(26, 'pouches', '<p>pouches</p>\r\n', 'pouches', 4, 5, 22, 4, 'pouches', '400', NULL, 0, 'pouches', 'pouches', 'pouches', 'upload/products/523b96f500fcb4459aa8718e387c9b23.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '30', '', '1', '20', '12.50', 0, 0, 1, 0, '0', 0, 0, 'fdvfd', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(27, 'Office Product', '<p>Office Product</p>\r\n', 'Office Product', 5, 5, 28, 5, 'Office Product', '400', NULL, 0, 'Office Product', 'Office Product', 'Office Product', 'upload/products/3c19211bcc34fabc8ec48e601e97e4a5.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '4', '', '1', '10', '12.50', 0, 0, 0, 0, '0', 0, 0, 'xdce', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(28, 'Ready To Print', '<p>Ready To Print</p>\r\n', 'Ready To Print', 9, 6, 0, 9, 'Ready To Print', '500', NULL, 0, 'Ready To Print', 'Ready To Print', 'Ready To Print', 'upload/products/6fae4e7975cfb72a356e6a8682456c6e.png', '0', '0', '0', '0', 1, '0000-00-00', '480', '30', '', '1', '20', '4.00', 0, 0, 1, 0, '0', 0, 0, 'vnbmgfn', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(29, 'Ready To Print_prod', '<p>Ready To Print_prod</p>\r\n', 'Ready To Print_prod', 9, 6, 0, 9, 'Ready To Print_prod', '300', NULL, 0, 'Ready To Print_prod', 'Ready To Print_prod', 'Ready To Print_prod', 'upload/products/e03814c1d555e06aa5d562d95ed29bd2.png', '0', '0', '0', '0', 1, '0000-00-00', '250', '10', '', '1', '50', '16.67', 0, 0, 1, 0, '0', 0, 0, 'nmmk', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(30, 'ready_prod3', '<p>ready_prod3</p>\r\n', 'ready_prod3', 9, 6, 0, 9, 'ready_prod3', '300', NULL, 0, 'ready_prod3', 'ready_prod3', 'ready_prod3', 'upload/products/cc26f87f3f9f7c0fbf2d36ad880a9a4e.png', '0', '0', '0', '0', 1, '0000-00-00', '250', '50', '', '1', '50', '16.67', 0, 0, 1, 0, '0', 0, 0, 'xdrdrf', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(33, 'ready_prod4', '<p>ready_prod4</p>\r\n', 'ready_prod4', 9, 6, 0, 9, 'ready_prod4', '400', NULL, 0, 'ready_prod4', 'ready_prod4', 'ready_prod4', 'upload/products/2907d2584b4215ec733f9b4b09d83765.png', '0', '0', '0', '0', 1, '0000-00-00', '350', '20', '', '1', '4', '12.50', 0, 0, 1, 0, '0', 0, 0, 'cxvcxv', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(34, 'retail_products', '<p>retail_products</p>\r\n', 'retail_products', 7, 7, 0, 7, 'retail_products', '400', NULL, 0, 'retail_products', 'retail_products', 'retail_products', 'upload/products/515f4b1414c40dd89c5d73bb0c1671ac.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '20', '', '1', '40', '12.50', 0, 0, 1, 0, '0', 0, 0, 'smcsc', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(35, 'offers', '<p>offers</p>\r\n', 'offers', 8, 7, 0, 8, 'offers', '300', NULL, 0, 'offers', 'offers', 'offers', 'upload/products/478ee79434a295d016f91d90ea301bcc.jpg', '0', '0', '0', '0', 1, '0000-00-00', '250', '30', '', '1', '40', '16.67', 0, 0, 2, 0, '0', 0, 0, 'sercbv', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(36, 'wholesale_products', '<p>wholesale_products</p>\r\n', 'wholesale_products', 6, 7, 0, 6, 'wholesale_products', '400', NULL, 0, 'wholesale_products', 'wholesale_products', 'wholesale_products', 'upload/products/546ba6ad0ece03a14523470c72264e09.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '20', '', '1', '30', '12.50', 0, 0, 1, 0, '0', 0, 0, 'srdfgcv', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(37, 'Paperbags', '<p>Paperbags</p>\r\n', 'Paperbags', 0, 0, 0, 0, 'Paperbags', '500', NULL, 0, 'Paperbags', 'Paperbags', 'Paperbags', 'upload/products/23685a2431acad7789c1e3d43ea1522c.jpg', '0', '0', '0', '0', 1, '0000-00-00', '480', '20', '', '1', '20', '4.00', 0, 0, 1, 0, '0', 0, 0, 'abc', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(38, 'Customize paperbags', '<p>Customize paperbags</p>\r\n', 'Customize paperbags', 0, 0, 2, 0, 'Customize paperbags', '100', NULL, 0, 'Customize paperbags', 'Customize paperbags', 'Customize paperbags', 'upload/products/f81e516d45f7143402e9482b47248e3b.jpg', '0', '0', '0', '0', 1, '0000-00-00', '100', '20', '', '1', '30', '0.00', 0, 0, 1, 0, '0', 0, 0, 'ghghjjh', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
-(39, 'Customize Boxes', '<p>Customize Boxes</p>\r\n', 'Customize Boxes', 0, 0, 2, 0, 'Customize Boxes', '800', NULL, 0, 'Customize Boxes', 'Customize Boxes', 'Customize Boxes', 'upload/products/c4eb92c689e6b9728cd42db83ed02bfa.jpg', '0', '0', '0', '0', 1, '0000-00-00', '750', '400', '', '1', '30', '6.25', NULL, 0, 1, 0, '0', 0, 0, 'njkkjkjk', 8, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0);
+(40, 'Customize Paper Bag', '<p>Customize Paper Bag</p>\r\n', 'Customize Paper Bag', 0, 0, 0, 0, 'Customize Paper Bag', '500', NULL, 0, 'Customize Paper Bag', 'Customize Paper Bag', 'Customize Paper Bag', 'upload/products/7de6cd35982b5384abd11277d1c25f4f.jpg', '0', '0', '0', '0', 1, '0000-00-00', '480', '500', '', '1', '20', '4.00', NULL, 0, 1, 0, '0', 0, 0, 'abc', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(41, 'Customizable ecobag', '<p>Customizable ecobag</p>\r\n', 'Customizable ecobag', 1, 0, 10, 1, 'Customizable ecobag', '400', NULL, 0, 'Customizable ecobag', 'Customizable ecobag', 'Customizable ecobag', 'upload/products/536eecee295b92db6b32194e269541f8.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '500', '', '1', '30', '12.50', NULL, 0, 2, 0, '0', 0, 0, 'cxvcxv', 3, '3', '0', '0', '3', '3', 3, '3', '3', '', 0, 0, 0),
+(42, 'Customizable Boxes', '<p>Customizable Boxes</p>\r\n', 'Customizable Boxes', 2, 0, 17, 2, 'Customizable Boxes', '300', NULL, 0, 'Customizable Boxes', 'Customizable Boxes', 'Customizable Boxes', 'upload/products/85b9a5ac91cd629bd3afe396ec07270a.jpg', '0', '0', '0', '0', 1, '0000-00-00', '250', '500', '', '1', '50', '16.67', NULL, 0, 1, 0, '0', 0, 0, 'nmjjkk', 4, '4', '0', '0', '4', '4', 4, '4', '4', '', 0, 0, 0),
+(43, 'Customizable Pouches', '<p>Customizable Pouches</p>\r\n', 'Customizable Pouches', 3, 0, 21, 3, 'Customizable Pouches', '800', NULL, 0, 'Customizable Pouches', 'Customizable Pouches', 'Customizable Pouches', 'upload/products/fc75bd9622425bbc421653770069faf5.jpg', '0', '0', '0', '0', 1, '0000-00-00', '750', '500', '', '1', '30', '6.25', NULL, 0, 1, 0, '0', 0, 0, 'dkmn', 5, '5', '0', '0', '5', '5', 5, '5', '5', '', 0, 0, 0),
+(44, 'Office Products', '<p>Customizable Office Products</p>\r\n', 'Customizable Office Products', 4, 0, 27, 4, 'Customizable Office Products', '350', NULL, 0, 'Customizable Office Products', 'Customizable Office Products', 'Customizable Office Products', 'upload/products/87d2df31d91c857ffb1a3d5caf45f766.jpg', '0', '0', '0', '0', 1, '0000-00-00', '310', '500', '', '1', '30', '11.43', NULL, 0, 1, 0, '0', 0, 0, 'sdffgf', 6, '6', '0', '0', '6', '6', 6, '6', '6', '', 0, 0, 0),
+(45, 'Retail Products', '<p>Retail Products</p>\r\n', 'Retail Products', 11, 2, 69, 10, 'Retail Products', '400', NULL, 0, 'Retail Products', 'Retail Products', 'Retail Products', 'upload/products/2e28dda26c212b9fddfcfa1e44ab97b1.jpg', '0', '0', '0', '0', 1, '0000-00-00', '350', '1', '', '1', '30', '12.50', NULL, 0, 1, 0, '0', 0, 0, 'cfvfv', 7, '7', '0', '0', '7', '7', 7, '7', '7', '', 0, 0, 0),
+(46, 'Offers', '<p>Offer&nbsp;Products</p>\r\n', 'Wholesale', 12, 2, 0, 10, 'Wholesale', '800', NULL, 0, 'Offers', 'Offers', 'Offers', 'upload/products/9c502490400407d66aff75b9fff0be36.jpg', '', '', '', '', 1, '0000-00-00', '800', '5', '', '1', '30', '6.25', 0, 0, 1, 0, '0', 0, 0, 'bhjjjn', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(47, 'Wholesale', '<p>Wholesale Products</p>\r\n', 'Wholesale', 10, 2, 69, 10, 'Wholesale', '100', NULL, 0, 'Wholesale', 'Wholesale', 'Wholesale', 'upload/products/7c6f8dba4a02404f97b5953d2c4172a7.jpg', '0', '0', '0', '0', 1, '0000-00-00', '80', '10', '', '1', '40', '20.00', NULL, 0, 1, 0, '0', 0, 0, 'hgnb', 7, '7', '0', '0', '7', '7', 7, '7', '7', '', 0, 0, 0),
+(48, 'Paperbag (Shopping Carry Bags)', '<p>Ready To Print&nbsp;Paperbag</p>\r\n', 'Paperbag', 5, 1, 31, 5, 'Paperbag', '200', NULL, 0, 'Paperbag', 'Paperbag', 'Paperbag', 'upload/products/498bce62bd2bda584246701fa0166482.jpg', '', '', '', '', 1, '0000-00-00', '200', '100', '', '1', '30', '10', 0, 0, 1, 0, '0', 0, 0, 'bhvjb', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0),
+(49, 'Paperbag (Color Kraft Paper)', '<p>paperbag</p>\r\n', 'paperbag', 5, 1, 31, 5, 'paperbag', '300', NULL, 0, 'paperbag', 'paperbag', 'paperbag', 'upload/products/18b18272ed31e60bafbdef233b87afc0.jpg', '0', '0', '0', '0', 1, '0000-00-00', '280', '100', '', '1', '30', '6.67', NULL, 0, 1, 0, '0', 0, 0, 'mncvjh', 2, '2', '2', '0', '2', '2', 2, '2', '2', '', 0, 0, 0),
+(50, 'Ecobags (Jute Bags)', '<p>Ecobags (Jute Bags)</p>\r\n', 'Ecobags (Jute Bags)', 6, 1, 41, 6, 'Ecobags (Jute Bags)', '200', NULL, 0, 'Ecobags (Jute Bags)', 'Ecobags (Jute Bags)', 'Ecobags (Jute Bags)', 'upload/products/f0adc8838f4bdedde4ec2cfad0515589.jpg', '0', '0', '0', '0', 1, '0000-00-00', '180', '100', '', '1', '30', '10.00', NULL, 0, 1, 0, '0', 0, 0, 'cvfg', 10, '10', '0', '0', '10', '10', 10, '10', '10', '', 0, 0, 0),
+(51, 'Ecobags (Non Woven Bags)', '<p>Ecobags</p>\r\n', 'Ecobags', 6, 1, 41, 6, 'Ecobags', '5', NULL, 0, 'Ecobags', 'Ecobags', 'Ecobags', 'upload/products/1dc7f3464a4839e6009992502eabb7a1.jpg', '0', '0', '0', '0', 1, '0000-00-00', '4', '100', '', '1', '30', '20.00', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 10, '10', '0', '0', '10', '10', 10, '10', '10', '', 0, 0, 0),
+(52, 'Boxes (Courier Boxes)', '<p>Boxes&nbsp;</p>\r\n', 'Boxes ', 7, 1, 48, 7, 'Boxes ', '12', NULL, 0, 'Boxes ', 'Boxes ', 'Boxes ', 'upload/products/2d1838bd5b731e64a54439dac82b3a4e.jpg', '0', '0', '0', '0', 1, '0000-00-00', '10', '100', '', '1', '30', '16.67', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 11, '11', '0', '0', '11', '11', 11, '11', '11', '', 0, 0, 0),
+(53, 'Boxes (white Boxes)', '<p>White Box</p>\r\n', 'White Box', 7, 1, 48, 7, 'White Box', '15', NULL, 0, 'White Box', 'White Box', 'White Box', 'upload/products/7690dd4db7a92524c684e3191919eb6b.jpg', '0', '0', '0', '0', 1, '0000-00-00', '13', '100', '', '1', '30', '13.33', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 11, '11', '0', '0', '11', '11', 11, '11', '11', '', 0, 0, 0),
+(54, 'Pouches (Jute Pouches)', '<p>Jute Pouches</p>\r\n', 'Jute Pouches', 8, 1, 52, 8, 'Jute Pouches', '10', NULL, 0, 'Jute Pouches', 'Jute Pouches', 'Jute Pouches', 'upload/products/3fe230348e9a12c13120749e3f9fa4cd.jpg', '0', '0', '0', '0', 1, '0000-00-00', '9', '100', '', '1', '30', '10.00', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 12, '12', '0', '0', '12', '12', 12, '12', '12', '', 0, 0, 0),
+(55, 'Pouches (Canvas Pouches)', '<p>Canvas Pouches</p>\r\n', 'Canvas Pouches', 8, 1, 52, 8, 'Canvas Pouches', '15', NULL, 0, 'Canvas Pouches', 'Canvas Pouches', 'Canvas Pouches', 'upload/products/5c1d3094cb6ad88a8fe5a64e0bdd8b1e.jpg', '0', '0', '0', '0', 1, '0000-00-00', '12', '100', '', '1', '30', '20.00', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 12, '12', '0', '0', '12', '12', 12, '12', '12', '', 0, 0, 0),
+(56, 'Office Products (Files and Folders)', '<p>&nbsp;Files and Folders For&nbsp;<span style="line-height: 20.7999992370605px;">Office Products</span></p>\r\n', 'Office Products', 9, 1, 59, 9, 'Office Products', '100', NULL, 0, 'Office Products Files and Folders', 'Office Products Files and Folders', 'Office Products Files and Folders', 'upload/products/06c765902df5e6af92864147e1995fa3.jpg', '0', '0', '0', '0', 1, '0000-00-00', '80', '100', '', '1', '30', '20.00', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 15, '15', '0', '0', '15', '15', 15, '15', '15', '', 0, 0, 0),
+(57, 'Office Products (Envelopes)', '<p>Envelopes For Office Products</p>\r\n', 'Envelopes For Office Products', 9, 1, 58, 9, 'Envelopes For Office Products', '5', NULL, 0, 'Envelopes For Office Products', 'Envelopes For Office Products', 'Envelopes For Office Products', 'upload/products/e4f37b9ed429c1fe5ce61860d9902521.jpg', '0', '0', '0', '0', 1, '0000-00-00', '4', '100', '', '1', '20', '20.00', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 13, '13', '0', '0', '13', '13', 13, '13', '13', '', 0, 0, 0),
+(58, 'Accessories (Tissue Paper)', '<p>Tissue Papers</p>\r\n', 'Tissue Paper', 15, 1, 63, 15, 'Tissue Paper', '10', NULL, 0, 'Tissue Paper', 'Tissue Paper', 'Tissue Paper', 'upload/products/76ea811ab0fa4779bc19b003bec98570.jpg', '0', '0', '0', '0', 1, '0000-00-00', '9', '100', '', '1', '20', '10.00', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 16, '16', '0', '0', '16', '16', 16, '16', '16', '', 0, 0, 0),
+(59, 'Office Products (Tags)', '<p>Office Products&nbsp;</p>\r\n', 'Office Products', 15, 1, 62, 15, 'Office Products', '8', NULL, 0, 'Office Products', 'Office Products', 'Office Products', 'upload/products/b64bd4b2d025a7635eabf84b086f65fe.jpg', '0', '0', '0', '0', 1, '0000-00-00', '7', '100', '', '1', '5', '12.50', NULL, 0, 1, 0, '0', 0, 0, 'Paprobag', 14, '14', '0', '0', '14', '14', 14, '14', '14', '', 0, 0, 0),
+(60, 'Boxes (Gift Boxes)', '<p>Gift Boxes</p>\r\n', 'Gift Boxes', 7, 1, 48, 10, 'Gift Boxes', '10', NULL, 0, 'Gift Boxes', 'Gift Boxes', 'Gift Boxes', 'upload/products/f7620fbc20ce5ea030e60b8c6f96a346.jpg', '', '', '', '', 1, '0000-00-00', '10', '100', '', '1', '8', '10', 0, 0, 1, 0, '0', 0, 0, 'Paprobag', 0, '0', '0', '0', '0', '0', 0, '0', '0', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -825,89 +845,90 @@ CREATE TABLE IF NOT EXISTS `subcategory` (
   `sub_cat_id` int(11) NOT NULL,
   `sub_cat_name` varchar(100) NOT NULL,
   `cat_id` int(11) NOT NULL,
-  `section_id` int(11) NOT NULL
+  `section_id` int(11) NOT NULL,
+  `moq` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subcategory`
 --
 
-INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`) VALUES
-(0, 'Shopping Carry Bags', 0, 0),
-(1, 'Handmade Paper bags', 0, 0),
-(2, 'Food parshal bags', 0, 0),
-(3, 'Counter Bags', 0, 0),
-(4, 'Grocery Bags', 0, 0),
-(5, 'Wine Bags', 0, 0),
-(6, 'Medical Bags', 0, 0),
-(7, 'Box Bags', 0, 0),
-(8, 'Basket Bags', 0, 0),
-(9, 'Neckties Bags', 0, 0),
-(10, 'Non Woven Bags', 1, 0),
-(11, 'Woven Stitch Bags', 1, 0),
-(12, 'Jute Bags', 1, 0),
-(13, 'Cotton Bags', 1, 0),
-(14, 'Canvas Bags', 1, 0),
-(15, 'Bamboo Bags', 1, 0),
-(16, 'Khadi Bags', 1, 0),
-(17, 'Courier Boxes', 2, 0),
-(18, 'Mailing Boxes', 2, 0),
-(19, 'Food Boxes', 2, 0),
-(20, 'Paper Board Conisters', 2, 0),
-(21, 'Paper Pouches', 3, 0),
-(22, 'Non Woven Pouches', 3, 0),
-(23, 'Woven Pouches', 3, 0),
-(24, 'Jute Pouches', 3, 0),
-(25, 'Cotton Pouches', 3, 0),
-(26, 'Canvas Pouches', 3, 0),
-(27, 'Envolopes', 4, 0),
-(28, 'Files and Folders', 4, 0),
-(29, 'Stickers', 4, 0),
-(30, 'Pamplets', 4, 0),
-(31, 'Shopping Carry Bags', 5, 1),
-(32, 'Handmade Paper bags', 5, 1),
-(33, 'Food parshal bags', 5, 1),
-(34, 'Counter Bags', 5, 1),
-(35, 'Grocery Bags', 5, 1),
-(36, 'Wine Bags', 5, 1),
-(37, 'Medical Bags', 5, 1),
-(38, 'Box Bags', 5, 1),
-(39, 'Basket Bags', 5, 1),
-(40, 'Bag For Neckties', 5, 1),
-(41, 'Non Woven Bags', 6, 1),
-(42, 'Woven Stitch Bags', 6, 1),
-(43, 'Jute Bags', 6, 1),
-(44, 'Canvas Bags', 6, 1),
-(45, 'Cotton Bags', 6, 1),
-(46, 'Bamboo Bags', 6, 1),
-(47, 'Khadi Bags', 6, 1),
-(48, 'Courier Boxes', 7, 1),
-(49, 'Mailing Boxes', 7, 1),
-(50, 'Food Boxes', 7, 1),
-(51, 'Paper Board Conisters', 7, 1),
-(52, 'Paper Pouches', 8, 1),
-(53, 'Non Woven Pouches', 8, 1),
-(54, 'Woven Pouches', 8, 1),
-(55, 'Jute Pouches', 8, 1),
-(56, 'Cotton Pouches', 8, 1),
-(57, 'Canvas Pouches', 8, 1),
-(58, 'Envolopes', 9, 1),
-(59, 'Files and Folders', 9, 1),
-(60, 'Stickers', 9, 1),
-(61, 'Pamplets', 9, 1),
-(62, 'Tags', 15, 1),
-(63, 'Tissue Paper', 15, 1),
-(64, 'Bookmarks', 15, 1),
-(65, 'Shutcovers', 15, 1),
-(66, 'Bags', 11, 2),
-(67, 'Hand Made Diaries', 11, 2),
-(68, 'Hand Made Lams', 11, 2),
-(69, 'Bags', 10, 2),
-(70, 'Boxes', 10, 2),
-(71, 'Pouches', 10, 2),
-(72, 'Office Products', 10, 2),
-(73, 'Offers On Retail', 12, 2),
-(74, 'Offers On Wholesale', 12, 2);
+INSERT INTO `subcategory` (`sub_cat_id`, `sub_cat_name`, `cat_id`, `section_id`, `moq`) VALUES
+(0, 'Shopping Carry Bags', 0, 0, 500),
+(1, 'Handmade Paper bags', 0, 0, 500),
+(2, 'Food parshal bags', 0, 0, 500),
+(3, 'Counter Bags', 0, 0, 500),
+(4, 'Grocery Bags', 0, 0, 500),
+(5, 'Wine Bags', 0, 0, 500),
+(6, 'Medical Bags', 0, 0, 500),
+(7, 'Box Bags', 0, 0, 500),
+(8, 'Basket Bags', 0, 0, 500),
+(9, 'Neckties Bags', 0, 0, 500),
+(10, 'Non Woven Bags', 1, 0, 500),
+(11, 'Woven Stitch Bags', 1, 0, 500),
+(12, 'Jute Bags', 1, 0, 500),
+(13, 'Cotton Bags', 1, 0, 500),
+(14, 'Canvas Bags', 1, 0, 500),
+(15, 'Bamboo Bags', 1, 0, 500),
+(16, 'Khadi Bags', 1, 0, 500),
+(17, 'Courier Boxes', 2, 0, 500),
+(18, 'Mailing Boxes', 2, 0, 500),
+(19, 'Food Boxes', 2, 0, 500),
+(20, 'Paper Board Conisters', 2, 0, 500),
+(21, 'Paper Pouches', 3, 0, 500),
+(22, 'Non Woven Pouches', 3, 0, 500),
+(23, 'Woven Pouches', 3, 0, 500),
+(24, 'Jute Pouches', 3, 0, 500),
+(25, 'Cotton Pouches', 3, 0, 500),
+(26, 'Canvas Pouches', 3, 0, 500),
+(27, 'Envolopes', 4, 0, 500),
+(28, 'Files and Folders', 4, 0, 500),
+(29, 'Stickers', 4, 0, 500),
+(30, 'Pamplets', 4, 0, 500),
+(31, 'Shopping Carry Bags', 5, 1, 100),
+(32, 'Handmade Paper bags', 5, 1, 100),
+(33, 'Food parshal bags', 5, 1, 100),
+(34, 'Counter Bags', 5, 1, 100),
+(35, 'Grocery Bags', 5, 1, 100),
+(36, 'Wine Bags', 5, 1, 100),
+(37, 'Medical Bags', 5, 1, 100),
+(38, 'Box Bags', 5, 1, 100),
+(39, 'Basket Bags', 5, 1, 100),
+(40, 'Bag For Neckties', 5, 1, 100),
+(41, 'Non Woven Bags', 6, 1, 100),
+(42, 'Woven Stitch Bags', 6, 1, 100),
+(43, 'Jute Bags', 6, 1, 100),
+(44, 'Canvas Bags', 6, 1, 100),
+(45, 'Cotton Bags', 6, 1, 100),
+(46, 'Bamboo Bags', 6, 1, 100),
+(47, 'Khadi Bags', 6, 1, 100),
+(48, 'Courier Boxes', 7, 1, 100),
+(49, 'Mailing Boxes', 7, 1, 100),
+(50, 'Food Boxes', 7, 1, 100),
+(51, 'Paper Board Conisters', 7, 1, 100),
+(52, 'Paper Pouches', 8, 1, 100),
+(53, 'Non Woven Pouches', 8, 1, 100),
+(54, 'Woven Pouches', 8, 1, 100),
+(55, 'Jute Pouches', 8, 1, 100),
+(56, 'Cotton Pouches', 8, 1, 100),
+(57, 'Canvas Pouches', 8, 1, 100),
+(58, 'Envolopes', 9, 1, 100),
+(59, 'Files and Folders', 9, 1, 100),
+(60, 'Stickers', 9, 1, 100),
+(61, 'Pamplets', 9, 1, 100),
+(62, 'Tags', 15, 1, 100),
+(63, 'Tissue Paper', 15, 1, 100),
+(64, 'Bookmarks', 15, 1, 100),
+(65, 'Shutcovers', 15, 1, 100),
+(66, 'Bags', 11, 2, 1),
+(67, 'Hand Made Diaries', 11, 2, 1),
+(68, 'Hand Made Lams', 11, 2, 1),
+(69, 'Bags', 10, 2, 5),
+(70, 'Boxes', 10, 2, 5),
+(71, 'Pouches', 10, 2, 5),
+(72, 'Office Products', 10, 2, 5),
+(73, 'Offers On Retail', 12, 2, 5),
+(74, 'Offers On Wholesale', 12, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -1237,7 +1258,7 @@ ALTER TABLE `print_color`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `roles`
 --
