@@ -41,12 +41,11 @@
                            </ul>
                            <!-- Tab panes -->
                             
-                           <form method="post">
+                           <form method="post" id="product_upload" action="<?php echo base_url();?>upload_product_info" enctype="multipart/form-data">
 
                               <div class="tab-content">
                                  <div class="tab-pane active" id="custp">
                                     <div class="row">
-                                       
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="section_list">
                                         <table class="table table-condensed borderless">
                                           <thead>  
@@ -82,12 +81,12 @@
                                                 for ($i = 0; $i < count($category); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$category[$i]['cat_id'].'" disabled>'
+                                                          .'<input type="radio" name="category" value="'.$category[$i]['cat_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$category[$i]['cat_name'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$category[$i]['cat_id'].'" disabled>'
+                                                          .'<input type="radio" name="category" value="'.$category[$i]['cat_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$category[$i]['cat_name'] 
                                                           .'</label></td>';
                                                   }
@@ -102,18 +101,18 @@
                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="sub_category_list">
                                         <table class="table table-condensed borderless">
                                           <thead>  
-                                            <tr><th>subcategory</th></tr>
+                                            <tr><th>Subcategory</th></tr>
                                             <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
                                               <?php
                                                 for ($i = 0; $i < count($subcategory); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
+                                                          .'<input type="radio" name="subcategory" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$subcategory[$i]['sub_cat_name'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
+                                                          .'<input type="radio" name="subcategory" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$subcategory[$i]['sub_cat_name'] 
                                                           .'</label></td>';
                                                   }
@@ -134,12 +133,12 @@
                                                 for ($i = 0; $i < count($material); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$material[$i]['material_id'].'" disabled>'
+                                                          .'<input type="radio" name="material" value="'.$material[$i]['material_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$material[$i]['material'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$material[$i]['material_id'].'" disabled>'
+                                                          .'<input type="radio" name="material" value="'.$material[$i]['material_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$material[$i]['material'] 
                                                           .'</label></td>';
                                                   }
@@ -170,12 +169,12 @@
                                                 for ($j=0; $j < count($a); $j++) { 
                                                   if ($j%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$a[$j].'" disabled>'
+                                                          .'<input type="radio" name="gsm" value="'.$a[$j].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$a[$j] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$a[$j].'" disabled>'
+                                                          .'<input type="radio" name="gsm" value="'.$a[$j].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$a[$j]
                                                           .'</label></td>';
                                                   }
@@ -198,12 +197,12 @@
                                                 for ($i = 0; $i < count($style); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$style[$i]['style'].'" disabled>'
+                                                          .'<input type="radio" name="style" value="'.$style[$i]['style'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$style[$i]['style'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$style[$i]['style'].'" disabled>'
+                                                          .'<input type="radio" name="style" value="'.$style[$i]['style'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$style[$i]['style'] 
                                                           .'</label></td>';
                                                   }
@@ -224,12 +223,12 @@
                                                 for ($i = 0; $i < count($size); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$size[$i]['size'].'" disabled>'
+                                                          .'<input type="radio" name="size" value="'.$size[$i]['size'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$size[$i]['size'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$size[$i]['size'].'" disabled>'
+                                                          .'<input type="radio" name="size" value="'.$size[$i]['size'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$size[$i]['size'] 
                                                           .'</label></td>';
                                                   }
@@ -250,12 +249,12 @@
                                                 for ($i = 0; $i < count($handle); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$handle[$i]['handle'].'" disabled>'
+                                                          .'<input type="radio" name="handle" value="'.$handle[$i]['handle'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$handle[$i]['handle'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$handle[$i]['handle'].'" disabled>'
+                                                          .'<input type="radio" name="handle" value="'.$handle[$i]['handle'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$handle[$i]['handle'] 
                                                           .'</label></td>';
                                                   }
@@ -276,12 +275,12 @@
                                                 for ($i = 0; $i < count($print); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$print[$i]['print'].'" disabled>'
+                                                          .'<input type="radio" name="print" value="'.$print[$i]['print'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$print[$i]['print'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$print[$i]['print'].'" disabled>'
+                                                          .'<input type="radio" name="print" value="'.$print[$i]['print'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$print[$i]['print'] 
                                                           .'</label></td>';
                                                   }
@@ -302,12 +301,12 @@
                                                 for ($i = 0; $i < count($print_color); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$print_color[$i]['print_color'].'" disabled>'
+                                                          .'<input type="radio" name="no_of_colors" value="'.$print_color[$i]['print_color'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$print_color[$i]['print_color'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$print_color[$i]['print_color'].'" disabled>'
+                                                          .'<input type="radio" name="no_of_colors" value="'.$print_color[$i]['print_color'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$print_color[$i]['print_color'] 
                                                           .'</label></td>';
                                                   }
@@ -328,12 +327,12 @@
                                                 for ($i = 0; $i < count($lamination); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$lamination[$i]['lamination'].'" disabled>'
+                                                          .'<input type="radio" name="lamination" value="'.$lamination[$i]['lamination'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$lamination[$i]['lamination'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$lamination[$i]['lamination'].'" disabled>'
+                                                          .'<input type="radio" name="lamination" value="'.$lamination[$i]['lamination'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$lamination[$i]['lamination'] 
                                                           .'</label></td>';
                                                   }
@@ -354,12 +353,12 @@
                                                 for ($i = 0; $i < count($special_wrk); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$special_wrk[$i]['special_wrk'].'" disabled>'
+                                                          .'<input type="radio" name="special_work" value="'.$special_wrk[$i]['special_wrk'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$special_wrk[$i]['special_wrk'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="section" value="'.$special_wrk[$i]['special_wrk'].'" disabled>'
+                                                          .'<input type="radio" name="special_work" value="'.$special_wrk[$i]['special_wrk'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$special_wrk[$i]['special_wrk'] 
                                                           .'</label></td>';
                                                   }
@@ -377,13 +376,13 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">
-                                             <input type="radio" name="section"class="txtbox">Yes  
+                                             <input type="radio" name="shipping" value="yes">Yes  
                                           </div>
                                           <div class="select_box sub_box" style="float: left;  padding: 24px 0 13px 39px;">     
-                                             <input type="radio" name="section"class="txtbox">No  
+                                             <input type="radio" name="shipping" value="no">No  
                                           </div>
                                        </div>
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="table_for_cust_and_deliver">
                                         <table class="table">
                                           <thead>
                                             <tr>
@@ -396,39 +395,107 @@
                                           <tbody>
                                             <tr>
                                               <td>500</td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
+                                              <td><input type="text" name="md500"></td>
+                                              <td><input type="text" name="sd500"></td>
+                                              <td><input type="text" name="dd500"></td>
                                             </tr>
                                             <tr>
                                               <td>1000</td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
+                                              <td><input type="text" name="md1000"></td>
+                                              <td><input type="text" name="sd1000"></td>
+                                              <td><input type="text" name="dd1000"></td>
                                             </tr>
                                             <tr>
                                               <td>1500</td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
+                                              <td><input type="text" name="md1500"></td>
+                                              <td><input type="text" name="sd1500"></td>
+                                              <td><input type="text" name="dd1500"></td>
                                             </tr>
                                             <tr>
                                               <td>2000</td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
+                                              <td><input type="text" name="md2000"></td>
+                                              <td><input type="text" name="sd2000"></td>
+                                              <td><input type="text" name="dd2000"></td>
                                             </tr>
                                             <tr>
                                               <td>3000</td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
+                                              <td><input type="text" name="md3000"></td>
+                                              <td><input type="text" name="sd3000"></td>
+                                              <td><input type="text" name="dd3000"></td>
                                             </tr>
                                             <tr>
                                               <td>5000</td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
-                                              <td><input type="text"></td>
+                                              <td><input type="text" name="md5000"></td>
+                                              <td><input type="text" name="sd5000"></td>
+                                              <td><input type="text" name="dd5000"></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="table_for_print" style="display:none;">
+                                        <table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th>Qty</th>
+                                              <th>MRP</th>
+                                              <th>Sell Price</th>
+                                              <th>Discount</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>100</td>
+                                              <td><input type="text" name="m100"></td>
+                                              <td><input type="text" name="s100"></td>
+                                              <td><input type="text" name="d100"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>200</td>
+                                             <td><input type="text" name="m200"></td>
+                                              <td><input type="text" name="s200"></td>
+                                              <td><input type="text" name="d200"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>300</td>
+                                              <td><input type="text" name="m300"></td>
+                                              <td><input type="text" name="s300"></td>
+                                              <td><input type="text" name="d300"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>500</td>
+                                              <td><input type="text" name="m500"></td>
+                                              <td><input type="text" name="s500"></td>
+                                              <td><input type="text" name="d500"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>1000</td>
+                                              <td><input type="text" name="m1000"></td>
+                                              <td><input type="text" name="s1000"></td>
+                                              <td><input type="text" name="d1000"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>1500</td>
+                                              <td><input type="text" name="m1500"></td>
+                                              <td><input type="text" name="s1500"></td>
+                                              <td><input type="text" name="d1500"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>2000</td>
+                                              <td><input type="text" name="m2000"></td>
+                                              <td><input type="text" name="s2000"></td>
+                                              <td><input type="text" name="d2000"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>3000</td>
+                                              <td><input type="text" name="m3000"></td>
+                                              <td><input type="text" name="s3000"></td>
+                                              <td><input type="text" name="d3000"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>5000</td>
+                                              <td><input type="text" name="m5000"></td>
+                                              <td><input type="text" name="s5000"></td>
+                                              <td><input type="text" name="d5000"></td>
                                             </tr>
                                           </tbody>
                                         </table>
@@ -439,7 +506,7 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="file" name="pic" accept="image/*">
+                                            <input type="file" name="pic1" accept="image/*">
                                           </div>
                                        </div>
 
@@ -448,7 +515,7 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="file" name="pic" accept="image/*">
+                                            <input type="file" name="pic2" accept="image/*">
                                           </div>
                                        </div>
 
@@ -457,7 +524,7 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="file" name="pic" accept="image/*">
+                                            <input type="file" name="pic3" accept="image/*">
                                           </div>
                                        </div>
 
@@ -466,7 +533,7 @@
                                              <span class="req" required data-validation-required-message="Please Select Subject">*</span>
                                           </div>
                                           <div class="lbltxt" style="float:right;margin-right:45%;">
-                                            <input type="file" name="pic" accept="image/*">
+                                            <input type="file" name="pic4" accept="image/*">
                                           </div>
                                        </div>
 
@@ -546,7 +613,7 @@
                      </div>
                      <div class="cart_btn clearfix">
                         <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                        <a href="<?php echo base_url()?>seller_catalog" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
+                        <a href="javascript:void(0);" id="submit_product" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
                      </div>
                   </div>
                </div>

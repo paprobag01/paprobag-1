@@ -22,13 +22,12 @@
 				</li>   
 		<?php } ?>			
           </ul>
-          <div class="container">
-           
+          <div class="container">           
           </div>
         </div>
       </div>
       <div class="title clearfix">
-        <h2><?php foreach($page_data3 as $row){echo $row['cat_name'];}?>
+        <h2><?php foreach($page_data3 as $row){echo $row['cat_name'];}?>    
           
         </h2>
       </div>
@@ -56,7 +55,10 @@
             <div class="side_box side_box_1 red5">
               <h5><a href="#" class="tgl_btn">categories</a></h5>
               <ul class="tgl_c" id="sub_cat_data">
-			  <?php foreach($sub_category_list as $row){?>
+			  <?php 
+          
+    
+        foreach($sub_category_list as $row){?>
               
                 <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>" onclick="show_filter_subprod(this.id); showsubcat(this.id); showstyle(this.id); createpagenumb(this.id)"><?php echo $row['sub_cat_name']; ?></li>
 			  <?php } ?>
@@ -70,7 +72,12 @@
              <div class="side_box side_box_1 red5" id="material_result">
                <span class="unclickable"> <h5><a href="#" class="tgl_btn">Material</a></h5></span>
                   <ul class="tgl_c1">
-                       <li> <?php echo "Select Category"; ?></li>
+                    <?php 
+                    $subcat_data = $this->session->userdata('subcat_details_data');
+                    if ($subcat_data==null) {?>
+                     <li> <?php echo "Select Category"; ?></li>
+                   <?php }?>
+                       
                   </ul>
               
 
@@ -81,7 +88,11 @@
             <div class="side_box side_box_1 red5 material" id="GSM_result">
             <span class="unclickable"> <h5><a href="#" class="tgl_btn">GSM</a></h5></span>
                   <ul class="tgl_c1">
-                       <li> <?php echo "Select Material"; ?></li>
+                     <?php $material_data = $this->session->userdata('material_details_data');
+                      echo $GSM_data = $this->session->userdata('GSM_details_data');
+                    if ($GSM_data==null) {?>
+                     <li> <?php echo "Select Material"; ?></li>
+                   <?php }?>
                   </ul>
             </div>
             <div class="side_box side_box_1 red5 material" id="size_result">
@@ -103,7 +114,11 @@
             <div class="side_box side_box_1 red5 material" id="handle_result">
                <span class="unclickable" > <h5><a href="#" class="tgl_btn">Handle</a></h5></span>
                  <ul class="tgl_c1">
-                      <li> <?php echo "Select Style"; ?></li>
+                      <?php $material_data = $this->session->userdata('material_details_data');
+                      $GSM_data = $this->session->userdata('GSM_details_data');                      
+                    if (!isset($GSM_data)) {?>
+                     <li> <?php echo "Select GSM"; ?></li>
+                   <?php }?>
                   </ul> 
               
             </div>

@@ -14,8 +14,8 @@ class seller_catalog extends CI_Controller{
 
 		$data['section'] = $this->common_model->getdistinct_id('sections','section_name','section_id');		
 		$data['category'] = $this->common_model->getdistinct_id('category','cat_name','cat_id');
-		$data['subcategory'] = $this->common_model->getdistinct_id('subcategory','sub_cat_name','sub_cat_id');
-		$data['material'] = $this->common_model->getdistinct_id('material','material','material_id');
+		$data['subcategory'] = $this->common_model->get_all_values('subcategory','sub_cat_id','sub_cat_name');
+		$data['material'] = $this->common_model->get_all_values('material','material_id','material');
 		
 		$data['style'] = $this->common_model->getdistinct_value('style_details','style');
 		

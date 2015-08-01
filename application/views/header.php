@@ -13,7 +13,7 @@
 <link rel="stylesheet" media="screen" type="text/css" href="<?php echo base_url('css/layout.css')?>" /> 
 <script type="text/javascript" src="<?php echo base_url('js/jquery.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('js/jquery.icheck.js')?>"></script>
+<!--<script type="text/javascript" src="<?php //echo base_url('js/jquery.icheck.js')?>"></script>-->
 <script type="text/javascript" src="<?php echo base_url('js/package.min.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/jquery.flexslider.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/bxslider/jquery.bxslider.min.js')?>"></script> 

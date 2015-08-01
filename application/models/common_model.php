@@ -23,11 +23,17 @@ class Common_model extends CI_Model
 
 	function getdistinct_id($table,$column1,$column2)
 	{
-		$sql = $this->db->query("SELECT DISTINCT $table.$column2,$table.$column1 FROM $table");
+		$sql = $this->db->query("SELECT DISTINCT $column2, $column1 FROM $table");
 		$result = $sql->result_array();
 		return $result;
 	}
 
+	function get_all_values($table,$column1,$column2){
+		$sql = $this->db->query("SELECT $column2, $column1 FROM $table GROUP by $column2");
+		$result = $sql->result_array();
+		return $result;
+	}
+	
 	function header_cart_details()
 	{
 		if($this->session->userdata('cart_id'))

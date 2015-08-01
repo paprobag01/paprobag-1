@@ -567,8 +567,28 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
         
   }
 
+  // function session_value($array = null)
+  // {
+  //     $array = array(
+  //       'GSM_data' =>$this->session->unset_userdata('GSM_details_data'),
+  //       'handle_data' =>$this->session->unset_userdata('handle_details_data'),
+  //     );
+
+  // }
+
    function filter_subprod_result($search_for=null)
   {
+    $this->session->unset_userdata('material_details_data');
+   $this->session->unset_userdata('GSM_details_data');
+    $this->session->unset_userdata('handle_details_data');
+    // $session_value_array = array(
+    //     'GSM_data' =>$this->session->unset_userdata('GSM_details_data'),
+    //     'handle_data' =>$this->session->unset_userdata('handle_details_data'),
+    //   );
+     
+     
+    $this->session->sess_destroy();
+    
      $material_id = $this->input->get('filter_subprod_result');
 
       $material_id;
@@ -583,6 +603,8 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
       $cat_id = $arr['1'];
       $sub_cat_id = $arr['2'];
       //$material_id = $arr['4'];
+       $this->session->set_userdata('subcat_details_data',$arr['2']);
+    print_r($this->session->userdata('subcat_details_data'));
     
     $material_data = $this->common_model->getsubprod($section_id,$cat_id,$sub_cat_id);
     foreach($material_data as $row)
@@ -616,6 +638,15 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
 
   function filter_material_result1($search_for=null)
   {
+    $sub_cat = $this->session->userdata('subcat_details_data');
+    $material_details = $this->session->userdata('material_details_data');
+    $GSM_details = $this->session->userdata('GSM_details_data');
+    $handle_details = $this->session->userdata('handle_details_data');
+    if (isset($sub_cat) && isset($material_details) && isset($GSM_details) && isset($handle_details)) {
+     $this->session->unset_userdata('material_details_data');
+     $this->session->unset_userdata('GSM_details_data');
+     $this->session->unset_userdata('handle_details_data');
+    }
      $material_id = $this->input->get('filter_material_result1');
 
       //$material_id;
@@ -629,9 +660,15 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
      $section_id = $arr['0'];
      $cat_id = $arr['1'];
      $sub_cat_id = $arr['2'];
-    $material_id = $arr['3'];
-
+     $material_id = $arr['3'];
+     
+     if(isset($sub_cat))
+     {
+         $this->session->set_userdata('material_details_data',$arr['3']);
+        print_r($this->session->userdata('material_details_data'));
+     }
     
+
     $material_data = $this->common_model->getsubprod($section_id,$cat_id,$sub_cat_id,$material_id);
     foreach($material_data as $row)
     {
@@ -664,6 +701,11 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
 
  function filter_GSM_result($search_for=null)
  {
+
+    if ($this->session->userdata('material_details_data')!=null && $this->session->userdata('GSM_details_data')!=null) {
+     $this->session->unset_userdata('material_details_data');
+     $this->session->unset_userdata('GSM_details_data');
+    }
     $material_id = $this->input->get('filter_GSM_result');
 
       //$material_id;
@@ -673,7 +715,7 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
     $arr = explode('/',$material_id);
 
    print_r($arr);//it shows the result to check need die();
-   die();
+  
 
       // $filter_id=$arr['0'];
       $section_id = $arr['0'];
@@ -681,7 +723,11 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
       $sub_cat_id = $arr['2'];
       $material_id = $arr['3'];
       $GSM_name = $arr['4'];
-
+      $this->session->set_userdata('material_details_data',$arr['3']);
+      $this->session->set_userdata('GSM_details_data',$arr['4']);
+    print_r($this->session->userdata('material_details_data'));
+     print_r($this->session->userdata('GSM_details_data'));
+ die();
        $material_data = $this->common_model->getfilterGSM_product($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name);
  
     foreach($material_data as $row)
@@ -816,6 +862,12 @@ echo "<a href='#'' class='prev'><span class='fa fa-chevron-left'></span>Previous
 
 function filter_handle_result($search_for=null)
  {
+
+    if ($this->session->userdata('material_details_data')!=null && $this->session->userdata('GSM_details_data')!=null && $this->session->userdata('handle_details_data')!=null) {
+     $this->session->unset_userdata('material_details_data');
+     $this->session->unset_userdata('GSM_details_data');
+     $this->session->unset_userdata('handle_details_data');
+    }
     $material_id = $this->input->get('filter_handle_result');
 
       //$material_id;
@@ -831,6 +883,12 @@ function filter_handle_result($search_for=null)
     $material_id = $arr['3'];
     $GSM_name = $arr['4'];    
     $handle = $arr['5'];
+    $this->session->set_userdata('material_details_data',$arr['3']);
+    $this->session->set_userdata('GSM_details_data',$arr['4']);
+    $this->session->set_userdata('handle_details_data',$arr['5']);
+    print_r($this->session->userdata('material_details_data'));
+     print_r($this->session->userdata('GSM_details_data'));
+     print_r($this->session->userdata('handle_details_data'));
 
        $material_data = $this->common_model->getfilterhandle_product($section_id,$cat_id,$sub_cat_id,$material_id,$GSM_name,$size,$style,$handle);
  
@@ -1024,6 +1082,8 @@ function filter_splwrk_result($search_for=null)
 
 function filter_material($search_for=null)
   {
+
+    
      $material_id = $this->input->get('filter_material');
     //print_r($material_id);
      //die();
@@ -1081,8 +1141,14 @@ function filter_material($search_for=null)
       echo "<div class='side_box side_box_1 red5 material' id='GSM_result'>";
         echo "<h5><a href='#'' class='tgl_btn'>GSM</a></h5>";
           echo "<ul class='tgl_c'>"; 
-          
-            if(count($material_data)>0)
+          echo $this->session->userdata('material_details_data');
+          die();
+          $GSM_details = $this->session->userdata('GSM_details_data');
+          if($material_details==null)
+          {?>
+             <li> <?php echo "Select Material"; ?></li>
+            <?php       
+          }else if(count($material_data)>0)
            {
               foreach( $material_data as $row)
               {
