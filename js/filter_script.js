@@ -368,7 +368,7 @@
                 }
                  </script>  
                    <script>
-                function filter_print(str) {
+                function show_print(str) {
                  var xmlhttp;
                   if (str.length==0) { 
                     document.getElementById("print_result").innerHTML="";
