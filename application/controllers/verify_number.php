@@ -22,7 +22,6 @@ class Verify_number extends CI_Controller{
 		$app_id = '876386c270d54e3e8b55dd7';
 		$access_token = '5e0a726cd84178bacd6fe1d8e590b7fbce4d3d8b';
 		$url = "http://www.cognalys.com/api/v1/otp/confirm/?app_id=".$app_id."&access_token=".$access_token."&keymatch=".$keymatch."&otp=".$otp;
-
 		$ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_HEADER, 0);

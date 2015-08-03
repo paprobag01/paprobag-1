@@ -11,7 +11,6 @@
                                 <li class="complete"><span></span></li>
                                 <li><span>2</span></li>
                                 <li><span>3</span></li>
-                                <li><span>4</span></li>
                             </ul>
                         </div>
                     </div>
@@ -42,62 +41,73 @@
                             <?php
                             } else {
                             ?>
-                                <div class="frm ship_frm">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">Email ID :<span class="req">*</span></div>
-                                            <input type="text" id="email_id" class="txtbox">
+                                <form method="post" id="register_seller_info" action="<?php echo base_url()?>login/register_seller_info">
+                                    <div class="frm ship_frm">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">Email ID :<span class="req">*</span></div>
+                                                <input type="text" name="email_id" id="email_id" class="txtbox" value="<?php 
+                                                if(isset($email_id)){
+                                                    echo $email_id;
+                                                }
+                                                ?>">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">Enter OTP :<span class="req">*</span></div>
+                                                <input type="text" class="txtbox" id="otp" name="otp" placeholder="Put last four digits of miss call" value="<?php echo $otp_start; ?>">
+                                            </div>
+                                            <span style="float:left">
+                                           <div class="cart_btn clearfix" style="padding-top: 40px;padding-bottom: 10px;">
+                                       
+                                                <a href="javascript:void(0);" class="next_btn" id="verify_number">Verify Number</a>
+                                         </div>  </span>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">Enter OTP :<span class="req">*</span></div>
-                                            <input type="text" class="txtbox" id="mobile_number" placeholder="Put last four digits of miss call" value="<?php echo $otp_start; ?>">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">Organization Name :<span class="req">*</span></div>
+                                                <input type="text" class="txtbox" name="orgname" value="<?php 
+                                                if(isset($orgname)){
+                                                    echo $orgname;
+                                                }
+                                                ?>">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">Address Line 1:  <span class="req">*</span></div>
+                                                <input type="text" id="address_1" name="address1" class="txtbox">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">Address Line 2: <span class="req">*</span></div>
+                                                <input type="text" id="address_2" name="address2" class="txtbox">
+                                            </div>
                                         </div>
-                                        <span style="float:left">
-                                       <div class="cart_btn clearfix" style="padding-top: 40px;padding-bottom: 10px;">
-                                   
-                                            <a href="javascript:void(0);" class="next_btn" id="verify_number">Verify Number</a>
-                                     </div>  </span>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">Zip/Postal Code:<span class="req">*</span></div>
+                                                <input type="text" id="zipcode" name="zipcode" class="txtbox">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">City:<span class="req">*</span></div>
+                                                <input type="text" id="city" name="city" class="txtbox">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="lbltxt">State: <span class="req">*</span></div>
+                                                <input type="text" id="state" name="state" class="txtbox">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <div class="reqired" style="float:left">* Required Fields</div>
+                                                <div id="otp_check" style="float: right;padding: 24px 0 13px 0;line-height: 16px;display:none"><b>otp is not verified</b></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">Organization Name :<span class="req">*</span></div>
-                                            <input type="text" class="txtbox">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">Address Line 1:  <span class="req">*</span></div>
-                                            <input type="text" id="address_1" class="txtbox">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">Address Line 2: <span class="req">*</span></div>
-                                            <input type="text" id="address_2" class="txtbox">
-                                        </div>
+                                    <div class="cart_btn clearfix">
+                                        <input type="hidden" id="keymatch" name="keymatch" value="<?php echo $keymatch; ?>">
+                                        <input type="hidden" id="otp_set" value="0">
+                                        <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
+                                        <a href="javascript:void(0);" id="seller_info" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">Zip/Postal Code:<span class="req">*</span></div>
-                                            <input type="text" id="zipcode" class="txtbox">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">City:<span class="req">*</span></div>
-                                            <input type="text" id="city" class="txtbox">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="lbltxt">State: <span class="req">*</span></div>
-                                            <input type="text" id="state" class="txtbox">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="reqired">* Required Fields</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart_btn clearfix">
-                                    <input type="hidden" id="keymatch" name="keymatch" value="<?php echo $keymatch; ?>">
-                                    <input type="hidden" id="otp_set" value="0">
-                                    <a href="#" class="back_btn"><span class="fa fa-chevron-left"></span>Back</a>
-                                    <a href="javascript:void(0);" onclick="seller_info();" id="seller_info" class="next_btn">Next step<span class="fa fa-chevron-right"></span></a>
-                                </div> 
+                                </form> 
                             <?php       
                             }
                             ?>
@@ -108,43 +118,67 @@
             </div>
         </div>
     </div>
-
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
     <script type="text/javascript">
     /////////////////////////////////////
     // Register Seller info
     /////////////////////////////////////
-
-    function seller_info(){
-        var otp_set = $('#otp_set').val();
-        if(otp_set == '1'){
-            // register seller info
-            var email_id = $('#email_id').val();
-            var address_1 = $('#address_1').val();
-            var address_2 = $('#address_2').val();
-            var zipcode = $('#zipcode').val();
-            var city = $('#city').val();
-            var state = $('#state').val();
-            var data = {
-                'email_id': email_id,
-                'address_1': address_1,
-                'address_2': address_2,
-                'zipcode': zipcode,
-                'city': city,
-                'state': state
-            };
-            $.ajax({
-                type: 'POST',
-                dataType: 'json',
-                ContentType: "application/json",
-                url: base_url+"/login/register_seller_info",
-                data: data, // or JSON.stringify ({name: 'jonas'}),
-                success: function(data) { 
-                    window.location.href = base_url+"/seller_catalog";
-                },
-            });
-        } else {
-            // Otp is not set
+    $('body').on('click', '#seller_info', function() {
+        if($('#otp_set').val() == '1'){
+            if ($('#register_seller_info').valid())
+                $('#register_seller_info').submit();           
         }
-    }
-
+        else {
+            $('#otp_check').show();
+        }
+    });
+    $(document).ready(function () {           
+       //validate seller registration
+       $("#register_seller_info").validate({
+            rules: {
+               "orgname": {
+                   required: true,
+                   maxlength: 25,
+                   alphanumeric: true,
+                   minlength: 3
+               },
+               "email_id": {
+                  required: true,
+                  email: true,
+                  maxlength: 55
+               },
+               "otp":{
+                    required: true,
+                    minlength: 12,
+                    maxlength: 12
+               },
+               "address1": {
+                  required: true,
+                  maxlength: 55,
+                  alphanumeric: true
+               },
+               "address2": {
+                  required: true,
+                  maxlength: 55,
+                  alphanumeric: true
+               },
+               "city": {
+                  required: true,
+                  maxlength: 55,
+                  alphanumeric: true
+               },
+               "state": {
+                  required: true,
+                  maxlength: 55,
+                  alphanumeric: true
+               },
+               "zipcode": {
+                    required: true,
+                    maxlength: 8,
+                    number: true
+               }
+           }
+        });
+    });
     </script>

@@ -107,12 +107,12 @@
                                                 for ($i = 0; $i < count($subcategory); $i++) {
                                                   if ($i%3 == 0) {
                                                     echo '</tr><tr><td style="border:none">'
-                                                          .'<input type="radio" name="subcategory" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
+                                                          .'<input type="radio" name="sub_category" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$subcategory[$i]['sub_cat_name'] 
                                                           .'</label></td>';
                                                   } else {
                                                     echo '<td style="border:none">'
-                                                          .'<input type="radio" name="subcategory" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
+                                                          .'<input type="radio" name="sub_category" value="'.$subcategory[$i]['sub_cat_id'].'" disabled>'
                                                           .'<label style="padding-left:10px">'.$subcategory[$i]['sub_cat_name'] 
                                                           .'</label></td>';
                                                   }
@@ -608,7 +608,7 @@
                                     </div>
                                  </div>
                               </div>
-                        </div>
+                          </div>
                         </form>          
                      </div>
                      <div class="cart_btn clearfix">
@@ -622,3 +622,209 @@
       </div>
    </div>
 </div>
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#product_upload').validate({
+        // other options & rules
+    });
+
+    // must come afer validate()
+    $('input[name="section"]').rules("add", {
+        required: true
+    });
+    $('input[name="category"]').rules("add", {
+        required: true
+    });
+    $('input[name="sub_category"]').rules("add", {
+        required: true
+    });
+    $('input[name="material"]').rules("add", {
+        required: true
+    });
+    $('input[name="gsm"]').rules("add", {
+        required: true
+    });
+    $('input[name="style"]').rules("add", {
+        required: true
+    });
+    $('input[name="size"]').rules("add", {
+        required: true
+    });
+    $('input[name="handle"]').rules("add", {
+        required: true
+    });
+    $('input[name="print"]').rules("add", {
+        required: true
+    });
+    $('input[name="no_of_colors"]').rules("add", {
+        required: true
+    });
+    $('input[name="lamination"]').rules("add", {
+        required: true
+    });
+    $('input[name="special_work"]').rules("add", {
+        required: true
+    });
+    $('input[name="shipping"]').rules("add", {
+        required: true
+    });
+
+    // ready to deliver table validation
+    $('input[name="m100"]').rules("add", {
+        required: true
+    });
+    $('input[name="s100"]').rules("add", {
+        required: true
+    });
+    $('input[name="d100"]').rules("add", {
+        required: true
+    });
+    $('input[name="m200"]').rules("add", {
+        required: true
+    });
+    $('input[name="s200"]').rules("add", {
+        required: true
+    });
+    $('input[name="d200"]').rules("add", {
+        required: true
+    });
+    $('input[name="m300"]').rules("add", {
+        required: true
+    });
+    $('input[name="s300"]').rules("add", {
+        required: true
+    });
+    $('input[name="d300"]').rules("add", {
+        required: true
+    });
+    $('input[name="m500"]').rules("add", {
+        required: true
+    });
+    $('input[name="s500"]').rules("add", {
+        required: true
+    });
+    $('input[name="d500"]').rules("add", {
+        required: true
+    });
+    $('input[name="m1000"]').rules("add", {
+        required: true
+    });
+    $('input[name="s1000"]').rules("add", {
+        required: true
+    });
+    $('input[name="d1000"]').rules("add", {
+        required: true
+    });
+    $('input[name="m1500"]').rules("add", {
+        required: true
+    });
+    $('input[name="s1500"]').rules("add", {
+        required: true
+    });
+    $('input[name="d1500"]').rules("add", {
+        required: true
+    });
+    $('input[name="m2000"]').rules("add", {
+        required: true
+    });
+    $('input[name="s2000"]').rules("add", {
+        required: true
+    });
+    $('input[name="d2000"]').rules("add", {
+        required: true
+    });
+    $('input[name="m3000"]').rules("add", {
+        required: true
+    });
+    $('input[name="s3000"]').rules("add", {
+        required: true
+    });
+    $('input[name="d3000"]').rules("add", {
+        required: true
+    });
+    $('input[name="m5000"]').rules("add", {
+        required: true
+    });
+    $('input[name="s5000"]').rules("add", {
+        required: true
+    });
+    $('input[name="d5000"]').rules("add", {
+        required: true
+    });
+
+
+    // table validation
+    $('input[name="md500"]').rules("add", {
+        required: true
+    });
+    $('input[name="sd500"]').rules("add", {
+        required: true
+    });
+    $('input[name="dd500"]').rules("add", {
+        required: true
+    });
+    $('input[name="md1000"]').rules("add", {
+        required: true
+    });
+    $('input[name="sd1000"]').rules("add", {
+        required: true
+    });
+    $('input[name="dd1000"]').rules("add", {
+        required: true
+    });
+    $('input[name="md1500"]').rules("add", {
+        required: true
+    });
+    $('input[name="sd1500"]').rules("add", {
+        required: true
+    });
+    $('input[name="dd1500"]').rules("add", {
+        required: true
+    });
+    $('input[name="md2000"]').rules("add", {
+        required: true
+    });
+    $('input[name="sd2000"]').rules("add", {
+        required: true
+    });
+    $('input[name="dd2000"]').rules("add", {
+        required: true
+    });
+    $('input[name="md3000"]').rules("add", {
+        required: true
+    });
+    $('input[name="sd3000"]').rules("add", {
+        required: true
+    });
+    $('input[name="dd3000"]').rules("add", {
+        required: true
+    });
+    $('input[name="md5000"]').rules("add", {
+        required: true
+    });
+    $('input[name="sd5000"]').rules("add", {
+        required: true
+    });
+    $('input[name="dd5000"]').rules("add", {
+        required: true
+    });
+
+    // file upload validation
+    $('input[name="pic1"]').rules("add", {
+        required: true
+    });
+    $('input[name="pic2"]').rules("add", {
+        required: true
+    });
+    $('input[name="pic3"]').rules("add", {
+        required: true
+    });
+    $('input[name="pic4"]').rules("add", {
+        required: true
+    });
+});
+</script>

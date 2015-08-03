@@ -9,7 +9,6 @@ class seller_catalog extends CI_Controller{
 	}
 	function index()
 	{	
-		
 		$data = $this->common_model->get_head();
 
 		$data['section'] = $this->common_model->getdistinct_id('sections','section_name','section_id');		

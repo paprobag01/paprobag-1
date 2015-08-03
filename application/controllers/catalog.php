@@ -15,7 +15,7 @@ class Catalog extends CI_Controller{
 	{
 		$data = $this->headermenu->add();
 		$data['cart_data'] = $this->common_model->header_cart_details();
-
+		$data['section_id'] = $section_id;
 		// Get filters
 		// Get subcategory ids
 		$sub_cat_data['where']="where cat_id=$cat_id && section_id=$section_id";

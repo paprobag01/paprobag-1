@@ -62,7 +62,7 @@
           $material_selection = 0;
           ?>
               
-                <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $material_selection;?>" onclick="show_filter_subprod(this.id); showResult(this.id); showsubcat(this.id); show_print(this.id); showstyle(this.id); createpagenumb(this.id); showhandle(this.id)"><?php echo $row['sub_cat_name']; ?></li>
+                <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $material_selection;?>" onclick="show_filter_subprod(this.id); showsize(this.id); filter_lamination(this.id); filter_spl_wrk(this.id); showResult(this.id); showsubcat(this.id); show_print(this.id); showstyle(this.id); createpagenumb(this.id); showhandle(this.id)"><?php echo $row['sub_cat_name']; ?></li>
 			  <?php } ?>
 			       </ul>
             </div>
@@ -108,6 +108,7 @@
                       <li> <?php echo "Select GSM"; ?></li>
                    </ul>               
             </div>
+            <?php if (isset($section_id)!=2) { ?>
             <div class="side_box side_box_1 red5 material" id="print_result">
               <span class="unclickable" > <h5><a href="#" class="tgl_btn">Print</a></h5></span>
                  <ul class="tgl_c1">
@@ -152,6 +153,7 @@
                    </ul> 
              
             </div>
+            <?php } ?>
             <div class="side_box side_box_1 red5 cat_box">
               <h2>Free Catalog</h2>
               <h5>Summer 2014</h5>

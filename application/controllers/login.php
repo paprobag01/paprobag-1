@@ -164,13 +164,21 @@ class Login extends CI_Controller{
 		$noRecords = $this->HomeModel->verifyEmailAddress($verificationText);  
 
 		$error = array( 'success' => true, 'error' => false); 
+		
+		// Get mobile number
 		$mobile_data = $this->common_model->getMobileNo($verificationText);
 		$mobile_number = $mobile_data[0]['mobile_number'];
+
+		// Get email address and org name
+		$email_org_data = $this->common_model->get_seller_email_orgname($verificationText);
+		$email_id = $email_org_data[0]['email'];
+		$orgname = $email_org_data[0]['org_name'];
+		
 
 		// Call the Cognalys api
 		$app_id = '876386c270d54e3e8b55dd7';
 		$access_token = '5e0a726cd84178bacd6fe1d8e590b7fbce4d3d8b';
-		$url = "http://www.cognalys.com/api/v1/otp/?app_id=".$app_id."&access_token=".$access_token."&mobile=".$mobile_number;
+		$url = "http://www.cognalys.com/api/v1/otp/?app_id=".$app_id."&access_token=".$access_token."&mobile=91".$mobile_number;
 
 		$ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -185,7 +193,8 @@ class Login extends CI_Controller{
 		
 		$data['keymatch'] = $json_data->keymatch;
 		$data['otp_start'] = $json_data->otp_start;
-		
+		$data['email_id'] = $email_id;
+		$data['orgname'] = $orgname;
 		$data['errormsg'] = $error;
 		
 		$this->load->view('header',$data);
@@ -196,8 +205,8 @@ class Login extends CI_Controller{
 	function register_seller_info()
 	{
 		$email_id = $this->input->post('email_id');
-		$address_1 = $this->input->post('address_1');
-		$address_2 = $this->input->post('address_2');
+		$address_1 = $this->input->post('address1');
+		$address_2 = $this->input->post('address2');
 		$zipcode = $this->input->post('zipcode');
 		$city = $this->input->post('city');
 		$state = $this->input->post('state');
@@ -219,7 +228,36 @@ class Login extends CI_Controller{
 		   'state' => $state
 		);
 
-		$this->db->insert('seller', $data); 
+		$this->db->insert('seller', $data);
+
+
+
+		$data = $this->common_model->get_head();
+
+		$data['section'] = $this->common_model->getdistinct_id('sections','section_name','section_id');		
+		$data['category'] = $this->common_model->getdistinct_id('category','cat_name','cat_id');
+		$data['subcategory'] = $this->common_model->get_all_values('subcategory','sub_cat_id','sub_cat_name');
+		$data['material'] = $this->common_model->get_all_values('material','material_id','material');
+		
+		$data['style'] = $this->common_model->getdistinct_value('style_details','style');
+		
+		$data['GSM'] = $this->common_model->getdistinct_value('filters','GSM_name');		
+		$data['handle'] = $this->common_model->getdistinct_value('filters','handle','material_id');
+		$data['print'] = $this->common_model->getdistinct_value('filters','print','material_id');
+		$data['print_color'] = $this->common_model->getdistinct_value('filters','print_color','material_id');
+		$data['lamination'] = $this->common_model->getdistinct_value('filters','lamination','material_id');
+		$data['special_wrk'] = $this->common_model->getdistinct_value('filters','special_wrk','material_id');
+		$data['size'] = $this->common_model->getdistinct_value('style_details','size','style_id');	
+
+		$section_id=5;
+		$cat_id=1;
+
+
+		$data['sub_category_list'] = $this->common_model->getsubcategory($section_id,$cat_id);
+				
+		$this->load->view('header',$data);
+		$this->load->view('seller_catalog_view1',$data);
+		$this->load->view('footer');
 	}
 	function _isCurl(){
 	    return function_exists('curl_version');
@@ -234,8 +272,6 @@ class Login extends CI_Controller{
 		
 		$data['Product Name'] = 'Product Name : Paper Bag';
 		$this->EmailModel->sendoredr_By_Email($email,$data);
-		
-		
 	}
 
 	function logout()

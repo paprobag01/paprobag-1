@@ -8,9 +8,6 @@ class Upload_product_info extends CI_Controller{
 	}
 	function index()
 	{
-		print_r('<pre>');
-		print_r($_POST);
-		
 		$imagePath = "upload/products/";
 		
 		$imagename = $_FILES['pic1']['name'];
@@ -81,19 +78,19 @@ class Upload_product_info extends CI_Controller{
 		    // echo "Failed to upload your image.";
 		}
 		$data = array(
-			'section_id' =>$_POST['section'],
-			'cat_id' => $_POST['category'],
-			'sub_cat_id' => $_POST['sub_category'],
-			'material_id' => $_POST['material'],
-			'GSM_name' => $_POST['gsm'],
-			'style_id' => $_POST['style'],
-			'size' => $_POST['size'],
-			'handle' => $_POST['handle'],
-			'print_color' => $_POST['no_of_colors'],
-			'print' => $_POST['print'],
-			'lamination' => $_POST['lamination'],
-			'special_wrk' => $_POST['special_work'],
-			'shipping_require' => $_POST['shipping'],
+			'section_id' => isset($_POST['section']) ? $_POST['section'] : null,
+			'cat_id' => isset($_POST['category']) ? $_POST['category'] : null,
+			'sub_cat_id' => isset($_POST['sub_category']) ? $_POST['sub_category'] : null,
+			'material_id' => isset($_POST['material']) ? $_POST['material'] : null,
+			'GSM_name' => isset($_POST['gsm']) ? $_POST['gsm'] : null,
+			'style_id' => isset($_POST['style']) ? $_POST['style'] : null,
+			'size' => isset($_POST['size']) ? $_POST['size'] : null,
+			'handle' => isset($_POST['handle']) ? $_POST['handle'] : null,
+			'print_color' => isset($_POST['no_of_colors']) ? $_POST['no_of_colors'] : null,
+			'print' => isset($_POST['print']) ? $_POST['print'] : null,
+			'lamination' => isset($_POST['lamination']) ? $_POST['lamination'] : null,
+			'special_wrk' => isset($_POST['special_work']) ? $_POST['special_work'] : null,
+			'shipping_require' => isset($_POST['shipping']) ? $_POST['shipping'] : null,
 			'prod_image1' => $_FILES['pic1']['name'],
 			'prod_image2' => $_FILES['pic2']['name'],
 			'prod_image3' => $_FILES['pic3']['name'],

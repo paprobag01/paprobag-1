@@ -10,7 +10,7 @@
                   <a href="blog_single_post.html">
                      <div class="box ">
                         <figure class="effect-chico">
-                           <img alt="alt"  src="media/blog/front_page.jpg" width="928px" height="361px"/>          
+                           <img alt="alt"  src="media/blog/all pics seller page1.jpg" width="928px" height="361px"/>          
                            <figcaption></figcaption>
                         </figure>
                         <div class=""></div>
@@ -140,7 +140,7 @@
                        <div class="menu_title clearfix">
                           <h4>Seller Account</h4>
                        </div>
-                       <form method="post" action="<?php echo base_url(); ?>login/seller_login">
+                       <form method="post" action="<?php echo base_url(); ?>login/seller_login" id="seller_login">
                           <div class="login_frm">
                               <input type="text" name="seller_username" id="seller_username" class="txtbox" placeholder="Username">
                               <input type="text" name="seller_password" id="seller_password" class="txtbox" placeholder="Password">
@@ -196,17 +196,20 @@
 
 <script>
    $(document).ready(function () {           
-       //validation rules
+       //validate seller registration
        $("#seller_registration_form").validate({
            rules: {
                "sellername": {
                    required: true,
-                   maxlength : 25
+                   maxlength : 25,
+                   alphanumeric: true,
+                   minlength: 3
                },
                "orgname": {
                    required: true,
-                   minlength: 2,
-                   maxlength: 25
+                   maxlength: 25,
+                   alphanumeric: true,
+                   minlength: 3
                },
                "email_id": {
                   required: true,
@@ -215,8 +218,9 @@
                },
                "mob_no": {
                   required: true,
-                  alphanumeric: true,
-                  maxlength: 25
+                  number: true,
+                  maxlength: 10,
+                  minlength: 10
                },
                "seller_password": {
                   required: true,
@@ -227,6 +231,21 @@
                   equalTo: "#seller_password"
                }
            }
-       })       
+       });
+       $("#seller_login").validate({
+         rules: {
+            "seller_username": {
+               required: true,
+               alphanumeric: true,
+               maxlength: 25,
+               minlength: 3
+            },
+            "seller_password": {
+               required: true,
+               maxlength: 25,
+               minlength: 3
+            }
+         }
+       });
    });
 </script>

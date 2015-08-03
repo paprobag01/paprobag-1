@@ -360,9 +360,9 @@ class Common_model extends CI_Model
 		return $sql->result_array();
 	}
 
-	function getfilterprint($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null,$style_id=null)
+	function getfilterprint($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null)
 	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and handle=$handle and style_id=$style_id");
+		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and GSM_name=$GSM_name and handle=$handle");
 		return $sql->result_array();
 	}
 
@@ -698,6 +698,27 @@ class Common_model extends CI_Model
 
 		}
 		
+	}
+
+	function get_seller_email_orgname($verificationText)
+	{
+		try {
+			$sql = $this->db->query("select email, org_name from login where email_verification_code = '".$verificationText."'");
+
+			$rowcount = $sql->num_rows();	
+			
+			if($rowcount>0)
+			{
+				return $sql->result_array();
+			}
+			else
+			{
+				return false;
+			}
+		} catch (Exception $e) {
+			// print error
+			redirect('/index','refrest');
+		}
 	}
 }
 ?>

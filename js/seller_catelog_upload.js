@@ -83,7 +83,7 @@ $(document).ready(function() {
 	        data: data,
 	        success: function(data) { 
 	        	var options = '<table class="table table-condensed borderless">'
-							    +''
+							    +'<thead>'
 							    +'<tr><th>Material</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
 	            for (var i = 0; i < data.length; i++) {
 	            	if (i%3 == 0) {
@@ -177,84 +177,92 @@ $(document).ready(function() {
 	        	 }; 
 	        	$('div#handle_list').html(handle_options);
 
-	        	// Set print options
-	       		var print_options = '<table class="table table-condensed borderless">'
-							    +'<thead>'
-							    +'  <tr><th>Print</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
-	       		// var print_options = '<option>select print</option>';
-	       		var str2 = data[0].print.split(",");
-	        	
-	        	for (var i = 0; i < str2.length; i++) {
-	            	if (i%3 == 0) {
-	            		print_options += '</tr><tr><td style="border:none">'
-		                        +'<input type="radio" name="no_of_colors" value="'+str2[i]+'"><label style="padding-left:10px">'+str2[i] 
-		                        +'</label></td>';
-	            	} else {
-		            	print_options += '<td style="border:none">'
-		                        +'<input type="radio" name="no_of_colors" value="'+str2[i]+'"><label style="padding-left:10px">'+str2[i] 
-		                        +'</label></td>';
-	            	}
-	            	// print_options += '<option value="'+data.print[i].print_id+'">'+data.print[i].print+'</option>';
-	        	 }; 
-	        	$('div#print_list').html(print_options);
+	        	var section_id = $('input:radio[name=section]:checked').val();
+	        	if(section_id == 2){
+					$('#print_list').hide();
+					$('#print_color_list').hide();
+					$('#lamination_list').hide();
+					$('#special_work_list').hide();
+				} else {
+					$('#print_list').show();
+					$('#print_color_list').show();
+					$('#lamination_list').show();
+					$('#special_work_list').show();
+		        	// Set print options
+		       		var print_options = '<table class="table table-condensed borderless">'
+								    +'<thead>'
+								    +'  <tr><th>Print</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
+		       		var str2 = data[0].print.split(",");
+		        	
+		        	for (var i = 0; i < str2.length; i++) {
+		            	if (i%3 == 0) {
+		            		print_options += '</tr><tr><td style="border:none">'
+			                        +'<input type="radio" name="print" value="'+str2[i]+'"><label style="padding-left:10px">'+str2[i] 
+			                        +'</label></td>';
+		            	} else {
+			            	print_options += '<td style="border:none">'
+			                        +'<input type="radio" name="print" value="'+str2[i]+'"><label style="padding-left:10px">'+str2[i] 
+			                        +'</label></td>';
+		            	}
+		        	 }; 
+		        	$('div#print_list').html(print_options);
 
-	        	//print color list
-	        	var print_color_options = '<table class="table table-condensed borderless">'
-							    +'<thead>'
-							    +'  <tr><th>Number Of Colours</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
-	       		var str3 = data[0].print_color.split(",");
-	        	
-	        	for (var i = 0; i < str3.length; i++) {
-	            	if (i%3 == 0) {
-	            		print_color_options += '</tr><tr><td style="border:none">'
-		                        +'<input type="radio" name="print" value="'+str3[i]+'"><label style="padding-left:10px">'+str3[i] 
-		                        +'</label></td>';
-	            	} else {
-		            	print_color_options += '<td style="border:none">'
-		                        +'<input type="radio" name="print" value="'+str3[i]+'"><label style="padding-left:10px">'+str3[i] 
-		                        +'</label></td>';
-	            	}
-	        	 }; 
-	        	$('div#print_color_list').html(print_color_options);
+		        	//print color list
+		        	var print_color_options = '<table class="table table-condensed borderless">'
+								    +'<thead>'
+								    +'  <tr><th>Number Of Colours</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
+		       		var str3 = data[0].print_color.split(",");
+		        	
+		        	for (var i = 0; i < str3.length; i++) {
+		            	if (i%3 == 0) {
+		            		print_color_options += '</tr><tr><td style="border:none">'
+			                        +'<input type="radio" name="no_of_colors" value="'+str3[i]+'"><label style="padding-left:10px">'+str3[i] 
+			                        +'</label></td>';
+		            	} else {
+			            	print_color_options += '<td style="border:none">'
+			                        +'<input type="radio" name="no_of_colors" value="'+str3[i]+'"><label style="padding-left:10px">'+str3[i] 
+			                        +'</label></td>';
+		            	}
+		        	 }; 
+		        	$('div#print_color_list').html(print_color_options);
 
-	        	// Set lamination options
-	        	var lamination_options = '<table class="table table-condensed borderless">'
-							    +'<thead>'
-							    +'  <tr><th>Lamination</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
-	       		var str4 = data[0].lamination.split(",");
+		        	// Set lamination options
+		        	var lamination_options = '<table class="table table-condensed borderless">'
+								    +'<thead>'
+								    +'  <tr><th>Lamination</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
+		       		var str4 = data[0].lamination.split(",");
 
-	        	for (var i = 0; i < str4.length; i++) {
-	            	if (i%3 == 0) {
-	            		lamination_options += '</tr><tr><td style="border:none">'
-		                        +'<input type="radio" name="lamination" value="'+str4[i]+'"><label style="padding-left:10px">'+str4[i] 
-		                        +'</label></td>';
-	            	} else {
-		            	lamination_options += '<td style="border:none">'
-		                        +'<input type="radio" name="lamination" value="'+str4[i]+'"><label style="padding-left:10px">'+str4[i] 
-		                        +'</label></td>';
-	            	}
-	            	// lamination_options += '<option value="'+data.lamination[i].lamination_id+'">'+data.lamination[i].lamination+'</option>';
-	        	 }; 
-	        	$('div#lamination_list').html(lamination_options);
+		        	for (var i = 0; i < str4.length; i++) {
+		            	if (i%3 == 0) {
+		            		lamination_options += '</tr><tr><td style="border:none">'
+			                        +'<input type="radio" name="lamination" value="'+str4[i]+'"><label style="padding-left:10px">'+str4[i] 
+			                        +'</label></td>';
+		            	} else {
+			            	lamination_options += '<td style="border:none">'
+			                        +'<input type="radio" name="lamination" value="'+str4[i]+'"><label style="padding-left:10px">'+str4[i] 
+			                        +'</label></td>';
+		            	}
+		        	 }; 
+		        	$('div#lamination_list').html(lamination_options);
 
-	        	// Set special work options
-	        	var special_work_options = '<table class="table table-condensed borderless">'
-							    +'<thead>'
-							    +'  <tr><th>Special Work</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
-	       		var str5 = data[0].special_wrk.split(",");
-	        	for (var i = 0; i < str5.length; i++) {
-	            	if (i%3 == 0) {
-	            		special_work_options += '</tr><tr><td style="border:none">'
-		                        +'<input type="radio" name="special_work" value="'+str5[i]+'"><label style="padding-left:10px">'+str5[i] 
-		                        +'</label></td>';
-	            	} else {
-		            	special_work_options += '<td style="border:none">'
-		                        +'<input type="radio" name="special_work" value="'+str5[i]+'"><label style="padding-left:10px">'+str5[i] 
-		                        +'</label></td>';
-	            	}
-	            	// special_work_options += '<option value="'+data.special_work[i].special_work_id+'">'+data.special_work[i].special_work+'</option>';
-	        	 }; 
-	        	$('div#special_work_list').html(special_work_options);
+		        	// Set special work options
+		        	var special_work_options = '<table class="table table-condensed borderless">'
+								    +'<thead>'
+								    +'  <tr><th>Special Work</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>';
+		       		var str5 = data[0].special_wrk.split(",");
+		        	for (var i = 0; i < str5.length; i++) {
+		            	if (i%3 == 0) {
+		            		special_work_options += '</tr><tr><td style="border:none">'
+			                        +'<input type="radio" name="special_work" value="'+str5[i]+'"><label style="padding-left:10px">'+str5[i] 
+			                        +'</label></td>';
+		            	} else {
+			            	special_work_options += '<td style="border:none">'
+			                        +'<input type="radio" name="special_work" value="'+str5[i]+'"><label style="padding-left:10px">'+str5[i] 
+			                        +'</label></td>';
+		            	}
+		        	 }; 
+		        	$('div#special_work_list').html(special_work_options);
+		        }
 	        },
 	    });
 	});

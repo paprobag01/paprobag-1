@@ -242,7 +242,7 @@ jQuery(function ($) {
 
     jQuery('#verify_number').click(function(e){
         var keymatch = $('#keymatch').val();
-        var otp = $('#mobile_number').val();
+        var otp = $('#otp').val();
         otp = decodeURIComponent(otp);
         var data = {
             'keymatch':keymatch,
@@ -262,6 +262,7 @@ jQuery(function ($) {
                     $("body").off( "click", "#verify_number", flash);
                     $('#verify_number').css('background','#8DC838');
                     $('#otp_set').val("1");
+                    $('#otp_check').hide();
                 }
             },
         });
