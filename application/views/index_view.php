@@ -168,7 +168,7 @@ n<div class="flexslider home-slider">
               <figcaption> </figcaption>
             </figure>
             <div class="box_inn">
-              <h1><?php echo $row['prod_name']; ?></h1>
+              <!-- <h1><?php echo $row['prod_name']; ?></h1> -->
              <!--  <p>Egestas nisi nec, ultrices erat. Aliquam elit urna, rutrum et accumsan in <a href="#" class="fa fa-arrow-circle-right"></a></p> -->
             </div>
           </div>

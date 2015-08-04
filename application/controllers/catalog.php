@@ -167,7 +167,7 @@ class Catalog extends CI_Controller{
 
 	}
 
-	function getmore($wholesale_flag=null, $section_id=null, $cat_id=null, $sub_cat_id=null, $prod_id=null)
+	function getmore($section_id=null, $cat_id=null, $sub_cat_id=null, $prod_id=null)
 	{
 
 		$data = $this->headermenu->add();
@@ -179,9 +179,7 @@ class Catalog extends CI_Controller{
 			$cart_details['where']="where cart_id=$cart_id";
 			$cart_details['table']='cart_product';
 			$cart_details['order_by']='';
-			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);
-
-			
+			$data['cart_array'] = $this->common_model->getAllDetails($cart_details);		
 
 
 		}

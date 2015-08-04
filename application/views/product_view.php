@@ -53,7 +53,8 @@ extract($page_data5);
           <div class="desc_blk">
             <h5>description</h5>
             <div class="desc_blk_inn">
-              <h5>Care instructions</h5>
+              <h5>Product ID :</h5><br>
+              <h5>Sold By :</h5>
               <p><?php foreach($page_data5 as $row){echo $row['prod_short_description'];}?></p>
              
             </div>
@@ -88,8 +89,9 @@ extract($page_data5);
                 <?php foreach($page_data5 as $row){
                   echo $row['prod_price'];
                 }?>
-              </div>
-              <a href="javascript:void(0);" class="btn_c" id="add_to_cart">Add to cart</a> </div>
+              </div>              
+              <a href="javascript:void(0);" class="btn_c" id="add_to_cart">Add to cart</a>           
+              <a href="javascript:void(0);" class="btn_c" id="customize">Customize</a>&nbsp;&nbsp;&nbsp;</div>
             <div class="review_row clearfix">
               <ul class="start_list">
                 <li class="fa fa-star active"></li>
@@ -105,9 +107,10 @@ extract($page_data5);
       </div>
       <div class="tabing animated  animation-done bounceInUp "  data-animation="bounceInUp">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#home" data-toggle="tab">customer reviews    2</a></li>
+          <li class="active"><a href="#home" data-toggle="tab">customer reviews</a></li>
           <li><a href="#information" data-toggle="tab">More INFORMATION</a></li>
-          <li><a href="#protags" data-toggle="tab">Recently viewed</a></li>
+          <li><a href="#protags" data-toggle="tab">Quantity Vs Price</a></li>
+          <li><a href="#protags" data-toggle="tab">Care Tips</a></li>
         </ul>
         
         <!-- Tab panes -->

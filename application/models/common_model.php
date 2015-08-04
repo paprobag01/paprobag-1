@@ -331,15 +331,15 @@ class Common_model extends CI_Model
 
 	function getfilterSize($style_id=null,$size=null)
 	{
-		$sql = $this->db->query("select * from style_details where style_id=$style_id and size=$size");
+		$sql = $this->db->query("select * from products where style_id=$style_id and size=$size");
 		return $sql->result_array();
 	}
 
-	function getfilterGSM_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null)
-	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name");
-		return $sql->result_array();
-	}	
+	// function getfilterGSM_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null)
+	// {
+	// 	$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name");
+	// 	return $sql->result_array();
+	// }	
 
 	function getfilterstyle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$style_id=null)
 	{
@@ -354,11 +354,11 @@ class Common_model extends CI_Model
 		return $sql->result_array();
 	}
 
-	function getfilterhandle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null)
-	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and handle=$handle");
-		return $sql->result_array();
-	}
+	// function getfilterhandle_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null)
+	// {
+	// 	$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and handle=$handle");
+	// 	return $sql->result_array();
+	// }
 
 	function getfilterprint($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$handle=null)
 	{
@@ -366,22 +366,24 @@ class Common_model extends CI_Model
 		return $sql->result_array();
 	}
 
-	function getfilterprint_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null)
-	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and print=$print");
-		return $sql->result_array();
-	}
-	function getfilterlamination_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null,$lamination=null)
-	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and print=$print and lamination=$lamination");
-		return $sql->result_array();
-	}
+	// function getfilterprint_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null)
+	// {
+	// 	$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and print=$print");
+	// 	return $sql->result_array();
+	// }
+	// function getfilterlamination($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null)
+	// {
+	// 	$size = $this->session->userdata('size_details');
+ //    	$style = $this->session->userdata('style_id'); 
+	// 	$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and size=$size and style_id=$style");
+	// 	return $sql->result_array();
+	// }
 
-	function getfiltersplwrk_product($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null,$lamination=null,$splwrk=null)
-	{
-		$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and print=$print and lamination=$lamination special_wrk=$splwrk");
-		return $sql->result_array();
-	}
+	// function getfiltersplwrk($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null,$GSM_name=null,$size=null,$style=null,$handle=null,$print=null,$lamination=null)
+	// {
+	// 	$sql = $this->db->query("select * from products where section_id=$section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id and material_id=$material_id and and GSM_name=$GSM_name and size=$size and style=$style and handle=$handle and print=$print and lamination=$lamination");
+	// 	return $sql->result_array();
+	// }
 
 	function checkuser($data=null)
 	{
@@ -525,25 +527,102 @@ class Common_model extends CI_Model
 			
 	}
 
-	function getsubprod($section_id=null,$cat_id=null,$sub_cat_id=null)
-	{
+	function getsubcat_relatedprod($array=null)
+	{		
 		$sub_cat_id;
 		$section_id;
 		$cat_id;
-			$sql = $this->db->query("select * from products where cat_id=$cat_id and section_id=$section_id and sub_cat_id=$sub_cat_id");
+			$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."'");
 			return $sql->result_array();
 			
 	}
 
-	function getfilterprod($section_id=null,$cat_id=null,$sub_cat_id=null,$material_id=null)
-	{
-		$sub_cat_id;
-		$section_id;
-		$cat_id;
-			$sql = $this->db->query("select * from products where cat_id=$cat_id and section_id=$section_id and sub_cat_id=$sub_cat_id and material_id=$material_id");
+	function getmaterial_relatedprod($array=null)
+	{		
+		
+		//echo '<pre>';
+		print_r(count($array));
+		//echo '</pre>';
+		
+		$a = $this->session->userdata('size_details');
+		$b = $this->session->userdata('style_id');	
+		if (count($array)==5) {
+			$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."'");
 			return $sql->result_array();
+		}
+		else if(count($array)==6)
+		{
+					
+			if ($a!=null && $b!=null) {
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and size=$a and style_id=$b");
+				return $sql->result_array();
+			}
+			else
+			{
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."'");
+				return $sql->result_array();
+			}
 			
-	}
+		}
+		else if(count($array)==7)
+		{					
+			if ($a!=null && $b!=null) {
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and size=$a and style_id=$b");
+				return $sql->result_array();
+			}
+			else
+			{
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."'");
+				return $sql->result_array();
+			}
+			
+		}
+		else if(count($array)==8)
+		{
+					
+			if ($a!=null && $b!=null) {
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and print = '".$array['7']."' and size=$a and style_id=$b");
+				return $sql->result_array();
+			}
+			else
+			{
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and print = '".$array['7']."'");
+				return $sql->result_array();
+			}
+			
+		}
+		else if(count($array)==9)
+		{
+				
+			if ($a!=null && $b!=null) {
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and print = '".$array['7']."' and lamination='".$array['8']."' and size=$a and style_id=$b");
+				return $sql->result_array();
+			}
+			else
+			{
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and print = '".$array['7']."' and lamination='".$array['8']."'");
+				return $sql->result_array();
+			}
+			
+		}
+		else if(count($array)==10)
+		{
+				
+			if ($a!=null && $b!=null) {
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and print = '".$array['7']."' and lamination='".$array['8']."' and special_wrk='".$array['9']."' and size=$a and style_id=$b");
+				return $sql->result_array();
+			}
+			else
+			{
+				$sql = $this->db->query("select * from products where cat_id='".$array['1']."' and section_id='".$array['0']."' and sub_cat_id='".$array['2']."' and material_id='".$array['4']."' and GSM_name='".$array['5']."' and handle='".$array['6']."' and print = '".$array['7']."' and lamination='".$array['8']."' and special_wrk='".$array['9']."'");
+				return $sql->result_array();
+			}
+			
+		}
+
+			
+			
+	}	
 
 	function getcategory($section_id=null)
 	{
@@ -563,32 +642,8 @@ class Common_model extends CI_Model
 		$sql = $this->db->query("select * from filters where section_id = $section_id and cat_id=$cat_id and sub_cat_id=$sub_cat_id");
 		return $sql->result_array();
 
-		/*foreach ($sub_cat_result as $row)
-		{
-			$sql1 = $this->db->query("select * from subcategory where section_id = '".$row['section_id']."' and cat_id='".$row['cat_id']."'");
-			$sub_cat = $sql1->result_array();
-
-		}
-			return $sub_cat;*/
-		
 	}
-
-	function get_customizable_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
-	{
-		// section_id = 5 (because it is customizbae)
-
-	}
-
-	function get_readytoprint_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
-	{
-		// section_id = 6 (because it is readytoprint)
-	}
-
-	function get_readytodeliver_prods($cat_id=null,$sub_cat_id=null,$child_cat_id=null)
-	{
-		// section_id = 7 (because it is readytoprint)
-	}
-
+	
 	function get_head()
 	{
 		$catIdArr="";

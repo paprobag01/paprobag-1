@@ -290,7 +290,7 @@
                               <h5>Retail Products</h5>                              
                             </div>
                             <div class="item_thumb">
-                              <img alt="alt" src="media/product/Retail box.jpg" height="255" width="100%">
+                              <img alt="alt" src="media/product/retail 3.jpg" height="255" width="100%">
                             </div>
                             <div class="item_desc">
                               <div class="pull-left">
@@ -307,7 +307,7 @@
                               <h5>Offers</h5>                              
                             </div>
                             <div class="item_thumb">
-                              <img alt="alt" src="media/product/F OFFER.jpg" height="255" width="100%">
+                              <img alt="alt" src="media/product/wholesale0111.jpg" height="255" width="100%">
                             </div>
                             <div class="item_desc">
                               <div class="pull-left">

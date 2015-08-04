@@ -60,9 +60,15 @@
     
         foreach($sub_category_list as $row){
           $material_selection = 0;
+          if ($this->session->userdata('size_data')!=null && $this->session->userdata('style_data')!=null) {
+            $this->session->unset_userdata('size_data');
+            $this->session->unset_userdata('style_data');
+            // echo $this->session->userdata('size_data');
+            // echo $this->session->userdata('style_data');
+          }
           ?>
               
-                <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $material_selection;?>" onclick="show_filter_subprod(this.id); showsize(this.id); filter_lamination(this.id); filter_spl_wrk(this.id); showResult(this.id); showsubcat(this.id); show_print(this.id); showstyle(this.id); createpagenumb(this.id); showhandle(this.id)"><?php echo $row['sub_cat_name']; ?></li>
+                <li id="<?php echo $row['section_id']; ?>/<?php echo $row['cat_id']; ?>/<?php echo $row['sub_cat_id']; ?>/<?php echo $material_selection;?>" onclick="show_filter_subprod(this.id); showsize(this.id); showstyle(this.id); filter_lamination(this.id); filter_spl_wrk(this.id); showResult(this.id); showsubcat(this.id); show_print(this.id); createpagenumb(this.id); showhandle(this.id)"><?php echo $row['sub_cat_name']; ?></li>
 			  <?php } ?>
 			       </ul>
             </div>
@@ -85,27 +91,27 @@
                  <ul class="tgl_c1">
                       <li> <?php echo "Select Material"; ?></li>
                    </ul> 
+            </div>                    
+            <div class="side_box side_box_1 red5 material" id="style_result">
+              <span class="unclickable" > <h5><a href="#" class="tgl_btn">Style</a></h5></span>
+                 <ul class="tgl_c1">
+                      <li> <?php echo "Select GSM"; ?></li>
+                   </ul> 
+              
             </div>
             <div class="side_box side_box_1 red5 material" id="size_result">
               <span class="unclickable" style="hover:{ cursor: default; }"> <h5><a href="#" class="tgl_btn">Size</a></h5></span>
                   <ul class="tgl_c1">
-                      <li> <?php echo "Select GSM"; ?></li>
+                      <li> <?php echo "Select Style"; ?></li>
                    </ul>           
 
-            </div>           
-            <div class="side_box side_box_1 red5 material" id="style_result">
-              <span class="unclickable" > <h5><a href="#" class="tgl_btn">Style</a></h5></span>
-                 <ul class="tgl_c1">
-                      <li> <?php echo "Select Size"; ?></li>
-                   </ul> 
-              
-            </div>
+            </div>   
              </form>
             
             <div class="side_box side_box_1 red5 material" id="handle_result">
                <span class="unclickable" > <h5><a href="#" class="tgl_btn">Handle</a></h5></span>
                 <ul class="tgl_c1">
-                      <li> <?php echo "Select GSM"; ?></li>
+                      <li> <?php echo "Select size"; ?></li>
                    </ul>               
             </div>
             <?php if (isset($section_id)!=2) { ?>
